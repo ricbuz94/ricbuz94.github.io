@@ -1,6 +1,6 @@
 ## Riccardo's website
 
-###### Done with:
+###### Made with:
 
 * [**create-react-app**](https://create-react-app.dev)
 
