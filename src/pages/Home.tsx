@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { List } from "../../common/types";
-import HomeFooter from "../../components/HomeFooter";
-import HomeList from "../../components/HomeList";
+import { List } from "../common/types";
+import HomeFooter from "../components/HomeFooter";
+import HomeList from "../components/HomeList";
 
 const lists: Array<List> = [
   {
