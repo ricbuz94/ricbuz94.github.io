@@ -8,12 +8,12 @@ const lists: Array<List> = [
     title: "Progetti",
     items: [
       {
-        url: process.env.REACT_APP_HMCID_URL,
+        url: process.env.REACT_APP_HMCID_URL ?? "#",
         title: "Howmuchcanidrink",
         description: "Quanto posso bere? Quanto devo aspettare?",
       },
       {
-        url: process.env.REACT_APP_DRINKTOOL_URL,
+        url: process.env.REACT_APP_DRINKTOOL_URL ?? "#",
         title: "DrinkTool",
         description: "Calcolo del tasso alcolemico.",
       },
@@ -23,7 +23,10 @@ const lists: Array<List> = [
 
 function Home() {
   useEffect(() => {
-    document.getElementById("title").innerHTML = " · Home";
+    let title = document.getElementById("title");
+    if (title != null) {
+      title.innerHTML = " · Home";
+    }
   }, []);
 
   return (

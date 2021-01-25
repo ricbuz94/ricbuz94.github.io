@@ -5,7 +5,10 @@ function PageNotFound() {
   let location = useLocation();
 
   useEffect(() => {
-    document.getElementById("title").innerHTML = " · 404";
+    let title = document.getElementById("title");
+    if (title != null) {
+      title.innerHTML = " · 404";
+    }
   }, []);
 
   return (

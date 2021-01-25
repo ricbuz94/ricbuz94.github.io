@@ -2,7 +2,10 @@ import React, { useEffect } from "react";
 
 function DrinkToolPolicy() {
   useEffect(() => {
-    document.getElementById("title").innerHTML = " · DrinkTool";
+    let title = document.getElementById("title");
+    if (title != null) {
+      title.innerHTML = " · DrinkTool";
+    }
   }, []);
 
   return (
