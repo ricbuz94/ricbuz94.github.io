@@ -54,6 +54,11 @@ code {
   text-align: center;
 }
 
+.Home-list-div {
+  padding-left: calc(4rem + 1vmin);
+  padding-right: calc(4rem + 1vmin);
+}
+
 .Home-divider {
   min-width: 70%;
   color: var(--black);

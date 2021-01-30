@@ -8,7 +8,7 @@ type HomeListType = {
 
 function HomeList({ list }: HomeListType) {
   return (
-    <div>
+    <div className="Home-list-div">
       <h2 className="Home-header">{list.title}</h2>
       {list.items
         .map((item: Item, index: number) => (
