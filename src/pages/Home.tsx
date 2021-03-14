@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { List } from "../common/types";
 import HomeFooter from "../components/HomeFooter";
 import HomeList from "../components/HomeList";
+import SiteTitle from "../ui/site-title/SiteTitle";
 
 const lists: Array<List> = [
   {
@@ -31,12 +32,10 @@ function Home() {
 
   return (
     <div className="Home-div">
-      <h1 className="Home-header">Riccardo Buzzolo</h1>
-      <hr className="Home-divider" />
+      <SiteTitle title="Riccardo Buzzolo" />
       {lists.map((list: List, i: number) => (
         <HomeList key={list.title} list={lists[i]} />
       ))}
-      <br />
       <HomeFooter />
     </div>
   );

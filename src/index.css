@@ -1,8 +1,8 @@
 :root {
   --yellow: #ffde22;
+  --darkYellow: rgba(200, 173, 0, 0.8);
   --red: #ff414e;
-  --black: #1b1d1c;
-  --transition: all 0.2s linear;
+  --easeInOutTransition: all 0.18s ease-in-out;
 }
 
 @font-face {
@@ -23,21 +23,26 @@ body {
   margin: 0;
 }
 
-#underline {
-  text-decoration: underline;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
+a {
+  outline: none;
+}
+
 /* HOME */
-.Home {
-  text-align: center;
+.Home-div h1,
+h2,
+h3,
+h4 {
+  margin: 0px;
+  padding: 0px;
 }
 
 .Home-div {
+  color: black;
   font-family: "Comfortaa";
   font-weight: 600;
   background-color: var(--yellow);
@@ -45,85 +50,53 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(5px + 2vmin);
-}
-
-.Home-header {
-  color: var(--black);
-  text-align: center;
-}
-
-.Home-list-div {
-  padding-left: calc(4rem + 1vmin);
-  padding-right: calc(4rem + 1vmin);
+  justify-content: space-around;
+  font-size: max(3vmin, 1em);
 }
 
 .Home-divider {
   min-width: 70%;
-  color: var(--black);
-  border: 1px solid var(--black);
-  background-color: var(--black);
+  color: black;
+  border: 1px solid black;
+  background-color: black;
 }
 
-.Home-item-div {
-  padding: 15px;
+.Home-list {
+  width: 80vmin;
 }
 
-.Home-item-header {
-  padding: 0;
-  margin-bottom: 1vmin;
-}
-
-.Home-item-desc {
-  margin: 0;
-  padding: 0;
-}
-
-.Home-link {
-  color: var(--black);
-  text-decoration: none;
-}
-
-.Home-link:hover {
-  color: var(--red);
-  text-decoration: underline;
+.Home-list-divider {
+  margin: 0px;
+  padding: 0px;
+  height: 10px;
 }
 
 .Home-footer {
-  margin-top: 5rem;
-  min-width: calc(10rem + 2vmin);
+  min-width: 40vmin;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
 }
 
-.Home-icon {
-  color: var(--black);
-  font-size: calc(15px + 2vmin);
-}
-
-.Home-icon:hover {
-  color: var(--red);
-  font-size: calc(15px + 2vmin);
-}
-
 /* DRINKTOOL-POLICY */
 .DTP-div {
+  color: black;
   padding: 3rem;
   font-family: "Roboto Mono", monospace;
+  font-size: 100%;
   background-color: white;
 }
 
 /* PAGE NOT FOUND */
 .PNF-container {
+  font-family: "Roboto Mono", monospace;
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: max(3vmin, 1em);
   color: white;
 }

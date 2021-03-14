@@ -1,0 +1,26 @@
+.site-button {
+  outline: none;
+  text-decoration: none;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1rem;
+  box-shadow: 0px 0px 0px #111;
+  background-color: transparent;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  transition: var(--easeInOutTransition);
+}
+
+.site-button:hover {
+  cursor: pointer;
+  border: 1px solid white;
+}
+
+.site-button:active {
+  color: #282c34;
+  background-color: white;
+  box-shadow: none;
+}

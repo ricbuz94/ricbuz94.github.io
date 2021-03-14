@@ -1,32 +1,18 @@
-import React from "react";
 import { FiTwitter, FiInstagram, FiGithub } from "react-icons/fi";
+import FooterIcon from "../ui/footer-icon/FooterIcon";
 
 function HomeFooter() {
   return (
     <footer className="Home-footer">
-      <span>
-        <a
-          rel="noreferrer"
-          href={process.env.REACT_APP_TWITTER}
-          target="_blank"
-        >
-          <FiTwitter className="Home-icon" />
-        </a>
-      </span>
-      <span>
-        <a
-          rel="noreferrer"
-          href={process.env.REACT_APP_INSTAGRAM}
-          target="_blank"
-        >
-          <FiInstagram className="Home-icon" />
-        </a>
-      </span>
-      <span>
-        <a rel="noreferrer" href={process.env.REACT_APP_GITHUB} target="_blank">
-          <FiGithub className="Home-icon" />
-        </a>
-      </span>
+      <FooterIcon href={process.env.REACT_APP_TWITTER}>
+        <FiTwitter className="footer-icon" />
+      </FooterIcon>
+      <FooterIcon href={process.env.REACT_APP_INSTAGRAM}>
+        <FiInstagram className="footer-icon" />
+      </FooterIcon>
+      <FooterIcon href={process.env.REACT_APP_GITHUB}>
+        <FiGithub className="footer-icon" />
+      </FooterIcon>
     </footer>
   );
 }
