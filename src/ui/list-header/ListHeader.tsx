@@ -5,7 +5,7 @@ type ListHeaderType = {
 };
 
 const ListHeader = ({ title }: ListHeaderType) => (
-  <h2 className="list-header">{title}</h2>
+  <h5 className="list-header">{title}</h5>
 );
 
 export default ListHeader;

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { List } from "../common/types";
 import HomeFooter from "../components/HomeFooter";
 import HomeList from "../components/HomeList";
-import SiteTitle from "../ui/site-title/SiteTitle";
+import SiteLogo from "../ui/site-logo/SiteLogo";
 
 const lists: Array<List> = [
   {
@@ -32,7 +32,7 @@ function Home() {
 
   return (
     <div className="Home-div">
-      <SiteTitle title="Riccardo Buzzolo" />
+      <SiteLogo />
       {lists.map((list: List, i: number) => (
         <HomeList key={list.title} list={lists[i]} />
       ))}
