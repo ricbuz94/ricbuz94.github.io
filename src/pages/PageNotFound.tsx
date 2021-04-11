@@ -8,14 +8,13 @@ function PageNotFound() {
   useEffect(() => {
     let title = document.getElementById("title");
     if (title != null) {
-      title.innerHTML = " · 404";
+      title.innerHTML = " · 404 Page not found";
     }
   }, []);
 
   return (
     <div className="PNF-container">
-      <h2>No matches for {location.pathname}</h2>
-      <hr color="transparent" />
+      <h2>Nessun risultato per {location.pathname}</h2>
       <SiteButton isLink path="/" title="Home" />
     </div>
   );

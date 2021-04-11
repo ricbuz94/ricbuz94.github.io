@@ -1,26 +1,24 @@
 .site-button {
   outline: none;
+  font-family: "Roboto", monospace;
   text-decoration: none;
-  color: white;
-  padding-left: 10px;
-  padding-right: 10px;
+  color: black;
+  padding-left: 15px;
+  padding-right: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
-  font-size: 1rem;
-  box-shadow: 0px 0px 0px #111;
-  background-color: transparent;
-  border: 1px solid lightgray;
-  border-radius: 5px;
+  background-color: white;
+  border: 1px solid var(--gray2);
+  border-radius: 0.5em;
   transition: var(--easeInOutTransition);
 }
 
 .site-button:hover {
   cursor: pointer;
-  border: 1px solid white;
+  border: 1px solid #555;
 }
 
 .site-button:active {
-  color: #282c34;
+  color: var(--red);
   background-color: white;
-  box-shadow: none;
 }
