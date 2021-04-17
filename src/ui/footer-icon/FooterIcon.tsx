@@ -8,7 +8,7 @@ type FooterIconType = {
 const FooterIcon = ({ href, children }: FooterIconType) => {
   return (
     <span>
-      <a rel="noreferrer" href={href ?? "#"} target="_blank">
+      <a rel="noreferrer" aria-label="icon" href={href ?? "#"} target="_blank">
         {children}
       </a>
     </span>
