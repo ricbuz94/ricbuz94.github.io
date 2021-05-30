@@ -1,8 +1,18 @@
 {
 	"name": "website",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"private": true,
-	"homepage": "https://ricbuz94.github.io/app/",
+	"description": "Una landing page per i miei progetti",
+	"homepage": "https://ricbuz94.github.io",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ricbuz94/ricbuz94.github.io"
+	},
+	"author": {
+		"name": "Riccardo Buzzolo",
+		"email": "riccardo.buzzolo@gmail.com"
+	},
+	"license": "UNLICENSED",
 	"dependencies": {
 		"@babel/core": "7.12.3",
 		"@pmmmwh/react-refresh-webpack-plugin": "0.4.2",
