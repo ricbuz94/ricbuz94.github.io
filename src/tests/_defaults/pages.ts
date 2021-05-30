@@ -6,11 +6,11 @@ export const pages = {
 		title: "homepage",
 	},
 	drinktool: {
-		url: `${MAIN_URL}/drinktool-policy`,
+		url: `${MAIN_URL}/#/drinktool-policy`,
 		title: "drinktool privacy policy",
 	},
 	pageNotFound: {
-		url: `${MAIN_URL}/*`,
+		url: `${MAIN_URL}/#/*`,
 		title: "page not found"
 	}
 };
