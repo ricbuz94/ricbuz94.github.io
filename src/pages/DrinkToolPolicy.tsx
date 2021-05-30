@@ -11,7 +11,7 @@ function DrinkToolPolicy() {
   return (
     <div className="DTP-div">
       <p style={{ marginTop: 0 }}>
-        <sub id="lastMod">{`Last update: ${new Date(
+        <sub>{`Last update: ${new Date(
           document.lastModified
         ).toDateString()}`}</sub>
       </p>

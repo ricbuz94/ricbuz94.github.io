@@ -4,13 +4,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-	background-color: white;
+  background-color: white;
   border-radius: 0.5em;
-	transition: var(--easeInOutTransition);
-	box-shadow: var(--card-shadow);
+  transition: var(--easeInOutTransition);
+  box-shadow: var(--card-shadow);
 }
 
 .list-item:hover {
-	box-shadow: var(--card-shadow-hover);
-	transform: translateY(-5px);
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-5px);
 }
