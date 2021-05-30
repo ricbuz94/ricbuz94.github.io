@@ -16,7 +16,7 @@ function PageNotFound() {
     <div className="PNF-container">
       {/* <h2>Nessun risultato per {location.pathname}</h2> */}
       <h2>Pagina non trovata</h2>
-      <SiteButton isLink path="/home" title="Home" />
+      <SiteButton isLink path="/" title="Home" />
     </div>
   );
 }

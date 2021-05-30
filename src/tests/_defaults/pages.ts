@@ -2,8 +2,8 @@ import { MAIN_URL } from "./defaults";
 
 export const pages = {
 	home: {
-		url: `${MAIN_URL}/home`,
-		title: "home",
+		url: `${MAIN_URL}/`,
+		title: "homepage",
 	},
 	drinktool: {
 		url: `${MAIN_URL}/drinktool-policy`,
