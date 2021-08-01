@@ -1,16 +1,21 @@
 import "./list-item.css";
-import { Item } from "../../common/types";
-import ListItemDescription from "../list-item-description/ListItemDescription";
-import ListItemTitle from "../list-item-title/ListItemTitle";
+import { Item } from "../../common/interfaces";
 
-type ListItemType = {
+interface ListItemType {
   item: Item;
-};
+}
 
 const ListItem = ({ item }: ListItemType) => (
   <div className="list-item">
-    <ListItemTitle url={item.url} title={item.title} />
-    <ListItemDescription description={item.description} />
+    <a
+      className="list-item-title"
+      rel="noreferrer"
+      href={item.url}
+      target="_blank"
+    >
+      <h3>{item.title}</h3>
+      <p className="list-item-description">{item.description}</p>
+    </a>
   </div>
 );
 

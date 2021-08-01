@@ -3,6 +3,7 @@
   --gray1: #dbe1e8;
   --gray2: #b2becd;
   --gray3: #6c7983;
+  --gray4: #424242;
   --red: #ff414e;
   --easeInOutTransition: all 0.15s ease-in-out;
   --card-shadow: 0 2px 4px rgba(0, 30, 84, 0.12);
@@ -58,25 +59,21 @@ h4 {
   font-size: max(2vmin, 1em);
 }
 
-.Home-divider {
-  min-width: 70%;
-  color: black;
-  border: 1px solid black;
-  background-color: black;
-}
-
 .Home-list {
-  width: 80vmin;
+  width: 70vmin;
 }
 
 .Home-list-divider {
   margin: 0px;
   padding: 0px;
-  height: 15px;
+  height: 1em;
 }
 
 .Home-footer {
-  min-width: 40vmin;
+  max-height: 30vh;
+  padding-top: 1em;
+  padding-bottom: 2em;
+  min-width: 45vmin;
   display: flex;
   flex-direction: row;
   align-items: center;

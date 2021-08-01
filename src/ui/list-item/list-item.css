@@ -1,6 +1,6 @@
 .list-item {
   margin: 0px;
-  padding: 1em;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,5 +12,44 @@
 
 .list-item:hover {
   box-shadow: var(--card-shadow-hover);
-  transform: translateY(-5px);
+  transform: scale(1.05);
+}
+
+.list-item:active {
+  box-shadow: var(--card-shadow-hover);
+  transform: scale(1.05);
+}
+
+.list-item > a {
+  margin: 0px;
+  padding: 1em;
+  outline: none;
+  color: black;
+  text-decoration: none;
+  transition: var(--easeInOutTransition);
+}
+
+.list-item > a:active {
+  background-color: transparent;
+  outline: none;
+}
+
+.list-item > a > h3 {
+  color: black;
+  transition: var(--easeInOutTransition);
+}
+
+.list-item:hover > a > h3 {
+  color: var(--red);
+}
+
+.list-item:active > a > h3 {
+  color: var(--red);
+}
+
+.list-item-description {
+  color: var(--gray4);
+  margin: 0px;
+  margin-top: 15px;
+  padding: 0px;
 }

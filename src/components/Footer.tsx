@@ -1,7 +1,7 @@
 import { FiTwitter, FiInstagram, FiGithub } from "react-icons/fi";
 import FooterIcon from "../ui/footer-icon/FooterIcon";
 
-function HomeFooter() {
+function Footer() {
   return (
     <footer className="Home-footer">
       <FooterIcon href={process.env.REACT_APP_TWITTER}>
@@ -17,4 +17,4 @@ function HomeFooter() {
   );
 }
 
-export default HomeFooter;
+export default Footer;

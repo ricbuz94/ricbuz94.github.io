@@ -1,7 +1,7 @@
 .footer-icon {
   margin: 0px;
   padding: 0px;
-	font-size: 180%;
+  font-size: 180%;
   color: black;
   vertical-align: middle;
   transition: var(--easeInOutTransition);
@@ -9,9 +9,10 @@
 
 .footer-icon:hover {
   color: var(--red);
-	transform: translateY(-5px);
+  transform: scale(1.25);
 }
 
 .footer-icon:active {
   color: var(--red);
+  transform: scale(1.25);
 }
