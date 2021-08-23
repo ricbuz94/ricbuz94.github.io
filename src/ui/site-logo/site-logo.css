@@ -1,7 +1,6 @@
 .logo {
   width: calc(60px + 2vmin);
   height: calc(60px + 2vmin);
-  padding-top: 1.5em;
-  padding-bottom: 1em;
-  transition: var(--easeInOutTransition);
+  margin-top: 1rem;
+  transition: var(--easeTransition);
 }

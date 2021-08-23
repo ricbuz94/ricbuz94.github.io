@@ -2,17 +2,15 @@
   margin: 0px;
   padding: 0px;
   font-size: 180%;
-  color: black;
+  color: var(--text);
   vertical-align: middle;
-  transition: var(--easeInOutTransition);
+  transition: var(--easeTransition);
 }
 
 .footer-icon:hover {
-  color: var(--red);
-  transform: scale(1.25);
+  color: var(--accent);
 }
 
 .footer-icon:active {
-  color: var(--red);
-  transform: scale(1.25);
+  color: var(--accent);
 }

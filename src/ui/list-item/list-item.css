@@ -4,9 +4,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
+  background-color: var(--cardBackground);
   border-radius: 0.5em;
-  transition: var(--easeInOutTransition);
+  transition: var(--easeTransition);
   box-shadow: var(--card-shadow);
 }
 
@@ -24,9 +24,9 @@
   margin: 0px;
   padding: 1em;
   outline: none;
-  color: black;
+  color: var(--text);
   text-decoration: none;
-  transition: var(--easeInOutTransition);
+  transition: var(--easeTransition);
 }
 
 .list-item > a:active {
@@ -35,20 +35,23 @@
 }
 
 .list-item > a > h3 {
-  color: black;
-  transition: var(--easeInOutTransition);
+  transition: var(--easeTransition);
 }
 
 .list-item:hover > a > h3 {
-  color: var(--red);
+  color: var(--accent);
 }
 
 .list-item:active > a > h3 {
-  color: var(--red);
+  color: var(--accent);
+}
+
+.list-item-title {
+  font-weight: 800;
 }
 
 .list-item-description {
-  color: var(--gray4);
+  color: var(--subText);
   margin: 0px;
   margin-top: 15px;
   padding: 0px;

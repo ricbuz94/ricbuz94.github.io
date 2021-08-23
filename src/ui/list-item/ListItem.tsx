@@ -13,7 +13,7 @@ const ListItem = ({ item }: ListItemType) => (
       href={item.url}
       target="_blank"
     >
-      <h3>{item.title}</h3>
+      <h3 className="list-item-title">{item.title}</h3>
       <p className="list-item-description">{item.description}</p>
     </a>
   </div>

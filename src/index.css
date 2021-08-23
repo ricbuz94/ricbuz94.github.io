@@ -3,11 +3,37 @@
   --gray1: #dbe1e8;
   --gray2: #b2becd;
   --gray3: #6c7983;
-  --gray4: #424242;
+  --gray4: #454e56;
+  --gray5: #2a2e35;
+  --gray6: #12181b;
   --red: #ff414e;
-  --easeInOutTransition: all 0.15s ease-in-out;
+  --purple: #9166cc;
+  --easeTransition: all 0.3s ease;
+}
+
+/* ::selection {
+  background-color: var(--red);
+  color: white;
+} */
+
+.light {
+  --accent: var(--red);
+  --cardBackground: #ffffff;
+  --background: var(--gray0);
+  --text: var(--gray6);
+  --subText: var(--gray4);
   --card-shadow: 0 2px 4px rgba(0, 30, 84, 0.12);
   --card-shadow-hover: 0 4px 8px rgba(0, 30, 84, 0.12);
+}
+
+.dark {
+  --accent: var(--purple);
+  --cardBackground: var(--gray5);
+  --background: var(--gray6);
+  --text: #ffffff;
+  --subText: var(--gray2);
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.38);
+  --card-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.38);
 }
 
 @font-face {
@@ -47,16 +73,23 @@ h4 {
 }
 
 .Home-div {
-  color: black;
+  color: var(--text);
   font-family: "Quando";
   font-weight: 600;
-  background-color: var(--gray0);
+  background-color: var(--background);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  font-size: max(2vmin, 1em);
+  font-size: max(1.8vmin, 0.8em);
+  transition: background 500ms ease, color 1000ms ease;
+}
+
+.Home-div header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .Home-list {
@@ -70,9 +103,9 @@ h4 {
 }
 
 .Home-footer {
-  max-height: 30vh;
-  padding-top: 1em;
-  padding-bottom: 2em;
+  margin-bottom: 1rem;
+  height: fit-content;
+  overflow: visible;
   min-width: 45vmin;
   display: flex;
   flex-direction: row;
