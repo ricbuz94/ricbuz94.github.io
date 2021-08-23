@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.432a56af.chunk.css",
+    "main.css": "/static/css/main.b4fe68a0.chunk.css",
     "main.js": "/static/js/main.41fc3550.chunk.js",
     "main.js.map": "/static/js/main.41fc3550.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.56a8dca1.js",
@@ -8,7 +8,7 @@
     "static/js/2.c906d9aa.chunk.js": "/static/js/2.c906d9aa.chunk.js",
     "static/js/2.c906d9aa.chunk.js.map": "/static/js/2.c906d9aa.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.432a56af.chunk.css.map": "/static/css/main.432a56af.chunk.css.map",
+    "static/css/main.b4fe68a0.chunk.css.map": "/static/css/main.b4fe68a0.chunk.css.map",
     "static/js/2.c906d9aa.chunk.js.LICENSE.txt": "/static/js/2.c906d9aa.chunk.js.LICENSE.txt",
     "static/media/index.css": "/static/media/RobotoMono-Variable.2ccde177.ttf",
     "static/media/logo.7bc7418e.png": "/static/media/logo.7bc7418e.png",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.56a8dca1.js",
     "static/js/2.c906d9aa.chunk.js",
-    "static/css/main.432a56af.chunk.css",
+    "static/css/main.b4fe68a0.chunk.css",
     "static/js/main.41fc3550.chunk.js"
   ]
 }
