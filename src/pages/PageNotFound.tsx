@@ -1,24 +1,24 @@
 import { useEffect } from "react";
-// import { useLocation } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import SiteButton from "../ui/site-button/SiteButton";
 
-function PageNotFound() {
-  //   let location = useLocation();
+const PageNotFound = () => {
+  const { url } = useRouteMatch();
 
   useEffect(() => {
     let title = document.getElementById("title");
     if (title != null) {
-      title.innerHTML = " · 404 Page not found";
+      title.innerHTML = "Page not found";
     }
   }, []);
 
+  const homeUrl = url.includes("/drinktool/") ? "/drinktool" : "/";
   return (
-    <div className="PNF-container">
-      {/* <h2>Nessun risultato per {location.pathname}</h2> */}
+    <div className="pnf-container">
       <h2>Pagina non trovata</h2>
-      <SiteButton isLink path="/" title="Home" />
+      <SiteButton isLink path={homeUrl} title="Home" />
     </div>
   );
-}
+};
 
 export default PageNotFound;

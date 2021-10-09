@@ -3,22 +3,17 @@
   font-family: "Roboto", monospace;
   text-decoration: none;
   color: black;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   background-color: white;
   border: 1px solid var(--gray2);
-  border-radius: 0.5em;
+  border-radius: 0.2rem;
   transition: var(--easeTransition);
 }
 
 .site-button:hover {
   cursor: pointer;
-  border: 1px solid #555;
-}
-
-.site-button:active {
-  color: var(--red);
-  background-color: white;
+  border: 1px solid var(--gray4);
 }

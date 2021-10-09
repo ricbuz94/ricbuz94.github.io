@@ -1,0 +1,5 @@
+.logo {
+  width: calc(40px + 1vmin);
+  height: auto;
+  transition: var(--easeTransition);
+}

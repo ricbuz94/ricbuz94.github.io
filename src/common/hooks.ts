@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const useMediaQuery = (query: string): boolean => {
+export const useMediaQuery = (query: string): boolean => {
   const [matches, setMatches] = useState(false);
 
   useEffect(() => {
@@ -16,4 +16,23 @@ const useMediaQuery = (query: string): boolean => {
   return matches;
 }
 
-export default useMediaQuery;
+export const useMountTransition = (isMounted: any, unmountDelay: any) => {
+  const [isTransitioning, setIsTransitioning] = useState(false);
+
+  useEffect(() => {
+    let timeoutId: any;
+
+    if (isMounted && !isTransitioning) {
+      setIsTransitioning(true);
+    } else if (!isMounted && isTransitioning) {
+      timeoutId = setTimeout(() => setIsTransitioning(false), unmountDelay);
+    }
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [unmountDelay, isMounted, isTransitioning]);
+
+  return isTransitioning;
+};
+
+export default useMountTransition;

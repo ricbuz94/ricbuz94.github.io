@@ -1,0 +1,27 @@
+.form-input-cpntainer {
+}
+
+.form-input-cpntainer h5 {
+  margin-bottom: 0.5rem;
+}
+
+.form-input-cpntainer input,
+.form-input-cpntainer textarea {
+  outline: none;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  padding: 4px;
+  border-radius: 3px;
+  border: 1px solid var(--gray2);
+  transition: all 0.2s ease;
+}
+
+.form-input-cpntainer input:hover,
+.form-input-cpntainer textarea:hover {
+  border-color: var(--gray3);
+}
+
+.form-input-cpntainer input:focus,
+.form-input-cpntainer textarea:focus {
+  border-color: #000000;
+}

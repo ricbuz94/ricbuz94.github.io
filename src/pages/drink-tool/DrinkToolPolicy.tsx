@@ -1,21 +1,21 @@
 import { useEffect } from "react";
 
-function DrinkToolPolicy() {
+const DrinkToolPolicy = () => {
   useEffect(() => {
     let title = document.getElementById("title");
     if (title != null) {
-      title.innerHTML = " · DrinkTool";
+      title.innerHTML = "DrinkTool · Privacy-Policy";
     }
   }, []);
 
   return (
-    <div className="DTP-div">
+    <div className="dtp-div">
       <p style={{ marginTop: 0 }}>
         <sub>{`Last update: ${new Date(
           document.lastModified
         ).toDateString()}`}</sub>
       </p>
-      <h3 style={{ marginTop: 0 }}>DrinkTool - Privacy Policy</h3>
+      <h3>DrinkTool · Privacy-Policy</h3>
       <p>
         Riccardo Buzzolo built the DrinkTool app as an Ad Supported app. This
         application is provided by Riccardo Buzzolo at no cost and is intended
@@ -236,6 +236,6 @@ function DrinkToolPolicy() {
       </p>
     </div>
   );
-}
+};
 
 export default DrinkToolPolicy;

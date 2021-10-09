@@ -11,10 +11,10 @@
   --easeTransition: all 0.3s ease;
 }
 
-/* ::selection {
+::selection {
   background-color: var(--red);
   color: white;
-} */
+}
 
 .light {
   --accent: var(--red);
@@ -38,8 +38,16 @@
 
 @font-face {
   font-family: "Quando";
+  font-weight: 400;
   src: local("Quando"), local("Quando"),
     url("./fonts/Quando-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-weight: 400;
+  src: local("Nunito"), local("Nunito"),
+    url("./fonts/Nunito-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -52,6 +60,7 @@
 
 body {
   margin: 0;
+  padding: 0;
 }
 
 code {
@@ -59,81 +68,142 @@ code {
     monospace;
 }
 
-a {
+a,
+button {
   outline: none;
 }
 
+hr {
+  height: 1px;
+  border: none;
+  background-color: var(--gray1);
+}
+
+.route-link {
+  outline: none;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: bolder;
+  transition: var(--easeTransition);
+}
+
+.route-link:hover {
+  color: var(--accent);
+}
+
 /* HOME */
-.Home-div h1,
+.Home-div,
+h1,
 h2,
 h3,
 h4 {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 
-.Home-div {
+.home-div {
   color: var(--text);
   font-family: "Quando";
-  font-weight: 600;
+  font-size: max(1.8vmin, 0.8rem);
   background-color: var(--background);
   min-height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  font-size: max(1.8vmin, 0.8em);
-  transition: background 500ms ease, color 1000ms ease;
+  justify-content: space-between;
+  transition: background 500ms ease, color 500ms ease;
 }
 
-.Home-div header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+.home-div header {
+  width: 60vmin;
+  padding-bottom: 2rem;
 }
 
-.Home-list {
+.home-list {
   width: 70vmin;
 }
 
-.Home-list-divider {
-  margin: 0px;
-  padding: 0px;
-  height: 1em;
+.home-list-divider {
+  margin: 0;
+  padding: 0;
+  height: 1rem;
 }
 
-.Home-footer {
-  margin-bottom: 1rem;
-  height: fit-content;
-  overflow: visible;
+.home-footer {
+  min-height: max-content;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
   min-width: 45vmin;
+}
+
+.home-footer p {
+  font-size: 80%;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.home-footer div {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+
+/* DRINKTOOL - WEB */
+.dt-div {
+  height: 100vh;
+  font-family: "Nunito";
+  background-color: var(--gray0);
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #111111;
+  --bg-secondary: #000000;
+}
+
+.dt-div main {
+  margin-left: 4rem;
+  padding: 10rem;
+  height: -webkit-fill-available;
+  height: -moz-available;
+}
+
+.dt-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+/* SMALL */
+@media only screen and (max-width: 600px) {
+  .dt-div main {
+    margin-left: 0;
+    margin-bottom: 4rem;
+  }
 }
 
 /* DRINKTOOL-POLICY */
-.DTP-div {
-  color: black;
+.dtp-div {
   padding: 3rem;
+  color: #000000;
   font-family: "Roboto Mono", monospace;
-  font-size: 100%;
-  background-color: white;
+  background-color: #ffffff;
 }
 
 /* PAGE NOT FOUND */
-.PNF-container {
-  font-family: "Quando", monospace;
+.pnf-container {
+  font-family: "Roboto Mono", monospace;
+  font-size: max(1.8vmin, 0.8rem);
   background-color: var(--gray0);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: max(2vmin, 1em);
 }
 
-.PNF-container h2 {
-  margin-bottom: 1em;
+.pnf-container h2 {
+  margin-bottom: 2rem;
 }
