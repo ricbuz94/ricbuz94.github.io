@@ -14,7 +14,7 @@ const ListLink = ({ link }: ListItemType) => (
       target="_blank"
     >
       <div className="list-item-header-container">
-        <h3>{link.title}</h3>
+        <h4>{link.title}</h4>
         {link?.tag ? (
           <p className={`list-item-tag ${link.tag}`}>#{link.tag}</p>
         ) : null}

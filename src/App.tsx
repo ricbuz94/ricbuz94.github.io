@@ -7,9 +7,9 @@ const App = () => (
       <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/drinktool">
+      {/* <Route path="/drinktool">
         <DrinkTool />
-      </Route>
+      </Route> */}
       <Route path="*">
         <PageNotFound />
       </Route>

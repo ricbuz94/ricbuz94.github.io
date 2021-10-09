@@ -23,11 +23,11 @@ const SiteNavbar = ({ theme, onToggle, onToggleDrawer }: SiteNavbarProps) => {
             <span className="link-text">Contacts</span>
           </Link>
         </li> */}
-          <li>
+          {/* <li>
             <Link className="route-link" to={`${match.url}drinktool`}>
               DrinkTool
             </Link>
-          </li>
+          </li> */}
           {/* <li>
           <Link className="route-link" to={`${match.url}drinktool/about`}>
             <p>About</p>

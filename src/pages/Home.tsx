@@ -60,11 +60,11 @@ const Home = () => {
             <p>Chiudi</p>
             <FiArrowRight />
           </li>
-          <li>
+          {/* <li>
             <Link className="route-link" to={`${match.url}drinktool`}>
               DrinkTool
             </Link>
-          </li>
+          </li> */}
           <li>
             <ThemeSwitch theme={theme} onChange={toggleTheme} />
           </li>
