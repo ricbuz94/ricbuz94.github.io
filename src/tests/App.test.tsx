@@ -3,24 +3,25 @@ import { FAST_TIMEOUT } from "./_defaults/defaults";
 import { pages } from "./_defaults/pages";
 
 describe("Riccardo's", () => {
-  let page: any;
+  let testPage = null;
   beforeAll(async () => {
-    page = await browser.newPage();
-  });
+    await page.close();
+    testPage = await browser.newPage();
+  }, FAST_TIMEOUT);
 
   afterAll(async () => {
-    await page.close();
-  });
+    await testPage.close();
+  }, FAST_TIMEOUT);
 
   test(
     `${pages.home.title} loads correctly`,
     async () => {
-      await page.goto(pages.home.url);
+      await testPage.goto(pages.home.url);
 
-      const htmlTitle = "h5.list-header";
-      await page.waitForSelector(htmlTitle);
-      const title = await page.$eval(htmlTitle, (e) => e.innerHTML);
-      expect(title).toBe("Progetti");
+      const htmlTitle = "h5";
+      await testPage.waitForSelector(htmlTitle);
+      const title = await testPage.$eval(htmlTitle, (e) => e.innerHTML);
+      expect(title).toBe("Lavoro");
     },
     FAST_TIMEOUT
   );
@@ -28,12 +29,12 @@ describe("Riccardo's", () => {
   test(
     `${pages.drinktool.title} loads correctly`,
     async () => {
-      await page.goto(pages.drinktool.url);
+      await testPage.goto(pages.drinktool.url);
 
       const htmlTitle = "h3";
-      await page.waitForSelector(htmlTitle);
-      const title = await page.$eval(htmlTitle, (e) => e.innerHTML);
-      expect(title).toBe("DrinkTool - Privacy Policy");
+      await testPage.waitForSelector(htmlTitle);
+      const title = await testPage.$eval(htmlTitle, (e) => e.innerHTML);
+      expect(title).toBe("DrinkTool · Privacy-Policy");
     },
     FAST_TIMEOUT
   );
@@ -41,11 +42,11 @@ describe("Riccardo's", () => {
   test(
     `${pages.pageNotFound.title} loads correctly`,
     async () => {
-      await page.goto(pages.pageNotFound.url);
+      await testPage.goto(pages.pageNotFound.url);
 
       const htmlTitle = "h2";
-      await page.waitForSelector(htmlTitle);
-      const title = await page.$eval(htmlTitle, (e) => e.innerHTML);
+      await testPage.waitForSelector(htmlTitle);
+      const title = await testPage.$eval(htmlTitle, (e) => e.innerHTML);
       expect(title).toBe("Pagina non trovata");
     },
     FAST_TIMEOUT

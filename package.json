@@ -1,6 +1,6 @@
 {
 	"name": "website",
-	"version": "0.2.0",
+	"version": "1.0.0",
 	"private": true,
 	"description": "Una landing page per i miei progetti",
 	"homepage": "https://ricbuz94.github.io",
@@ -94,14 +94,14 @@
 		"jest-puppeteer": "^5.0.3",
 		"jest-resolve": "^26.6.0",
 		"jest-watch-typeahead": "^0.6.1",
-		"puppeteer": "^9.1.1",
+		"puppeteer": "^10.1.0",
 		"react-test-renderer": "^17.0.1",
 		"serve": "^11.3.2"
 	},
 	"scripts": {
 		"start": "BROWSER=google-chrome BROWSER_ARGS=--incognito node scripts/start.js",
 		"build": "node scripts/build.js",
-		"test": "HEADLESS=false SLOW=50 jest --runInBand",
+		"test": "INCOGNITO=true HEADLESS=false SLOW=50 jest --runInBand",
 		"test:ci": "SLOW=50 jest --ci --runInBand",
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build"
@@ -112,7 +112,7 @@
 			"react-app/jest"
 		],
 		"env": {
-			"jest/globals": true
+			"jest": true
 		},
 		"globals": {
 			"page": true,
