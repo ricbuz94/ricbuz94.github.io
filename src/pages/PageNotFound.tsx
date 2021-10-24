@@ -16,7 +16,7 @@ const PageNotFound = () => {
   return (
     <div className="pnf-container">
       <h2>Pagina non trovata</h2>
-      <SiteButton isLink path={homeUrl} title="Home" />
+      <SiteButton path={homeUrl} title="Home" />
     </div>
   );
 };

@@ -1,7 +1,0 @@
-.site-link {
-  outline: none;
-  text-decoration: none;
-  color: var(--accent);
-  font-weight: bolder;
-  transition: var(--easeTransition);
-}

@@ -1,16 +1,25 @@
-const colors = {
-	gray0: "#f8f8f8",
-	gray1: "#dbe1e8",
-	gray2: "#b2becd",
-	gray3: "#6c7983",
-	gray4: "#454e56",
-	gray5: "#2a2e35",
-	gray6: "#12181b",
-	red: "#ff414e",
-	purple: "#9166cc",
-	white: "#ffffff"
-};
+import 'styled-components';
+
+declare module 'styled-components' {
+	export interface Theme {
+		name: string;
+		borderRadius: string;
+		foregroundColorTransition: string;
+		backgroundColorTransition: string;
+		mainTransition: string
+		colors: {
+			accent: string,
+			cardBackground: string,
+			background: string,
+			text: string,
+			subText: string,
+			scrollbarBackground: string,
+			cardShadow: string,
+			cardShadowHover: string
+		};
+		fontFamily: string
+	}
+}
 
 export { default as light } from "./light";
 export { default as dark } from "./dark";
-export { colors };

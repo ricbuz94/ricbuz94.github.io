@@ -4,17 +4,6 @@
   font-size: max(1.8vmin, 0.8rem);
 }
 
-.drawer {
-  background: var(--cardBackground);
-  width: 40vw;
-  height: 100%;
-  overflow: auto;
-  position: fixed;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-  transition: transform var(--transition-speed) ease;
-  z-index: 1000;
-}
-
 .drawer.right {
   top: 0;
   right: 0;

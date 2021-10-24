@@ -99,7 +99,7 @@
 		"serve": "^11.3.2"
 	},
 	"scripts": {
-		"start": "node scripts/start.js",
+		"start": "BROWSER=google-chrome BROWSER_ARGS=--incognito node scripts/start.js",
 		"build": "node scripts/build.js",
 		"test": "HEADLESS=false SLOW=50 jest --runInBand",
 		"test:ci": "SLOW=50 jest --ci --runInBand",

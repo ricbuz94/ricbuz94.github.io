@@ -1,33 +1,38 @@
 import { useState, useEffect } from "react";
+import { ThemeProvider } from "../context/theme";
 import { Links } from "../common/interfaces";
 import Footer from "../components/Footer";
 import LinkList from "../components/LinkList";
-import SiteNavbar from "../ui/site-navbar/SiteNavbar";
-import ListContainer from "../ui/list-container/ListContainer";
+import SiteNavbar from "../ui/SiteNavbar";
+import ListContainer from "../ui/ListContainer";
+import RouteLink from "../ui/RouteLink";
 import { links } from "../data/data";
 import Drawer from "../ui/site-drawer/Drawer";
-import ThemeSwitch from "../ui/theme-switch/ThemeSwitch";
+import ThemeSwitch from "../ui/ThemeSwitch";
 import { FiArrowRight } from "react-icons/fi";
-import { Link, useRouteMatch } from "react-router-dom";
+import styled from "styled-components";
+
+const StyledHomeBackground = styled.div`
+  color: ${(props) => props.theme.colors.text};
+  background-color: ${(props) => props.theme.colors.background};
+  font-family: ${(props) => props.theme.fontFamily};
+  font-size: max(1.8vmin, 0.8rem);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: ${(props) => props.theme.backgroundColorTransition};
+
+  & header {
+    width: 60vmin;
+    padding-bottom: 2rem;
+  }
+`;
 
 const Home = () => {
-  const [theme, setTheme] = useState(() => {
-    const theme = localStorage.getItem("theme");
-    return theme ? theme : "light";
-  });
-
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => setIsOpen(!isOpen);
-
-  const toggleTheme = () => {
-    if (theme !== "dark") {
-      setTheme("dark");
-      localStorage.setItem("theme", "dark");
-      return;
-    }
-    setTheme("light");
-    localStorage.setItem("theme", "light");
-  };
 
   useEffect(() => {
     let title = document.getElementById("title");
@@ -36,16 +41,11 @@ const Home = () => {
     }
   }, []);
 
-  let match = useRouteMatch();
   return (
-    <>
-      <div className={`home-div ${theme}`}>
+    <ThemeProvider>
+      <StyledHomeBackground>
         <header>
-          <SiteNavbar
-            theme={theme}
-            onToggle={toggleTheme}
-            onToggleDrawer={toggleDrawer}
-          />
+          <SiteNavbar onToggleDrawer={toggleDrawer} />
         </header>
         <ListContainer>
           {links.map((list: Links, i: number) => (
@@ -53,24 +53,24 @@ const Home = () => {
           ))}
         </ListContainer>
         <Footer />
-      </div>
-      <Drawer className={theme} isOpen={isOpen} onClose={toggleDrawer}>
+      </StyledHomeBackground>
+      <Drawer className="" isOpen={isOpen} onClose={toggleDrawer}>
         <ul className="drawer-content">
-          <li className="route-link" onClick={toggleDrawer}>
-            <p>Chiudi</p>
-            <FiArrowRight />
-          </li>
-          {/* <li>
-            <Link className="route-link" to={`${match.url}drinktool`}>
-              DrinkTool
-            </Link>
-          </li> */}
           <li>
-            <ThemeSwitch theme={theme} onChange={toggleTheme} />
+            <RouteLink isButton onClick={toggleDrawer}>
+              <>
+                <p>Chiudi</p>
+                <FiArrowRight />
+              </>
+            </RouteLink>
+          </li>
+
+          <li>
+            <ThemeSwitch />
           </li>
         </ul>
       </Drawer>
-    </>
+    </ThemeProvider>
   );
 };
 

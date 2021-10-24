@@ -10,7 +10,7 @@
   background-color: white;
   border: 1px solid var(--gray2);
   border-radius: 0.2rem;
-  transition: var(--easeTransition);
+  transition: border-color 0.15s ease;
 }
 
 .site-button:hover {
