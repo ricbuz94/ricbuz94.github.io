@@ -3,16 +3,17 @@ import logoLight from "../images/logo-light.png";
 import logoDark from "../images/logo-dark.png";
 
 const StyledLogo = styled.img`
-  height: auto;
-  width: calc(40px + 1vmin);
-  transition: all 0.3s ease;
+  aspect-ratio: attr(width) / attr(height);
 `;
 
 const SiteLogo = () => (
   <ThemeConsumer>
     {(theme) => {
       const isDark = theme.name === "dark";
-      return <StyledLogo alt="" src={isDark ? logoDark : logoLight} />;
+      if (isDark) {
+        return <StyledLogo alt="R" src={logoDark} width="50" height="50" />;
+      }
+      return <StyledLogo alt="R" src={logoLight} width="50" height="50" />;
     }}
   </ThemeConsumer>
 );

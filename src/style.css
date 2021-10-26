@@ -6,12 +6,12 @@
   --gray4: #454e56;
   --gray5: #2a2e35;
   --gray6: #12181b;
-  --red: #ff414e;
+  --red: #e50909;
   --purple: #9166cc;
 }
 
 ::selection {
-  background-color: #ff414e;
+  background-color: #e50909;
   color: #ffffff;
 }
 
@@ -21,6 +21,7 @@
   font-weight: 400;
   src: local("Quando"), local("Quando"),
     url(./fonts/Quando-Regular.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -29,6 +30,7 @@
   font-weight: 400;
   src: local("Nunito"), local("Nunito"),
     url(./fonts/Nunito-Regular.ttf) format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -37,6 +39,7 @@
   font-weight: 400;
   src: local("Roboto Mono"), local("Roboto Mono"),
     url(./fonts/RobotoMono-Variable.ttf) format("truetype");
+  font-display: swap;
 }
 
 body {
@@ -69,6 +72,10 @@ hr {
   height: 1px;
   border: none;
   background-color: var(--gray1);
+}
+
+.fallback {
+  background-color: var(--gra0);
 }
 
 /* DRINKTOOL-POLICY */

@@ -30,11 +30,11 @@ const StyledTag = styled.p`
   padding: 0;
 
   &.ANDROID {
-    color: #689f38;
+    color: #54822b;
   }
 
   &.WEB {
-    color: #6495ed;
+    color: #4e74bf;
   }
 `;
 

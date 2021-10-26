@@ -15,7 +15,7 @@ const theme: Theme = {
 		subText: colors.gray4,
 		scrollbarBackground: colors.gray2,
 		cardShadow: "0 2px 4px rgba(0, 30, 84, 0.12)",
-		cardShadowHover: "0 4px 8px rgba(0, 30, 84, 0.12)"
+		cardShadowHover: "0 6px 12px -2px rgba(50,50,93,0.25)"
 	},
 	fontFamily: "'Quando'"
 };
