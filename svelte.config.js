@@ -6,7 +6,11 @@ const config = {
 	preprocess: preprocess(),
 	kit: {
 		ssr: false,
-		adapter: static_adapter()
+		adapter: static_adapter(),
+		paths: {
+			base: '/app',
+			assets: '/app'
+		}
 	}
 };
 

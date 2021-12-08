@@ -1,6 +1,7 @@
 <script>
+  import { base } from "$app/paths";
   import { goto } from "$app/navigation";
-  const goToHome = () => goto("/");
+  const goToHome = () => goto(`${base}/`);
 </script>
 
 <svelte:head>
