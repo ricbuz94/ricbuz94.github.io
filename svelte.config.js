@@ -8,8 +8,7 @@ const config = {
 		ssr: false,
 		adapter: static_adapter(),
 		paths: {
-			base: '/app',
-			assets: '/app'
+			base: '/app'
 		}
 	}
 };
