@@ -34,7 +34,7 @@
   .icon {
     width: 80px;
     height: 80px;
-    stroke: black;
+    stroke: var(--textColor);
     stroke-width: 1;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -63,22 +63,22 @@
     text-decoration: none;
     color: var(--textColor);
     padding: 0.5rem 0.8rem;
-    background-color: var(--gray0);
-    border: 1px solid var(--gray2);
+    background-color: var(--cardBackgroundColor);
+    border: 1px solid var(--gray3);
     border-radius: 0.4rem;
     -webkit-tap-highlight-color: transparent;
     transition: border-color var(--transition);
   }
 
   button:hover {
-    border-color: #000;
+    border-color: var(--textColor);
   }
 
   .btn-icon {
     margin-right: 5px;
     width: 20px;
     height: 20px;
-    stroke: black;
+    stroke: var(--textColor);
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
