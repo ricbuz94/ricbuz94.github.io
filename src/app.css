@@ -1,0 +1,128 @@
+:root {
+  --gray0: #f6f9fc;
+  --gray1: #dbe1e8;
+  --gray2: #b2becd;
+  --gray3: #6c7983;
+  --gray4: #454e56;
+  --gray5: #2a2e35;
+  --gray6: #12181b;
+  --red: #ff414e;
+  --redDark: #e13b47;
+  --purple: #9166cc;
+  --purpleLight: #a372e7;
+  --borderRadius: 0.4rem;
+  --transition: 0.2s ease;
+  --fontSize: 16px;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 300;
+  src: local("Ubuntu"), local("Ubuntu"),
+    url("/fonts/Ubuntu/Ubuntu-Light.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Ubuntu"), local("Ubuntu"),
+    url("/fonts/Ubuntu/Ubuntu-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Ubuntu";
+  font-style: normal;
+  font-weight: 500;
+  src: local("Ubuntu"), local("Ubuntu"),
+    url("/fonts/Ubuntu/Ubuntu-Medium.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "LibreBaskerville";
+  font-style: normal;
+  font-weight: 700;
+  src: local("LibreBaskerville"), local("LibreBaskerville"),
+    url("//fonts/Ubuntu/Ubuntu-Bold.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Mono"), local("Roboto Mono"),
+    url("/fonts/RobotoMono-Variable.ttf") format("truetype");
+  font-display: swap;
+}
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--backgroundColor);
+  font-family: "Ubuntu", sans-serif;
+  font-size: max(2vmin, var(--fontSize));
+  color: var(--textColor);
+  word-spacing: 2px;
+  transition: background-color var(--transition);
+}
+
+body.light {
+  --backgroundColor: var(--gray0);
+  --cardBackgroundColor: white;
+  --accentColor: var(--red);
+  --accentColorHover: var(--redDark);
+  --textColor: var(--gray6);
+  --subTextColor: var(--gray5);
+  --webTag: #005ac4;
+  --androidTag: #387002;
+  --cardShadow: 0 2px 4px rgba(0, 30, 84, 0.12);
+  --cardShadowHover: 0 6px 12px -2px rgba(50, 50, 93, 0.25);
+}
+
+body.dark {
+  --backgroundColor: var(--gray6);
+  --cardBackgroundColor: var(--gray5);
+  --accentColor: var(--purple);
+  --accentColorHover: var(--purpleLight);
+  --textColor: var(--gray0);
+  --subTextColor: var(--gray1);
+  --webTag: #82b5ff;
+  --androidTag: #99d066;
+  --cardShadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --cardShadowHover: 0 6px 12px -2px rgba(0, 0, 0, 0.6);
+}
+
+::selection {
+  color: var(--gray0);
+  background-color: var(--accentColor);
+}
+
+h5,
+h4,
+h3,
+h2,
+h1 {
+  margin: 0px;
+}
+
+hr {
+  height: 1px;
+  border: none;
+  background-color: var(--gray1);
+}
