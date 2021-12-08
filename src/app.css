@@ -88,7 +88,7 @@ body.light {
   --accentColor: var(--red);
   --accentColorHover: var(--redDark);
   --textColor: var(--gray6);
-  --subTextColor: var(--gray5);
+  --subTextColor: var(--gray4);
   --webTag: #005ac4;
   --androidTag: #387002;
   --cardShadow: 0 2px 4px rgba(0, 30, 84, 0.12);
@@ -101,7 +101,7 @@ body.dark {
   --accentColor: var(--purple);
   --accentColorHover: var(--purpleLight);
   --textColor: var(--gray0);
-  --subTextColor: var(--gray1);
+  --subTextColor: var(--gray2);
   --webTag: #82b5ff;
   --androidTag: #99d066;
   --cardShadow: 0 2px 4px rgba(0, 0, 0, 0.3);

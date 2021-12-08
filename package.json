@@ -20,17 +20,20 @@
 		"preview": "svelte-kit preview",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "eslint --ignore-path .gitignore ."
+		"lint": "eslint --ignore-path .gitignore .",
+		"deploy": "npm run build && npx gh-pages -d build"
 	},
 	"dependencies": {
 		"feather-icons": "^4.28.0"
 	},
 	"devDependencies": {
+		"@sveltejs/adapter-static": "^1.0.0-next.21",
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^4.31.1",
 		"@typescript-eslint/parser": "^4.31.1",
 		"eslint": "^7.32.0",
 		"eslint-plugin-svelte3": "^3.2.1",
+		"gh-pages": "^3.2.3",
 		"svelte": "^3.42.6",
 		"svelte-check": "^2.2.6",
 		"svelte-preprocess": "^4.9.4",

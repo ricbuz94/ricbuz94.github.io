@@ -139,7 +139,7 @@
       >
     </span>
   </p>
-  <p>Riccardo Buzzolo © {new Date().getFullYear()}</p>
+  <p>RiccardoBuzzolo © {new Date().getFullYear()}</p>
 </footer>
 
 <style>
