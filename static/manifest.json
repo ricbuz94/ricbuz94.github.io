@@ -1,7 +1,8 @@
 {
 	"name": "RiccardoBuzzolo",
 	"short_name": "RB",
-	"start_url": ".",
+	"description": "Sito di Riccardo",
+	"start_url": "·",
 	"display": "standalone",
 	"theme_color": "#f6f9fc",
 	"background_color": "#f6f9fc",
