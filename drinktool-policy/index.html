@@ -3,22 +3,24 @@
 
 <head>
 	<meta charset="utf-8" />
-	<!-- <link rel="icon" href="/favicon.ico" /> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+	<meta name="theme-color" media="(prefers-color-scheme: dark)" content="black">
+	<link rel="manifest" href="/manifest.json">
 	
 
 		
 
-		<link rel="modulepreload" href="/app/_app/start-280b3199.js">
-		<link rel="modulepreload" href="/app/_app/chunks/vendor-8b76c6b9.js">
-		<link rel="modulepreload" href="/app/_app/chunks/paths-c3a241ee.js">
-		<link rel="stylesheet" href="/app/_app/assets/start-61d1577b.css">
+		<link rel="modulepreload" href="/_app/start-afef0a5b.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-8b76c6b9.js">
+		<link rel="modulepreload" href="/_app/chunks/paths-c3a241ee.js">
+		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 
 		<script type="module">
-			import { start } from "/app/_app/start-280b3199.js";
+			import { start } from "/_app/start-afef0a5b.js";
 			start({
 				target: document.body,
-				paths: {"base":"/app","assets":""},
+				paths: {"base":"","assets":""},
 				session: {},
 				host: location.host,
 				route: true,
@@ -26,6 +28,10 @@
 				trailing_slash: "never",
 				hydrate: null
 			});
+		</script><script>
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('/service-worker.js');
+			}
 		</script>
 </head>
 
