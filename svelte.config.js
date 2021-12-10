@@ -1,6 +1,8 @@
 import preprocess from 'svelte-preprocess';
 import static_adapter from '@sveltejs/adapter-static';
 
+const dev = process.env.NODE_ENV === 'development';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	preprocess: preprocess(),
@@ -8,8 +10,8 @@ const config = {
 		ssr: false,
 		adapter: static_adapter(),
 		paths: {
-			base: '/app'
-		}
+			base: dev ? '' : '/app'
+		},
 	}
 };
 
