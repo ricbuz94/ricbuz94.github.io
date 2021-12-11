@@ -13,7 +13,7 @@
     <h5>{item.title}</h5>
   </div>
   <ul>
-    {#each item.links.reverse() as link}
+    {#each item.links as link}
       <Link {link} />
     {/each}
   </ul>
@@ -53,6 +53,7 @@
   h5 {
     font-size: 80%;
     margin-left: 0.5rem;
+    margin-top: 3px;
     transition: color var(--transition);
   }
 

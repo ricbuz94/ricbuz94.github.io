@@ -1,5 +1,4 @@
 <script context="module">
-  const modDate = new Date().toLocaleDateString();
 </script>
 
 <svelte:head>
@@ -8,9 +7,7 @@
 </svelte:head>
 
 <header>
-  <p class="top">
-    Last update: {modDate}
-  </p>
+  <p class="top">Last update: 10/12/2021</p>
   <h3>DrinkTool · Privacy-Policy</h3>
   <p>
     Riccardo Buzzolo built the DrinkTool app as an Ad Supported app. This

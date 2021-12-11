@@ -10,7 +10,7 @@
   <svg class="icon">
     <use
       href={`/feather-sprite.svg#${
-        currentTheme !== THEMES.DARK ? "sun" : "moon"
+        currentTheme !== THEMES.DARK ? "moon" : "sun"
       }`}
     />
   </svg>
