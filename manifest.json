@@ -2,7 +2,7 @@
 	"name": "RiccardoBuzzolo",
 	"short_name": "RiccardoBuzzolo",
 	"description": "Sito di Riccardo",
-	"start_url": ".",
+	"start_url": "/",
 	"scope": "/",
 	"display": "standalone",
 	"theme_color": "#f6f9fc",
