@@ -1,8 +1,8 @@
 {
 	"name": "RiccardoBuzzolo",
-	"short_name": "RB",
+	"short_name": "RiccardoBuzzolo",
 	"description": "Sito di Riccardo",
-	"start_url": "/",
+	"start_url": ".",
 	"scope": "/",
 	"display": "standalone",
 	"theme_color": "#f6f9fc",
@@ -14,7 +14,7 @@
 			"type": "image/ico"
 		},
 		{
-			"src": "/drink-tool.ico",
+			"src": "/drinktool.ico",
 			"sizes": "48x48",
 			"type": "image/ico"
 		},
