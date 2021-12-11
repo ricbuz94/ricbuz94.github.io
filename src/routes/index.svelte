@@ -1,5 +1,4 @@
 <script context="module">
-  export const prerender = true;
   import List from "$lib/components/List.svelte";
   import Switch from "$lib/components/Switch.svelte";
   // import isMobile from "$lib/helpers/isMobile";

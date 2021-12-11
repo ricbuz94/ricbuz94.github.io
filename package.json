@@ -3,7 +3,6 @@
 	"version": "2.0.0",
 	"private": true,
 	"description": "Una landing page per i miei progetti",
-	"homepage": "https://ricbuz94.github.io/me",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ricbuz94/ricbuz94.github.io"
@@ -27,7 +26,7 @@
 		"feather-icons": "^4.28.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "^1.0.0-next.21",
+		"@sveltejs/adapter-static": "next",
 		"@sveltejs/kit": "next",
 		"@typescript-eslint/eslint-plugin": "^4.31.1",
 		"@typescript-eslint/parser": "^4.31.1",

@@ -6,4 +6,3 @@
 /.svelte-kit
 /package
 .env
-.env.dev

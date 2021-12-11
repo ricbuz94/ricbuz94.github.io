@@ -1,9 +1,9 @@
-<script lang="ts">
-  const modDate: string = new Date(document.lastModified).toLocaleDateString();
+<script context="module">
+  const modDate = new Date().toLocaleDateString();
 </script>
 
 <svelte:head>
-  <link rel="icon" href="/drink-tool.ico" />
+  <link rel="icon" href="/drinktool.ico" />
   <title>Privacy-Policy · DrinkTool</title>
 </svelte:head>
 
