@@ -1,36 +1,36 @@
-const timestamp = 1639233663203;
+const timestamp = 1639235735297;
 const build = [
-  "/me/_app/start-98391163.js",
-  "/me/_app/assets/start-61d1577b.css",
-  "/me/_app/pages/__layout.svelte-f962bdb8.js",
-  "/me/_app/assets/pages/__layout.svelte-ab021dd4.css",
-  "/me/_app/pages/__error.svelte-48e92e36.js",
-  "/me/_app/pages/index.svelte-5661194e.js",
-  "/me/_app/assets/pages/index.svelte-4f3c9d4b.css",
-  "/me/_app/pages/drinktool.svelte-09d30320.js",
-  "/me/_app/assets/pages/drinktool.svelte-09e6fd90.css",
-  "/me/_app/pages/_fallthough_/_fallthough_.svelte-494930e3.js",
-  "/me/_app/assets/pages/_fallthough_/_fallthough_.svelte-5a50b112.css",
-  "/me/_app/pages/_fallthough_.svelte-9cfb5b42.js",
-  "/me/_app/chunks/vendor-8b76c6b9.js",
-  "/me/_app/chunks/paths-c3a241ee.js",
-  "/me/_app/chunks/navigation-d8ceaada.js"
+  "/_app/start-a7e7e86b.js",
+  "/_app/assets/start-61d1577b.css",
+  "/_app/pages/__layout.svelte-f962bdb8.js",
+  "/_app/assets/pages/__layout.svelte-ab021dd4.css",
+  "/_app/pages/__error.svelte-48e92e36.js",
+  "/_app/pages/index.svelte-5661194e.js",
+  "/_app/assets/pages/index.svelte-4f3c9d4b.css",
+  "/_app/pages/drinktool.svelte-09d30320.js",
+  "/_app/assets/pages/drinktool.svelte-09e6fd90.css",
+  "/_app/pages/_fallthough_/_fallthough_.svelte-494930e3.js",
+  "/_app/assets/pages/_fallthough_/_fallthough_.svelte-5a50b112.css",
+  "/_app/pages/_fallthough_.svelte-9cfb5b42.js",
+  "/_app/chunks/vendor-8b76c6b9.js",
+  "/_app/chunks/paths-c3a241ee.js",
+  "/_app/chunks/navigation-d8ceaada.js"
 ];
 const files = [
-  "/me/.nojekyll",
-  "/me/drinktool.ico",
-  "/me/favicon.ico",
-  "/me/feather-sprite.svg",
-  "/me/fonts/RobotoMono-Variable.ttf",
-  "/me/fonts/Ubuntu/UFL.txt",
-  "/me/fonts/Ubuntu/Ubuntu-Bold.ttf",
-  "/me/fonts/Ubuntu/Ubuntu-Light.ttf",
-  "/me/fonts/Ubuntu/Ubuntu-Medium.ttf",
-  "/me/fonts/Ubuntu/Ubuntu-Regular.ttf",
-  "/me/logo-dark.png",
-  "/me/logo-light.png",
-  "/me/manifest.json",
-  "/me/robots.txt"
+  "/.nojekyll",
+  "/drinktool.ico",
+  "/favicon.ico",
+  "/feather-sprite.svg",
+  "/fonts/RobotoMono-Variable.ttf",
+  "/fonts/Ubuntu/UFL.txt",
+  "/fonts/Ubuntu/Ubuntu-Bold.ttf",
+  "/fonts/Ubuntu/Ubuntu-Light.ttf",
+  "/fonts/Ubuntu/Ubuntu-Medium.ttf",
+  "/fonts/Ubuntu/Ubuntu-Regular.ttf",
+  "/logo-dark.png",
+  "/logo-light.png",
+  "/manifest.json",
+  "/robots.txt"
 ];
 const worker = self;
 const FILES = `cache${timestamp}`;
