@@ -1,14 +1,13 @@
 <script>
 	import { base } from "$app/paths";
 	import { goto } from "$app/navigation";
-	const goToHome = () => goto(`${base}/`);
+	const goToHome = () => goto(`${base}/drinktool/privacy-policy`);
 </script>
 
 <svelte:head>
 	<title>Not Found · RiccardoBuzzolo</title>
 </svelte:head>
 
-<div />
 <div class="container">
 	<svg class="icon">
 		<use href="/feather-sprite.svg#file" />
@@ -17,29 +16,29 @@
 	<button on:click={goToHome}>
 		<svg class="btn-icon">
 			<use href="/feather-sprite.svg#arrow-left" />
-		</svg>Home
+		</svg>Back
 	</button>
 </div>
-<div />
 
 <style>
 	::selection {
-		color: var(--gray0);
-		background-color: var(--accentColor);
+		color: black;
+		background-color: lightcoral;
 	}
 
 	div.container {
+		height: inherit;
 		display: flex;
 		flex-direction: column;
 		font-family: "Roboto Mono", monospace;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 	}
 
 	.icon {
 		width: 80px;
 		height: 80px;
-		stroke: var(--textColor);
+		stroke: black;
 		stroke-width: 1;
 		stroke-linecap: round;
 		stroke-linejoin: round;
@@ -49,14 +48,13 @@
 	}
 
 	.icon:hover {
-		stroke: var(--accentColor);
+		stroke: lightcoral;
 	}
 
 	h2 {
 		text-align: center;
 		margin-top: 2rem;
 		margin-bottom: 4rem;
-		transition: color var(--transition);
 	}
 
 	button {
@@ -66,30 +64,28 @@
 		outline: none;
 		cursor: pointer;
 		font-family: "Roboto", monospace;
-		font-size: initial;
 		text-decoration: none;
-		color: var(--textColor);
+		color: black;
 		padding: 0.5rem 0.8rem;
 		background-color: var(--cardBackgroundColor);
 		border: 2px solid var(--gray3);
 		border-radius: 0.4rem;
 		-webkit-tap-highlight-color: transparent;
-		transition: all var(--transition);
+		transition: border-color var(--transition);
 	}
 
 	button:hover {
-		border-color: var(--textColor);
+		border-color: black;
 	}
 
 	.btn-icon {
 		margin-right: 5px;
 		width: 20px;
 		height: 20px;
-		stroke: var(--textColor);
+		stroke: black;
 		stroke-width: 2;
 		stroke-linecap: round;
 		stroke-linejoin: round;
 		fill: none;
-		transition: stroke var(--transition);
 	}
 </style>

@@ -13,8 +13,8 @@
 	},
 	"license": "UNLICENSED",
 	"scripts": {
-		"dev": "svelte-kit dev",
-		"dev-host": "svelte-kit dev --host",
+		"start": "svelte-kit dev",
+		"start-host": "svelte-kit dev --host",
 		"preview": "svelte-kit preview --host",
 		"check": "svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
