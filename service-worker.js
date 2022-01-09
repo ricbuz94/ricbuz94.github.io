@@ -1,20 +1,26 @@
-const timestamp = 1639253301601;
+const timestamp = 1641760125768;
 const build = [
-  "/_app/start-cec03232.js",
+  "/_app/start-a26f8c1e.js",
   "/_app/assets/start-61d1577b.css",
-  "/_app/pages/__layout.svelte-f962bdb8.js",
-  "/_app/assets/pages/__layout.svelte-ab021dd4.css",
-  "/_app/pages/__error.svelte-48e92e36.js",
-  "/_app/pages/index.svelte-e98a807a.js",
-  "/_app/assets/pages/index.svelte-31552941.css",
-  "/_app/pages/drinktool/privacy-policy.svelte-4730b02a.js",
-  "/_app/assets/pages/drinktool/privacy-policy.svelte-d9feeae6.css",
-  "/_app/pages/_fallthough_/_fallthough_.svelte-494930e3.js",
-  "/_app/assets/pages/_fallthough_/_fallthough_.svelte-5a50b112.css",
-  "/_app/pages/_fallthough_.svelte-9cfb5b42.js",
-  "/_app/chunks/vendor-8b76c6b9.js",
-  "/_app/chunks/paths-c3a241ee.js",
-  "/_app/chunks/navigation-d8ceaada.js"
+  "/_app/pages/__layout.svelte-110054d0.js",
+  "/_app/assets/pages/__layout.svelte-5aace0f6.css",
+  "/_app/pages/__error.svelte-bda3f72f.js",
+  "/_app/pages/index.svelte-0acc9c2f.js",
+  "/_app/assets/pages/index.svelte-8bdc8026.css",
+  "/_app/pages/drinktool/__layout.reset.svelte-79c2efb9.js",
+  "/_app/pages/drinktool/index.svelte-49dffede.js",
+  "/_app/pages/drinktool/privacy-policy.svelte-8b2c7031.js",
+  "/_app/assets/pages/drinktool/privacy-policy.svelte-16bf39b3.css",
+  "/_app/pages/drinktool/_fallthough_.svelte-64a1cc04.js",
+  "/_app/assets/pages/drinktool/_fallthough_.svelte-a4532598.css",
+  "/_app/pages/about.svelte-579ff61d.js",
+  "/_app/assets/pages/about.svelte-4bfa9adf.css",
+  "/_app/pages/_fallthough_.svelte-7cbf13b2.js",
+  "/_app/assets/pages/_fallthough_.svelte-bfcfa6dd.css",
+  "/_app/chunks/vendor-6657840f.js",
+  "/_app/chunks/singletons-12a22614.js",
+  "/_app/chunks/paths-28a87002.js",
+  "/_app/chunks/navigation-51f4a605.js"
 ];
 const files = [
   "/.nojekyll",
@@ -27,9 +33,9 @@ const files = [
   "/fonts/Ubuntu/Ubuntu-Light.ttf",
   "/fonts/Ubuntu/Ubuntu-Medium.ttf",
   "/fonts/Ubuntu/Ubuntu-Regular.ttf",
-  "/logo-dark.png",
   "/logo-light.png",
   "/manifest.json",
+  "/me.jpg",
   "/robots.txt"
 ];
 const worker = self;
