@@ -223,7 +223,6 @@
 		display: flex;
 		padding-top: 3rem;
 		padding-bottom: 2rem;
-		padding-left: 1rem;
 		padding-right: 1rem;
 		justify-content: start;
 		align-items: center;
@@ -231,7 +230,6 @@
 
 	ul {
 		margin-left: auto;
-		margin-right: 1rem;
 		list-style: none;
 		padding: 0px;
 	}

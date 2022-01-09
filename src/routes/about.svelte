@@ -17,8 +17,9 @@
 					target="_blank"
 					rel="nonreferrer">Ingegneria e scienze informatiche</a
 				></span
-			>. Lavoro attualmente per una start-up innovativa che si occupa di
-			gestionale per le spiagge e prenotazioni online degli stabilimenti:
+			>. Lavoro attualmente, come tecnico informatico, per una start-up
+			innovativa che si occupa di gestionale per le spiagge e prenotazioni
+			online degli stabilimenti:
 			<span
 				><a
 					href={`${import.meta.env.VITE_APP_BEACHAROUND_URL}`}

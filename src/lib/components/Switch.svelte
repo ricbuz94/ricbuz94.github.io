@@ -19,6 +19,7 @@
 <style>
 	div {
 		padding: 5px;
+		padding-left: 8px;
 		cursor: pointer;
 		outline: none;
 		-webkit-tap-highlight-color: transparent;
