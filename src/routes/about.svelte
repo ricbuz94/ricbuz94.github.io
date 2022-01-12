@@ -1,3 +1,8 @@
+<svelte:head>
+	<link rel="icon" href="/favicon.ico" />
+	<title>About · RiccardoBuzzolo</title>
+</svelte:head>
+
 <div class="content">
 	<img src="/me.jpg" alt="author" />
 	<div class="card-wide">
@@ -10,14 +15,15 @@
 					target="_blank"
 					rel="nonreferrer">Istituto Tecnico Tecnologico Statale</a
 				></span
-			>). Ho studiato presso l'universita di Cesena: Alma Mater, al corso di
+			>). Ho studiato presso l'universita di Cesena, Alma Mater Studiorum, al
+			corso di
 			<span
 				><a
 					href={`${import.meta.env.VITE_APP_UNIBO_URL}`}
 					target="_blank"
 					rel="nonreferrer">Ingegneria e scienze informatiche</a
 				></span
-			>. Lavoro attualmente, come tecnico informatico, per una start-up
+			>. Lavoro attualmente, come tecnico informatico, per una startup
 			innovativa che si occupa di gestionale per le spiagge e prenotazioni
 			online degli stabilimenti:
 			<span

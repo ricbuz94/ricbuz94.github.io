@@ -232,6 +232,7 @@
 		margin-left: auto;
 		list-style: none;
 		padding: 0px;
+		margin-right: 5px;
 	}
 
 	li {
