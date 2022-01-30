@@ -9,35 +9,31 @@
 <div on:click={toggleTheme}>
 	<svg class="icon">
 		<use
-			href={`/feather-sprite.svg#${
-				currentTheme !== THEMES.DARK ? "moon" : "sun"
-			}`}
+			href="/feather-sprite.svg#{currentTheme !== THEMES.DARK ? 'moon' : 'sun'}"
 		/>
 	</svg>
 </div>
 
 <style>
 	div {
-		padding: 5px;
-		padding-left: 8px;
+		width: 40px;
+		height: 40px;
 		cursor: pointer;
 		outline: none;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		-webkit-tap-highlight-color: transparent;
 	}
 
-	div:hover > .icon {
-		stroke: var(--accentColor);
-	}
-
 	.icon {
-		width: 30px;
-		height: 30px;
+		width: 26px;
+		height: 26px;
 		stroke: var(--textColor);
 		stroke-width: 2;
 		stroke-linecap: round;
 		stroke-linejoin: round;
 		fill: none;
-		margin-top: 3px;
 		transition: stroke var(--transition);
 	}
 </style>

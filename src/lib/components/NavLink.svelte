@@ -1,0 +1,45 @@
+<script context="module" lang="ts">
+	import { page } from "$app/stores";
+</script>
+
+<script lang="ts">
+	export let href: string = "/";
+	$: isActive = $page.path === $$props.href;
+</script>
+
+<a {...$$props} class:active={isActive} {href}><slot /></a>
+
+<style>
+	a {
+		color: var(--textColor);
+		padding-left: 5px;
+		padding-right: 5px;
+		font-size: 0.9rem;
+		letter-spacing: 1px;
+		font-weight: 600;
+		transition: color var(--transition);
+	}
+
+	a:hover {
+		color: var(--accentColor);
+	}
+
+	a.active {
+		text-decoration: underline;
+		text-underline-offset: 4px;
+		text-decoration-thickness: 2px;
+	}
+
+	/* schermo piccolo */
+	@media only screen and (max-width: 720px) {
+		a {
+			text-align: center;
+			padding-top: 0.75rem;
+			padding-bottom: 0.75rem;
+		}
+
+		a:hover {
+			color: var(--accentColor);
+		}
+	}
+</style>

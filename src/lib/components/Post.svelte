@@ -1,20 +1,29 @@
 <script lang="ts">
 	import type { Link } from "$lib/helpers/interfaces";
-	export let link: Link;
+	export let post: Link;
 </script>
 
 <li>
-	<a rel="noreferrer" href={link.url} target="_blank"
-		><div class="">
-			<h5 class="">{link.title}</h5>
-			<p class={`tag ${link.tag}`}>#{link.tag}</p>
+	<a rel="noreferrer" href={post.url} target="_blank">
+		<div
+			class="image"
+			style="background-image: linear-gradient(rgba(0, 0, 0, 0.025),rgba(0, 0, 0, 0.05)),url('{post.image}');"
+		/>
+		<div class="container">
+			<div class="row">
+				<h5 class="">{post.title}</h5>
+				{#each post.tags as tag}
+					<p class={`tag ${tag}`}>#{tag}</p>
+				{/each}
+			</div>
+			<p class="description">{post.description}</p>
 		</div>
-		<p class="description">{link.description}</p></a
-	>
+	</a>
 </li>
 
 <style>
 	li {
+		height: min-content;
 		margin: 0px;
 		padding: 0px;
 		outline: none;
@@ -42,12 +51,11 @@
 
 	a {
 		display: block;
-		margin: 0;
+		margin: 0px;
 		line-height: 1;
 		outline: none;
 		border-radius: var(--borderRadius);
 		-webkit-tap-highlight-color: transparent;
-		padding: 1.2rem 1.4rem;
 		color: var(--textColor);
 	}
 
@@ -55,13 +63,29 @@
 		color: var(--accentColor);
 	}
 
-	div {
+	.image {
+		width: 100%;
+		height: 250px;
+		max-height: 250px;
+		background-size: cover;
+		background-position: 50%;
+		background-repeat: no-repeat;
+		border-radius: 0.5rem 0.5rem 0px 0px;
+		box-shadow: var(--navBorderBottom);
+	}
+
+	.container {
+		padding: 1.2rem 1.4rem;
+	}
+
+	.row {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: start;
 	}
 
 	h5 {
+		margin-right: auto;
 		transition: color var(--transition);
 	}
 
@@ -70,9 +94,11 @@
 	}
 
 	.tag {
+		letter-spacing: 1px;
 		font-size: 60%;
 		font-weight: bolder;
 		margin: 0;
+		margin-left: 5px;
 		padding: 0;
 	}
 
@@ -90,5 +116,12 @@
 
 	.ANDROID {
 		color: var(--androidTag);
+	}
+
+	/* schermo piccolo */
+	@media only screen and (max-width: 720px) {
+		.image {
+			height: 150px;
+		}
 	}
 </style>

@@ -3,36 +3,52 @@ import type { Section } from "$lib/helpers/interfaces";
 
 const data: Array<Section> = [
 	{
-		title: "Lavoro",
+		title: "Works",
 		links: [
 			{
 				url: `${import.meta.env.VITE_APP_BEACHAROUND_URL}` ?? "#",
+				image: "/images/beacharound.jpg",
 				title: "Beacharound",
-				tag: Tag.web,
-				description: "Portale per spiagge di tutta Italia.",
+				tags: [Tag.web],
+				description: "Portal for the beaches of all Italy.",
 			},
 			{
 				url: `${import.meta.env.VITE_APP_BEACHAROUND_BUSINESS_URL}` ?? "#",
+				image: "/images/beacharound_business.png",
 				title: "Beacharound Business",
-				tag: Tag.web,
-				description: "Gestionale spiaggia e prenotazioni online.",
+				tags: [Tag.web],
+				description: "Management system for bathing establishments and online reservations.",
+			},
+			{
+				url: `${import.meta.env.VITE_APP_MANGO_PICWIX_URL}` ?? "#",
+				image: "https://mangomobi.com/wp-content/uploads/2020/10/picwix-app-mood-mango-mobile-agency.jpg",
+				title: "PicWix for Mango Mobile",
+				tags: [Tag.ios, Tag.android],
+				description: "Choose a contest, share your photo and video and invite your friends to put \"like\" on your media to win the contest and win the prize!",
 			},
 		],
 	},
 	{
-		title: "Progetti",
+		title: "Projects",
 		links: [
 			{
 				url: `${import.meta.env.VITE_APP_DRINKTOOL_URL}` ?? "#",
+				image: "/images/drinktool.png",
 				title: "Drink Tool app",
-				tag: Tag.android,
-				description: "Calcolo del tasso alcolemico.",
+				tags: [Tag.android],
+				description: "Real-time BAC (Blood Alcohol Content) calculator.",
 			},
+		],
+	},
+	{
+		title: "Old projects",
+		links: [
 			{
 				url: `${import.meta.env.VITE_APP_HMCID_URL}` ?? "#",
+				image: "/images/howmuchcanidrink.png",
 				title: "Howmuchcanidrink",
-				tag: Tag.web,
-				description: "Quanto posso bere? Quanto devo aspettare?",
+				tags: [Tag.web],
+				description: "How much can i drink? How long shuld i wait?",
 			},
 		],
 	},

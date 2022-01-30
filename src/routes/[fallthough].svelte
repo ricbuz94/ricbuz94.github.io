@@ -8,7 +8,6 @@
 	<title>Not Found · RiccardoBuzzolo</title>
 </svelte:head>
 
-<div />
 <div class="container">
 	<svg class="icon">
 		<use href="/feather-sprite.svg#file" />
@@ -20,14 +19,8 @@
 		</svg>Home
 	</button>
 </div>
-<div />
 
 <style>
-	::selection {
-		color: var(--gray0);
-		background-color: var(--accentColor);
-	}
-
 	div.container {
 		display: flex;
 		flex-direction: column;
@@ -56,7 +49,6 @@
 		text-align: center;
 		margin-top: 2rem;
 		margin-bottom: 4rem;
-		transition: color var(--transition);
 	}
 
 	button {

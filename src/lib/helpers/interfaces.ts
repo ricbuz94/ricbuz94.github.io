@@ -1,12 +1,14 @@
 enum Tag {
 	web = "WEB",
+	ios = "iOS",
 	android = "ANDROID"
 }
 
 interface Link {
 	url: string,
+	image: string,
 	title: string,
-	tag: Tag,
+	tags: Array<Tag>,
 	description: string,
 }
 

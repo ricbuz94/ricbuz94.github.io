@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Section } from "$lib/helpers/interfaces";
-	import Link from "./Link.svelte";
+	import Post from "./Post.svelte";
 
 	export let item: Section;
 </script>
@@ -13,15 +13,14 @@
 		<h5>{item.title}</h5>
 	</div>
 	<ul>
-		{#each item.links as link}
-			<Link {link} />
+		{#each item.links as post, index}
+			<Post {post} />
 		{/each}
 	</ul>
 </li>
 
 <style>
 	li {
-		width: 70vmin;
 		margin: 0px;
 		padding: 0px;
 	}
@@ -54,11 +53,21 @@
 		font-size: 80%;
 		margin-left: 0.5rem;
 		margin-top: 3px;
-		transition: color var(--transition);
 	}
 
 	ul {
 		padding: 0px;
 		margin: 0px;
+		display: grid;
+		gap: 3rem;
+		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	}
+
+	/* schermo piccolo */
+	@media only screen and (max-width: 720px) {
+		ul {
+			gap: 0px;
+			grid-template-columns: auto;
+		}
 	}
 </style>
