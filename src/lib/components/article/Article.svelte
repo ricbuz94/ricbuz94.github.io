@@ -1,6 +1,9 @@
-<script lang="ts">
+<script context="module" lang="ts">
 	import { base } from "$app/paths";
 	import ButtonLink from "../ButtonLink.svelte";
+</script>
+
+<script lang="ts">
 	export let title: string;
 	export let text: string =
 		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum provident vitae accusamus, amet, dolores est quaerat expedita repellat nobis numquam voluptate iure necessitatibus qui odit. Nobis eveniet blanditiis delectus repellendus.";

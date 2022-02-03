@@ -5,6 +5,10 @@
 </script>
 
 <svelte:head>
+	<meta
+		name="description"
+		content="About page for Riccardo Buzzolo. Know something about me."
+	/>
 	<title>About · RiccardoBuzzolo</title>
 </svelte:head>
 
@@ -56,7 +60,10 @@
 				</p>
 			</Article>
 		</div>
-		<img src="/images/beacharound_business_info.png" alt="Beacharound" />
+		<img
+			src="/images/beacharound_business_info.png"
+			alt="Beacharound Business"
+		/>
 	</div>
 	<Divider />
 </div>

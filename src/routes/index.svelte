@@ -5,6 +5,10 @@
 </script>
 
 <svelte:head>
+	<meta
+		name="description"
+		content="Homepage of Riccardo Buzzolo. See my works and bio."
+	/>
 	<title>Home · RiccardoBuzzolo</title>
 </svelte:head>
 
@@ -20,7 +24,7 @@
 			<p>Developer (Web / Mobile / IT)</p>
 		</div>
 		<div class="cell">
-			<img src="/images/me.jpg" alt="author" />
+			<img src="/images/me.jpg" alt="Riccardo Buzzolo" />
 		</div>
 	</div>
 	<Divider />

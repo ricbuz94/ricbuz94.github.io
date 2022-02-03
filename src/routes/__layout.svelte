@@ -119,7 +119,7 @@
 		</main>
 	{/key}
 	<footer>
-		<div>
+		<div class="contacts-container">
 			<a
 				href={`${import.meta.env.VITE_APP_MAILTO}`}
 				target="_blank"
@@ -216,6 +216,7 @@
 		--purpleLight: #a372e7;
 		--borderRadius: 0.4rem;
 		--transition: 0.15s ease;
+		--activeInputShadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
 	}
 
 	#theme {
@@ -233,8 +234,8 @@
 	}
 
 	:global(a) {
-		text-decoration: none;
 		outline: none;
+		text-decoration: none;
 		-webkit-tap-highlight-color: transparent;
 	}
 
@@ -302,7 +303,7 @@
 		padding-right: 20%;
 	}
 
-	footer div {
+	.contacts-container {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -407,7 +408,7 @@
 
 	/* schermo grande */
 	@media only screen and (min-width: 1400px) {
-		footer div {
+		.contacts-container {
 			margin-bottom: 5rem;
 		}
 

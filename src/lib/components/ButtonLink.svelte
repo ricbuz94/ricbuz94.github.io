@@ -8,7 +8,7 @@
 
 <a href={to} {style}>
 	<p>{text}</p>
-	<svg class="icon accent">
+	<svg class="icon">
 		<use href="/feather-sprite.svg#chevron-right" />
 	</svg>
 </a>
@@ -32,7 +32,7 @@
 	}
 
 	a:active {
-		box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.6) !important;
+		box-shadow: var(--activeInputShadow) !important;
 	}
 
 	p {

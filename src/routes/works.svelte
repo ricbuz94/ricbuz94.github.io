@@ -5,7 +5,11 @@
 </script>
 
 <svelte:head>
-	<title>Work · RiccardoBuzzolo</title>
+	<meta
+		name="description"
+		content="Works page of Riccardo Buzzolo. Browse my old and current projects and works."
+	/>
+	<title>Works · RiccardoBuzzolo</title>
 </svelte:head>
 
 <Divider />

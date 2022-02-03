@@ -1,5 +1,5 @@
 <script lang="ts">
-	export let title: string = "Homepage";
+	export let title: string = "Home";
 	export let href: string = "/";
 </script>
 
