@@ -12,7 +12,7 @@
 	export let refresh = "";
 	export const load = async ({ page }) => ({
 		props: {
-			key: page.path,
+			key: page.url.pathname,
 		},
 	});
 
@@ -113,7 +113,7 @@
 			</div>
 		</nav>
 	</header>
-	{#key (refresh = $page.path)}
+	{#key (refresh = $page.url.pathname)}
 		<main in:fly={{ y: 15, duration: 400, delay: 200 }}>
 			<slot />
 		</main>
