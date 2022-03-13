@@ -3,51 +3,22 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="manifest" href="/manifest.json">
-	
-
-		
-
-		<link rel="modulepreload" href="/_app/start-812cece1.js">
-		<link rel="modulepreload" href="/_app/chunks/vendor-8c17374b.js">
-		<link rel="modulepreload" href="/_app/chunks/singletons-12a22614.js">
-		<link rel="modulepreload" href="/_app/chunks/paths-28a87002.js">
-		<link rel="modulepreload" href="/_app/pages/drinktool/__layout.reset.svelte-d3fe02ca.js">
-		<link rel="modulepreload" href="/_app/pages/drinktool/index.svelte-c6285251.js">
-		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
-
-		<script type="module">
-			import { start } from "/_app/start-812cece1.js";
-			start({
-				target: document.body,
-				paths: {"base":"","assets":""},
-				session: {},
-				host: location.host,
-				route: true,
-				spa: false,
-				trailing_slash: "never",
-				hydrate: {
-					status: 200,
-					error: null,
-					nodes: [
-						import("/_app/pages/drinktool/__layout.reset.svelte-d3fe02ca.js"),
-						import("/_app/pages/drinktool/index.svelte-c6285251.js")
-					],
-					page: {
-						host: location.host, // TODO this is redundant
-						path: "\u002Fdrinktool",
-						query: new URLSearchParams(""),
-						params: {}
-					}
-				}
-			});
-		</script><script>
-			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('/service-worker.js');
-			}
-		</script>
+	<meta name="description" content="Portfolio website for Riccardo Buzzolo: full-stack web and IT developer." />
+	<link rel="manifest" href="/manifest.json" />
+	<meta http-equiv="content-security-policy" content="">
+	<link rel="modulepreload" href="/_app/start-82a2dfb9.js">
+	<link rel="modulepreload" href="/_app/chunks/vendor-dea0256b.js">
+	<link rel="modulepreload" href="/_app/chunks/paths-4b3c6e7e.js">
+	<link rel="modulepreload" href="/_app/chunks/singletons-a6a7384f.js">
+	<link rel="modulepreload" href="/_app/pages/drinktool/__layout.reset.svelte-1fdcfe7c.js">
+	<link rel="modulepreload" href="/_app/pages/drinktool/index.svelte-615ac036.js">
+				<script>
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/service-worker.js');
+		}
+	</script>
 </head>
 
 <body>
@@ -57,9 +28,27 @@
 
 
 
-
-			
-		
+		<script type="module" data-hydrate="2eq20f">
+		import { start } from "/_app/start-82a2dfb9.js";
+		start({
+			target: document.querySelector('[data-hydrate="2eq20f"]').parentNode,
+			paths: {"base":"","assets":""},
+			session: {},
+			route: true,
+			spa: false,
+			trailing_slash: "never",
+			hydrate: {
+				status: 200,
+				error: null,
+				nodes: [
+					import("/_app/pages/drinktool/__layout.reset.svelte-1fdcfe7c.js"),
+						import("/_app/pages/drinktool/index.svelte-615ac036.js")
+				],
+				url: new URL("http://sveltekit-prerender/drinktool"),
+				params: {}
+			}
+		});
+	</script>
 </body>
 
 </html>
