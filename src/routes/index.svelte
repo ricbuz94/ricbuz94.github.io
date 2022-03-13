@@ -92,9 +92,9 @@
 			</p>
 		</div>
 		<div class="row">
-			<p class="margin">2022</p>
+			<p class="margin">2021</p>
 			<p>
-				Working at <ArticleLink
+				Currently working at <ArticleLink
 					title="Beacharound S.r.l."
 					href={`${import.meta.env.VITE_APP_BEACHAROUND_URL}`}
 				/>, an innovative startup developing a management system for bathing

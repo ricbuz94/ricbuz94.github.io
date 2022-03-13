@@ -60,10 +60,7 @@
 				</p>
 			</Article>
 		</div>
-		<img
-			src="/images/beacharound_business_info.png"
-			alt="Beacharound Business"
-		/>
+		<img src="/images/beach.png" alt="Beacharound" />
 	</div>
 	<Divider />
 </div>

@@ -7,14 +7,14 @@ const data: Array<Section> = [
 		links: [
 			{
 				url: `${import.meta.env.VITE_APP_BEACHAROUND_URL}` ?? "#",
-				image: "/images/beacharound.jpg",
+				image: "/images/beacharound.png",
 				title: "Beacharound",
 				tags: [Tag.web],
-				description: "Portal for the beaches of all Italy.",
+				description: "The portal for booking beaches throughout Italy.",
 			},
 			{
 				url: `${import.meta.env.VITE_APP_BEACHAROUND_BUSINESS_URL}` ?? "#",
-				image: "/images/beacharound_business.png",
+				image: "/images/beacharound-business.png",
 				title: "Beacharound Business",
 				tags: [Tag.web],
 				description: "Management system for bathing establishments and online reservations.",

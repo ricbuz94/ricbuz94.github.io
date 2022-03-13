@@ -7,7 +7,7 @@
 	<a rel="noreferrer" href={post.url} target="_blank">
 		<div
 			class="image"
-			style="background-image: linear-gradient(rgba(0, 0, 0, 0.025),rgba(0, 0, 0, 0.05)),url('{post.image}');"
+			style="background-image: linear-gradient(rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.1)),url('{post.image}');"
 		/>
 		<div class="container">
 			<div class="row">
@@ -71,7 +71,7 @@
 		background-position: 50%;
 		background-repeat: no-repeat;
 		border-radius: 0.5rem 0.5rem 0px 0px;
-		box-shadow: var(--navBorderBottom);
+		/* border-bottom: 1px solid var(--borderColor); */
 	}
 
 	.container {
@@ -120,8 +120,26 @@
 
 	/* schermo piccolo */
 	@media only screen and (max-width: 720px) {
+		li {
+			/* border: 1px solid var(--borderColor); */
+			border-radius: 1rem;
+			background-color: transparent;
+			box-shadow: none;
+		}
+
+		li:hover {
+			box-shadow: none;
+			transform: none;
+		}
+
+		li:active {
+			box-shadow: none;
+			transform: none;
+		}
+
 		.image {
 			height: 150px;
+			border-radius: 1rem;
 		}
 	}
 </style>

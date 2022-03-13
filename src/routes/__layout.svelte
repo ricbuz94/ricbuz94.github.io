@@ -16,10 +16,6 @@
 		},
 	});
 
-	// EVENTUALMENTE PER MOBILE
-	// import isMobile from "$lib/helpers/isMobile";
-	// console.log(isMobile());
-
 	// SCROLL
 	const updateScrollPosition = (event) => {
 		const scrollTop = window.scrollY;
@@ -214,7 +210,7 @@
 		--redDark: #e13b47;
 		--purple: #9166cc;
 		--purpleLight: #a372e7;
-		--borderRadius: 0.4rem;
+		--borderRadius: 0.5rem;
 		--transition: 0.15s ease;
 		--activeInputShadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
 	}
