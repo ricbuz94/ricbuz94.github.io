@@ -16,18 +16,15 @@
 		},
 	});
 
-	// SCROLL
-	const updateScrollPosition = (event) => {
-		const scrollTop = window.scrollY;
+	let isSet;
+	const setNavBottomBorder = () => {
 		let header = document.getElementById("header");
-		if (scrollTop > 15) {
-			if (header.style.boxShadow === "none") {
-				header.style.boxShadow = "var(--navBorderBottom)";
-			}
+		const scrollY = window.scrollY;
+
+		if (!isSet && scrollY > 15) {
+			header.style.boxShadow = "var(--navBorderBottom)";
 		} else {
-			if (header.style.boxShadow !== "none") {
-				header.style.boxShadow = "none";
-			}
+			header.style.boxShadow = "none";
 		}
 	};
 
@@ -39,7 +36,8 @@
 		LIGHT: "light",
 		DARK: "dark",
 	};
-	$: favicon = currentTheme === "light" ? "/favicon.ico" : "/favicon-dark.ico";
+	$: favicon =
+		currentTheme === "light" ? "/favicon.ico" : "/favicon-dark.ico";
 
 	const prefersDarkThemes = () => window.matchMedia(DARK_PREFERENCE).matches;
 
@@ -72,14 +70,16 @@
 	};
 
 	onMount(() => {
-		window.addEventListener("scroll", updateScrollPosition, {
+		window.addEventListener("scroll", setNavBottomBorder, {
 			passive: true,
 		});
 		applyTheme();
-		window.matchMedia(DARK_PREFERENCE).addEventListener("change", applyTheme);
+		window
+			.matchMedia(DARK_PREFERENCE)
+			.addEventListener("change", applyTheme);
 
 		return () => {
-			window.removeEventListener("scroll", updateScrollPosition);
+			window.removeEventListener("scroll", setNavBottomBorder);
 			window
 				.matchMedia(DARK_PREFERENCE)
 				.removeEventListener("change", applyTheme);
@@ -244,7 +244,8 @@
 		background-color: var(--navBackgroundColor);
 		-webkit-backdrop-filter: saturate(180%) blur(5px);
 		backdrop-filter: saturate(180%) blur(5px);
-		transition: background-color var(--transition), box-shadow var(--transition);
+		transition: background-color var(--transition),
+			box-shadow var(--transition);
 	}
 
 	nav {
