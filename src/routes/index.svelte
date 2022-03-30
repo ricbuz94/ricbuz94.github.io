@@ -24,7 +24,7 @@
 			<p>Developer (Web / Mobile / IT)</p>
 		</div>
 		<div class="cell">
-			<img src="/images/me.jpg" alt="Riccardo Buzzolo" />
+			<img src="/images/me.png" alt="Riccardo Buzzolo" />
 		</div>
 	</div>
 	<Divider />

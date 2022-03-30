@@ -15,7 +15,7 @@
 <div class="container">
 	<Divider />
 	<div class="content">
-		<img src="/images/me.jpg" alt="Riccardo Buzzolo" />
+		<img src="/images/me.png" alt="Riccardo Buzzolo" />
 		<div class="card-wide">
 			<Article title="About me">
 				<p>
@@ -60,7 +60,7 @@
 				</p>
 			</Article>
 		</div>
-		<img src="/images/beach.png" alt="Beacharound" />
+		<img src="/images/beach.jpg" alt="Beacharound" />
 	</div>
 	<Divider />
 </div>
