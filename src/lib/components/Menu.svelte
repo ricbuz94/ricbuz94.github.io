@@ -15,7 +15,7 @@
 </script>
 
 {#if open}
-	<div in:fly={{ y: -15, duration: 200 }} out:fly={{ y: -15, duration: 200 }}>
+	<div in:fly={{ x: 30, y: -15, duration: 200 }}>
 		<ul>
 			<li>
 				<NavLink href={`${base}/works`}>{$_("layout.nav.works")}</NavLink>

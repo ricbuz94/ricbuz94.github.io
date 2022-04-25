@@ -24,8 +24,8 @@
 	register("en-US", () => import("$lib/locales/en-US.json"));
 
 	init({
-		fallbackLocale: "en-US",
-		initialLocale: "en-US",
+		fallbackLocale: "it-IT",
+		initialLocale: "it-IT",
 	});
 
 	export let language: string = Locales.it;
@@ -35,9 +35,6 @@
 			localStorage.getItem("language") || getLocaleFromNavigator();
 
 		!!language && locale.set(language);
-		console.log("Language: " + language);
-
-		console.log(page.url.pathname);
 
 		return {
 			props: {

@@ -126,7 +126,6 @@
 	}
 
 	.me {
-		max-width: 600px;
 		display: grid;
 		gap: 3rem;
 		grid-template-columns: auto auto;
