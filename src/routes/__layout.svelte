@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import "../app.css";
 	import { base } from "$app/paths";
 	import { page } from "$app/stores";
@@ -8,23 +8,54 @@
 	import { fly } from "svelte/transition";
 	import Menu from "$lib/components/Menu.svelte";
 	import NavLink from "$lib/components/NavLink.svelte";
+	import LocaleSwitch from "$lib/components/LocaleSwitch.svelte";
+	import {
+		_,
+		register,
+		init,
+		locale,
+		getLocaleFromNavigator,
+		isLoading,
+	} from "svelte-i18n";
+	import { Locales } from "$lib/helpers/interfaces";
+	import Loader from "$lib/components/Loader.svelte";
 
-	export let refresh = "";
-	export const load = async ({ page }) => ({
-		props: {
-			key: page.url.pathname,
-		},
+	register("it-IT", () => import("$lib/locales/it-IT.json"));
+	register("en-US", () => import("$lib/locales/en-US.json"));
+
+	init({
+		fallbackLocale: "en-US",
+		initialLocale: "en-US",
 	});
 
-	let isSet;
+	export let language: string = Locales.it;
+	export let refresh: string = "";
+	export const load = async ({ page }) => {
+		const language =
+			localStorage.getItem("language") || getLocaleFromNavigator();
+
+		!!language && locale.set(language);
+		console.log("Language: " + language);
+
+		console.log(page.url.pathname);
+
+		return {
+			props: {
+				key: page.url.pathname,
+				language,
+			},
+		};
+	};
+
+	let isSet: boolean;
 	const setNavBottomBorder = () => {
 		let header = document.getElementById("header");
-		const scrollY = window.scrollY;
-
-		if (!isSet && scrollY > 15) {
-			header.style.boxShadow = "var(--navBorderBottom)";
-		} else {
-			header.style.boxShadow = "none";
+		if (header) {
+			if (!isSet && window.scrollY > 15) {
+				header.style.boxShadow = "var(--navBorderBottom)";
+			} else {
+				header.style.boxShadow = "none";
+			}
 		}
 	};
 
@@ -36,8 +67,7 @@
 		LIGHT: "light",
 		DARK: "dark",
 	};
-	$: favicon =
-		currentTheme === "light" ? "/favicon.ico" : "/favicon-dark.ico";
+	$: favicon = currentTheme === "light" ? "/favicon.ico" : "/favicon-dark.ico";
 
 	const prefersDarkThemes = () => window.matchMedia(DARK_PREFERENCE).matches;
 
@@ -70,13 +100,16 @@
 	};
 
 	onMount(() => {
+		language = localStorage.getItem("language") || getLocaleFromNavigator();
+
+		console.log("Language: " + language);
+		locale.set(language);
+
 		window.addEventListener("scroll", setNavBottomBorder, {
 			passive: true,
 		});
 		applyTheme();
-		window
-			.matchMedia(DARK_PREFERENCE)
-			.addEventListener("change", applyTheme);
+		window.matchMedia(DARK_PREFERENCE).addEventListener("change", applyTheme);
 
 		return () => {
 			window.removeEventListener("scroll", setNavBottomBorder);
@@ -92,93 +125,103 @@
 </svelte:head>
 
 <div id="theme" class="light">
-	<header id="header">
-		<nav>
-			<Logo />
-			<ul class="menu-off">
-				<li>
-					<NavLink href={`${base}/works`}>Works</NavLink>
-				</li>
-				<li>
-					<NavLink href={`${base}/about`}>About</NavLink>
-				</li>
-			</ul>
-			<Switch {currentTheme} {toggleTheme} />
-			<div class="menu-on">
-				<Menu />
+	{#if $isLoading}
+		{#key (refresh = $page.url.pathname)}
+			<div class="loading" in:fly={{ y: -15, duration: 300 }}>
+				<Loader />
+				<div />
 			</div>
-		</nav>
-	</header>
-	{#key (refresh = $page.url.pathname)}
-		<main in:fly={{ y: 15, duration: 400, delay: 200 }}>
-			<slot />
-		</main>
-	{/key}
-	<footer>
-		<div class="contacts-container">
-			<a
-				href={`${import.meta.env.VITE_APP_MAILTO}`}
-				target="_blank"
-				rel="nonreferrer"
-			>
-				<svg class="icon">
-					<use href="/feather-sprite.svg#mail" />
-				</svg>
-				<p>riccardo.buzzolo@gmail.com</p>
-			</a>
-			<a
-				href={`${import.meta.env.VITE_APP_INSTAGRAM_PROFILE_URL}`}
-				target="_blank"
-				rel="nonreferrer"
-			>
-				<svg class="icon">
-					<use href="/feather-sprite.svg#instagram" />
-				</svg>
-				<p>@riccardo_buzzolo</p>
-			</a>
-			<a
-				href={`${import.meta.env.VITE_APP_GITHUB_PROFILE_URL}`}
-				target="_blank"
-				rel="nonreferrer"
-			>
-				<svg class="icon">
-					<use href="/feather-sprite.svg#github" />
-				</svg>
-				<p>@ricbuz94</p>
-			</a>
-			<a
-				href={`${import.meta.env.VITE_APP_TWITTER_PROFILE_URL}`}
-				target="_blank"
-				rel="nonreferrer"
-			>
-				<svg class="icon">
-					<use href="/feather-sprite.svg#twitter" />
-				</svg>
-				<p>@riccardobuzzolo</p>
-			</a>
-		</div>
-		<p>
-			Made with <span
-				><a
-					class="footer-link"
-					href={`${import.meta.env.VITE_APP_SVELTEKIT_URL}`}
+		{/key}
+	{:else}
+		<header id="header">
+			<nav>
+				<Logo />
+				<ul class="menu-off">
+					<li>
+						<NavLink href={`${base}/works`}>{$_("layout.nav.works")}</NavLink>
+					</li>
+					<li>
+						<NavLink href={`${base}/about`}>{$_("layout.nav.about")}</NavLink>
+					</li>
+				</ul>
+				<Switch {currentTheme} {toggleTheme} />
+				<LocaleSwitch {language} />
+				<div class="menu-on">
+					<Menu />
+				</div>
+			</nav>
+		</header>
+		{#key (refresh = $page.url.pathname)}
+			<main in:fly={{ y: 15, duration: 600, delay: 150 }}>
+				<slot />
+			</main>
+		{/key}
+		<footer>
+			<div class="contacts-container">
+				<a
+					href={`${import.meta.env.VITE_APP_MAILTO}`}
 					target="_blank"
-					rel="nonreferrer">SvelteKit</a
-				><span /> and
-				<span
+					rel="nonreferrer"
+				>
+					<svg class="icon">
+						<use href="/feather-sprite.svg#mail" />
+					</svg>
+					<p>riccardo.buzzolo@gmail.com</p>
+				</a>
+				<a
+					href={`${import.meta.env.VITE_APP_INSTAGRAM_PROFILE_URL}`}
+					target="_blank"
+					rel="nonreferrer"
+				>
+					<svg class="icon">
+						<use href="/feather-sprite.svg#instagram" />
+					</svg>
+					<p>@riccardo_buzzolo</p>
+				</a>
+				<a
+					href={`${import.meta.env.VITE_APP_GITHUB_PROFILE_URL}`}
+					target="_blank"
+					rel="nonreferrer"
+				>
+					<svg class="icon">
+						<use href="/feather-sprite.svg#github" />
+					</svg>
+					<p>@ricbuz94</p>
+				</a>
+				<a
+					href={`${import.meta.env.VITE_APP_TWITTER_PROFILE_URL}`}
+					target="_blank"
+					rel="nonreferrer"
+				>
+					<svg class="icon">
+						<use href="/feather-sprite.svg#twitter" />
+					</svg>
+					<p>@riccardobuzzolo</p>
+				</a>
+			</div>
+			<p>
+				Made with <span
 					><a
 						class="footer-link"
-						href={`${import.meta.env.VITE_APP_GITHUB_PAGES_URL}`}
+						href={`${import.meta.env.VITE_APP_SVELTEKIT_URL}`}
 						target="_blank"
-						rel="nonreferrer">GitHub Pages</a
-					></span
-				>
-			</span>
-		</p>
-		<p class="sub-text">
-			© {year} Riccardo Buzzolo. All Rights Reserved.
-		</p>
-	</footer>
+						rel="nonreferrer">SvelteKit</a
+					><span /> and
+					<span
+						><a
+							class="footer-link"
+							href={`${import.meta.env.VITE_APP_GITHUB_PAGES_URL}`}
+							target="_blank"
+							rel="nonreferrer">GitHub Pages</a
+						></span
+					>
+				</span>
+			</p>
+			<p class="sub-text">
+				© {year} Riccardo Buzzolo. All Rights Reserved.
+			</p>
+		</footer>
+	{/if}
 </div>
 
 <style>
@@ -212,7 +255,7 @@
 		--purpleLight: #a372e7;
 		--borderRadius: 0.5rem;
 		--transition: 0.15s ease;
-		--activeInputShadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
+		--activeInputShadow: 0 0 0 2px rgba(66, 153, 225, 0.6);
 	}
 
 	#theme {
@@ -244,8 +287,17 @@
 		background-color: var(--navBackgroundColor);
 		-webkit-backdrop-filter: saturate(180%) blur(5px);
 		backdrop-filter: saturate(180%) blur(5px);
-		transition: background-color var(--transition),
-			box-shadow var(--transition);
+		transition: background-color var(--transition), box-shadow var(--transition),
+			opacity 500ms ease;
+	}
+
+	.loading {
+		height: 100vh;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
 	}
 
 	nav {
@@ -286,6 +338,7 @@
 		flex-direction: column;
 		justify-content: start;
 		align-items: center;
+		transition: opacity 500ms ease;
 	}
 
 	footer {
@@ -298,6 +351,7 @@
 		padding-bottom: 4rem;
 		padding-left: 20%;
 		padding-right: 20%;
+		transition: opacity 500ms ease;
 	}
 
 	.contacts-container {

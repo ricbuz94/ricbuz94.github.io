@@ -2,103 +2,111 @@
 	import Article from "$lib/components/article/Article.svelte";
 	import ArticleLink from "$lib/components/article/ArticleLink.svelte";
 	import Divider from "$lib/components/Divider.svelte";
+	import { _ } from "svelte-i18n";
 </script>
 
 <svelte:head>
+	<title>Home · RiccardoBuzzolo</title>
 	<meta
 		name="description"
 		content="Homepage of Riccardo Buzzolo. See my works and bio."
 	/>
-	<title>Home · RiccardoBuzzolo</title>
 </svelte:head>
 
 <div class="content">
 	<Divider />
 	<div class="banner">
-		<p>Greatings, i'm a full-stack developer based in Italy.</p>
+		<p>{$_("home.greatings")}</p>
 	</div>
 	<Divider />
 	<div class="me">
 		<div class="cell">
 			<h2>Riccardo Buzzolo</h2>
-			<p>Developer (Web / Mobile / IT)</p>
+			<p>{$_("home.developer")} (Web / Mobile / IT)</p>
 		</div>
 		<div class="cell">
 			<img src="/images/me.png" alt="Riccardo Buzzolo" />
 		</div>
 	</div>
 	<Divider />
-	<Article title="Work" link="works">
+	<Article
+		title={$_("home.works.title")}
+		link="works"
+		linkText={$_("home.works.callToAction")}
+	>
 		<p style="text-align: justify;">
-			I actually work as CTO and full-stack web developer at <ArticleLink
+			{$_("home.works.content.1")}
+			<ArticleLink
 				title="Beacharound S.r.l."
 				href={`${import.meta.env.VITE_APP_BEACHAROUND_URL}`}
-			/> based in San Giovanni in Marignano, Italy. I have also worked at <ArticleLink
+			/>{$_("home.works.content.2")}
+			<ArticleLink
 				title="Mango Mobile S.r.l."
 				href={`${import.meta.env.VITE_APP_MANGO_URL}`}
-			/> as mobile developer using React Native, PHP and CentOS Linux server. I have
-			built
+			/>{$_("home.works.content.3")}
 			<ArticleLink
 				title="Drink Tool"
 				href={`${import.meta.env.VITE_APP_DRINKTOOL_URL}`}
-			/>: a real-time BAC (Blood Alcohol Content) calculator Android application
-			using Flutter.
+			/>{$_("home.works.content.4")}
 		</p>
 	</Article>
 	<Divider />
-	<Article title="Bio" link="about">
+	<Article
+		title={$_("home.bio.title")}
+		link="about"
+		linkText={$_("home.bio.callToAction")}
+	>
 		<div class="row">
 			<p class="margin">1994</p>
-			<p class="margin">Born in Cattolica (RN), Italy</p>
+			<p class="margin">{$_("home.bio.content.1")}</p>
 		</div>
 		<div class="row">
 			<p class="margin">2011</p>
-			<p class="margin">Moved to San Giovanni in Marignano (RN), Italy</p>
+			<p class="margin">{$_("home.bio.content.2")}</p>
 		</div>
 		<div class="row">
 			<p class="margin">2013</p>
 			<p class="margin">
-				Graduated at <ArticleLink
+				{$_("home.bio.content.3")}<ArticleLink
 					title="ITTS O. Belluzzi, RN"
 					href={`${import.meta.env.VITE_APP_ITG_URL}`}
-				/>
+				/>.
 			</p>
 		</div>
 		<div class="row">
 			<p class="margin">2016</p>
 			<p class="margin">
-				Studied computer sience at <ArticleLink
+				{$_("home.bio.content.4")}<ArticleLink
 					title="Unibo Alma Mater Studiorum, Cesena"
 					href={`${import.meta.env.VITE_APP_UNIBO_URL}`}
-				/>
+				/>.
 			</p>
 		</div>
 		<div class="row">
 			<p class="margin">2018</p>
 			<p class="margin">
-				Worked at <ArticleLink
+				{$_("home.bio.content.5")}<ArticleLink
 					title="Teddy S.p.A."
 					href={`${import.meta.env.VITE_APP_TEDDY_URL}`}
-				/> traveling around the country.
+				/>{$_("home.bio.content.6")}
 			</p>
 		</div>
 		<div class="row">
 			<p class="margin">2019</p>
 			<p class="margin">
-				Worked at <ArticleLink
+				{$_("home.bio.content.7")}<ArticleLink
 					title="Mango Mobile S.r.l."
 					href={`${import.meta.env.VITE_APP_MANGO_URL}`}
-				/> as a React Native developer, building a photo/video contest application.
+				/>{$_("home.bio.content.8")}
 			</p>
 		</div>
 		<div class="row">
 			<p class="margin">2021</p>
 			<p>
-				Currently working at <ArticleLink
+				{$_("home.bio.content.9")}<ArticleLink
 					title="Beacharound S.r.l."
 					href={`${import.meta.env.VITE_APP_BEACHAROUND_URL}`}
-				/>, an innovative startup developing a management system for bathing
-				establishments and online reservations.
+				/>{$_("home.bio.content.10")}
 			</p>
 		</div>
 	</Article>
@@ -118,6 +126,7 @@
 	}
 
 	.me {
+		max-width: 600px;
 		display: grid;
 		gap: 3rem;
 		grid-template-columns: auto auto;

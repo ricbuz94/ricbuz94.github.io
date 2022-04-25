@@ -16,7 +16,7 @@
 	<button on:click={goToHome}>
 		<svg class="btn-icon">
 			<use href="/feather-sprite.svg#arrow-left" />
-		</svg>Back
+		</svg>BACK
 	</button>
 </div>
 
@@ -27,7 +27,7 @@
 	}
 
 	div.container {
-		height: inherit;
+		height: 100vh;
 		display: flex;
 		flex-direction: column;
 		font-family: "Roboto Mono", monospace;
@@ -64,6 +64,8 @@
 		outline: none;
 		cursor: pointer;
 		font-family: "Roboto", monospace;
+		font-weight: 600;
+		font-size: 0.8rem;
 		text-decoration: none;
 		color: black;
 		padding: 0.5rem 0.8rem;

@@ -8,9 +8,7 @@
 	export let text: string =
 		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum provident vitae accusamus, amet, dolores est quaerat expedita repellat nobis numquam voluptate iure necessitatibus qui odit. Nobis eveniet blanditiis delectus repellendus.";
 	export let link: string = "";
-	const linkText: string = link
-		? link.replace(/^./, link[0].toUpperCase())
-		: "";
+	export let linkText: string = "Testo";
 </script>
 
 <div>

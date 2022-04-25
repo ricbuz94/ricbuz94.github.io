@@ -1,7 +1,9 @@
+<script context="module">
+	import Post from "./Post.svelte";
+</script>
+
 <script lang="ts">
 	import type { Section } from "$lib/helpers/interfaces";
-	import Post from "./Post.svelte";
-
 	export let item: Section;
 </script>
 
@@ -13,7 +15,7 @@
 		<h5>{item.title}</h5>
 	</div>
 	<ul>
-		{#each item.links as post, index}
+		{#each item.links as post}
 			<Post {post} />
 		{/each}
 	</ul>

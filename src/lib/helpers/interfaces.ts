@@ -1,3 +1,8 @@
+enum Locales {
+	it = "it-IT",
+	en = "en-US"
+}
+
 enum Tag {
 	web = "WEB",
 	ios = "iOS",
@@ -17,5 +22,5 @@ interface Section {
 	links: Array<Link>
 }
 
-export { Tag };
+export { Locales, Tag };
 export type { Link, Section };

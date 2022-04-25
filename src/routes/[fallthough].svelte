@@ -22,10 +22,11 @@
 
 <style>
 	div.container {
+		height: 600px;
 		display: flex;
 		flex-direction: column;
 		font-family: "Roboto Mono", monospace;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
 	}
 

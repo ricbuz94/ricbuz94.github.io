@@ -1,45 +1,43 @@
 <script context="module">
 	import { base } from "$app/paths";
+	import { _ } from "svelte-i18n";
+	import NavLink from "./NavLink.svelte";
+	import { fly } from "svelte/transition";
 </script>
 
 <script lang="ts">
-	import NavLink from "./NavLink.svelte";
-
 	let open: boolean = false;
-
-	function closeMenu() {
-		open = false;
-	}
+	$: menu = open ? "x" : "menu";
 
 	function toggleMenu() {
 		open = !open;
 	}
-
-	$: menu = open ? "x" : "menu";
 </script>
 
-<div class={menu}>
-	<ul>
-		<li>
-			<NavLink href={`${base}/works`}>Works</NavLink>
-		</li>
-		<li>
-			<NavLink href={`${base}/about`}>About</NavLink>
-		</li>
-	</ul>
-</div>
-<div class="container" on:click={toggleMenu}>
+{#if open}
+	<div in:fly={{ y: -15, duration: 200 }} out:fly={{ y: -15, duration: 200 }}>
+		<ul>
+			<li>
+				<NavLink href={`${base}/works`}>{$_("layout.nav.works")}</NavLink>
+			</li>
+			<li>
+				<NavLink href={`${base}/about`}>{$_("layout.nav.about")}</NavLink>
+			</li>
+		</ul>
+	</div>
+{/if}
+<button on:click={toggleMenu}>
 	<svg class="icon">
 		<use href="/feather-sprite.svg#{menu}" />
 	</svg>
-</div>
+</button>
 
 <style>
 	ul {
 		height: 100%;
 		list-style: none;
 		margin: 0px;
-		padding: 0px;
+		padding: 1rem 0px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -49,45 +47,39 @@
 		display: contents;
 	}
 
-	.menu {
-		height: 0px;
-		width: 0px;
-		background-color: var(--cardBackgroundColor);
-		position: absolute;
-		top: 50px;
-		right: 1rem;
-		border-radius: 0.5rem;
-		transition: background-color var(--transition), height 0.2s ease,
-			width 0.2s ease;
-	}
-
-	.menu ul {
-		display: none;
-	}
-
-	.x {
-		height: 120px;
+	div {
+		height: fit-content;
 		width: 120px;
 		position: absolute;
-		top: 50px;
+		top: 55px;
 		right: 1rem;
 		background-color: var(--cardBackgroundColor);
 		border-radius: 0.5rem;
 		box-shadow: var(--cardShadow);
-		transition: background-color var(--transition), height 0.2s ease,
-			width 0.2s ease;
+		transition: background-color var(--transition);
 	}
 
-	.container {
+	button {
+		background-color: transparent !important;
 		width: 40px;
 		height: 40px;
-		cursor: pointer;
 		outline: none;
 		display: flex;
-		margin-left: 0.5rem;
 		align-items: center;
 		justify-content: center;
 		-webkit-tap-highlight-color: transparent;
+		background-color: var(--backgroundColor);
+		border: 1px solid var(--borderColor);
+		border-radius: var(--borderRadius);
+		margin: 0px;
+		margin-left: 0.5rem;
+		padding: 0.5rem 0.65rem;
+		cursor: pointer;
+		transition: all var(--transition);
+	}
+
+	button:active {
+		box-shadow: var(--activeInputShadow) !important;
 	}
 
 	.icon {

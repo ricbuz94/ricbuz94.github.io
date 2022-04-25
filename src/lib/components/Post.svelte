@@ -11,7 +11,7 @@
 		/>
 		<div class="container">
 			<div class="row">
-				<h5 class="">{post.title}</h5>
+				<h5>{post.title}</h5>
 				{#each post.tags as tag}
 					<p class={`tag ${tag}`}>#{tag}</p>
 				{/each}
@@ -71,7 +71,6 @@
 		background-position: 50%;
 		background-repeat: no-repeat;
 		border-radius: 0.5rem 0.5rem 0px 0px;
-		/* border-bottom: 1px solid var(--borderColor); */
 	}
 
 	.container {
@@ -121,7 +120,6 @@
 	/* schermo piccolo */
 	@media only screen and (max-width: 720px) {
 		li {
-			/* border: 1px solid var(--borderColor); */
 			border-radius: 1rem;
 			background-color: transparent;
 			box-shadow: none;
