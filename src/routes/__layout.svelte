@@ -98,15 +98,14 @@
 
 	onMount(() => {
 		language = localStorage.getItem("language") || getLocaleFromNavigator();
-
-		console.log("Language: " + language);
 		locale.set(language);
 
 		window.addEventListener("scroll", setNavBottomBorder, {
 			passive: true,
 		});
-		applyTheme();
+
 		window.matchMedia(DARK_PREFERENCE).addEventListener("change", applyTheme);
+		applyTheme();
 
 		return () => {
 			window.removeEventListener("scroll", setNavBottomBorder);
@@ -326,7 +325,7 @@
 	main {
 		margin-left: auto;
 		margin-right: auto;
-		max-width: 60vw;
+		box-sizing: border-box;
 		padding-top: 80px;
 		padding-bottom: 1rem;
 		padding-left: 20%;

@@ -23,16 +23,18 @@
 		<List
 			item={{
 				title: jsonWorks[i].header,
-				links: item.links.map((link, j) => {
-					console.log(jsonWorks[i].list[j]);
-					return {
-						...link,
-						title: jsonWorks[i].list[j].title,
-						description: jsonWorks[i].list[j].description,
-					};
-				}),
+				links: item.links.map((link, j) => ({
+					...link,
+					title: jsonWorks[i].list[j].title,
+					description: jsonWorks[i].list[j].description,
+				})),
 			}}
 		/>
+		{#if i !== data.length - 1}
+			<div id="marker">
+				<p>-•-</p>
+			</div>
+		{/if}
 	{/each}
 </ul>
 <Divider />
@@ -45,10 +47,20 @@
 		padding: 0px;
 	}
 
+	#marker {
+		padding-top: 3rem;
+		text-align: center;
+	}
+
 	/* schermo piccolo */
 	@media only screen and (max-width: 720px) {
 		ul {
 			width: 100%;
+		}
+
+		#marker {
+			padding-top: 2rem;
+			padding-bottom: 1rem;
 		}
 	}
 </style>

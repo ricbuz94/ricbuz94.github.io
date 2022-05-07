@@ -9,9 +9,9 @@ body {
 }
 
 body {
+	line-height: 1.6;
 	-webkit-font-smoothing: antialiased;
-	overflow-y: scroll;
-	scroll-behavior: smooth;
+	text-rendering: optimizeLegibility;
 }
 
 .light {

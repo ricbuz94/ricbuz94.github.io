@@ -51,6 +51,6 @@
 		stroke-linecap: round;
 		stroke-linejoin: round;
 		fill: none;
-		transition: stroke var(--transition);
+		transition: stroke var(--transition), opacity var(--transition);
 	}
 </style>
