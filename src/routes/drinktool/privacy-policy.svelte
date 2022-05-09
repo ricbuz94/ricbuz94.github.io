@@ -95,16 +95,7 @@
 					href={`${import.meta.env.VITE_APP_GOOGLE_POLICY_URL}`}
 					target="_blank"
 				>
-					Google Play Services
-				</a>
-			</li>
-			<li>
-				<a
-					rel="noreferrer"
-					href={`${import.meta.env.VITE_APP_ADMOB_POLICY_URL}`}
-					target="_blank"
-				>
-					AdMob
+					Google Play Services and AdMob
 				</a>
 			</li>
 		</ul>
