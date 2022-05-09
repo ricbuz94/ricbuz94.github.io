@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-12604e75.js",
+    "file": "start-61c1c396.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -23,7 +23,7 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-aa268c41.js",
+    "file": "pages/__layout.svelte-2828b21d.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -51,7 +51,7 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-0ac344fa.js",
+    "file": "pages/index.svelte-85b37052.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -84,7 +84,7 @@
     ]
   },
   "src/routes/drinktool/privacy-policy.svelte": {
-    "file": "pages/drinktool/privacy-policy.svelte-cc0ab019.js",
+    "file": "pages/drinktool/privacy-policy.svelte-35c7f324.js",
     "src": "src/routes/drinktool/privacy-policy.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -111,7 +111,7 @@
     ]
   },
   "src/routes/about.svelte": {
-    "file": "pages/about.svelte-3c41d2e2.js",
+    "file": "pages/about.svelte-4e615956.js",
     "src": "src/routes/about.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -126,7 +126,7 @@
     ]
   },
   "src/routes/works.svelte": {
-    "file": "pages/works.svelte-ae64b92c.js",
+    "file": "pages/works.svelte-dbc8baf4.js",
     "src": "src/routes/works.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -195,12 +195,12 @@
     ]
   },
   "src/lib/locales/it-IT.json": {
-    "file": "chunks/it-IT-bc392e95.js",
+    "file": "chunks/it-IT-3ae5d62e.js",
     "src": "src/lib/locales/it-IT.json",
     "isDynamicEntry": true
   },
   "src/lib/locales/en-US.json": {
-    "file": "chunks/en-US-ebe13386.js",
+    "file": "chunks/en-US-2e74bbb3.js",
     "src": "src/lib/locales/en-US.json",
     "isDynamicEntry": true
   }
