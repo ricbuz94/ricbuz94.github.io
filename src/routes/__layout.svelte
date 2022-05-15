@@ -148,7 +148,7 @@
 			</nav>
 		</header>
 		{#key (refresh = $page.url.pathname)}
-			<main in:fly={{ y: 15, duration: 600, delay: 150 }}>
+			<main in:fly={{ y: 30, duration: 600, delay: 150 }}>
 				<slot />
 			</main>
 		{/key}
@@ -255,13 +255,17 @@
 	}
 
 	#theme {
+		word-spacing: 1px;
 		min-height: 100vh;
-		background-color: var(--backgroundColor);
-		font-family: "Nunito", sans-serif;
-		font-size: max(1vmax, var(--fontSize));
 		color: var(--textColor);
-		word-spacing: 2px;
-		transition: color var(--transition), background-color var(--transition);
+		margin: 0 auto;
+		font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+			Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
+			sans-serif;
+		font-size: var(--fontSize);
+		background-color: var(--backgroundColor);
+		transition: color var(--transition), background-color var(--transition),
+			width var(--transition);
 	}
 
 	:global(p) {
@@ -275,11 +279,11 @@
 	}
 
 	header {
+		z-index: 1;
 		height: 80px;
 		width: 100%;
-		z-index: 1;
-		box-shadow: none;
 		position: fixed;
+		box-shadow: none;
 		background-color: var(--navBackgroundColor);
 		-webkit-backdrop-filter: saturate(180%) blur(5px);
 		backdrop-filter: saturate(180%) blur(5px);
@@ -297,13 +301,11 @@
 	}
 
 	nav {
+		max-width: 650px;
 		height: inherit;
-		max-width: 70vw;
 		display: flex;
 		margin-left: auto;
 		margin-right: auto;
-		padding-left: 20%;
-		padding-right: 20%;
 		justify-content: start;
 		align-items: center;
 	}
@@ -323,13 +325,14 @@
 	}
 
 	main {
+		width: 650px;
+		padding-left: 25px;
+		padding-right: 25px;
 		margin-left: auto;
 		margin-right: auto;
 		box-sizing: border-box;
 		padding-top: 80px;
 		padding-bottom: 1rem;
-		padding-left: 20%;
-		padding-right: 20%;
 		display: flex;
 		flex-direction: column;
 		justify-content: start;
@@ -401,11 +404,7 @@
 	/* schermo piccolo */
 	@media only screen and (max-width: 720px) {
 		:root {
-			--transition: 0.3s ease;
-		}
-
-		#theme {
-			font-size: var(--fontSize);
+			--transition: 300ms ease;
 		}
 
 		header {
@@ -414,7 +413,7 @@
 
 		nav {
 			height: inherit;
-			max-width: 100vw;
+			min-width: inherit;
 			padding-left: 1rem;
 			padding-right: 1rem;
 		}
@@ -455,6 +454,18 @@
 
 	/* schermo grande */
 	@media only screen and (min-width: 1400px) {
+		#theme {
+			font-size: var(--fontSizeLarge);
+		}
+
+		main {
+			width: 850px;
+		}
+
+		nav {
+			max-width: 850px;
+		}
+
 		.contacts-container {
 			margin-bottom: 5rem;
 		}

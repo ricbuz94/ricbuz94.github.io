@@ -5,13 +5,15 @@
 
 <li>
 	<a rel="noreferrer" href={post.url} target="_blank">
-		<div
-			class="image"
-			style="background-image: linear-gradient(rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.1)),url('{post.image}');"
-		/>
+		<div class="image-container">
+			<div
+				class="image"
+				style="background-image: linear-gradient(rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.1)),url('{post.image}');"
+			/>
+		</div>
 		<div class="container">
 			<div class="row">
-				<h5>{post.title}</h5>
+				<h4>{post.title}</h4>
 				{#each post.tags as tag}
 					<p class={`tag ${tag}`}>#{tag}</p>
 				{/each}
@@ -24,25 +26,16 @@
 <style>
 	li {
 		height: min-content;
-		margin: 0px;
-		padding: 0px;
+		margin: 0;
+		padding: 0;
 		outline: none;
 		list-style: none;
 		-webkit-tap-highlight-color: transparent;
-		background-color: var(--cardBackgroundColor);
-		border-radius: var(--borderRadius);
 		transition: all var(--transition);
-		box-shadow: var(--cardShadow);
 	}
 
-	li:hover {
-		box-shadow: var(--cardShadowHover);
-		transform: translateY(-2px);
-	}
-
-	li:active {
-		box-shadow: var(--cardShadowHover);
-		transform: scale(1.02);
+	li:hover div.image {
+		transform: scale(1.05);
 	}
 
 	li:not(:last-child) {
@@ -59,22 +52,27 @@
 		color: var(--textColor);
 	}
 
-	a:hover h5 {
+	a:hover h4 {
 		color: var(--accentColor);
 	}
 
+	.image-container {
+		height: 180px;
+		max-height: 180px;
+		overflow: hidden;
+		border-radius: var(--borderRadius);
+	}
+
 	.image {
-		width: 100%;
-		height: 250px;
-		max-height: 250px;
+		height: inherit;
 		background-size: cover;
 		background-position: 50%;
 		background-repeat: no-repeat;
-		border-radius: 0.5rem 0.5rem 0px 0px;
+		transition: all var(--transition);
 	}
 
 	.container {
-		padding: 1.2rem 1.4rem;
+		padding: 1.2rem 0.6rem;
 	}
 
 	.row {
@@ -83,7 +81,7 @@
 		justify-content: start;
 	}
 
-	h5 {
+	h4 {
 		margin-right: auto;
 		transition: color var(--transition);
 	}
@@ -102,7 +100,7 @@
 	}
 
 	.description {
-		font-size: 80%;
+		font-size: 14px;
 		color: var(--subTextColor);
 		margin: 0px;
 		margin-top: 10px;
@@ -135,9 +133,17 @@
 			transform: none;
 		}
 
-		.image {
-			height: 150px;
-			border-radius: 1rem;
+		.image-container {
+			height: 200px;
+			max-height: 200px;
+		}
+	}
+
+	/* schermo grande */
+	@media only screen and (min-width: 1400px) {
+		.image-container {
+			height: 220px;
+			max-height: 220px;
 		}
 	}
 </style>

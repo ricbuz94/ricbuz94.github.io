@@ -32,7 +32,7 @@
 		/>
 		{#if i !== data.length - 1}
 			<div id="marker">
-				<p>-•-</p>
+				<p>{"~"}</p>
 			</div>
 		{/if}
 	{/each}
@@ -41,10 +41,10 @@
 
 <style>
 	ul {
-		width: 80%;
-		list-style: none;
 		margin: 0px;
 		padding: 0px;
+		width: 100%;
+		list-style: none;
 	}
 
 	#marker {
@@ -52,12 +52,12 @@
 		text-align: center;
 	}
 
+	#marker p {
+		font-size: 2rem;
+	}
+
 	/* schermo piccolo */
 	@media only screen and (max-width: 720px) {
-		ul {
-			width: 100%;
-		}
-
 		#marker {
 			padding-top: 2rem;
 			padding-bottom: 1rem;

@@ -13,12 +13,12 @@
 	/>
 </svelte:head>
 
-<div class="container">
+<article>
 	<Divider />
 	<div class="content">
 		<img src="/images/me.png" alt="Riccardo Buzzolo" />
 		<div class="card-wide">
-			<Article title={$_("about.aboutMe")}>
+			<Article style="padding: 0 !important;" title={$_("about.aboutMe")}>
 				<p>
 					{$_("about.aboutMeContent1")}
 					<ArticleLink
@@ -40,7 +40,7 @@
 	<Divider />
 	<div class="content dense">
 		<div class="card-wide">
-			<Article title={$_("about.aboutMyWork")}>
+			<Article style="padding: 0 !important;" title={$_("about.aboutMyWork")}>
 				<p>
 					{$_("about.aboutMyWorkContent1")}
 					<ArticleLink
@@ -53,15 +53,16 @@
 		<img src="/images/beach.jpg" alt="Beacharound" />
 	</div>
 	<Divider />
-</div>
+</article>
 
 <style>
-	.container {
-		width: 80%;
+	article {
+		width: 100%;
 	}
 
 	.card-wide {
-		max-width: 600px;
+		max-width: 400px;
+		font-size: 90%;
 		grid-column: span 2 / auto;
 	}
 
@@ -72,12 +73,11 @@
 		grid-template-rows: auto;
 		align-items: center;
 		justify-items: center;
-		font-size: 95%;
 	}
 
 	img {
-		width: 200px;
-		height: 200px;
+		width: 180px;
+		height: 180px;
 		padding: 3px;
 		border-radius: 50%;
 		background-color: var(--subTextColor);
@@ -90,11 +90,7 @@
 	}
 
 	/* schermo piccolo */
-	@media only screen and (max-width: 1200px) {
-		.container {
-			width: 100%;
-		}
-
+	@media only screen and (max-width: 800px) {
 		.content {
 			display: grid !important;
 			gap: 2rem !important;
@@ -111,6 +107,7 @@
 		}
 
 		.card-wide {
+			font-size: 100%;
 			grid-column: auto !important;
 		}
 
@@ -121,6 +118,25 @@
 
 		p {
 			text-align: justify;
+		}
+	}
+
+	/* schermo grande */
+	@media only screen and (min-width: 1400px) {
+		div.content {
+			gap: 3rem;
+			grid-template-columns: auto auto auto;
+			grid-template-rows: auto;
+		}
+
+		.card-wide {
+			max-width: 500px;
+			grid-column: span 2 / auto;
+		}
+
+		img {
+			width: 200px;
+			height: 200px;
 		}
 	}
 </style>

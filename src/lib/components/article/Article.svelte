@@ -4,6 +4,7 @@
 </script>
 
 <script lang="ts">
+	export let style: string = "";
 	export let title: string;
 	export let text: string =
 		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum provident vitae accusamus, amet, dolores est quaerat expedita repellat nobis numquam voluptate iure necessitatibus qui odit. Nobis eveniet blanditiis delectus repellendus.";
@@ -11,7 +12,7 @@
 	export let linkText: string = "Testo";
 </script>
 
-<div>
+<article {style}>
 	<h3>{title}</h3>
 	<slot>
 		<p>{text}</p>
@@ -20,10 +21,10 @@
 	{#if !!link}
 		<ButtonLink to={`${base}/${link}`} text={linkText} shadow />
 	{/if}
-</div>
+</article>
 
 <style>
-	div {
+	article {
 		padding: 10px;
 	}
 

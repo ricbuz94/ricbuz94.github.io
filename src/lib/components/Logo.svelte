@@ -1,6 +1,6 @@
 <a href={"/"}>
 	<svg class="icon accent">
-		<use href="/feather-sprite.svg#terminal" />
+		<use href="/feather-sprite.svg#box" />
 	</svg>
 	<h3>RiccardoBuzzolo</h3>
 </a>

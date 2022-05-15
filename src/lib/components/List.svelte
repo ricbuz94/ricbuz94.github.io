@@ -62,7 +62,7 @@
 		margin: 0px;
 		display: grid;
 		gap: 3rem;
-		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 	}
 
 	/* schermo piccolo */
@@ -70,6 +70,13 @@
 		ul {
 			gap: 0px;
 			grid-template-columns: auto;
+		}
+	}
+
+	/* schermo grande */
+	@media only screen and (min-width: 1400px) {
+		ul {
+			grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
 		}
 	}
 </style>

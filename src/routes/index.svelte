@@ -13,7 +13,7 @@
 	/>
 </svelte:head>
 
-<div class="content">
+<article>
 	<Divider />
 	<div class="banner">
 		<p>{$_("home.greatings")}</p>
@@ -21,7 +21,7 @@
 	<Divider />
 	<div class="me">
 		<div class="cell">
-			<h2>Riccardo Buzzolo</h2>
+			<h1>Riccardo Buzzolo</h1>
 			<p>{$_("home.developer")} (Web / Mobile / IT)</p>
 		</div>
 		<div class="cell">
@@ -111,13 +111,9 @@
 		</div>
 	</Article>
 	<Divider />
-</div>
+</article>
 
 <style>
-	.content {
-		width: 80%;
-	}
-
 	.banner {
 		padding: 1rem 2rem;
 		text-align: center;
@@ -128,14 +124,15 @@
 	.me {
 		display: grid;
 		gap: 3rem;
+		font-size: 120%;
 		grid-template-columns: auto auto;
 		align-items: center;
 		justify-items: center;
 	}
 
 	img {
-		width: 100px;
-		height: 100px;
+		width: 120px;
+		height: 120px;
 		padding: 3px;
 		border-radius: 50%;
 		background-color: var(--subTextColor);
@@ -155,8 +152,8 @@
 
 	/* schermo piccolo */
 	@media only screen and (max-width: 720px) {
-		.content {
-			width: 100%;
+		.banner {
+			padding: 1rem;
 		}
 
 		.me {
@@ -164,8 +161,15 @@
 			grid-template-columns: auto;
 		}
 
-		h2 {
+		h1 {
 			letter-spacing: 1px;
+		}
+	}
+
+	@media only screen and (min-width: 1400px) {
+		img {
+			width: 140px;
+			height: 140px;
 		}
 	}
 </style>
