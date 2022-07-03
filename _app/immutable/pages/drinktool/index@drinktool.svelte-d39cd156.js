@@ -1,0 +1,1 @@
+import{S as n,i as o,s}from"../../chunks/index-5d948a52.js";async function a(){return{status:302,redirect:"/drinktool/privacy-policy"}}class l extends n{constructor(t){super(),o(this,t,null,null,s,{})}}export{l as default,a as load};
