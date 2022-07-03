@@ -1,12 +1,7 @@
-const timestamp = {
-  toString: () => {
-    throw new Error("`timestamp` has been removed from $service-worker. Use `version` instead");
-  }
-};
 const build = [
-  "/_app/immutable/start-940b469f.js",
-  "/_app/immutable/pages/__layout.svelte-bd00b5dd.js",
-  "/_app/immutable/assets/pages/__layout.svelte-35077544.css",
+  "/_app/immutable/start-a4d20e35.js",
+  "/_app/immutable/pages/__layout.svelte-78c2f298.js",
+  "/_app/immutable/assets/pages/__layout.svelte-c0960c59.css",
   "/_app/immutable/pages/__error.svelte-f927686e.js",
   "/_app/immutable/pages/__layout-drinktool.svelte-abe718c7.js",
   "/_app/immutable/pages/_fallthough_.svelte-b7e5f634.js",
@@ -57,8 +52,9 @@ const files = [
   "/manifest.json",
   "/robots.txt"
 ];
+const version = "1656866180558";
 const worker = self;
-const FILES = `cache${timestamp}`;
+const FILES = `cache${version}`;
 const to_cache = build.concat(files);
 const staticAssets = new Set(to_cache);
 worker.addEventListener("install", (event) => {
@@ -76,7 +72,7 @@ worker.addEventListener("activate", (event) => {
   }));
 });
 async function fetchAndCache(request) {
-  const cache = await caches.open(`offline${timestamp}`);
+  const cache = await caches.open(`offline${version}`);
   try {
     const response = await fetch(request);
     cache.put(request, response.clone());
