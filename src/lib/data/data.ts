@@ -20,7 +20,7 @@ const data: Array<Section> = [
 				description: "Management system for bathing establishments and online reservations.",
 			},
 			{
-				url: `${import.meta.env.VITE_APP_MANGO_PICWIX_URL}` ?? "#",
+				url: `${import.meta.env.VITE_APP_MANGO_URL}` ?? "#",
 				image: "https://mangomobi.com/wp-content/uploads/2020/10/picwix-app-mood-mango-mobile-agency.jpg",
 				title: "PicWix for Mango Mobile",
 				tags: [Tag.ios, Tag.android],
