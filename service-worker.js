@@ -1,15 +1,16 @@
 const build = [
-  "/_app/immutable/start-a4d20e35.js",
+  "/_app/immutable/start-ab8be33b.js",
   "/_app/immutable/pages/__layout.svelte-78c2f298.js",
   "/_app/immutable/assets/pages/__layout.svelte-c0960c59.css",
-  "/_app/immutable/pages/__error.svelte-f927686e.js",
+  "/_app/immutable/pages/__error.svelte-605ef7e6.js",
+  "/_app/immutable/assets/pages/__error.svelte-7067f3c2.css",
   "/_app/immutable/pages/__layout-drinktool.svelte-abe718c7.js",
-  "/_app/immutable/pages/_fallthough_.svelte-b7e5f634.js",
-  "/_app/immutable/assets/pages/_fallthough_.svelte-b56e2645.css",
+  "/_app/immutable/pages/drinktool/__error.svelte-2d3275c1.js",
+  "/_app/immutable/assets/pages/drinktool/__error.svelte-4578a161.css",
+  "/_app/immutable/pages/_...path_.svelte-f5746525.js",
   "/_app/immutable/pages/about.svelte-e2709080.js",
   "/_app/immutable/assets/pages/about.svelte-5a0511d3.css",
-  "/_app/immutable/pages/drinktool/_fallthough_@drinktool.svelte-b52e22e4.js",
-  "/_app/immutable/assets/pages/drinktool/_fallthough_@drinktool.svelte-e5d76b8d.css",
+  "/_app/immutable/pages/drinktool/_...path_@drinktool.svelte-851a9bc0.js",
   "/_app/immutable/pages/drinktool/index@drinktool.svelte-d39cd156.js",
   "/_app/immutable/pages/drinktool/privacy-policy@drinktool.svelte-e04cdccf.js",
   "/_app/immutable/assets/pages/drinktool/privacy-policy@drinktool.svelte-bc4081a2.css",
@@ -52,7 +53,7 @@ const files = [
   "/manifest.json",
   "/robots.txt"
 ];
-const version = "1656866180558";
+const version = "1656877664744";
 const worker = self;
 const FILES = `cache${version}`;
 const to_cache = build.concat(files);

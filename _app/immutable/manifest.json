@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-a4d20e35.js",
+    "file": "start-ab8be33b.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -14,9 +14,10 @@
       "src/routes/__layout.svelte",
       "src/routes/__error.svelte",
       "src/routes/__layout-drinktool.svelte",
-      "src/routes/[fallthough].svelte",
+      "src/routes/drinktool/__error.svelte",
+      "src/routes/[...path].svelte",
       "src/routes/about.svelte",
-      "src/routes/drinktool/[fallthough]@drinktool.svelte",
+      "src/routes/drinktool/[...path]@drinktool.svelte",
       "src/routes/drinktool/index@drinktool.svelte",
       "src/routes/drinktool/privacy-policy@drinktool.svelte",
       "src/routes/index.svelte",
@@ -45,12 +46,18 @@
     ]
   },
   "src/routes/__error.svelte": {
-    "file": "pages/__error.svelte-f927686e.js",
+    "file": "pages/__error.svelte-605ef7e6.js",
     "src": "src/routes/__error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5d948a52.js"
+      "_index-5d948a52.js",
+      "_paths-396f020f.js",
+      "_navigation-0e6511d1.js",
+      "_singletons-d1fb5791.js"
+    ],
+    "css": [
+      "assets/pages/__error.svelte-7067f3c2.css"
     ]
   },
   "src/routes/__layout-drinktool.svelte": {
@@ -62,9 +69,9 @@
       "_index-5d948a52.js"
     ]
   },
-  "src/routes/[fallthough].svelte": {
-    "file": "pages/_fallthough_.svelte-b7e5f634.js",
-    "src": "src/routes/[fallthough].svelte",
+  "src/routes/drinktool/__error.svelte": {
+    "file": "pages/drinktool/__error.svelte-2d3275c1.js",
+    "src": "src/routes/drinktool/__error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
@@ -74,7 +81,16 @@
       "_singletons-d1fb5791.js"
     ],
     "css": [
-      "assets/pages/_fallthough_.svelte-b56e2645.css"
+      "assets/pages/drinktool/__error.svelte-4578a161.css"
+    ]
+  },
+  "src/routes/[...path].svelte": {
+    "file": "pages/_...path_.svelte-f5746525.js",
+    "src": "src/routes/[...path].svelte",
+    "isEntry": true,
+    "isDynamicEntry": true,
+    "imports": [
+      "_index-5d948a52.js"
     ]
   },
   "src/routes/about.svelte": {
@@ -94,19 +110,13 @@
       "assets/pages/about.svelte-5a0511d3.css"
     ]
   },
-  "src/routes/drinktool/[fallthough]@drinktool.svelte": {
-    "file": "pages/drinktool/_fallthough_@drinktool.svelte-b52e22e4.js",
-    "src": "src/routes/drinktool/[fallthough]@drinktool.svelte",
+  "src/routes/drinktool/[...path]@drinktool.svelte": {
+    "file": "pages/drinktool/_...path_@drinktool.svelte-851a9bc0.js",
+    "src": "src/routes/drinktool/[...path]@drinktool.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
-      "_index-5d948a52.js",
-      "_paths-396f020f.js",
-      "_navigation-0e6511d1.js",
-      "_singletons-d1fb5791.js"
-    ],
-    "css": [
-      "assets/pages/drinktool/_fallthough_@drinktool.svelte-e5d76b8d.css"
+      "_index-5d948a52.js"
     ]
   },
   "src/routes/drinktool/index@drinktool.svelte": {
