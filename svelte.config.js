@@ -5,7 +5,11 @@ import adapter from '@sveltejs/adapter-static';
 const config = {
 	preprocess: preprocess(),
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		prerender: {
+			default: true
+		},
+		trailingSlash: 'always'
 	},
 };
 

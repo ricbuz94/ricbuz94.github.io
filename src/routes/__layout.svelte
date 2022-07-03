@@ -1,5 +1,4 @@
 <script lang="ts">
-	import "../app.css";
 	import { base } from "$app/paths";
 	import { page } from "$app/stores";
 	import Logo from "$lib/components/Logo.svelte";
@@ -19,6 +18,7 @@
 	} from "svelte-i18n";
 	import { Locales } from "$lib/helpers/interfaces";
 	import Loader from "$lib/components/Loader.svelte";
+	import "../app.css";
 
 	register("it-IT", () => import("$lib/locales/it-IT.json"));
 	register("en-US", () => import("$lib/locales/en-US.json"));
@@ -134,10 +134,10 @@
 				<Logo />
 				<ul class="menu-off">
 					<li>
-						<NavLink href={`${base}/works`}>{$_("layout.nav.works")}</NavLink>
+						<NavLink href="{base}/works">{$_("layout.nav.works")}</NavLink>
 					</li>
 					<li>
-						<NavLink href={`${base}/about`}>{$_("layout.nav.about")}</NavLink>
+						<NavLink href="{base}/about">{$_("layout.nav.about")}</NavLink>
 					</li>
 				</ul>
 				<Switch {currentTheme} {toggleTheme} />
