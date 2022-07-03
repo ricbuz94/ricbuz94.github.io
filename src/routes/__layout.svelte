@@ -64,6 +64,7 @@
 		LIGHT: "light",
 		DARK: "dark",
 	};
+	
 	$: favicon = currentTheme === "light" ? "/favicon.ico" : "/favicon-dark.ico";
 
 	const prefersDarkThemes = () => window.matchMedia(DARK_PREFERENCE).matches;

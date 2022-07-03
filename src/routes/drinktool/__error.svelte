@@ -14,7 +14,7 @@
   import { goto } from "$app/navigation";
 
   export let title;
-  const goToHome = () => goto(`${base}/`);
+  const goToHome = () => goto(`${base}/drinktool/privacy-policy`);
 </script>
 
 <svelte:head>
@@ -29,13 +29,18 @@
   <button on:click={goToHome}>
     <svg class="btn-icon">
       <use href="/feather-sprite.svg#arrow-left" />
-    </svg>Home
+    </svg>BACK
   </button>
 </div>
 
 <style>
+  ::selection {
+    color: black;
+    background-color: lightcoral;
+  }
+
   div.container {
-    height: 600px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: "Roboto Mono", monospace;
@@ -46,7 +51,7 @@
   .icon {
     width: 80px;
     height: 80px;
-    stroke: var(--textColor);
+    stroke: black;
     stroke-width: 1;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -56,7 +61,7 @@
   }
 
   .icon:hover {
-    stroke: var(--accentColor);
+    stroke: lightcoral;
   }
 
   h2 {
@@ -72,30 +77,30 @@
     outline: none;
     cursor: pointer;
     font-family: "Roboto", monospace;
-    font-size: initial;
+    font-weight: 600;
+    font-size: 0.8rem;
     text-decoration: none;
-    color: var(--textColor);
+    color: black;
     padding: 0.5rem 0.8rem;
     background-color: var(--cardBackgroundColor);
     border: 2px solid var(--gray3);
     border-radius: 0.4rem;
     -webkit-tap-highlight-color: transparent;
-    transition: all var(--transition);
+    transition: border-color var(--transition);
   }
 
   button:hover {
-    border-color: var(--textColor);
+    border-color: black;
   }
 
   .btn-icon {
     margin-right: 5px;
     width: 20px;
     height: 20px;
-    stroke: var(--textColor);
+    stroke: black;
     stroke-width: 2;
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
-    transition: stroke var(--transition);
   }
 </style>

@@ -1,6 +1,6 @@
 {
 	"name": "ricbuz94.github.io",
-	"version": "2.2.0",
+	"version": "2.4.0",
 	"private": true,
 	"description": "Una landing page per i miei progetti",
 	"repository": {
@@ -20,7 +20,7 @@
 		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint --ignore-path .gitignore .",
 		"build": "rm -rf build && svelte-kit build",
-		"deploy": "pnpm run build && npx gh-pages -d build"
+		"deploy": "pnpm run build && pnpm dlx gh-pages -d build"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "next",
