@@ -4,7 +4,7 @@
 
 <script lang="ts">
 	export let href: string = "/";
-	$: isActive = $page.url.pathname === $$props.href;
+	$: isActive = $page.url.pathname === href;
 </script>
 
 <a {...$$props} class:active={isActive} {href}><slot /></a>

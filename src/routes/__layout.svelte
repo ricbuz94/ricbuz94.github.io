@@ -135,10 +135,10 @@
 				<Logo />
 				<ul class="menu-off">
 					<li>
-						<NavLink href="{base}/works">{$_("layout.nav.works")}</NavLink>
+						<NavLink href="{base}/works/">{$_("layout.nav.works")}</NavLink>
 					</li>
 					<li>
-						<NavLink href="{base}/about">{$_("layout.nav.about")}</NavLink>
+						<NavLink href="{base}/about/">{$_("layout.nav.about")}</NavLink>
 					</li>
 				</ul>
 				<Switch {currentTheme} {toggleTheme} />
@@ -251,7 +251,7 @@
 		--purple: #9166cc;
 		--purpleLight: #a372e7;
 		--borderRadius: 0.5rem;
-		--transition: 0.15s ease;
+		--transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 		--activeInputShadow: 0 0 0 2px rgba(66, 153, 225, 0.6);
 	}
 
