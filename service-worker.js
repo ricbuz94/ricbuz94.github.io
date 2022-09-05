@@ -1,11 +1,11 @@
 const build = [
-  "/_app/immutable/start-8ec6674b.js",
-  "/_app/immutable/pages/__layout.svelte-10047406.js",
-  "/_app/immutable/assets/pages/__layout.svelte-3b8b5162.css",
-  "/_app/immutable/pages/__error.svelte-605ef7e6.js",
+  "/_app/immutable/start-08d28dc1.js",
+  "/_app/immutable/pages/__layout.svelte-8c937cef.js",
+  "/_app/immutable/assets/pages/__layout.svelte-5340aea1.css",
+  "/_app/immutable/pages/__error.svelte-d970a5a7.js",
   "/_app/immutable/assets/pages/__error.svelte-7067f3c2.css",
   "/_app/immutable/pages/__layout-drinktool.svelte-abe718c7.js",
-  "/_app/immutable/pages/drinktool/__error.svelte-2d3275c1.js",
+  "/_app/immutable/pages/drinktool/__error.svelte-a079aff0.js",
   "/_app/immutable/assets/pages/drinktool/__error.svelte-4578a161.css",
   "/_app/immutable/pages/_...path_.svelte-f5746525.js",
   "/_app/immutable/pages/about.svelte-e2709080.js",
@@ -14,7 +14,7 @@ const build = [
   "/_app/immutable/pages/drinktool/index@drinktool.svelte-d39cd156.js",
   "/_app/immutable/pages/drinktool/privacy-policy@drinktool.svelte-e04cdccf.js",
   "/_app/immutable/assets/pages/drinktool/privacy-policy@drinktool.svelte-bc4081a2.css",
-  "/_app/immutable/pages/index.svelte-95bb8b9a.js",
+  "/_app/immutable/pages/index.svelte-77bc948f.js",
   "/_app/immutable/assets/pages/index.svelte-f4043fc0.css",
   "/_app/immutable/pages/works.svelte-43b7e7e4.js",
   "/_app/immutable/assets/pages/works.svelte-b4c3e941.css",
@@ -25,12 +25,12 @@ const build = [
   "/_app/immutable/chunks/preload-helper-60cab3ee.js",
   "/_app/immutable/chunks/runtime.esm-1e195e88.js",
   "/_app/immutable/chunks/interfaces-50a290f3.js",
-  "/_app/immutable/chunks/navigation-0e6511d1.js",
+  "/_app/immutable/chunks/navigation-3f1ea447.js",
   "/_app/immutable/chunks/Divider-e8897399.js",
   "/_app/immutable/assets/Divider-9ce30687.css",
   "/_app/immutable/chunks/Article-0f71abf0.js",
   "/_app/immutable/assets/Article-3d7cbaeb.css",
-  "/_app/immutable/chunks/it-IT-3ae5d62e.js",
+  "/_app/immutable/chunks/it-IT-c8fe5320.js",
   "/_app/immutable/chunks/en-US-2e74bbb3.js"
 ];
 const files = [
@@ -53,7 +53,7 @@ const files = [
   "/manifest.json",
   "/robots.txt"
 ];
-const version = "1657119860465";
+const version = "1662408198282";
 const worker = self;
 const FILES = `cache${version}`;
 const to_cache = build.concat(files);

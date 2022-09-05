@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-8ec6674b.js",
+    "file": "start-08d28dc1.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -25,7 +25,7 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-10047406.js",
+    "file": "pages/__layout.svelte-8c937cef.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -34,26 +34,28 @@
       "_index-5d948a52.js",
       "_paths-396f020f.js",
       "_runtime.esm-1e195e88.js",
+      "_navigation-3f1ea447.js",
       "_interfaces-50a290f3.js",
-      "_index-06c1623c.js"
+      "_index-06c1623c.js",
+      "_singletons-d1fb5791.js"
     ],
     "dynamicImports": [
       "src/lib/locales/it-IT.json",
       "src/lib/locales/en-US.json"
     ],
     "css": [
-      "assets/pages/__layout.svelte-3b8b5162.css"
+      "assets/pages/__layout.svelte-5340aea1.css"
     ]
   },
   "src/routes/__error.svelte": {
-    "file": "pages/__error.svelte-605ef7e6.js",
+    "file": "pages/__error.svelte-d970a5a7.js",
     "src": "src/routes/__error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-5d948a52.js",
       "_paths-396f020f.js",
-      "_navigation-0e6511d1.js",
+      "_navigation-3f1ea447.js",
       "_singletons-d1fb5791.js"
     ],
     "css": [
@@ -70,14 +72,14 @@
     ]
   },
   "src/routes/drinktool/__error.svelte": {
-    "file": "pages/drinktool/__error.svelte-2d3275c1.js",
+    "file": "pages/drinktool/__error.svelte-a079aff0.js",
     "src": "src/routes/drinktool/__error.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_index-5d948a52.js",
       "_paths-396f020f.js",
-      "_navigation-0e6511d1.js",
+      "_navigation-3f1ea447.js",
       "_singletons-d1fb5791.js"
     ],
     "css": [
@@ -141,7 +143,7 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-95bb8b9a.js",
+    "file": "pages/index.svelte-77bc948f.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -200,8 +202,8 @@
   "_interfaces-50a290f3.js": {
     "file": "chunks/interfaces-50a290f3.js"
   },
-  "_navigation-0e6511d1.js": {
-    "file": "chunks/navigation-0e6511d1.js",
+  "_navigation-3f1ea447.js": {
+    "file": "chunks/navigation-3f1ea447.js",
     "imports": [
       "_singletons-d1fb5791.js"
     ]
@@ -226,7 +228,7 @@
     ]
   },
   "src/lib/locales/it-IT.json": {
-    "file": "chunks/it-IT-3ae5d62e.js",
+    "file": "chunks/it-IT-c8fe5320.js",
     "src": "src/lib/locales/it-IT.json",
     "isDynamicEntry": true
   },
