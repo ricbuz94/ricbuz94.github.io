@@ -74,13 +74,13 @@
 	],
 	"about": {
 		"aboutMe": "Chi sono",
-		"aboutMeContent1": "Mi chiamo Riccardo Buzzolo, sono nato a Cattolica(RN) il 13 Dicembre del 1994. Mi sono diplomato presso l' Istituto Tecnico per Geometri O. Belluzzi di Rimini (oggi ",
+		"aboutMeContent1": "Mi chiamo Riccardo Buzzolo, sono nato a Cattolica(RN) il 13 Dicembre del 1994. Diplomato presso l' Istituto Tecnico per Geometri O. Belluzzi di Rimini (oggi ",
 		"aboutMeLink1": "Istituto Tecnico Tecnologico Statale",
-		"aboutMeContent2": "). Successivamente ho studiato presso l'università Alma Mater Studiorum di Cesena, nel corso di ",
+		"aboutMeContent2": "). In seguito ho studiato presso l'università Alma Mater Studiorum di Cesena, nel corso di ",
 		"aboutMeLink2": "Ingegneria e Scienze Informatiche",
 		"aboutMeContent3": ". Ho lavorato per un po' come programmatore mobile per Mango Mobile, a Cesena, e come valutatore per il gruppo Teddy, a Rimini. Attualmente lavoro come programmatore web \"full-stack\" per una startup innovativa, a San Giovanni in Marignano, che si occupa di gestionali e prenotazioni online per gli stabilimenti balneari sul territorio nazionale: ",
 		"aboutMyWork": "Il mio lavoro",
 		"aboutMyWorkContent1": "Come menzionato sopra, lavoro per una startup di San Giovanni in Marignano che si occupa di gestionali per gli stabilimenti balneari e della prenotazione online degli stessi: ",
-		"aboutMyWorkContent2": " Il mio lavoro cambia in alcuni aspetti tra la stagione estiva e quella invernale. Durante la stagione invernale il lavoro è incentrato sullo sviluppo del gestionale, e quindi sui test da effettuare sulle nuove funzini o modifiche apportate al gestionale. In sostanza, si tratta di test end-to-end, per verificare il funzionamento dei vari flussi di operazioni, e test delle API (come parte di \"integration testing\"), per verificare la corretta fruizione dei dati. Durante la stagione estiva, il mio lavoro si concentra soprattutto sul fornire assistenza tecnica ai gestori dello stabilimento che riscontrano problemi e raccogliere ed analizzare dati per migliorare il programma."
+		"aboutMyWorkContent2": " Il mio lavoro cambia in alcuni aspetti tra la stagione estiva e quella invernale. Durante la stagione invernale il lavoro è incentrato sullo sviluppo del gestionale, e quindi sui test da effettuare sulle nuove funzini o modifiche apportate al gestionale. In sostanza, si tratta di test end-to-end, per verificare il funzionamento dei vari flussi di operazioni, e test delle API (come parte di \"integration testing\"), per verificare la corretta fruizione dei dati. Durante la stagione estiva, il mio lavoro si concentra soprattutto sul fornire assistenza tecnica ai gestori degli stabilimenti e raccogliere ed analizzare dati per migliorare il programma."
 	}
 }

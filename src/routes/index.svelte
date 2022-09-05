@@ -57,16 +57,16 @@
 		linkText={$_("home.bio.callToAction")}
 	>
 		<div class="row">
-			<p class="margin">1994</p>
-			<p class="margin">{$_("home.bio.content.1")}</p>
+			<p>1994</p>
+			<p>{$_("home.bio.content.1")}</p>
 		</div>
 		<div class="row">
-			<p class="margin">2011</p>
-			<p class="margin">{$_("home.bio.content.2")}</p>
+			<p>2011</p>
+			<p>{$_("home.bio.content.2")}</p>
 		</div>
 		<div class="row">
-			<p class="margin">2013</p>
-			<p class="margin">
+			<p>2013</p>
+			<p>
 				{$_("home.bio.content.3")}<ArticleLink
 					title="ITTS O. Belluzzi, RN"
 					href={`${import.meta.env.VITE_APP_ITG_URL}`}
@@ -74,8 +74,8 @@
 			</p>
 		</div>
 		<div class="row">
-			<p class="margin">2016</p>
-			<p class="margin">
+			<p>2016</p>
+			<p>
 				{$_("home.bio.content.4")}<ArticleLink
 					title="Unibo Alma Mater Studiorum, Cesena"
 					href={`${import.meta.env.VITE_APP_UNIBO_URL}`}
@@ -83,8 +83,8 @@
 			</p>
 		</div>
 		<div class="row">
-			<p class="margin">2018</p>
-			<p class="margin">
+			<p>2018</p>
+			<p>
 				{$_("home.bio.content.5")}<ArticleLink
 					title="Teddy S.p.A."
 					href={`${import.meta.env.VITE_APP_TEDDY_URL}`}
@@ -92,8 +92,8 @@
 			</p>
 		</div>
 		<div class="row">
-			<p class="margin">2019</p>
-			<p class="margin">
+			<p>2019</p>
+			<p>
 				{$_("home.bio.content.7")}<ArticleLink
 					title="Mango Mobile S.r.l."
 					href={`${import.meta.env.VITE_APP_MANGO_URL}`}
@@ -101,7 +101,7 @@
 			</p>
 		</div>
 		<div class="row">
-			<p class="margin">2021</p>
+			<p>2021</p>
 			<p>
 				{$_("home.bio.content.9")}<ArticleLink
 					title="Beacharound S.r.l."

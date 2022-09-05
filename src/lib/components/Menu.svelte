@@ -1,5 +1,6 @@
 <script context="module">
 	import { base } from "$app/paths";
+	import { beforeNavigate } from "$app/navigation";
 	import { _ } from "svelte-i18n";
 	import NavLink from "./NavLink.svelte";
 	import { fly } from "svelte/transition";
@@ -12,6 +13,10 @@
 	function toggleMenu() {
 		open = !open;
 	}
+
+	beforeNavigate(() => {
+		open = false;
+	});
 </script>
 
 {#if open}

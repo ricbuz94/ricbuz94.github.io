@@ -66,6 +66,7 @@
 	};
 	
 	$: favicon = currentTheme === "light" ? "/favicon.ico" : "/favicon-dark.ico";
+	$: addressBarColor = currentTheme === "light" ? "#ff414e" : "#9166cc"
 
 	const prefersDarkThemes = () => window.matchMedia(DARK_PREFERENCE).matches;
 
@@ -119,6 +120,7 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<meta name="theme-color" content={addressBarColor}/>
 </svelte:head>
 
 <div id="theme" class="light">
@@ -252,7 +254,7 @@
 		--purpleLight: #a372e7;
 		--borderRadius: 0.5rem;
 		--transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-		--activeInputShadow: 0 0 0 2px rgba(66, 153, 225, 0.6);
+		--activeInputShadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
 	}
 
 	#theme {
