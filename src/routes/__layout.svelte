@@ -252,7 +252,7 @@
 		--redDark: #e13b47;
 		--purple: #9166cc;
 		--purpleLight: #a372e7;
-		--borderRadius: 0.5rem;
+		--borderRadius: 0.75rem;
 		--transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
 		--activeInputShadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
 	}
@@ -288,8 +288,8 @@
 		position: fixed;
 		box-shadow: none;
 		background-color: var(--navBackgroundColor);
-		-webkit-backdrop-filter: saturate(180%) blur(5px);
-		backdrop-filter: saturate(180%) blur(5px);
+		-webkit-backdrop-filter: saturate(180%) blur(15px);
+		backdrop-filter: saturate(180%) blur(15px);
 		transition: background-color var(--transition), box-shadow var(--transition),
 			opacity 500ms ease;
 	}

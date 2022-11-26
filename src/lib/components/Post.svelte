@@ -35,7 +35,7 @@
 	}
 
 	li:hover div.image {
-		transform: scale(1.05);
+		transform: scale(1.1);
 	}
 
 	li:not(:last-child) {
@@ -54,6 +54,7 @@
 
 	a:hover h4 {
 		color: var(--accentColor);
+		text-decoration: underline;
 	}
 
 	.image-container {
@@ -68,11 +69,11 @@
 		background-size: cover;
 		background-position: 50%;
 		background-repeat: no-repeat;
-		transition: all var(--transition);
+		transition: transform 4s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 
 	.container {
-		padding: 1.2rem 0.6rem;
+		padding: 1rem 3px;
 	}
 
 	.row {
@@ -91,9 +92,11 @@
 	}
 
 	.tag {
+		top: 0.5rem;
+		left: 0.5rem;
 		letter-spacing: 1px;
 		font-size: 60%;
-		font-weight: bolder;
+		font-weight: bold;
 		margin: 0;
 		margin-left: 5px;
 		padding: 0;

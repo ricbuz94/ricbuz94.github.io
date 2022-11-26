@@ -21,8 +21,8 @@
 	<Divider />
 	<div class="me">
 		<div class="cell">
-			<h1>Riccardo Buzzolo</h1>
-			<p>{$_("home.developer")} (Web / Mobile / IT)</p>
+			<h1 class="title">Riccardo Buzzolo</h1>
+			<p class="subtitle">{$_("home.developer")} (Web / Mobile / IT)</p>
 		</div>
 		<div class="cell">
 			<img src="/images/me.png" alt="Riccardo Buzzolo" />
@@ -118,6 +118,8 @@
 		padding: 1rem 2rem;
 		text-align: center;
 		border-radius: 0.5rem;
+		font-weight: bold;
+		letter-spacing: 1px;
 		background-color: rgba(128, 128, 128, 0.1);
 	}
 
@@ -128,6 +130,15 @@
 		grid-template-columns: auto auto;
 		align-items: center;
 		justify-items: center;
+	}
+
+	h1.title,
+	p.subtitle {
+		font-weight: bold;
+	}
+
+	p.subtitle {
+		font-size: 80%;
 	}
 
 	img {
@@ -154,6 +165,7 @@
 	@media only screen and (max-width: 720px) {
 		.banner {
 			padding: 1rem;
+			letter-spacing: 0px;
 		}
 
 		.me {
