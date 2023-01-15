@@ -2,7 +2,7 @@
 	"name": "ricbuz94.github.io",
 	"version": "3.0.0",
 	"private": true,
-	"description": "Una landing page per i miei progetti.",
+	"description": "Portfolio website.",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ricbuz94/ricbuz94.github.io"
@@ -11,7 +11,6 @@
 		"name": "Riccardo Buzzolo",
 		"email": "riccardo.buzzolo@gmail.com"
 	},
-	"license": "UNLICENSED",
 	"scripts": {
 		"dev": "vite dev",
 		"preview": "vite preview",
