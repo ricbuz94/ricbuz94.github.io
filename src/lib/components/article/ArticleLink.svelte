@@ -4,7 +4,7 @@
 </script>
 
 <span>
-	<a {href} target="_blank" rel="nonreferrer">{title}</a>
+	<a {href} target="_blank" rel="noreferrer">{title}</a>
 </span>
 
 <style>

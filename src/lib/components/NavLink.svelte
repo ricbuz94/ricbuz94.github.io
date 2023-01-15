@@ -16,7 +16,7 @@
 		padding-right: 5px;
 		font-size: 0.9rem;
 		letter-spacing: 1px;
-		font-weight: 600;
+		font-weight: 700;
 		transition: color var(--transition);
 	}
 

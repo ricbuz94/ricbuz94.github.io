@@ -7,20 +7,20 @@
 </script>
 
 <script lang="ts">
-	let open: boolean = false;
-	$: menu = open ? "x" : "menu";
+	let isOpen: boolean = false;
+	$: icon = isOpen ? "x" : "menu";
 
 	function toggleMenu() {
-		open = !open;
+		isOpen = !isOpen;
 	}
 
 	beforeNavigate(() => {
-		open = false;
+		isOpen = false;
 	});
 </script>
 
-{#if open}
-	<div in:fly={{ x: 30, y: -15, duration: 200 }}>
+{#if isOpen}
+	<div in:fly={{ x: 30, y: -15, duration: 180 }}>
 		<ul>
 			<li>
 				<NavLink href={`${base}/works`}>{$_("layout.nav.works")}</NavLink>
@@ -33,13 +33,12 @@
 {/if}
 <button on:click={toggleMenu}>
 	<svg class="icon">
-		<use href="/feather-sprite.svg#{menu}" />
+		<use href="/feather-sprite.svg#{icon}" />
 	</svg>
 </button>
 
 <style>
 	ul {
-		height: 100%;
 		list-style: none;
 		margin: 0px;
 		padding: 1rem 0px;
@@ -78,7 +77,6 @@
 		border-radius: var(--borderRadius);
 		margin: 0px;
 		margin-left: 0.5rem;
-		padding: 0.5rem 0.65rem;
 		cursor: pointer;
 		transition: all var(--transition);
 	}
@@ -88,8 +86,8 @@
 	}
 
 	.icon {
-		width: 26px;
-		height: 26px;
+		width: 18px;
+		height: 18px;
 		stroke: var(--textColor);
 		stroke-width: 2;
 		stroke-linecap: round;

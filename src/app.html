@@ -3,15 +3,16 @@
 
 <head>
 	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="viewport" content="width=device-width" />
 	<meta name="description" content="Portfolio website for Riccardo Buzzolo: full-stack, web and IT developer." />
 	<link rel="manifest" href="/manifest.json" />
 	%sveltekit.head%
 </head>
 
-<body>
-	%sveltekit.body%
+<body data-sveltekit-preload-data="hover">
+	<div style="display: contents">
+		%sveltekit.body%
+	</div>
 </body>
 
 </html>

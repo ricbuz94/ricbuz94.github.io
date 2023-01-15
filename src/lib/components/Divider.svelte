@@ -1,5 +1,5 @@
-<script lang="ts">
-	export let height: number = 0;
+<script>
+	export let height = 0;
 </script>
 
 <hr style="height: {height}rem" />

@@ -6,7 +6,7 @@
 <script lang="ts">
 	import Loader from "./Loader.svelte";
 
-	export let language: string;
+	export let language: string | null;
 	let isLoading: boolean = false;
 	$: localeText = language === Locales.it ? "IT" : "EN";
 
@@ -73,9 +73,9 @@
 
 	p {
 		letter-spacing: 1px;
-		font-weight: 600;
+		font-weight: 700;
 		padding-top: 1px;
-		font-size: 0.8rem;
+		font-size: 14px;
 		font-family: "Nunito";
 		color: var(--textColor);
 		transition: color var(--transition);

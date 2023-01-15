@@ -3,8 +3,7 @@
 </script>
 
 <script lang="ts">
-	import type { Section } from "$lib/helpers/interfaces";
-	export let item: Section;
+	export let item: any;
 </script>
 
 <li>

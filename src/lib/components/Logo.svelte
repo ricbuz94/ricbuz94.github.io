@@ -16,6 +16,9 @@
 
 	h3 {
 		padding-left: 3px;
+		font-size: 20px;
+		font-weight: 700;
+		user-select: none;
 		transition: color var(--transition);
 	}
 

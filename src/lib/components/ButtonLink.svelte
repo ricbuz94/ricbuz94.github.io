@@ -1,6 +1,6 @@
-<script lang="ts">
-	export let to: string = "/",
-		text: string = "Testo",
+<script>
+	export let to = "/",
+		text = "Testo",
 		shadow = false;
 
 	$: style = shadow ? "box-shadow: var(--cardShadow);" : "box-shadow: none;";

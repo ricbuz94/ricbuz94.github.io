@@ -7,21 +7,21 @@ const data: Array<Section> = [
 		links: [
 			{
 				url: `${import.meta.env.VITE_APP_BEACHAROUND_URL}` ?? "#",
-				image: "/images/beacharound.png",
+				image: "/images/beacharound.webp",
 				title: "Beacharound",
 				tags: [Tag.web],
 				description: "The portal for booking beaches throughout Italy.",
 			},
 			{
 				url: `${import.meta.env.VITE_APP_BEACHAROUND_BUSINESS_URL}` ?? "#",
-				image: "/images/beacharound-business.png",
+				image: "/images/beacharound-business.webp",
 				title: "Beacharound Business",
 				tags: [Tag.web],
 				description: "Management system for bathing establishments and online reservations.",
 			},
 			{
 				url: `${import.meta.env.VITE_APP_MANGO_URL}` ?? "#",
-				image: "https://mangomobi.com/wp-content/uploads/2020/10/picwix-app-mood-mango-mobile-agency.jpg",
+				image: "/images/pic-wix.webp",
 				title: "PicWix for Mango Mobile",
 				tags: [Tag.ios, Tag.android],
 				description: "Choose a contest, share your photo and video and invite your friends to put \"like\" on your media to win the contest and win the prize!",
@@ -33,7 +33,7 @@ const data: Array<Section> = [
 		links: [
 			{
 				url: `${import.meta.env.VITE_APP_DRINKTOOL_URL}` ?? "#",
-				image: "/images/drinktool.png",
+				image: "/images/drinktool.webp",
 				title: "Drink Tool app",
 				tags: [Tag.android],
 				description: "Real-time BAC (Blood Alcohol Content) calculator.",
@@ -45,7 +45,7 @@ const data: Array<Section> = [
 		links: [
 			{
 				url: `${import.meta.env.VITE_APP_HMCID_URL}` ?? "#",
-				image: "/images/howmuchcanidrink.png",
+				image: "/images/howmuchcanidrink.webp",
 				title: "Howmuchcanidrink",
 				tags: [Tag.web],
 				description: "How much can i drink? How long shuld i wait?",

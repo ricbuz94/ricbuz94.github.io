@@ -1,8 +1,8 @@
 {
 	"name": "ricbuz94.github.io",
-	"version": "2.4.0",
+	"version": "3.0.0",
 	"private": true,
-	"description": "Una landing page per i miei progetti",
+	"description": "Una landing page per i miei progetti.",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/ricbuz94/ricbuz94.github.io"
@@ -13,30 +13,27 @@
 	},
 	"license": "UNLICENSED",
 	"scripts": {
-		"start": "svelte-kit dev",
-		"start-host": "svelte-kit dev --host",
-		"preview": "pnpm run build && svelte-kit preview --host",
-		"check": "svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "eslint --ignore-path .gitignore .",
-		"build": "rm -rf build && svelte-kit build",
+		"dev": "vite dev",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"lint": "eslint .",
+		"build": "rm -rf build && vite build",
 		"deploy": "pnpm run build && pnpm dlx gh-pages -d build"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-static": "next",
-		"@sveltejs/kit": "next",
-		"@typescript-eslint/eslint-plugin": "^4.33.0",
-		"@typescript-eslint/parser": "^4.33.0",
-		"eslint": "^7.32.0",
-		"eslint-plugin-svelte3": "^3.4.1",
-		"feather-icons": "^4.29.0",
-		"gh-pages": "^3.2.3",
-		"svelte": "^3.48.0",
-		"svelte-check": "^2.8.0",
-		"svelte-i18n": "^3.4.0",
-		"svelte-preprocess": "^4.10.7",
-		"tslib": "^2.4.0",
-		"typescript": "^4.7.4"
+		"@sveltejs/adapter-static": "^1.0.2",
+		"@sveltejs/kit": "^1.0.0",
+		"@typescript-eslint/eslint-plugin": "^5.45.0",
+		"@typescript-eslint/parser": "^5.45.0",
+		"eslint": "^8.28.0",
+		"eslint-plugin-svelte3": "^4.0.0",
+		"svelte": "^3.54.0",
+		"svelte-check": "^3.0.1",
+		"svelte-i18n": "^3.6.0",
+		"tslib": "^2.4.1",
+		"typescript": "^4.9.3",
+		"vite": "^4.0.0"
 	},
 	"type": "module"
 }
