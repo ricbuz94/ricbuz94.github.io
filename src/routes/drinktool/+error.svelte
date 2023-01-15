@@ -1,30 +1,22 @@
-<script context="module" lang="ts">
-  export function load({ error, status }: any) {
-    return {
-      props: {
-        title: `${status}: ${error.message}`,
-      },
-    };
-  }
-</script>
-
 <script lang="ts">
+  import { page } from "$app/stores";
   import { base } from "$app/paths";
   import { goto } from "$app/navigation";
 
-  export let title: string;
-  const goToHome = () => goto(`${base}/drinktool/privacy-policy`);
+  function goToHome() {
+    goto(`${base}/drinktool/privacy-policy`);
+  }
 </script>
 
 <svelte:head>
-  <title>Not Found · RiccardoBuzzolo</title>
+  <title>{$page.status} · RiccardoBuzzolo</title>
 </svelte:head>
 
 <div class="container">
   <svg class="icon">
     <use href="/feather-sprite.svg#file" />
   </svg>
-  <h2>{title}</h2>
+  <h2>{$page.error?.message}</h2>
   <button on:click={goToHome}>
     <svg class="btn-icon">
       <use href="/feather-sprite.svg#arrow-left" />

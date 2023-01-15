@@ -2,13 +2,11 @@
 	import Divider from "$lib/components/Divider.svelte";
 	import List from "$lib/components/List.svelte";
 	import data from "$lib/data/data";
-	import { _, json, locale } from "svelte-i18n";
+	import { _, json } from "svelte-i18n";
 </script>
 
 <script lang="ts">
-	let jsonWorks: Array<Object>;
-	$: jsonWorks =
-		!!locale && typeof $json("works") != "undefined" ? $json("works") : [{}];
+	const jsonWorks: any = $json("works");
 </script>
 
 <svelte:head>

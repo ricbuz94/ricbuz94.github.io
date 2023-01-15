@@ -1,6 +1,6 @@
 <script context="module">
 	import { locale } from "svelte-i18n";
-	import { Locales } from "$lib/helpers/interfaces";
+	import { Locale } from "$lib/helpers/interfaces";
 </script>
 
 <script lang="ts">
@@ -8,7 +8,7 @@
 
 	export let language: string | null;
 	let isLoading: boolean = false;
-	$: localeText = language === Locales.it ? "IT" : "EN";
+	$: localeText = language === Locale.it ? "IT" : "EN";
 
 	const handleLocaleChange = async (e: any) => {
 		e.preventDefault();
@@ -22,14 +22,14 @@
 		footer.style.opacity = "0";
 
 		setTimeout(() => {
-			if (language === Locales.it) {
-				locale.set(Locales.en);
-				localStorage.setItem("language", Locales.en);
-				language = Locales.en;
+			if (language === Locale.it) {
+				locale.set(Locale.en);
+				localStorage.setItem("language", Locale.en);
+				language = Locale.en;
 			} else {
-				locale.set(Locales.it);
-				localStorage.setItem("language", Locales.it);
-				language = Locales.it;
+				locale.set(Locale.it);
+				localStorage.setItem("language", Locale.it);
+				language = Locale.it;
 			}
 			isLoading = false;
 			header.style.opacity = "1";

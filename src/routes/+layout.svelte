@@ -1,6 +1,6 @@
 <script lang="ts">
 	import "../app.css";
-	import { Locales } from "$lib/helpers/interfaces";
+	import { Locale } from "$lib/helpers/interfaces";
 	import { browser } from "$app/environment";
 	import '$lib/i18n';
 	import {
@@ -21,7 +21,7 @@
 	import LocaleSwitch from "$lib/components/LocaleSwitch.svelte";
 	import Loader from "$lib/components/Loader.svelte";
 
-	export let language: string | null = Locales.it;
+	export let language: string | null = Locale.it;
 	export let refresh: string = "";
 
 	export const load = async ({ page, ...others }: any) => {

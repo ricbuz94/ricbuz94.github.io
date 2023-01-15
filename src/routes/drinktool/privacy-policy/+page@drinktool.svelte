@@ -110,7 +110,7 @@
 			advertising (Google Advertiser ID or IDFA, for example); Usage Data.
 		</p>
 		<p>
-			Place of processing: United States – Privacy Policy – Opt Out; Ireland –
+			Place of processing: United States - Privacy Policy - Opt Out; Ireland -
 			Privacy Policy. Privacy Shield participant.
 		</p>
 		<br />
@@ -211,8 +211,7 @@
 		font-family: "Roboto Mono";
 		font-style: normal;
 		font-weight: 400;
-		src: local("Roboto Mono"), local("Roboto Mono"),
-			url("/fonts/RobotoMono-Variable.ttf") format("truetype");
+		src: url("/fonts/RobotoMono-Variable.ttf") format("truetype");
 		font-display: swap;
 	}
 

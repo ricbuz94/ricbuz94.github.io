@@ -1,6 +1,11 @@
-enum Locales {
+enum Locale {
 	it = "it-IT",
 	en = "en-US"
+}
+
+enum Theme {
+	light = "light",
+	dark = "dark"
 }
 
 enum Tag {
@@ -22,5 +27,5 @@ interface Section {
 	links: Array<Link>
 }
 
-export { Locales, Tag };
+export { Locale, Theme, Tag };
 export type { Link, Section };
