@@ -1,0 +1,1 @@
+import{e as o}from"./index-4ed61906.js";const e=()=>{throw o(404,"Not Found")},t=Object.freeze(Object.defineProperty({__proto__:null,load:e},Symbol.toStringTag,{value:"Module"}));export{t as _,e as l};

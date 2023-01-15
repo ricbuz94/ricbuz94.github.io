@@ -1,0 +1,1 @@
+import{r as o}from"./index-4ed61906.js";async function e(){throw o(302,"/drinktool/privacy-policy")}const t=Object.freeze(Object.defineProperty({__proto__:null,load:e},Symbol.toStringTag,{value:"Module"}));export{t as _,e as l};

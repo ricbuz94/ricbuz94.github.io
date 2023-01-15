@@ -1,1 +1,0 @@
-import{S as e,i as r,s as o}from"../chunks/index-5d948a52.js";function a({params:t}){return{status:404,error:new Error(`Il percorso '/${t.path}' non esiste.`)}}class l extends e{constructor(s){super(),r(this,s,null,null,o,{})}}export{l as default,a as load};

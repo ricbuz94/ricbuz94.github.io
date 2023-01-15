@@ -1,1 +1,0 @@
-import{S as r,i as s,s as e}from"../../chunks/index-5d948a52.js";function a({params:t}){return{status:404,error:new Error(`Il percorso '/drinktool/${t.path}' non esiste.`)}}class l extends r{constructor(o){super(),s(this,o,null,null,e,{})}}export{l as default,a as load};
