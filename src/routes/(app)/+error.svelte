@@ -62,7 +62,6 @@
     align-items: center;
     outline: none;
     cursor: pointer;
-    font-family: "Roboto", monospace;
     font-size: initial;
     text-decoration: none;
     color: var(--textColor);

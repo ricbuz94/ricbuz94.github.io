@@ -67,7 +67,6 @@
     align-items: center;
     outline: none;
     cursor: pointer;
-    font-family: "Roboto", monospace;
     font-weight: 600;
     font-size: 0.8rem;
     text-decoration: none;

@@ -12,7 +12,6 @@ body {
 
 body {
 	line-height: 1.6;
-	font-family: 'Nunito', -apple-system, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 }
@@ -54,7 +53,6 @@ body {
 body::-webkit-scrollbar {
 	width: 0.375rem;
 	height: 0.375rem;
-	transition: all var(--transition);
 }
 
 body::-webkit-scrollbar-track {

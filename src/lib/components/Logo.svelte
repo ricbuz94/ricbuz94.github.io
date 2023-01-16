@@ -2,7 +2,8 @@
 	<svg class="icon accent">
 		<use href="/feather-sprite.svg#box" />
 	</svg>
-	<h3>RiccardoBuzzolo</h3>
+	<h3 class="short">RB</h3>
+	<h3 class="long">RiccardoBuzzolo</h3>
 </a>
 
 <style>
@@ -22,6 +23,14 @@
 		transition: color var(--transition);
 	}
 
+	h3.long {
+		display: block;
+	}
+
+	h3.short {
+		display: none;
+	}
+
 	.icon {
 		width: 24px;
 		height: 24px;
@@ -31,5 +40,21 @@
 		stroke-linejoin: round;
 		fill: none;
 		transition: stroke var(--transition);
+	}
+
+	/* schermo piccolo */
+	@media only screen and (max-width: 400px) {
+		h3.long {
+			display: none;
+		}
+
+		h3.short {
+			display: block;
+		}
+
+		.icon {
+			width: 30px;
+			height: 30px;
+		}
 	}
 </style>

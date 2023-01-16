@@ -98,6 +98,10 @@
 			grid-template-rows: auto auto !important;
 		}
 
+		article p {
+			font-weight: 600;
+		}
+
 		.dense {
 			grid-auto-flow: dense;
 		}

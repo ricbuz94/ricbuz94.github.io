@@ -123,7 +123,7 @@
 		padding: 1rem 2rem;
 		text-align: center;
 		border-radius: 0.5rem;
-		font-weight: 600;
+		font-weight: 500;
 		background-color: rgba(128, 128, 128, 0.1);
 	}
 
@@ -138,11 +138,11 @@
 
 	h1.title,
 	p.subtitle {
-		font-weight: bold;
+		font-weight: 700;
 	}
 
 	p.subtitle {
-		font-size: 80%;
+		font-size: 90%;
 	}
 
 	img {
@@ -175,20 +175,21 @@
 			padding: 1rem;
 			text-align: center;
 			border-radius: 0.5rem;
-			font-weight: 700;
+			font-weight: 600;
 			background-color: rgba(128, 128, 128, 0.1);
+		}
+
+		article p {
+			font-weight: 600;
 		}
 
 		.me {
 			gap: 1.5rem;
 			grid-template-columns: auto;
 		}
-
-		h1 {
-			letter-spacing: 1px;
-		}
 	}
 
+	/* schermo grande */
 	@media only screen and (min-width: 1400px) {
 		img {
 			width: 140px;

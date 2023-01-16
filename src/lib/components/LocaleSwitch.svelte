@@ -55,6 +55,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		font-family: "Nunito", sans-serif;
 		background-color: transparent !important;
 		-webkit-tap-highlight-color: transparent;
 		background-color: var(--backgroundColor);
@@ -76,7 +77,6 @@
 		font-weight: 700;
 		padding-top: 1px;
 		font-size: 14px;
-		font-family: "Nunito";
 		color: var(--textColor);
 		transition: color var(--transition);
 	}

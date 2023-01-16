@@ -38,7 +38,7 @@
 	p {
 		color: var(--gray0);
 		margin-right: 5px;
-		font-weight: 600;
+		font-weight: 700;
 		font-size: 0.9rem;
 		letter-spacing: 1px;
 	}
@@ -47,7 +47,7 @@
 		width: 14px;
 		height: 14px;
 		stroke: var(--gray0);
-		stroke-width: 2;
+		stroke-width: 3;
 		stroke-linecap: round;
 		stroke-linejoin: round;
 		fill: none;

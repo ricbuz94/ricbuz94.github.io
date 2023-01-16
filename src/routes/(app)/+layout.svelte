@@ -198,7 +198,7 @@
 					<p>@riccardobuzzolo</p>
 				</a>
 			</div>
-			<p>
+			<p class="bottom-text">
 				Made with <span
 					><a
 						class="footer-link"
@@ -216,7 +216,7 @@
 					>
 				</span>
 			</p>
-			<p class="sub-text">
+			<p class="sub-text bottom-text">
 				© {year} Riccardo Buzzolo. All Rights Reserved.
 			</p>
 		</footer>
@@ -227,35 +227,25 @@
 	@font-face {
 		font-family: "Nunito";
 		font-style: normal;
+		font-weight: 200;
+		src: url("..//fonts/Nunito/static/Nunito-ExtraLight.ttf") format("truetype");
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Nunito";
+		font-style: italic;
+		font-weight: 200;
+		src: url("..//fonts/Nunito/static/Nunito-ExtraLightItalic.ttf")
+			format("truetype");
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Nunito";
+		font-style: normal;
 		font-weight: 300;
 		src: url("/fonts/Nunito/static/Nunito-Light.ttf") format("truetype");
 		font-display: swap;
 	}
-
-	@font-face {
-		font-family: "Nunito";
-		font-style: normal;
-		font-weight: 400;
-		src: url("/fonts/Nunito/static/Nunito-Regular.ttf") format("truetype");
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "Nunito";
-		font-style: normal;
-		font-weight: 500;
-		src: url("/fonts/Nunito/static/Nunito-Medium.ttf") format("truetype");
-		font-display: swap;
-	}
-
-	@font-face {
-		font-family: "Nunito";
-		font-style: normal;
-		font-weight: 700;
-		src: url("/fonts/Nunito/static/Nunito-Bold.ttf") format("truetype");
-		font-display: swap;
-	}
-
 	@font-face {
 		font-family: "Nunito";
 		font-style: italic;
@@ -263,7 +253,13 @@
 		src: url("/fonts/Nunito/static/Nunito-LightItalic.ttf") format("truetype");
 		font-display: swap;
 	}
-
+	@font-face {
+		font-family: "Nunito";
+		font-style: normal;
+		font-weight: 400;
+		src: url("/fonts/Nunito/static/Nunito-Regular.ttf") format("truetype");
+		font-display: swap;
+	}
 	@font-face {
 		font-family: "Nunito";
 		font-style: italic;
@@ -271,7 +267,13 @@
 		src: url("/fonts/Nunito/static/Nunito-Italic.ttf") format("truetype");
 		font-display: swap;
 	}
-
+	@font-face {
+		font-family: "Nunito";
+		font-style: normal;
+		font-weight: 500;
+		src: url("/fonts/Nunito/static/Nunito-Medium.ttf") format("truetype");
+		font-display: swap;
+	}
 	@font-face {
 		font-family: "Nunito";
 		font-style: italic;
@@ -279,12 +281,63 @@
 		src: url("/fonts/Nunito/static/Nunito-MediumItalic.ttf") format("truetype");
 		font-display: swap;
 	}
-
+	@font-face {
+		font-family: "Nunito";
+		font-style: normal;
+		font-weight: 600;
+		src: url("..//fonts/Nunito/static/Nunito-SemiBold.ttf") format("truetype");
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Nunito";
+		font-style: italic;
+		font-weight: 600;
+		src: url("..//fonts/Nunito/static/Nunito-SemiBoldItalic.ttf")
+			format("truetype");
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Nunito";
+		font-style: normal;
+		font-weight: 700;
+		src: url("/fonts/Nunito/static/Nunito-Bold.ttf") format("truetype");
+		font-display: swap;
+	}
 	@font-face {
 		font-family: "Nunito";
 		font-style: italic;
 		font-weight: 700;
 		src: url("/fonts/Nunito/static/Nunito-BoldItalic.ttf") format("truetype");
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Nunito";
+		font-style: normal;
+		font-weight: 800;
+		src: url("..//fonts/Nunito/static/Nunito-ExtraBold.ttf") format("truetype");
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Nunito";
+		font-style: italic;
+		font-weight: 800;
+		src: url("..//fonts/Nunito/static/Nunito-ExtraBoldItalic.ttf")
+			format("truetype");
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Nunito";
+		font-style: normal;
+		font-weight: 900;
+		src: url("..//fonts/Nunito/static/Nunito-Black.ttf") format("truetype");
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "Nunito";
+		font-style: italic;
+		font-weight: 900;
+		src: url("..//fonts/Nunito/static/Nunito-BlackItalic.ttf")
+			format("truetype");
 		font-display: swap;
 	}
 
@@ -309,9 +362,8 @@
 		min-height: 100vh;
 		color: var(--textColor);
 		margin: 0 auto;
-		font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-			Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue",
-			sans-serif;
+		font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu,
+			"Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 		font-size: var(--fontSize);
 		background-color: var(--backgroundColor);
 		transition: color var(--transition), background-color var(--transition),
@@ -367,7 +419,7 @@
 	.menu-off {
 		list-style: none;
 		padding: 0px;
-		margin-right: 5px;
+		margin-right: 10px;
 	}
 
 	li {
@@ -397,7 +449,7 @@
 		font-size: 80%;
 		min-width: 45vmin;
 		padding-top: 2rem;
-		padding-bottom: 4rem;
+		padding-bottom: 6rem;
 		padding-left: 20%;
 		padding-right: 20%;
 		transition: opacity 500ms ease;
