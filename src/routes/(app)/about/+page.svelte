@@ -60,6 +60,10 @@
 		width: 100%;
 	}
 
+	article p {
+			font-weight: 500;
+		}
+
 	.card-wide {
 		max-width: 400px;
 		font-size: 90%;

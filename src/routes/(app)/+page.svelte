@@ -145,6 +145,10 @@
 		font-size: 90%;
 	}
 
+	article p {
+			font-weight: 500;
+		}
+
 	img {
 		width: 120px;
 		height: 120px;
