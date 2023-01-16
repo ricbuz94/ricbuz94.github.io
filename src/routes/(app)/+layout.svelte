@@ -228,14 +228,14 @@
 		font-family: "Nunito";
 		font-style: normal;
 		font-weight: 200;
-		src: url("..//fonts/Nunito/static/Nunito-ExtraLight.ttf") format("truetype");
+		src: url("../fonts/Nunito/static/Nunito-ExtraLight.ttf") format("truetype");
 		font-display: swap;
 	}
 	@font-face {
 		font-family: "Nunito";
 		font-style: italic;
 		font-weight: 200;
-		src: url("..//fonts/Nunito/static/Nunito-ExtraLightItalic.ttf")
+		src: url("../fonts/Nunito/static/Nunito-ExtraLightItalic.ttf")
 			format("truetype");
 		font-display: swap;
 	}
@@ -285,14 +285,14 @@
 		font-family: "Nunito";
 		font-style: normal;
 		font-weight: 600;
-		src: url("..//fonts/Nunito/static/Nunito-SemiBold.ttf") format("truetype");
+		src: url("../fonts/Nunito/static/Nunito-SemiBold.ttf") format("truetype");
 		font-display: swap;
 	}
 	@font-face {
 		font-family: "Nunito";
 		font-style: italic;
 		font-weight: 600;
-		src: url("..//fonts/Nunito/static/Nunito-SemiBoldItalic.ttf")
+		src: url("../fonts/Nunito/static/Nunito-SemiBoldItalic.ttf")
 			format("truetype");
 		font-display: swap;
 	}
@@ -314,14 +314,14 @@
 		font-family: "Nunito";
 		font-style: normal;
 		font-weight: 800;
-		src: url("..//fonts/Nunito/static/Nunito-ExtraBold.ttf") format("truetype");
+		src: url("../fonts/Nunito/static/Nunito-ExtraBold.ttf") format("truetype");
 		font-display: swap;
 	}
 	@font-face {
 		font-family: "Nunito";
 		font-style: italic;
 		font-weight: 800;
-		src: url("..//fonts/Nunito/static/Nunito-ExtraBoldItalic.ttf")
+		src: url("../fonts/Nunito/static/Nunito-ExtraBoldItalic.ttf")
 			format("truetype");
 		font-display: swap;
 	}
@@ -329,15 +329,14 @@
 		font-family: "Nunito";
 		font-style: normal;
 		font-weight: 900;
-		src: url("..//fonts/Nunito/static/Nunito-Black.ttf") format("truetype");
+		src: url("../fonts/Nunito/static/Nunito-Black.ttf") format("truetype");
 		font-display: swap;
 	}
 	@font-face {
 		font-family: "Nunito";
 		font-style: italic;
 		font-weight: 900;
-		src: url("..//fonts/Nunito/static/Nunito-BlackItalic.ttf")
-			format("truetype");
+		src: url("../fonts/Nunito/static/Nunito-BlackItalic.ttf") format("truetype");
 		font-display: swap;
 	}
 
