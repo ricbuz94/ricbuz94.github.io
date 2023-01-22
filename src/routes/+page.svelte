@@ -1,8 +1,9 @@
-<script context="module">
+<script>
+	import { _ } from "svelte-i18n";
 	import Article from "$lib/components/article/Article.svelte";
 	import ArticleLink from "$lib/components/article/ArticleLink.svelte";
 	import Divider from "$lib/components/Divider.svelte";
-	import { _ } from "svelte-i18n";
+	import me from "$lib/assets/images/me.webp";
 </script>
 
 <svelte:head>
@@ -25,7 +26,7 @@
 			<p class="subtitle">{$_("home.developer")} (Web / Mobile / IT)</p>
 		</div>
 		<div class="cell">
-			<img src="/images/me.webp" alt="Riccardo Buzzolo" />
+			<img src={me} alt="Riccardo Buzzolo" />
 		</div>
 	</div>
 	<Divider />

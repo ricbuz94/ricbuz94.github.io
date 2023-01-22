@@ -4,14 +4,14 @@
 </script>
 
 <script lang="ts">
-	import Loader from "./Loader.svelte";
+	import MenuButton from "./MenuButton.svelte";
 
 	export let language: string | null;
+
 	let isLoading: boolean = false;
 	$: localeText = language === Locale.it ? "IT" : "EN";
 
-	const handleLocaleChange = async (e: any) => {
-		e.preventDefault();
+	async function handleLocaleChange() {
 		isLoading = true;
 		let header = document.getElementsByTagName("header")[0];
 		let main = document.getElementsByTagName("main")[0];
@@ -32,52 +32,14 @@
 				language = Locale.it;
 			}
 			isLoading = false;
-			header.style.opacity = "1";
-			main.style.opacity = "1";
-			footer.style.opacity = "1";
-		}, 700);
-	};
+
+			setTimeout(() => {
+				header.style.opacity = "1";
+				main.style.opacity = "1";
+				footer.style.opacity = "1";
+			}, 300);
+		}, 300);
+	}
 </script>
 
-<button id="localeSwitch" on:click={handleLocaleChange}>
-	{#if isLoading}
-		<Loader small />
-	{:else}
-		<p>{localeText}</p>
-	{/if}
-</button>
-
-<style>
-	button {
-		width: 40px;
-		height: 40px;
-		outline: none;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-family: "Nunito", sans-serif;
-		background-color: transparent !important;
-		-webkit-tap-highlight-color: transparent;
-		background-color: var(--backgroundColor);
-		border: 1px solid var(--borderColor);
-		border-radius: var(--borderRadius);
-		margin: 0px;
-		padding: 0px;
-		margin-left: 0.5rem;
-		cursor: pointer;
-		transition: all var(--transition);
-	}
-
-	button:active {
-		box-shadow: var(--activeInputShadow) !important;
-	}
-
-	p {
-		letter-spacing: 1px;
-		font-weight: 700;
-		padding-top: 1px;
-		font-size: 14px;
-		color: var(--textColor);
-		transition: color var(--transition);
-	}
-</style>
+<MenuButton {isLoading} text={localeText} onclick={handleLocaleChange} />

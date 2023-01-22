@@ -1,4 +1,5 @@
 <script context="module">
+	import Icon from "./Icon.svelte";
 	import Post from "./Post.svelte";
 </script>
 
@@ -8,9 +9,7 @@
 
 <li>
 	<div>
-		<svg class="icon">
-			<use href="/feather-sprite.svg#corner-down-right" />
-		</svg>
+		<Icon name="corner-down-right" size={16} />
 		<h5>{item.title}</h5>
 	</div>
 	<ul>
@@ -37,17 +36,6 @@
 		padding-top: 2rem;
 		padding-left: 0.5rem;
 		padding-bottom: 1rem;
-	}
-
-	.icon {
-		width: 16px;
-		height: 16px;
-		stroke: var(--textColor);
-		stroke-width: 2;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		fill: none;
-		transition: stroke var(--transition);
 	}
 
 	h5 {

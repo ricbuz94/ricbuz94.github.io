@@ -11,6 +11,8 @@
 
 <style>
 	a {
+		/* border: 1px solid red; */
+
 		color: var(--textColor);
 		padding-left: 5px;
 		padding-right: 5px;
@@ -34,10 +36,10 @@
 	@media only screen and (max-width: 720px) {
 		a {
 			text-align: center;
-			padding-top: 0.75rem;
-			padding-bottom: 0.75rem;
+			padding: 0.75rem 0px;
+			border-radius: var(--borderRadius);
 		}
-
+		
 		a:hover {
 			color: var(--accentColor);
 		}

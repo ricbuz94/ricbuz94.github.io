@@ -2,6 +2,7 @@
   import { page } from "$app/stores";
   import { base } from "$app/paths";
   import { goto } from "$app/navigation";
+  import Icon from "$lib/components/Icon.svelte";
 
   function goToHome() {
     goto(`${base}/`);
@@ -13,14 +14,11 @@
 </svelte:head>
 
 <div class="container">
-  <svg class="icon">
-    <use href="/feather-sprite.svg#file" />
-  </svg>
+  <Icon name="file" size={80} width={1} />
   <h2>{$page.error?.message}</h2>
   <button on:click={goToHome}>
-    <svg class="btn-icon">
-      <use href="/feather-sprite.svg#arrow-left" />
-    </svg>Home
+    <Icon name="arrow-left" size={20} />
+    <p>Home</p>
   </button>
 </div>
 
@@ -34,22 +32,6 @@
     align-items: center;
   }
 
-  .icon {
-    width: 80px;
-    height: 80px;
-    stroke: var(--textColor);
-    stroke-width: 1;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-    padding-top: 3px;
-    transition: stroke var(--transition);
-  }
-
-  .icon:hover {
-    stroke: var(--accentColor);
-  }
-
   h2 {
     text-align: center;
     margin-top: 2rem;
@@ -58,6 +40,7 @@
 
   button {
     display: flex;
+    gap: 5px;
     justify-content: space-between;
     align-items: center;
     outline: none;
@@ -75,17 +58,5 @@
 
   button:hover {
     border-color: var(--textColor);
-  }
-
-  .btn-icon {
-    margin-right: 5px;
-    width: 20px;
-    height: 20px;
-    stroke: var(--textColor);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    fill: none;
-    transition: stroke var(--transition);
   }
 </style>

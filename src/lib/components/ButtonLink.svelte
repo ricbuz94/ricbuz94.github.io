@@ -1,16 +1,16 @@
 <script>
+	import Icon from "./Icon.svelte";
+
 	export let to = "/",
 		text = "Testo",
 		shadow = false;
 
-	$: style = shadow ? "box-shadow: var(--cardShadow);" : "box-shadow: none;";
+	$: style = shadow ? "shadow" : "";
 </script>
 
-<a href={to} {style}>
+<a href={to} class={style}>
 	<p>{text}</p>
-	<svg class="icon">
-		<use href="/feather-sprite.svg#chevron-right" />
-	</svg>
+	<Icon name="chevron-right" size={14} width={3} color="#f6f9fc" />
 </a>
 
 <style>
@@ -35,22 +35,15 @@
 		box-shadow: var(--activeInputShadow) !important;
 	}
 
+	a.shadow {
+		box-shadow: var(--cardShadow);
+	}
+
 	p {
 		color: var(--gray0);
 		margin-right: 5px;
 		font-weight: 700;
 		font-size: 0.9rem;
 		letter-spacing: 1px;
-	}
-
-	.icon {
-		width: 14px;
-		height: 14px;
-		stroke: var(--gray0);
-		stroke-width: 3;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		fill: none;
-		transition: stroke var(--transition), opacity var(--transition);
 	}
 </style>

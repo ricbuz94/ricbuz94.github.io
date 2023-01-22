@@ -1,9 +1,21 @@
+<script lang="ts">
+	import type { Readable } from "svelte/store";
+	import { useMediaQuery } from "$lib/hooks/useMediaQuery";
+	import Icon from "./Icon.svelte";
+
+	let isMobile: boolean = false;
+	const mq: Readable<boolean> = useMediaQuery(
+		"only screen and (max-width: 400px)"
+	);
+
+	mq.subscribe((value) => (isMobile = value));
+	$: text = isMobile ? "RB" : "RiccardoBuzzolo";
+	$: size = isMobile ? 30 : 24;
+</script>
+
 <a href={"/"}>
-	<svg class="icon accent">
-		<use href="/feather-sprite.svg#box" />
-	</svg>
-	<h3 class="short">RB</h3>
-	<h3 class="long">RiccardoBuzzolo</h3>
+	<Icon name="box" {size} isThemed />
+	<h3>{text}</h3>
 </a>
 
 <style>
@@ -21,40 +33,5 @@
 		font-weight: 700;
 		user-select: none;
 		transition: color var(--transition);
-	}
-
-	h3.long {
-		display: block;
-	}
-
-	h3.short {
-		display: none;
-	}
-
-	.icon {
-		width: 24px;
-		height: 24px;
-		stroke: var(--accentColor);
-		stroke-width: 2.5;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		fill: none;
-		transition: stroke var(--transition);
-	}
-
-	/* schermo piccolo */
-	@media only screen and (max-width: 400px) {
-		h3.long {
-			display: none;
-		}
-
-		h3.short {
-			display: block;
-		}
-
-		.icon {
-			width: 30px;
-			height: 30px;
-		}
 	}
 </style>

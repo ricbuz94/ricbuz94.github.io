@@ -1,8 +1,10 @@
-<script context="module">
+<script lang="ts">
+	import { _ } from "svelte-i18n";
 	import Article from "$lib/components/article/Article.svelte";
 	import ArticleLink from "$lib/components/article/ArticleLink.svelte";
 	import Divider from "$lib/components/Divider.svelte";
-	import { _ } from "svelte-i18n";
+	import me from "$lib/assets/images/me.webp";
+	import beach from "$lib/assets/images/beach.webp";
 </script>
 
 <svelte:head>
@@ -16,7 +18,7 @@
 <article>
 	<Divider />
 	<div class="content">
-		<img src="/images/me.webp" alt="Riccardo Buzzolo" />
+		<img src={me} alt="Riccardo Buzzolo" />
 		<div class="card-wide">
 			<Article style="padding: 0 !important;" title={$_("about.aboutMe")}>
 				<p>
@@ -50,7 +52,7 @@
 				</p>
 			</Article>
 		</div>
-		<img src="/images/beach.webp" alt="Beacharound" />
+		<img src={beach} alt="Beacharound" />
 	</div>
 	<Divider />
 </article>
@@ -61,8 +63,8 @@
 	}
 
 	article p {
-			font-weight: 500;
-		}
+		font-weight: 500;
+	}
 
 	.card-wide {
 		max-width: 400px;
