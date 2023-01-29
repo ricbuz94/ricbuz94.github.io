@@ -76,9 +76,9 @@
 		"aboutMe": "About me",
 		"aboutMeContent1": "My name is Riccardo Buzzolo, I was born in Cattolica (RN) on 13 December 1994. I graduated from the Technical Institute for Surveyors O. Belluzzi in Rimini (today ",
 		"aboutMeLink1": "State Technical Technological Institute",
-		"aboutMeContent2": "). Later I studied at the Alma Mater Studiorum University of Cesena, in the course of",
+		"aboutMeContent2": "). Later I studied at the Alma Mater Studiorum University of Cesena, in the course of ",
 		"aboutMeLink2": "Engineering and Computer Science",
-		"aboutMeContent3": ". I worked for a while as a mobile programmer for Mango Mobile, in Cesena, and as an evaluator for the Teddy group, in Rimini. I currently work as a \"full-stack\" web programmer for an innovative startup, in San Giovanni in Marignano, which deals with management and online bookings for bathing establishments throughout the country:",
+		"aboutMeContent3": ". I worked for a while as a mobile programmer for Mango Mobile, in Cesena, and as an evaluator for the Teddy group, in Rimini. I currently work as a \"full-stack\" web programmer for an innovative startup, in San Giovanni in Marignano, which deals with management and online bookings for bathing establishments throughout the country: ",
 		"aboutMyWork": "About my work",
 		"aboutMyWorkContent1": "As mentioned above, I work for a startup in San Giovanni in Marignano that deals with management for bathing establishments and online booking of the same: ",
 		"aboutMyWorkContent2": " My work changes in some aspects between the summer and winter seasons. During the winter season the work is focused on the development of the management system, and therefore on the tests to be carried out on the new functions or changes made to the management system. Basically, these are end-to-end tests, to verify the functioning of the various flows of operations, and API tests (as part of \"integration testing\"), to verify the correct use of the data. During the summer season, my work is mainly focused on providing technical assistance to managers who are experiencing problems and collecting/analyzing data to improve the program."

@@ -1,52 +1,35 @@
 <script lang="ts">
 	import "../app.css";
-	import { Locale } from "$lib/helpers/interfaces";
-	import { browser } from "$app/environment";
 	import "$lib/i18n";
-	import {
-		_,
-		locale,
-		getLocaleFromNavigator,
-		waitLocale,
-		isLoading,
-	} from "svelte-i18n";
-	import { base } from "$app/paths";
+	import type { LayoutData } from "./$types";
+	import { _, isLoading } from "svelte-i18n";
 	import { page } from "$app/stores";
-	import Logo from "$lib/components/Logo.svelte";
-	import Switch from "$lib/components/Switch.svelte";
+	import { browser } from "$app/environment";
 	import { onMount } from "svelte";
 	import { fly } from "svelte/transition";
-	import Menu from "$lib/components/Menu.svelte";
-	import NavLink from "$lib/components/NavLink.svelte";
-	import LocaleSwitch from "$lib/components/LocaleSwitch.svelte";
+	import { Theme } from "$lib/helpers/interfaces";
 	import Loader from "$lib/components/Loader.svelte";
 	import Footer from "$lib/components/Footer/Footer.svelte";
+	import Header from "$lib/components/Header/Header.svelte";
 
-	export let language: string | null = Locale.it;
+	export let data: LayoutData;
 	export let refresh: string = "";
 
-	export const load = async ({ page }: any) => {
-		const language =
-			localStorage.getItem("language") || getLocaleFromNavigator();
+	let currentTheme = data?.currentTheme;
+	const THEME_KEY = "theme";
+	const DARK_PREFERENCE = "(prefers-color-scheme: dark)";
 
-		if (browser) {
-			locale.set(language);
-		}
+	$: favicon =
+		currentTheme === Theme.light ? "/favicon.ico" : "/favicon-dark.ico";
+	$: addressBarColor = currentTheme === Theme.light ? "#f6f9fc" : "#202023";
 
-		await waitLocale();
-
-		return {
-			props: {
-				key: page.url.pathname,
-				language,
-			},
-		};
-	};
+	const isMediaThemeDark =
+		browser && window.matchMedia(DARK_PREFERENCE).matches;
 
 	const setNavBottomBorder = () => {
 		let header = document.getElementById("header");
 		if (header) {
-			if (!!window && window.scrollY > 15) {
+			if (browser && window.scrollY > 15) {
 				header.style.boxShadow = "var(--navBorderBottom)";
 			} else {
 				header.style.boxShadow = "none";
@@ -54,42 +37,32 @@
 		}
 	};
 
-	let currentTheme = "light";
-	const STORAGE_KEY = "theme";
-	const DARK_PREFERENCE = "(prefers-color-scheme: dark)";
-	const THEMES = {
-		LIGHT: "light",
-		DARK: "dark",
-	};
-
-	$: favicon =
-		currentTheme === THEMES.LIGHT ? "/favicon.ico" : "/favicon-dark.ico";
-	$: addressBarColor = currentTheme === THEMES.LIGHT ? "#f6f9fc" : "#202023";
-
-	const prefersDarkThemes = () => window.matchMedia(DARK_PREFERENCE).matches;
-
 	const applyTheme = () => {
-		const preferredTheme = prefersDarkThemes() ? THEMES.DARK : THEMES.LIGHT;
-		currentTheme = localStorage.getItem(STORAGE_KEY) ?? preferredTheme;
+		const preferredTheme = isMediaThemeDark ? Theme.dark : Theme.light;
+		currentTheme = localStorage.getItem(THEME_KEY) || preferredTheme;
 
-		if (!!document && currentTheme === THEMES.DARK) {
-			document.getElementById("theme")?.classList.remove(THEMES.LIGHT);
-			document.getElementById("theme")?.classList.add(THEMES.DARK);
+		if (browser && currentTheme === Theme.dark) {
+			document.body?.classList.remove(Theme.light);
+			document.body?.classList.add(Theme.dark);
+			document.getElementById("theme")?.classList.remove(Theme.light);
+			document.getElementById("theme")?.classList.add(Theme.dark);
 		} else {
-			document.getElementById("theme")?.classList.remove(THEMES.DARK);
-			document.getElementById("theme")?.classList.add(THEMES.LIGHT);
+			document.body?.classList.remove(Theme.dark);
+			document.body?.classList.add(Theme.light);
+			document.getElementById("theme")?.classList.remove(Theme.dark);
+			document.getElementById("theme")?.classList.add(Theme.light);
 		}
 	};
 
 	const toggleTheme = () => {
-		const stored = localStorage.getItem(STORAGE_KEY);
+		const stored = localStorage.getItem(THEME_KEY);
 
 		if (stored) {
-			localStorage.removeItem(STORAGE_KEY);
+			localStorage.removeItem(THEME_KEY);
 		} else {
 			localStorage.setItem(
-				STORAGE_KEY,
-				prefersDarkThemes() ? THEMES.LIGHT : THEMES.DARK
+				THEME_KEY,
+				isMediaThemeDark ? Theme.light : Theme.dark
 			);
 		}
 
@@ -97,21 +70,15 @@
 	};
 
 	onMount(async () => {
-		language = localStorage.getItem("language") || getLocaleFromNavigator();
-		if (browser) {
-			locale.set(language);
-		}
+		applyTheme();
 
-		await waitLocale();
+		console.log("\n👉🏼   https://github.com/ricbuz94\n\n");
+
+		window.matchMedia(DARK_PREFERENCE).addEventListener("change", applyTheme);
 
 		window.addEventListener("scroll", setNavBottomBorder, {
 			passive: true,
 		});
-
-		window.matchMedia(DARK_PREFERENCE).addEventListener("change", applyTheme);
-		applyTheme();
-
-		console.log("\n👉🏼   https://github.com/ricbuz94\n\n");
 
 		return () => {
 			window.removeEventListener("scroll", setNavBottomBorder);
@@ -127,41 +94,28 @@
 	<meta name="theme-color" content={addressBarColor} />
 </svelte:head>
 
-<div id="theme" class="light">
-	{#if $isLoading}
-		{#key (refresh = $page.url.pathname)}
-			<div class="loading" in:fly={{ y: -15, duration: 300 }}>
-				<Loader />
-				<div />
-			</div>
-		{/key}
-	{:else}
-		<header id="header">
-			<nav>
-				<Logo />
-				<ul class="menu-off">
-					<li>
-						<NavLink href="{base}/works/">{$_("layout.nav.works")}</NavLink>
-					</li>
-					<li>
-						<NavLink href="{base}/about/">{$_("layout.nav.about")}</NavLink>
-					</li>
-				</ul>
-				<Switch {currentTheme} {toggleTheme} />
-				<LocaleSwitch {language} />
-				<div class="menu-on">
-					<Menu />
+{#if $page.url.pathname.includes("drinktool")}
+	<slot />
+{:else}
+	<div id="theme" class="light">
+		{#if $isLoading}
+			{#key (refresh = $page.url.pathname)}
+				<div class="loading" in:fly={{ y: -15, duration: 300 }}>
+					<Loader />
+					<div />
 				</div>
-			</nav>
-		</header>
-		{#key (refresh = $page.url.pathname)}
-			<main in:fly={{ y: 30, duration: 600, delay: 150 }}>
-				<slot />
-			</main>
-		{/key}
-		<Footer />
-	{/if}
-</div>
+			{/key}
+		{:else}
+			<Header language={data?.language} {currentTheme} {toggleTheme} />
+			{#key (refresh = $page.url.pathname)}
+				<main in:fly={{ y: 30, duration: 600, delay: 150 }}>
+					<slot />
+				</main>
+			{/key}
+			<Footer />
+		{/if}
+	</div>
+{/if}
 
 <style>
 	@font-face {
@@ -305,31 +259,17 @@
 			"Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 		font-size: var(--fontSize);
 		background-color: var(--backgroundColor);
-		transition: color var(--transition), background-color var(--transition),
-			width var(--transition);
+		transition: color var(--transition), background-color var(--transition);
 	}
 
 	:global(p) {
-		margin: 0;
+		margin: 0px;
 	}
 
 	:global(a) {
 		outline: none;
 		text-decoration: none;
 		-webkit-tap-highlight-color: transparent;
-	}
-
-	header {
-		z-index: 1;
-		height: 80px;
-		width: 100%;
-		position: fixed;
-		box-shadow: none;
-		background-color: var(--navBackgroundColor);
-		-webkit-backdrop-filter: saturate(180%) blur(15px);
-		backdrop-filter: saturate(180%) blur(15px);
-		transition: background-color var(--transition), box-shadow var(--transition),
-			opacity 300ms ease;
 	}
 
 	.loading {
@@ -339,30 +279,6 @@
 		flex-direction: column;
 		justify-content: space-evenly;
 		align-items: center;
-	}
-
-	nav {
-		max-width: 650px;
-		height: inherit;
-		display: flex;
-		margin-left: auto;
-		margin-right: auto;
-		justify-content: start;
-		align-items: center;
-	}
-
-	.menu-on {
-		display: none;
-	}
-
-	.menu-off {
-		list-style: none;
-		padding: 0px;
-		margin-right: 10px;
-	}
-
-	li {
-		display: inline;
 	}
 
 	main {
@@ -387,25 +303,6 @@
 			--transition: 360ms ease;
 		}
 
-		header {
-			height: 60px;
-		}
-
-		nav {
-			height: inherit;
-			min-width: inherit;
-			padding-left: 1rem;
-			padding-right: 1rem;
-		}
-
-		.menu-off {
-			display: none;
-		}
-
-		.menu-on {
-			display: block;
-		}
-
 		main {
 			display: block;
 			max-width: 100vw;
@@ -423,10 +320,6 @@
 
 		main {
 			width: 850px;
-		}
-
-		nav {
-			max-width: 850px;
 		}
 	}
 </style>

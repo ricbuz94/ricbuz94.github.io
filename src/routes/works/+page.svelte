@@ -1,12 +1,20 @@
-<script context="module">
+<script lang="ts">
+	import { _, json, locale } from "svelte-i18n";
 	import Divider from "$lib/components/Divider.svelte";
 	import List from "$lib/components/List.svelte";
-	import data from "$lib/data/data";
-	import { _, json } from "svelte-i18n";
-</script>
+	import type { PageData } from "./$types";
 
-<script lang="ts">
-	const jsonWorks: any = $json("works");
+	export let data: PageData;
+
+	$: jsonWorks = $json("works", $locale);
+	$: posts = data?.posts?.map(({ title, links }, i) => ({
+		title: jsonWorks[i].header,
+		links: links?.map((link, j) => ({
+			...link,
+			title: jsonWorks[i].list[j].title,
+			description: jsonWorks[i].list[j].description,
+		})),
+	}));
 </script>
 
 <svelte:head>
@@ -18,29 +26,22 @@
 </svelte:head>
 
 <Divider />
-<ul>
-	{#each data as item, i}
-		<List
-			item={{
-				title: jsonWorks[i].header,
-				links: item.links.map((link, j) => ({
-					...link,
-					title: jsonWorks[i].list[j].title,
-					description: jsonWorks[i].list[j].description,
-				})),
-			}}
-		/>
-		{#if i !== data.length - 1}
-			<div id="marker">
-				<p>{"~"}</p>
-			</div>
-		{/if}
-	{/each}
+<ul id="posts">
+	{#key data?.language}
+		{#each posts as post, i (post?.title)}
+			<List item={post} />
+			{#if i !== data?.posts?.length - 1}
+				<div id="marker">
+					<p>{"~"}</p>
+				</div>
+			{/if}
+		{/each}
+	{/key}
 </ul>
 <Divider />
 
 <style>
-	ul {
+	#posts {
 		margin: 0px;
 		padding: 0px;
 		width: 100%;

@@ -11,8 +11,6 @@
 
 <style>
 	a {
-		/* border: 1px solid red; */
-
 		color: var(--textColor);
 		padding-left: 5px;
 		padding-right: 5px;
