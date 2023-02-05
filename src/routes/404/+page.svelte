@@ -11,12 +11,12 @@
 </script>
 
 <svelte:head>
-  <title>{$page.status} · RiccardoBuzzolo</title>
+  <title>404 · RiccardoBuzzolo</title>
 </svelte:head>
 
 <div id="container">
   <Icon name="file" size={80} width={1} />
-  <h2 id="title">{$page.status} ~ {$page.error?.message ?? "OK"}</h2>
+  <h2 id="title">404 ~ {$_("generic.notFound")}</h2>
   <button id="back-button" on:click={goToHome}>
     <Icon name="arrow-left" size={14} />
     <p>{$_("generic.back")}</p>

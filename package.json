@@ -19,7 +19,7 @@
 		"lint": "eslint .",
 		"watch": "vite build --watch",
 		"build": "rm -rf build && vite build",
-		"deploy": "pnpm run build && touch build/.nojekyll && pnpm dlx gh-pages -d build -t true"
+		"deploy": "pnpm run build && touch build/.nojekyll && rm build/.DS_Store && pnpm dlx gh-pages -d build -t true"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-static": "^1.0.2",

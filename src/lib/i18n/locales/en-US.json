@@ -1,6 +1,7 @@
 {
 	"generic": {
-		"back": "Back"
+		"back": "Back",
+		"notFound": "Page not found"
 	},
 	"layout": {
 		"nav": {
