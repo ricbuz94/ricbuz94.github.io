@@ -14,18 +14,18 @@ enum Tag {
 	android = "ANDROID"
 }
 
-interface Link {
+interface Post {
 	url: string,
-	image: string,
 	title: string,
 	tags: Array<Tag>,
+	image: string,
 	description: string,
 }
 
 interface Section {
 	title: string,
-	links: Array<Link>
+	posts: Array<Post>
 }
 
 export { Locale, Theme, Tag };
-export type { Link, Section };
+export type { Post, Section };

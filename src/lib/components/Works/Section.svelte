@@ -1,19 +1,20 @@
-<script context="module">
-	import Icon from "./Icon.svelte";
+<script context="module" lang="ts">
+	import type { Section } from "$lib/helpers/interfaces";
+	import Icon from "../Icon.svelte";
 	import Post from "./Post.svelte";
 </script>
 
 <script lang="ts">
-	export let item: any;
+	export let section: Section;
 </script>
 
 <li>
 	<div>
 		<Icon name="corner-down-right" size={16} />
-		<h5>{item.title}</h5>
+		<h5>{section?.title}</h5>
 	</div>
 	<ul>
-		{#each item.links as post}
+		{#each section?.posts as post}
 			<Post {post} />
 		{/each}
 	</ul>

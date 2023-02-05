@@ -1,16 +1,23 @@
-<script lang="ts">
+<script context="module" lang="ts">
 	import { _, json, locale } from "svelte-i18n";
 	import Divider from "$lib/components/Divider.svelte";
-	import List from "$lib/components/List.svelte";
+	import List from "$lib/components/Works/Section.svelte";
 	import type { PageData } from "./$types";
+	import type { Section } from "$lib/helpers/interfaces";
+</script>
 
+<script lang="ts">
 	export let data: PageData;
 
-	$: jsonWorks = $json("works", $locale);
-	$: posts = data?.posts?.map(({ title, links }, i) => ({
+	$: jsonWorks = $json("works", $locale as string | undefined) as Array<{
+		header: string;
+		list: Array<{ title: string; description: string }>;
+	}>;
+	$: sections = (data?.sections as Array<Section>).map(({ title, posts }, i) => ({
+		key: `${i}-${title}`,
 		title: jsonWorks[i].header,
-		links: links?.map((link, j) => ({
-			...link,
+		posts: posts?.map((post, j) => ({
+			...post,
 			title: jsonWorks[i].list[j].title,
 			description: jsonWorks[i].list[j].description,
 		})),
@@ -26,10 +33,10 @@
 </svelte:head>
 
 <Divider />
-<ul id="posts">
+<ul id="sections">
 	{#key data?.language}
-		{#each posts as post, i (post?.title)}
-			<List item={post} />
+		{#each sections as section, i (section?.key)}
+			<List {section} />
 			{#if i !== data?.posts?.length - 1}
 				<div id="marker">
 					<p>{"~"}</p>
@@ -41,7 +48,7 @@
 <Divider />
 
 <style>
-	#posts {
+	#sections {
 		margin: 0px;
 		padding: 0px;
 		width: 100%;

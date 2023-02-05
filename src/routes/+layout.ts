@@ -5,6 +5,8 @@ import { Theme } from '$lib/helpers/interfaces';
 
 import { getLocaleFromNavigator, locale, waitLocale } from 'svelte-i18n';
 
+export const prerender = true;
+
 export const load = (async () => {
 
   let currentTheme = "light";
@@ -37,7 +39,7 @@ export const load = (async () => {
 
   return {
     currentTheme,
-    posts: data,
+    sections: data,
     language
   };
 }) satisfies LayoutData;

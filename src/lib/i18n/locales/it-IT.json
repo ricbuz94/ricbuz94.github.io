@@ -1,4 +1,7 @@
 {
+	"generic": {
+		"back": "Indietro"
+	},
 	"layout": {
 		"nav": {
 			"works": "Lavori",

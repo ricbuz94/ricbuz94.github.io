@@ -3,6 +3,7 @@
   import { base } from "$app/paths";
   import { goto } from "$app/navigation";
   import Icon from "$lib/components/Icon.svelte";
+  import { _ } from "svelte-i18n";
 
   function goToHome() {
     goto(`${base}/`);
@@ -13,50 +14,57 @@
   <title>{$page.status} · RiccardoBuzzolo</title>
 </svelte:head>
 
-<div class="container">
+<div id="container">
   <Icon name="file" size={80} width={1} />
-  <h2>{$page.error?.message}</h2>
-  <button on:click={goToHome}>
-    <Icon name="arrow-left" size={20} />
-    <p>Home</p>
+  <h2 id="title">{$page.status} ~ {$page.error?.message ?? "OK"}</h2>
+  <button id="back-button" on:click={goToHome}>
+    <Icon name="arrow-left" size={14} />
+    <p>{$_("generic.back")}</p>
   </button>
 </div>
 
 <style>
-  div.container {
+  #container {
     height: 600px;
     display: flex;
     flex-direction: column;
-    font-family: "Roboto Mono", monospace;
     justify-content: center;
     align-items: center;
   }
 
-  h2 {
+  #title {
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 4rem;
   }
 
-  button {
+  #back-button {
     display: flex;
-    gap: 5px;
+    font-family: inherit;
     justify-content: space-between;
     align-items: center;
     outline: none;
     cursor: pointer;
-    font-size: initial;
     text-decoration: none;
-    color: var(--textColor);
+    color: black;
+    font-weight: 700;
+    font-size: 0.75rem;
     padding: 0.5rem 0.8rem;
-    background-color: var(--cardBackgroundColor);
-    border: 2px solid var(--gray3);
-    border-radius: 0.4rem;
+    border: none;
+    border: 2px solid #6c7983;
+    border-radius: 10px;
+    user-select: none;
+    background-color: transparent;
     -webkit-tap-highlight-color: transparent;
-    transition: all var(--transition);
   }
 
-  button:hover {
+  #back-button:hover {
     border-color: var(--textColor);
+  }
+
+  #back-button p {
+    margin-left: 5px;
+    color: var(--textColor);
+    text-transform: uppercase;
   }
 </style>

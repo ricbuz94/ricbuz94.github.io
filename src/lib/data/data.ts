@@ -9,7 +9,7 @@ import howMuchCanIDrink from "$lib/assets/images/howmuchcanidrink.webp";
 const data: Array<Section> = [
 	{
 		title: "Works",
-		links: [
+		posts: [
 			{
 				url: `${import.meta.env.VITE_APP_BEACHAROUND_URL}` ?? "#",
 				image: beacharound,
@@ -35,7 +35,7 @@ const data: Array<Section> = [
 	},
 	{
 		title: "Projects",
-		links: [
+		posts: [
 			{
 				url: `${import.meta.env.VITE_APP_DRINKTOOL_URL}` ?? "#",
 				image: drinktool,
@@ -47,7 +47,7 @@ const data: Array<Section> = [
 	},
 	{
 		title: "Old projects",
-		links: [
+		posts: [
 			{
 				url: `${import.meta.env.VITE_APP_HMCID_URL}` ?? "#",
 				image: howMuchCanIDrink,

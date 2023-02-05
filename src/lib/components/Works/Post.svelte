@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Link } from "../../lib/helpers/interfaces";
-	export let post: Link;
+	import type { Post } from "../../helpers/interfaces";
+	export let post: Post;
 </script>
 
 <li>

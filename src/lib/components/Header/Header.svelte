@@ -52,10 +52,10 @@
     <Logo />
     <ul class="menu-off">
       <li>
-        <NavLink href="{base}/works/">{$_("layout.nav.works")}</NavLink>
+        <NavLink href="{base}/works">{$_("layout.nav.works")}</NavLink>
       </li>
       <li>
-        <NavLink href="{base}/about/">{$_("layout.nav.about")}</NavLink>
+        <NavLink href="{base}/about">{$_("layout.nav.about")}</NavLink>
       </li>
     </ul>
     <MenuButton icon={themeIcon} onclick={toggleTheme} />

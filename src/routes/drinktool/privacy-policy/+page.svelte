@@ -3,7 +3,7 @@
 	<title>Privacy-Policy · DrinkTool</title>
 </svelte:head>
 
-<div>
+<div id="container">
 	<header>
 		<p class="top">Last update: 10/12/2021</p>
 		<h3>DrinkTool · Privacy-Policy</h3>
@@ -31,16 +31,17 @@
 			mobile devices that was created by Riccardo Buzzolo.
 		</p>
 		<p>
-			<strong>Caution</strong> : this application is intended for users who are at
-			least 18 years old. Persons under the age of 13 are not permitted to register
-			for or use the application. Any information provided or contained within or
-			from this application is for entertainment purposes only and shall not be considered
-			"advice" and should not be construed as medical, legal, or financial advice
-			on any subject matter. Riccardo Buzzolo disclaims all liability in regard to
-			actions taken or not taken based on any or all of the contents on the application.
-			Please note that Riccardo Buzzolo does not necessarily endorse, and is not
-			responsible for, any third-party content that may be displayed or accessed
-			through this application.
+			<strong>Caution</strong>: this application is intended for users who are
+			at least 18 years old. Persons under the age of 13 are not permitted to
+			register for or use the application. Any information provided or contained
+			within or from this application is for entertainment purposes only and
+			shall not be considered "advice" and should not be construed as medical,
+			legal, or financial advice on any subject matter. Riccardo Buzzolo
+			disclaims all liability in regard to actions taken or not taken based on
+			any or all of the contents on the application. Please note that Riccardo
+			Buzzolo does not necessarily endorse, and is not responsible for, any
+			third-party content that may be displayed or accessed through this
+			application.
 		</p>
 		<p>
 			This application estimates blood alcohol content ("BAC") based on body
@@ -198,7 +199,7 @@
 			<strong>Contact Me</strong>
 		</p>
 		<p class="bottom">
-			{"If you have any questions or suggestions about my Privacy Policy, do nothesitate to contact me at "}
+			{"If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at "}
 			<a href="mailto:riccardo.buzzolo@gmail.com">
 				riccardo.buzzolo@gmail.com</a
 			>.
@@ -207,26 +208,18 @@
 </div>
 
 <style>
-	@font-face {
-		font-family: "Roboto Mono";
-		font-style: normal;
-		font-weight: 400;
-		src: local("Roboto Mono"), url("/fonts/RobotoMono-Variable.ttf") format("truetype");
-		font-display: swap;
-	}
-
 	::selection {
 		color: black;
 		background-color: lightcoral;
 	}
 
-	div {
+	#container {
 		background-color: white;
 		font-family: "Roboto Mono", monospace;
 		font-size: var(--fontSize);
 		color: black;
 		word-spacing: 0px;
-		padding: 3rem;
+		padding: 2rem;
 	}
 
 	main {

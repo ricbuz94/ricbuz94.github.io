@@ -21,6 +21,7 @@
 		margin-left: auto;
 		margin-right: auto;
 		align-items: center;
+		user-select: none;
 		background-color: var(--accentColor);
 		border-radius: var(--borderRadius);
 		padding: 0.5rem 1rem 0.5rem 1rem;

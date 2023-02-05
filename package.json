@@ -17,6 +17,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint .",
+		"watch": "vite build --watch",
 		"build": "rm -rf build && vite build",
 		"deploy": "pnpm run build && touch build/.nojekyll && pnpm dlx gh-pages -d build -t true"
 	},
