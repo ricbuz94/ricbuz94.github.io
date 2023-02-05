@@ -37,7 +37,7 @@
 	{#key data?.language}
 		{#each sections as section, i (section?.key)}
 			<List {section} />
-			{#if i !== data?.posts?.length - 1}
+			{#if i !== sections?.length - 1}
 				<div id="marker">
 					<p>{"~"}</p>
 				</div>
