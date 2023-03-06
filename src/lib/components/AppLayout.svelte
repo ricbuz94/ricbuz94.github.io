@@ -11,10 +11,15 @@
   import Footer from "$lib/components/Footer/Footer.svelte";
   import Header from "$lib/components/Header/Header.svelte";
   import type { LayoutData } from "../../routes/$types";
+  import { useMediaQuery } from "$lib/hooks/useMediaQuery";
+  import type { Readable } from "svelte/store";
+  import TopButton from "./TopButton.svelte";
 
   export let data: LayoutData;
   export let refresh: string = "";
 
+  let isMobile = false;
+  let isTopButtonVisible = false;
   let currentTheme = data?.currentTheme;
   const THEME_KEY = "theme";
   const DARK_PREFERENCE = "(prefers-color-scheme: dark)";
@@ -23,10 +28,15 @@
     currentTheme === Theme.light ? "/favicon.ico" : "/favicon-dark.ico";
   $: addressBarColor = currentTheme === Theme.light ? "#f6f9fc" : "#202023";
 
+  const mq: Readable<boolean> = useMediaQuery(
+    "only screen and (max-width: 400px)"
+  );
   const isMediaThemeDark =
     browser && window.matchMedia(DARK_PREFERENCE).matches;
 
-  const setNavBottomBorder = () => {
+  mq.subscribe((value) => (isMobile = value));
+
+  function setNavBottomBorder() {
     let header = document.getElementById("header");
     if (header) {
       if (browser && window.scrollY > 15) {
@@ -35,7 +45,15 @@
         header.style.boxShadow = "none";
       }
     }
-  };
+  }
+
+  function setTopButtonVisible() {
+    if (browser && window.scrollY > 80) {
+      isTopButtonVisible = true;
+    } else {
+      isTopButtonVisible = false;
+    }
+  }
 
   const applyTheme = () => {
     const preferredTheme = isMediaThemeDark ? Theme.dark : Theme.light;
@@ -76,12 +94,19 @@
 
     window.matchMedia(DARK_PREFERENCE).addEventListener("change", applyTheme);
 
-    window.addEventListener("scroll", setNavBottomBorder, {
-      passive: true,
-    });
+    window.addEventListener(
+      "scroll",
+      isMobile ? setTopButtonVisible : setNavBottomBorder,
+      {
+        passive: true,
+      }
+    );
 
     return () => {
-      window.removeEventListener("scroll", setNavBottomBorder);
+      window.removeEventListener(
+        "scroll",
+        isMobile ? setTopButtonVisible : setNavBottomBorder
+      );
       window
         .matchMedia(DARK_PREFERENCE)
         .removeEventListener("change", applyTheme);
@@ -110,6 +135,9 @@
       </main>
     {/key}
     <Footer />
+  {/if}
+  {#if isTopButtonVisible}
+    <TopButton />
   {/if}
 </div>
 
@@ -296,13 +324,13 @@
   /* schermo piccolo */
   @media only screen and (max-width: 720px) {
     :root {
-      --transition: 360ms ease;
+      --transition: 300ms ease;
     }
 
     main {
       display: block;
       max-width: 100vw;
-      padding-top: 60px;
+      padding-top: 0px;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }

@@ -1,20 +1,27 @@
 <script lang="ts">
   import { locale, _ } from "svelte-i18n";
   import { Locale, Theme } from "$lib/helpers/interfaces";
+  import { fly } from "svelte/transition";
   import { base } from "$app/paths";
   import Logo from "../Logo.svelte";
-  import Menu from "../Menu.svelte";
   import NavLink from "../NavLink.svelte";
   import MenuButton from "../MenuButton.svelte";
+  import { beforeNavigate } from "$app/navigation";
 
   export let currentTheme: string;
   export let toggleTheme: ((e: any) => void) | undefined;
 
   export let language: string | null;
 
+  let isOpen: boolean = false;
   let isLoading: boolean = false;
+  $: icon = isOpen ? "x" : "menu";
   $: localeText = language === Locale.it ? "IT" : "EN";
   $: themeIcon = currentTheme !== Theme.dark ? "moon" : "sun";
+
+  function toggleMenu() {
+    isOpen = !isOpen;
+  }
 
   async function handleLocaleChange() {
     isLoading = true;
@@ -45,12 +52,14 @@
       }, 300);
     }, 300);
   }
+
+  beforeNavigate(() => (isOpen = false));
 </script>
 
 <header id="header">
   <nav id="nav">
     <Logo />
-    <ul class="menu-off">
+    <ul id="menu">
       <li>
         <NavLink href="{base}/works">{$_("layout.nav.works")}</NavLink>
       </li>
@@ -60,11 +69,21 @@
     </ul>
     <MenuButton icon={themeIcon} onclick={toggleTheme} />
     <MenuButton {isLoading} text={localeText} onclick={handleLocaleChange} />
-    <div class="menu-on">
-      <Menu />
+    <div id="mobile-menu-button">
+      <MenuButton {icon} onclick={toggleMenu} />
     </div>
   </nav>
 </header>
+{#if isOpen}
+  <ul id="menu-mobile" in:fly={{ x: 10,y: -15, duration: 180 }}>
+    <li>
+      <NavLink href={`${base}/works`}>{$_("layout.nav.works")}</NavLink>
+    </li>
+    <li>
+      <NavLink href={`${base}/about`}>{$_("layout.nav.about")}</NavLink>
+    </li>
+  </ul>
+{/if}
 
 <style>
   #header {
@@ -73,6 +92,7 @@
     width: 100%;
     position: fixed;
     box-shadow: none;
+    user-select: none;
     background-color: var(--navBackgroundColor);
     -webkit-backdrop-filter: saturate(180%) blur(15px);
     backdrop-filter: saturate(180%) blur(15px);
@@ -90,24 +110,28 @@
     align-items: center;
   }
 
-  li {
+  #menu {
+    display: initial;
+  }
+
+  #menu li {
     display: inline;
   }
 
-  .menu-on {
+  #mobile-menu-button {
     display: none;
   }
 
-  .menu-off {
-    padding: 0px;
-    list-style: none;
-    margin-right: 10px;
+  #menu-mobile {
+    position: absolute;
+    display: none;
   }
 
   /* schermo piccolo */
   @media only screen and (max-width: 720px) {
     #header {
       height: 60px;
+      position: initial;
     }
 
     #nav {
@@ -117,12 +141,32 @@
       padding-right: 1rem;
     }
 
-    .menu-off {
+    #menu {
       display: none;
     }
 
-    .menu-on {
-      display: block;
+    #mobile-menu-button {
+      display: initial;
+    }
+
+    #menu-mobile {
+      width: 120px;
+      top: 55px;
+      right: 15px;
+      background-color: var(--cardBackgroundColor);
+      border-radius: var(--borderRadius);
+      box-shadow: var(--cardShadow);
+      list-style: none;
+      margin: 0px;
+      padding: 0.75rem 0.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: background-color var(--transition);
+    }
+
+    #menu-mobile li {
+      display: contents;
     }
   }
 

@@ -31,7 +31,7 @@
 	h3 {
 		margin-bottom: 1rem;
 		text-decoration: underline;
-		text-underline-offset: 4px;
+		text-underline-offset: 6px;
 		text-decoration-thickness: 3px;
 		text-decoration-color: var(--accentColor);
 	}

@@ -5,12 +5,12 @@
 
 	let isMobile: boolean = false;
 	const mq: Readable<boolean> = useMediaQuery(
-		"only screen and (max-width: 400px)"
+		"only screen and (max-width: 420px)"
 	);
 
 	mq.subscribe((value) => (isMobile = value));
 	$: text = isMobile ? "RB" : "RiccardoBuzzolo";
-	$: size = isMobile ? 30 : 24;
+	$: size = isMobile ? 34 : 24;
 </script>
 
 <a href={"/"}>
@@ -33,5 +33,12 @@
 		font-weight: 700;
 		user-select: none;
 		transition: color var(--transition);
+	}
+
+	@media only screen and (max-width: 420px) {
+		h3 {
+			font-size: 24px;
+			content: "RBBBB";
+		}
 	}
 </style>
