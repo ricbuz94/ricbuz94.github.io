@@ -163,6 +163,7 @@
       flex-direction: column;
       justify-content: center;
       transition: background-color var(--transition);
+      z-index: 1000;
     }
 
     #menu-mobile li {
