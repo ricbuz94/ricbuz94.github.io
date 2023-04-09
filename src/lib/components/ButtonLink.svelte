@@ -24,7 +24,7 @@
 		user-select: none;
 		background-color: var(--accentColor);
 		border-radius: var(--borderRadius);
-		padding: 0.5rem 1rem 0.5rem 1rem;
+		padding: 0.5rem 1rem;
 		transition: all var(--transition);
 	}
 
@@ -46,5 +46,17 @@
 		font-weight: 700;
 		font-size: 0.9rem;
 		letter-spacing: 1px;
+	}
+
+	/* schermo piccolo */
+  @media only screen and (max-width: 720px) {
+		a {
+			border-radius: 25px;
+			padding: 0.75rem 1.25rem;
+		}
+
+		p {
+			font-size: 1rem;
+		}
 	}
 </style>

@@ -39,7 +39,7 @@
 			</Article>
 		</div>
 	</div>
-	<Divider />
+	<Divider height={1.5} />
 	<div class="content dense">
 		<div class="card-wide">
 			<Article style="padding: 0 !important;" title={$_("about.aboutMyWork")}>

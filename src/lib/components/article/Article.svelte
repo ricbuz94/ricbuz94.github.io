@@ -24,10 +24,6 @@
 </article>
 
 <style>
-	article {
-		padding: 10px;
-	}
-
 	h3 {
 		margin-bottom: 1rem;
 		text-decoration: underline;
@@ -43,5 +39,12 @@
 	hr {
 		height: 1rem;
 		background: none;
+	}
+
+	/* schermo piccolo */
+	@media only screen and (max-width: 720px) {
+		article {
+			font-size: 120%;
+		}
 	}
 </style>

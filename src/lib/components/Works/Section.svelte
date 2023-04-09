@@ -55,6 +55,11 @@
 
 	/* schermo piccolo */
 	@media only screen and (max-width: 720px) {
+
+		h5 {
+			font-size: 100%;
+		}
+
 		ul {
 			gap: 0px;
 			grid-template-columns: auto;

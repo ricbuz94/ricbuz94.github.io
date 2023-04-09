@@ -12,13 +12,13 @@
 			/>
 		</div>
 		<div class="container">
+			<h4>{post.title}</h4>
+			<p class="description">{post.description}</p>
 			<div class="row">
-				<h4>{post.title}</h4>
 				{#each post.tags as tag}
 					<p class={`tag ${tag}`}>#{tag}</p>
 				{/each}
 			</div>
-			<p class="description">{post.description}</p>
 		</div>
 	</a>
 </li>
@@ -80,6 +80,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: start;
+		gap: 0.25rem;
+		padding-top: 1.5rem;
 	}
 
 	h4 {
@@ -92,18 +94,18 @@
 	}
 
 	.tag {
-		top: 0.5rem;
-		left: 0.5rem;
+		line-height: 1.2;
 		letter-spacing: 1px;
-		font-size: 60%;
+		font-size: 50%;
 		font-weight: bold;
 		margin: 0;
-		margin-left: 5px;
-		padding: 0;
+		padding: 6px 10px;
+		border-radius: 4px;
 	}
 
 	.description {
 		font-size: 14px;
+		font-weight: 500;
 		color: var(--subTextColor);
 		margin: 0px;
 		margin-top: 10px;
@@ -111,15 +113,34 @@
 	}
 
 	.WEB {
-		color: var(--webTag);
+		color: #fff;
+		background-color: var(--webTag);
 	}
 
 	.ANDROID {
-		color: var(--androidTag);
+		color: #fff;
+		background-color: var(--androidTag);
+	}
+
+	.iOS {
+		background-color: var(--textColor);
+		color: var(--backgroundColor);
 	}
 
 	/* schermo piccolo */
 	@media only screen and (max-width: 720px) {
+		h4 {
+			font-size: 140%;
+		}
+
+		.description {
+			font-size: 16px;
+		}
+
+		.tag {
+			border-radius: 25px;
+		}
+
 		li {
 			border-radius: 1rem;
 			background-color: transparent;

@@ -29,7 +29,7 @@
 			<img src={me} alt="Riccardo Buzzolo" />
 		</div>
 	</div>
-	<Divider />
+	<Divider height={1.5} />
 	<Article
 		title={$_("home.works.title")}
 		link="works"
@@ -51,7 +51,7 @@
 			/>{$_("home.works.content.4")}
 		</p>
 	</Article>
-	<Divider />
+	<Divider height={1.5} />
 	<Article
 		title={$_("home.bio.title")}
 		link="about"
@@ -111,7 +111,7 @@
 			</p>
 		</div>
 	</Article>
-	<Divider />
+	<Divider height={1.5} />
 </article>
 
 <style>
@@ -122,6 +122,7 @@
 	}
 
 	.banner p {
+		width: 100%;
 		padding: 1rem 2rem;
 		text-align: center;
 		border-radius: 0.5rem;
@@ -178,7 +179,7 @@
 		}
 
 		.banner p {
-			padding: 1rem;
+			padding: 1rem 0px;
 			text-align: center;
 			border-radius: 0.5rem;
 			font-weight: 600;

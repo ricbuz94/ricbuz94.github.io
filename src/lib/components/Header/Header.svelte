@@ -75,7 +75,7 @@
   </nav>
 </header>
 {#if isOpen}
-  <ul id="menu-mobile" in:fly={{ x: 10,y: -15, duration: 180 }}>
+  <ul id="menu-mobile" in:fly={{ x: 50, y: 0, duration: 180 }}>
     <li>
       <NavLink href={`${base}/works`}>{$_("layout.nav.works")}</NavLink>
     </li>
@@ -137,8 +137,7 @@
     #nav {
       height: inherit;
       min-width: inherit;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding: 0px 1.25rem;
     }
 
     #menu {
@@ -150,18 +149,18 @@
     }
 
     #menu-mobile {
-      width: 120px;
-      top: 55px;
-      right: 15px;
+      height: max-content;
+      width: 150px;
+      top: 60px;
+      right: 0px;
       background-color: var(--cardBackgroundColor);
-      border-radius: var(--borderRadius);
+      border-radius: var(--borderRadius) 0 0 var(--borderRadius);
       box-shadow: var(--cardShadow);
       list-style: none;
       margin: 0px;
       padding: 0.75rem 0.25rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       transition: background-color var(--transition);
       z-index: 1000;
     }

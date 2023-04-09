@@ -22,7 +22,6 @@
 	a {
 		display: flex;
 		align-items: center;
-		padding: 5px;
 		margin-right: auto;
 		color: var(--textColor);
 	}

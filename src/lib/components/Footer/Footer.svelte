@@ -94,7 +94,7 @@
   @media only screen and (max-width: 720px) {
     footer {
       max-width: 100vw;
-      padding-bottom: 3rem;
+      padding-bottom: 5rem;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
@@ -102,6 +102,11 @@
     footer a {
       width: 100%;
       text-align: center;
+    }
+
+    .contacts-container {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 

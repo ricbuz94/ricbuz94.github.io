@@ -11,23 +11,29 @@
 
 <style>
 	a {
+		display: inline-block;
 		color: var(--textColor);
-		padding-left: 5px;
-		padding-right: 5px;
+		margin: 0px 0.5rem;
 		font-size: 0.9rem;
 		letter-spacing: 1px;
 		font-weight: 700;
-		transition: color var(--transition);
+		background-image: linear-gradient(currentColor 0 0);
+		background-position: 0 100%; /*OR bottom left*/
+		background-size: 0% 2px;
+		background-repeat: no-repeat;
+		transition: color var(--transition), background-size 0.3s,
+			background-position 0s 0.3s;
 	}
 
 	a:hover {
 		color: var(--accentColor);
+		background-position: 100% 100%; /*OR bottom right*/
+		background-size: 100% 2px;
 	}
 
 	a.active {
-		text-decoration: underline;
-		text-underline-offset: 4px;
-		text-decoration-thickness: 2px;
+		background-position: 100% 100%; /*OR bottom right*/
+		background-size: 100% 2px;
 	}
 
 	/* schermo piccolo */
@@ -35,9 +41,11 @@
 		a {
 			text-align: center;
 			padding: 0.75rem 0px;
+			background: none;
+			font-size: 1rem;
 			border-radius: var(--borderRadius);
 		}
-		
+
 		a:hover {
 			color: var(--accentColor);
 		}

@@ -51,11 +51,22 @@
     #link {
       width: 100%;
       text-align: center;
+      justify-content: flex-start;
     }
 
     #icon {
       width: 26px;
       height: 26px;
+      margin: 0px 1.5rem;
+    }
+
+    #text {
+      display: inline;
+      line-height: 2;
+      margin-left: 0.5rem;
+      font-size: 1rem;
+      vertical-align: top;
+      color: var(--textColor);
     }
   }
 

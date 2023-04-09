@@ -51,4 +51,16 @@
     color: var(--textColor);
     transition: color var(--transition);
   }
+
+  /* schermo piccolo */
+  @media only screen and (max-width: 720px) {
+    #button {
+      border: none;
+      transform: scale(1.4);
+    }
+
+    #button:active {
+      box-shadow: none !important;
+    }
+  }
 </style>
