@@ -18,7 +18,7 @@
 <article>
 	<Divider />
 	<div class="content">
-		<img src={me} alt="Riccardo Buzzolo" />
+		<img src={me} alt="Riccardo Buzzolo" title="Riccardo Buzzolo" />
 		<div class="card-wide">
 			<Article style="padding: 0 !important;" title={$_("about.aboutMe")}>
 				<p>
@@ -52,7 +52,7 @@
 				</p>
 			</Article>
 		</div>
-		<img src={beach} alt="Beacharound" />
+		<img src={beach} alt="Cattolica" title="Cattolica" />
 	</div>
 	<Divider />
 </article>

@@ -26,7 +26,7 @@
 			<p class="subtitle">{$_("home.developer")} (Web / Mobile / IT)</p>
 		</div>
 		<div class="cell">
-			<img src={me} alt="Riccardo Buzzolo" />
+			<img src={me} alt="Riccardo Buzzolo" title="Riccardo Buzzolo" />
 		</div>
 	</div>
 	<Divider height={1.5} />

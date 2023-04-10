@@ -13,7 +13,7 @@
 	$: size = isMobile ? 34 : 24;
 </script>
 
-<a href={"/"}>
+<a href={"/"} title="Homepage">
 	<Icon name="box" {size} isThemed />
 	<h3>{text}</h3>
 </a>

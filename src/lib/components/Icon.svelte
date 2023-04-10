@@ -17,6 +17,8 @@
   height="{size}px"
   stroke-width={width}
   style="stroke: {color};"
+  aria-hidden="true"
+  focusable="false"
 >
   <use href="{feather}#{name}" />
 </svg>

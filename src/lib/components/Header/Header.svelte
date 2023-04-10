@@ -67,10 +67,10 @@
         <NavLink href="{base}/about">{$_("layout.nav.about")}</NavLink>
       </li>
     </ul>
-    <MenuButton icon={themeIcon} onclick={toggleTheme} />
-    <MenuButton {isLoading} text={localeText} onclick={handleLocaleChange} />
+    <MenuButton icon={themeIcon} onclick={toggleTheme} label="Cambia tema" />
+    <MenuButton {isLoading} text={localeText} onclick={handleLocaleChange} label="Cambia lingua" />
     <div id="mobile-menu-button">
-      <MenuButton {icon} onclick={toggleMenu} />
+      <MenuButton {icon} onclick={toggleMenu} label="Menù" />
     </div>
   </nav>
 </header>
