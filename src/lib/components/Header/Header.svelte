@@ -35,20 +35,20 @@
 
     setTimeout(() => {
       if (language === Locale.it) {
+        language = Locale.en;
         locale.set(Locale.en);
         localStorage.setItem("language", Locale.en);
-        language = Locale.en;
       } else {
+        language = Locale.it;
         locale.set(Locale.it);
         localStorage.setItem("language", Locale.it);
-        language = Locale.it;
       }
-      isLoading = false;
 
       setTimeout(() => {
         header.style.opacity = "1";
         main.style.opacity = "1";
         footer.style.opacity = "1";
+        isLoading = false;
       }, 300);
     }, 300);
   }
@@ -68,7 +68,12 @@
       </li>
     </ul>
     <MenuButton icon={themeIcon} onclick={toggleTheme} label="Cambia tema" />
-    <MenuButton {isLoading} text={localeText} onclick={handleLocaleChange} label="Cambia lingua" />
+    <MenuButton
+      {isLoading}
+      text={localeText}
+      onclick={handleLocaleChange}
+      label="Cambia lingua"
+    />
     <div id="mobile-menu-button">
       <MenuButton {icon} onclick={toggleMenu} label="Menù" />
     </div>
@@ -137,7 +142,8 @@
     #nav {
       height: inherit;
       min-width: inherit;
-      padding: 0px 1.25rem;
+      padding-left: 1.25rem;
+      padding-right: 1rem;
     }
 
     #menu {

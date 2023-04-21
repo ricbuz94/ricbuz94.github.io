@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 :root {
 	--fontSize: 16px;
 	--fontSizeLarge: 18px;
@@ -7,7 +11,7 @@ html,
 body {
 	margin: 0px;
 	padding: 0px;
-	min-width: 300px;
+	min-width: 320px;
 }
 
 body {

@@ -16,25 +16,25 @@
 			"title": "Lavori e progetti",
 			"content": {
 				"1": "Attualmente lavoro per ",
-				"2": ", una startup innovativa con sede a San Giovanni in Marignano(RN) che si occupa di gestionale e prenotazioni online per gli stabilimenti balneari. Ho lavorato anche per ",
-				"3": " come sviluppatore mobile, utilizzando un framework cross-platform. Ho anche programmato ",
-				"4": " un' applicazione per il calcolo del tasso alcolemico in tempo reale."
+				"2": ", una startup innovativa con sede a San Giovanni in Marignano(RN) che si occupa di gestionale e prenotazioni online per gli stabilimenti balneari. In passato ho lavorato per ",
+				"3": " come sviluppatore mobile, utilizzando un framework ≪cross-platform≫ per produrre applicazioni mobile per entrambe le piattaforme (Android e iOS) mantenendo una singola base di codice. Ho sviluppato, in modo analogo ma con un altro framework, ",
+				"4": ": un' applicazione per il calcolo del tasso alcolemico in tempo reale."
 			},
 			"callToAction": "Altro"
 		},
 		"bio": {
 			"title": "Biografia",
 			"content": {
-				"1": "Nato a Cattolica (RN), Italia.",
+				"1": "Nato a Cattolica (RN), Italia, dove ho vissuto fino alle scuole medie.",
 				"2": "Traslocato a San Giovanni in Marignano (RN), Italia.",
 				"3": "Diplomato presso ",
 				"4": "Studiato ingegnaria e scenze informatiche presso ",
 				"5": "Lavorato per ",
-				"6": " viaggiando per il Paese.",
+				"6": " con incarichi in tutta Italia e all' estero.",
 				"7": "Lavorato per ",
-				"8": " come programmatore mobile, sviluppando un' applicazione crossplatform utilizzando React Native.",
-				"9": "Lavorando attualmente per ",
-				"10": ", testando gestionale e prenotazioni online."
+				"8": " come programmatore mobile, sviluppando una applicazione ≪cross-platform≫ (Android e iOS).",
+				"9": "Lavoro attualmente per ",
+				"10": ", occupandomi di parte della programmazione e dell' assistenza tecnica ai gestori degli stabilimenti."
 			},
 			"callToAction": "Altro"
 		}

@@ -20,8 +20,8 @@
 	<div class="content">
 		<img src={me} alt="Riccardo Buzzolo" title="Riccardo Buzzolo" />
 		<div class="card-wide">
-			<Article style="padding: 0 !important;" title={$_("about.aboutMe")}>
-				<p>
+			<Article title={$_("about.aboutMe")}>
+				<p style="text-align: justify;">
 					{$_("about.aboutMeContent1")}
 					<ArticleLink
 						title={$_("about.aboutMeLink1")}
@@ -39,11 +39,11 @@
 			</Article>
 		</div>
 	</div>
-	<Divider height={1.5} />
+	<Divider height={4} />
 	<div class="content dense">
 		<div class="card-wide">
-			<Article style="padding: 0 !important;" title={$_("about.aboutMyWork")}>
-				<p>
+			<Article title={$_("about.aboutMyWork")}>
+				<p style="text-align: justify;">
 					{$_("about.aboutMyWorkContent1")}
 					<ArticleLink
 						title="Beacharound S.r.l."
@@ -67,18 +67,17 @@
 	}
 
 	.card-wide {
-		max-width: 400px;
 		font-size: 90%;
 		grid-column: span 2 / auto;
 	}
 
-	div.content {
+	.content {
 		display: grid;
 		gap: 3rem;
 		grid-template-columns: auto auto auto;
 		grid-template-rows: auto;
 		align-items: center;
-		justify-items: center;
+		justify-content: space-between;
 	}
 
 	img {
@@ -98,10 +97,11 @@
 	/* schermo piccolo */
 	@media only screen and (max-width: 800px) {
 		.content {
-			display: grid !important;
-			gap: 2rem !important;
-			grid-template-columns: auto !important;
-			grid-template-rows: auto auto !important;
+			display: grid;
+			gap: 2rem;
+			justify-items: center;
+			grid-template-columns: auto;
+			grid-template-rows: auto auto;
 		}
 
 		article p {
@@ -118,7 +118,7 @@
 
 		.card-wide {
 			font-size: 100%;
-			grid-column: auto !important;
+			grid-column: auto;
 		}
 
 		img {
@@ -133,14 +133,14 @@
 
 	/* schermo grande */
 	@media only screen and (min-width: 1400px) {
-		div.content {
-			gap: 3rem;
+		.content {
+			gap: 4rem;
 			grid-template-columns: auto auto auto;
 			grid-template-rows: auto;
 		}
 
 		.card-wide {
-			max-width: 500px;
+			font-size: 100%;
 			grid-column: span 2 / auto;
 		}
 

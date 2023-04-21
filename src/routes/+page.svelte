@@ -21,15 +21,13 @@
 	</div>
 	<Divider />
 	<div class="me">
-		<div class="cell">
+		<div>
 			<h1 class="title">Riccardo Buzzolo</h1>
 			<p class="subtitle">{$_("home.developer")} (Web / Mobile / IT)</p>
 		</div>
-		<div class="cell">
-			<img src={me} alt="Riccardo Buzzolo" title="Riccardo Buzzolo" />
-		</div>
+		<img src={me} alt="Riccardo Buzzolo" title="Riccardo Buzzolo" />
 	</div>
-	<Divider height={1.5} />
+	<Divider />
 	<Article
 		title={$_("home.works.title")}
 		link="works"
@@ -51,7 +49,7 @@
 			/>{$_("home.works.content.4")}
 		</p>
 	</Article>
-	<Divider height={1.5} />
+	<Divider />
 	<Article
 		title={$_("home.bio.title")}
 		link="about"
@@ -59,14 +57,17 @@
 	>
 		<div class="row">
 			<p>1994</p>
+			<span class="line-separator">-</span>
 			<p>{$_("home.bio.content.1")}</p>
 		</div>
 		<div class="row">
 			<p>2011</p>
+			<span class="line-separator">-</span>
 			<p>{$_("home.bio.content.2")}</p>
 		</div>
 		<div class="row">
 			<p>2013</p>
+			<span class="line-separator">-</span>
 			<p>
 				{$_("home.bio.content.3")}<ArticleLink
 					title="ITTS O. Belluzzi, RN"
@@ -76,6 +77,7 @@
 		</div>
 		<div class="row">
 			<p>2016</p>
+			<span class="line-separator">-</span>
 			<p>
 				{$_("home.bio.content.4")}<ArticleLink
 					title="Unibo Alma Mater Studiorum, Cesena"
@@ -85,6 +87,7 @@
 		</div>
 		<div class="row">
 			<p>2018</p>
+			<span class="line-separator">-</span>
 			<p>
 				{$_("home.bio.content.5")}<ArticleLink
 					title="Teddy S.p.A."
@@ -94,6 +97,7 @@
 		</div>
 		<div class="row">
 			<p>2019</p>
+			<span class="line-separator">-</span>
 			<p>
 				{$_("home.bio.content.7")}<ArticleLink
 					title="Mango Mobile S.r.l."
@@ -103,6 +107,7 @@
 		</div>
 		<div class="row">
 			<p>2021</p>
+			<span class="line-separator">-</span>
 			<p>
 				{$_("home.bio.content.9")}<ArticleLink
 					title="Beacharound S.r.l."
@@ -111,7 +116,7 @@
 			</p>
 		</div>
 	</Article>
-	<Divider height={1.5} />
+	<Divider />
 </article>
 
 <style>
@@ -149,8 +154,8 @@
 	}
 
 	article p {
-			font-weight: 500;
-		}
+		font-weight: 500;
+	}
 
 	img {
 		width: 120px;
@@ -170,6 +175,11 @@
 		display: flex;
 		column-gap: 0.5rem;
 		margin-bottom: 0.5rem;
+	}
+
+	.line-separator {
+		font-weight: bold;
+		color: var(--accentColor);
 	}
 
 	/* schermo piccolo */

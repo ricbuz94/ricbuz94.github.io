@@ -50,12 +50,11 @@
 		margin: 0px;
 		display: grid;
 		gap: 3rem;
-		grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	}
 
 	/* schermo piccolo */
 	@media only screen and (max-width: 720px) {
-
 		h5 {
 			font-size: 100%;
 		}
@@ -69,7 +68,7 @@
 	/* schermo grande */
 	@media only screen and (min-width: 1400px) {
 		ul {
-			grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(375, 1fr));
 		}
 	}
 </style>

@@ -53,6 +53,7 @@
 		padding: 0px;
 		width: 100%;
 		list-style: none;
+		box-sizing: border-box;
 	}
 
 	#marker {
@@ -66,6 +67,11 @@
 
 	/* schermo piccolo */
 	@media only screen and (max-width: 720px) {
+
+		#sections {
+			padding: 0px;
+		}
+
 		#marker {
 			padding-top: 2rem;
 			padding-bottom: 1rem;

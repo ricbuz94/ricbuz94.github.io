@@ -55,51 +55,50 @@
     }
   }
 
-  const applyTheme = () => {
-    const preferredTheme = isMediaThemeDark ? Theme.dark : Theme.light;
-    currentTheme = localStorage.getItem(THEME_KEY) || preferredTheme;
+  function applyTheme(theme?: string) {
+    if (browser) {
+      const preferredTheme: Theme = isMediaThemeDark ? Theme.dark : Theme.light;
+      const storedTheme = localStorage.getItem(THEME_KEY);
+      currentTheme = !!theme ? theme : storedTheme || preferredTheme;
 
-    if (browser && currentTheme === Theme.dark) {
-      document.body?.classList.remove(Theme.light);
-      document.body?.classList.add(Theme.dark);
-      document.getElementById("theme")?.classList.remove(Theme.light);
-      document.getElementById("theme")?.classList.add(Theme.dark);
-    } else {
-      document.body?.classList.remove(Theme.dark);
-      document.body?.classList.add(Theme.light);
-      document.getElementById("theme")?.classList.remove(Theme.dark);
-      document.getElementById("theme")?.classList.add(Theme.light);
+      localStorage.setItem(THEME_KEY, currentTheme);
+
+      console.table({
+        isMediaThemeDark,
+        preferredTheme,
+        storedTheme,
+        new: localStorage.getItem(THEME_KEY),
+      });
+
+      if (currentTheme === Theme.dark) {
+        document.body?.classList.remove(Theme.light);
+        document.body?.classList.add(Theme.dark);
+        document.getElementById("theme")?.classList.remove(Theme.light);
+        document.getElementById("theme")?.classList.add(Theme.dark);
+      } else {
+        document.body?.classList.remove(Theme.dark);
+        document.body?.classList.add(Theme.light);
+        document.getElementById("theme")?.classList.remove(Theme.dark);
+        document.getElementById("theme")?.classList.add(Theme.light);
+      }
     }
-  };
+  }
 
-  const toggleTheme = () => {
-    const stored = localStorage.getItem(THEME_KEY);
-
-    if (stored) {
-      localStorage.removeItem(THEME_KEY);
-    } else {
-      localStorage.setItem(
-        THEME_KEY,
-        isMediaThemeDark ? Theme.light : Theme.dark
-      );
-    }
-
-    applyTheme();
-  };
+  function toggleTheme() {
+    applyTheme(currentTheme === Theme.light ? Theme.dark : Theme.light);
+  }
 
   onMount(async () => {
     applyTheme();
-
     console.log("\n👉🏼   https://github.com/ricbuz94\n\n");
-
-    window.matchMedia(DARK_PREFERENCE).addEventListener("change", applyTheme);
+    window
+      .matchMedia(DARK_PREFERENCE)
+      .addEventListener("change", () => applyTheme());
 
     window.addEventListener(
       "scroll",
       isMobile ? setTopButtonVisible : setNavBottomBorder,
-      {
-        passive: true,
-      }
+      { passive: true }
     );
 
     return () => {
@@ -109,7 +108,7 @@
       );
       window
         .matchMedia(DARK_PREFERENCE)
-        .removeEventListener("change", applyTheme);
+        .removeEventListener("change", () => applyTheme());
     };
   });
 </script>
@@ -279,8 +278,7 @@
     min-height: 100vh;
     color: var(--textColor);
     margin: 0 auto;
-    font-family: "Nunito", -apple-system, BlinkMacSystemFont, "Segoe UI", Ubuntu,
-      "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, Arial sans-serif;
     font-size: var(--fontSize);
     background-color: var(--backgroundColor);
     transition: color var(--transition), background-color var(--transition);
@@ -307,12 +305,11 @@
 
   main {
     width: 650px;
-    padding-left: 25px;
-    padding-right: 25px;
     margin-left: auto;
     margin-right: auto;
-    box-sizing: border-box;
     padding-top: 80px;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
     padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
@@ -328,8 +325,8 @@
     }
 
     main {
+      width: 100%;
       display: block;
-      max-width: 100vw;
       padding-top: 0px;
       padding-left: 1.5rem;
       padding-right: 1.5rem;

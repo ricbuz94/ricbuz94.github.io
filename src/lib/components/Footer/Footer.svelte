@@ -17,14 +17,14 @@
       text="@riccardo_buzzolo"
     />
     <ContactLink
-      href={import.meta.env.VITE_APP_GITHUB_PROFILE_URL}
-      icon="github"
-      text="@ricbuz94"
-    />
-    <ContactLink
       href={import.meta.env.VITE_APP_TWITTER_PROFILE_URL}
       icon="twitter"
       text="@riccardobuzzolo"
+    />
+    <ContactLink
+      href={import.meta.env.VITE_APP_GITHUB_PROFILE_URL}
+      icon="github"
+      text="@ricbuz94"
     />
   </div>
   <p class="bottom-text">
@@ -50,15 +50,12 @@
 
 <style>
   footer {
+    width: 650px;
+    font-size: 80%;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
     margin-left: auto;
     margin-right: auto;
-    max-width: 70vw;
-    font-size: 80%;
-    min-width: 45vmin;
-    padding-top: 2rem;
-    padding-bottom: 6rem;
-    padding-left: 20%;
-    padding-right: 20%;
     transition: opacity 300ms ease;
   }
 
@@ -67,7 +64,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    margin-bottom: 3rem;
+    margin-bottom: 5rem;
   }
 
   .footer-link {
@@ -93,7 +90,12 @@
   /* schermo piccolo */
   @media only screen and (max-width: 720px) {
     footer {
-      max-width: 100vw;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding-top: 1rem;
       padding-bottom: 5rem;
       padding-left: 1.5rem;
       padding-right: 1.5rem;
@@ -112,8 +114,8 @@
 
   /* schermo grande */
   @media only screen and (min-width: 1400px) {
-    .contacts-container {
-      margin-bottom: 5rem;
+    footer {
+      width: 850px;
     }
 
     footer a p {

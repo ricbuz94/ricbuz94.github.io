@@ -4,26 +4,29 @@
 </script>
 
 <script lang="ts">
-	export let style: string = "";
 	export let title: string;
 	export let text: string =
-		"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum provident vitae accusamus, amet, dolores est quaerat expedita repellat nobis numquam voluptate iure necessitatibus qui odit. Nobis eveniet blanditiis delectus repellendus.";
+		"Lorem ipsum dolor sit amet consectetur adipisicing elit.";
 	export let link: string = "";
 	export let linkText: string = "Testo";
 </script>
 
-<article {style}>
+<article>
 	<h3>{title}</h3>
 	<slot>
 		<p>{text}</p>
 	</slot>
-	<hr />
 	{#if !!link}
+		<hr />
 		<ButtonLink to={`${base}/${link}`} text={linkText} shadow />
 	{/if}
 </article>
 
 <style>
+	article {
+		padding: 2rem 0px;
+	}
+
 	h3 {
 		margin-bottom: 1rem;
 		text-decoration: underline;
@@ -37,7 +40,7 @@
 	}
 
 	hr {
-		height: 1rem;
+		height: 1.5rem;
 		background: none;
 	}
 
