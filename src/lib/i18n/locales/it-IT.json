@@ -16,25 +16,25 @@
 			"title": "Lavori e progetti",
 			"content": {
 				"1": "Attualmente lavoro per ",
-				"2": ", una startup innovativa con sede a San Giovanni in Marignano(RN) che si occupa di gestionale e prenotazioni online per gli stabilimenti balneari. In passato ho lavorato per ",
-				"3": " come sviluppatore mobile, utilizzando un framework ≪cross-platform≫ per produrre applicazioni mobile per entrambe le piattaforme (Android e iOS) mantenendo una singola base di codice. Ho sviluppato, in modo analogo ma con un altro framework, ",
-				"4": ": un' applicazione per il calcolo del tasso alcolemico in tempo reale."
+				"2": ", una startup innovativa con sede a San Giovanni in Marignano (RN) che si occupa di gestionale e prenotazioni online per gli stabilimenti balneari in tutta Italia. In passato ho lavorato per ",
+				"3": " come sviluppatore mobile, utilizzando un framework per lo sviluppo di applicazioni mobile «cross-platform» - per entrambe le piattaforme (Android e iOS) - che consente di mantenere una singola base di codice rilasciando l'applicazione su due sistemi operativi. Ho sviluppato, in modo analogo ma con un altro framework, ",
+				"4": ": un'applicazione per il calcolo del tasso alcolemico in tempo reale."
 			},
 			"callToAction": "Altro"
 		},
 		"bio": {
 			"title": "Biografia",
 			"content": {
-				"1": "Nato a Cattolica (RN), Italia, dove ho vissuto fino alle scuole medie.",
-				"2": "Traslocato a San Giovanni in Marignano (RN), Italia.",
+				"1": "Nato a Cattolica (RN).",
+				"2": "Abito a San Giovanni in Marignano (RN), Italia.",
 				"3": "Diplomato presso ",
-				"4": "Studiato ingegnaria e scenze informatiche presso ",
+				"4": "Studiato ingegneria e scienze informatiche presso ",
 				"5": "Lavorato per ",
-				"6": " con incarichi in tutta Italia e all' estero.",
+				"6": " con incarichi in tutta Italia e all'estero.",
 				"7": "Lavorato per ",
-				"8": " come programmatore mobile, sviluppando una applicazione ≪cross-platform≫ (Android e iOS).",
+				"8": " come programmatore mobile, sviluppando un'applicazione «cross-platform» (Android e iOS).",
 				"9": "Lavoro attualmente per ",
-				"10": ", occupandomi di parte della programmazione e dell' assistenza tecnica ai gestori degli stabilimenti."
+				"10": ", occupandomi di parte della programmazione e dell'assistenza tecnica ai gestori degli stabilimenti."
 			},
 			"callToAction": "Altro"
 		}
@@ -45,15 +45,15 @@
 			"list": [
 				{
 					"title": "Beacharound",
-					"description": "Portale di ricerca e prenotazione online di postazioni negli stabilimenti balneari di tutta Italia."
+					"description": "Portale di ricerca e prenotazione online di stabilimenti balneari in tutta Italia."
 				},
 				{
 					"title": "Beacharound Business",
 					"description": "Gestionale in cloud e prenotazioni online per stabilimenti balneari."
 				},
 				{
-					"title": "PicWix per Mango Mobile",
-					"description": "Applicazione crossplatform in ReactNative che permette di gestire contest (foto e video) a premi."
+					"title": "Pic-Wix per Mango Mobile",
+					"description": "Applicazione «cross-platform» in React Native che permette di gestire contest (foto e video) a premi."
 				}
 			]
 		},
@@ -78,13 +78,13 @@
 	],
 	"about": {
 		"aboutMe": "Chi sono",
-		"aboutMeContent1": "Mi chiamo Riccardo Buzzolo, sono nato a Cattolica(RN) il 13 Dicembre del 1994. Diplomato presso l' Istituto Tecnico per Geometri O. Belluzzi di Rimini (oggi ",
+		"aboutMeContent1": "Mi chiamo Riccardo Buzzolo, sono nato a Cattolica(RN) il 13 Dicembre del 1994. Diplomato presso l'Istituto Tecnico per Geometri O. Belluzzi di Rimini (oggi ",
 		"aboutMeLink1": "Istituto Tecnico Tecnologico Statale",
-		"aboutMeContent2": "). In seguito ho studiato presso l'università Alma Mater Studiorum di Cesena, nel corso di ",
+		"aboutMeContent2": "). In seguito ho studiato presso l'università Alma Mater Studiorum di Cesena, percorso di ",
 		"aboutMeLink2": "Ingegneria e Scienze Informatiche",
-		"aboutMeContent3": ". Ho lavorato per un po' come programmatore mobile per Mango Mobile, a Cesena, e come valutatore per il gruppo Teddy, a Rimini. Attualmente lavoro come programmatore web \"full-stack\" per una startup innovativa, a San Giovanni in Marignano, che si occupa di gestionali e prenotazioni online per gli stabilimenti balneari sul territorio nazionale: ",
+		"aboutMeContent3": ". Ho lavorato per un po' come programmatore mobile per Mango Mobile, a Cesena, e come valutatore per il gruppo Teddy, a Rimini. Attualmente lavoro come programmatore web «full-stack» per una startup innovativa, di San Giovanni in Marignano, che si occupa di gestionale e prenotazioni online per gli stabilimenti balneari sul territorio nazionale: ",
 		"aboutMyWork": "Il mio lavoro",
-		"aboutMyWorkContent1": "Come menzionato sopra, lavoro per una startup di San Giovanni in Marignano che si occupa di gestionali per gli stabilimenti balneari e della prenotazione online degli stessi: ",
-		"aboutMyWorkContent2": " Il mio lavoro cambia in alcuni aspetti tra la stagione estiva e quella invernale. Durante la stagione invernale il lavoro è incentrato sullo sviluppo del gestionale, e quindi sui test da effettuare sulle nuove funzini o modifiche apportate al gestionale. In sostanza, si tratta di test end-to-end, per verificare il funzionamento dei vari flussi di operazioni, e test delle API (come parte di \"integration testing\"), per verificare la corretta fruizione dei dati. Durante la stagione estiva, il mio lavoro si concentra soprattutto sul fornire assistenza tecnica ai gestori degli stabilimenti e raccogliere ed analizzare dati per migliorare il programma."
+		"aboutMyWorkContent1": "Come scritto in precedenza, lavoro per una startup di San Giovanni in Marignano che si occupa di gestionale e prenotazione online per gli stabilimenti balneari di tutta Italia: ",
+		"aboutMyWorkContent2": " Il mio lavoro cambia, in alcuni aspetti, tra la stagione estiva e quella invernale. Durante la stagione invernale il lavoro è incentrato sullo sviluppo del gestionale, e, quindi, anche sui test da effettuare per collaudare le nuove funzini o modifiche apportate al gestionale. In sostanza, si tratta di test end-to-end, per verificare il funzionamento dei vari flussi di operazioni, e test delle API (come parte di «integration testing»), per verificare la corretta fruizione dei dati. Durante la stagione estiva, il mio lavoro si concentra, in parte, sull'assistenza tecnica ai gestori degli stabilimenti, la raccolta e analisi dati per migliorare il programma."
 	}
 }

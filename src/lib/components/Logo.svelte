@@ -37,7 +37,6 @@
 	@media only screen and (max-width: 420px) {
 		h3 {
 			font-size: 24px;
-			content: "RBBBB";
 		}
 	}
 </style>

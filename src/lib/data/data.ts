@@ -11,21 +11,21 @@ const data: Array<Section> = [
 		title: "Works",
 		posts: [
 			{
-				url: `${import.meta.env.VITE_APP_BEACHAROUND_URL}` ?? "#",
+				url: `${import.meta.env.VITE_APP_BEACHAROUND_URL}` || "#",
 				image: beacharound,
 				title: "Beacharound",
 				tags: [Tag.web],
 				description: "The portal for booking beaches throughout Italy.",
 			},
 			{
-				url: `${import.meta.env.VITE_APP_BEACHAROUND_BUSINESS_URL}` ?? "#",
+				url: `${import.meta.env.VITE_APP_BEACHAROUND_BUSINESS_URL}` || "#",
 				image: beacharoundBusiness,
 				title: "Beacharound Business",
 				tags: [Tag.web],
 				description: "Management system for bathing establishments and online reservations.",
 			},
 			{
-				url: `${import.meta.env.VITE_APP_MANGO_URL}` ?? "#",
+				url: `${import.meta.env.VITE_APP_MANGO_URL}` || "#",
 				image: picWix,
 				title: "PicWix for Mango Mobile",
 				tags: [Tag.ios, Tag.android],
@@ -37,7 +37,7 @@ const data: Array<Section> = [
 		title: "Projects",
 		posts: [
 			{
-				url: `${import.meta.env.VITE_APP_DRINKTOOL_URL}` ?? "#",
+				url: `${import.meta.env.VITE_APP_DRINKTOOL_URL}` || "#",
 				image: drinktool,
 				title: "Drink Tool app",
 				tags: [Tag.android],
@@ -49,7 +49,7 @@ const data: Array<Section> = [
 		title: "Old projects",
 		posts: [
 			{
-				url: `${import.meta.env.VITE_APP_HMCID_URL}` ?? "#",
+				url: `${import.meta.env.VITE_APP_HMCID_URL}` || "#",
 				image: howMuchCanIDrink,
 				title: "Howmuchcanidrink",
 				tags: [Tag.web],

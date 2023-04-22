@@ -76,7 +76,7 @@
 			</p>
 		</div>
 		<div class="row">
-			<p>2016</p>
+			<p>2017</p>
 			<span class="line-separator">-</span>
 			<p>
 				{$_("home.bio.content.4")}<ArticleLink

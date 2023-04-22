@@ -278,7 +278,7 @@
     min-height: 100vh;
     color: var(--textColor);
     margin: 0 auto;
-    font-family: "Nunito", -apple-system, BlinkMacSystemFont, Arial sans-serif;
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     font-size: var(--fontSize);
     background-color: var(--backgroundColor);
     transition: color var(--transition), background-color var(--transition);
