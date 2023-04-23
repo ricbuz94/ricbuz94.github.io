@@ -101,8 +101,8 @@
     background-color: var(--navBackgroundColor);
     -webkit-backdrop-filter: saturate(180%) blur(15px);
     backdrop-filter: saturate(180%) blur(15px);
-    transition: background-color var(--transition), box-shadow var(--transition),
-      opacity 300ms ease;
+    transition: height var(--transition), background-color var(--transition),
+      box-shadow var(--transition), opacity 300ms ease;
   }
 
   #nav {

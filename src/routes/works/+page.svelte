@@ -13,15 +13,17 @@
 		header: string;
 		list: Array<{ title: string; description: string }>;
 	}>;
-	$: sections = (data?.sections as Array<Section>).map(({ title, posts }, i) => ({
-		key: `${i}-${title}`,
-		title: jsonWorks[i].header,
-		posts: posts?.map((post, j) => ({
-			...post,
-			title: jsonWorks[i].list[j].title,
-			description: jsonWorks[i].list[j].description,
-		})),
-	}));
+	$: sections = (data?.sections as Array<Section>).map(
+		({ title, posts }, i) => ({
+			key: `${i}-${title}`,
+			title: jsonWorks[i].header,
+			posts: posts?.map((post, j) => ({
+				...post,
+				title: jsonWorks[i].list[j].title,
+				description: jsonWorks[i].list[j].description,
+			})),
+		})
+	);
 </script>
 
 <svelte:head>
@@ -67,7 +69,6 @@
 
 	/* schermo piccolo */
 	@media only screen and (max-width: 720px) {
-
 		#sections {
 			padding: 0px;
 		}

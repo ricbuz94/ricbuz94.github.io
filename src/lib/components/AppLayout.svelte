@@ -28,30 +28,28 @@
     currentTheme === Theme.light ? "/favicon.ico" : "/favicon-dark.ico";
   $: addressBarColor = currentTheme === Theme.light ? "#f6f9fc" : "#202023";
 
+  const header = browser && document.getElementById("header");
   const mq: Readable<boolean> = useMediaQuery(
-    "only screen and (max-width: 400px)"
+    "only screen and (max-width: 720px)"
   );
   const isMediaThemeDark =
     browser && window.matchMedia(DARK_PREFERENCE).matches;
 
   mq.subscribe((value) => (isMobile = value));
 
-  function setNavBottomBorder() {
-    let header = document.getElementById("header");
-    if (header) {
-      if (browser && window.scrollY > 15) {
-        header.style.boxShadow = "var(--navBorderBottom)";
-      } else {
-        header.style.boxShadow = "none";
-      }
-    }
-  }
-
-  function setTopButtonVisible() {
-    if (browser && window.scrollY > 80) {
+  function onScrollHandler() {
+    if (browser && window.scrollY > 15) {
       isTopButtonVisible = true;
+      if (!!header && !isMobile) {
+        header.style.height = "60px";
+        header.style.boxShadow = "var(--navBorderBottom)";
+      }
     } else {
       isTopButtonVisible = false;
+      if (!!header && !isMobile) {
+        header.style.height = "80px";
+        header.style.boxShadow = "none";
+      }
     }
   }
 
@@ -60,15 +58,7 @@
       const preferredTheme: Theme = isMediaThemeDark ? Theme.dark : Theme.light;
       const storedTheme = localStorage.getItem(THEME_KEY);
       currentTheme = !!theme ? theme : storedTheme || preferredTheme;
-
       localStorage.setItem(THEME_KEY, currentTheme);
-
-      console.table({
-        isMediaThemeDark,
-        preferredTheme,
-        storedTheme,
-        new: localStorage.getItem(THEME_KEY),
-      });
 
       if (currentTheme === Theme.dark) {
         document.body?.classList.remove(Theme.light);
@@ -90,22 +80,14 @@
 
   onMount(async () => {
     applyTheme();
-    console.log("\n👉🏼   https://github.com/ricbuz94\n\n");
     window
       .matchMedia(DARK_PREFERENCE)
       .addEventListener("change", () => applyTheme());
 
-    window.addEventListener(
-      "scroll",
-      isMobile ? setTopButtonVisible : setNavBottomBorder,
-      { passive: true }
-    );
+    window.addEventListener("scroll", onScrollHandler, { passive: true });
 
     return () => {
-      window.removeEventListener(
-        "scroll",
-        isMobile ? setTopButtonVisible : setNavBottomBorder
-      );
+      window.removeEventListener("scroll", onScrollHandler);
       window
         .matchMedia(DARK_PREFERENCE)
         .removeEventListener("change", () => applyTheme());

@@ -35,7 +35,7 @@
 	}
 
 	li:hover div.image {
-		transform: scale(1.1);
+		transform: scale(1.05);
 	}
 
 	li:not(:last-child) {
@@ -58,8 +58,8 @@
 	}
 
 	.image-container {
-		height: 180px;
-		max-height: 180px;
+		height: 200px;
+		max-height: 200px;
 		overflow: hidden;
 		border-radius: var(--borderRadius);
 	}
@@ -69,7 +69,7 @@
 		background-size: cover;
 		background-position: 50%;
 		background-repeat: no-repeat;
-		transition: transform 4s cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition: transform 3s cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 
 	.container {
@@ -167,8 +167,8 @@
 	/* schermo grande */
 	@media only screen and (min-width: 1400px) {
 		.image-container {
-			height: 220px;
-			max-height: 220px;
+			height: 250px;
+			max-height: 250px;
 		}
 	}
 </style>

@@ -10,7 +10,7 @@
 
 <li>
 	<div>
-		<Icon name="corner-down-right" size={16} />
+		<Icon name="corner-down-right" width={3} size={16} isThemed />
 		<h5>{section?.title}</h5>
 	</div>
 	<ul>
