@@ -7,11 +7,12 @@
 
 <style>
 	.loader {
-		border: 0.25rem solid var(--borderColor);
-		border-radius: 50%;
-		border-top: 0.25rem solid var(--accentColor);
 		width: 4rem;
 		height: 4rem;
+		margin: 0px;
+		border-radius: 50%;
+		border: 0.25rem solid var(--borderColor);
+		border-top: 0.25rem solid var(--accentColor);
 		-webkit-animation: spin 700ms linear infinite; /* Safari */
 		animation: spin 700ms linear infinite;
 	}

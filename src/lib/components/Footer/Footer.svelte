@@ -1,5 +1,6 @@
 <script lang="ts">
   import ContactLink from "./ContactLink.svelte";
+  import makeItRain from "$lib/utils/confetti";
 
   const year: number = new Date().getFullYear();
 </script>
@@ -43,7 +44,7 @@
       rel="noreferrer">GitHub Pages</a
     >
   </p>
-  <p class="sub-text bottom-text">
+  <p class="sub-text bottom-text" on:mousedown={makeItRain}>
     © {year} Riccardo Buzzolo. All Rights Reserved.
   </p>
 </footer>
@@ -85,6 +86,7 @@
 
   p.sub-text {
     color: var(--subTextColor);
+    cursor: pointer;
   }
 
   /* schermo piccolo */

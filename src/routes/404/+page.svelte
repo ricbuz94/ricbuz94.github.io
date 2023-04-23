@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { page } from "$app/stores";
   import { base } from "$app/paths";
   import { goto } from "$app/navigation";
   import Icon from "$lib/components/Icon.svelte";
@@ -11,7 +10,7 @@
 </script>
 
 <svelte:head>
-  <title>404 · RiccardoBuzzolo</title>
+  <title>404</title>
 </svelte:head>
 
 <div id="container">

@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Home · RiccardoBuzzolo</title>
+	<title>Home</title>
 	<meta
 		name="description"
 		content="Homepage of Riccardo Buzzolo. See my works and bio."

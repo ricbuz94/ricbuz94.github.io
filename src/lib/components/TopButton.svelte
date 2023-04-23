@@ -3,6 +3,12 @@
   import { fly } from "svelte/transition";
   import Icon from "./Icon.svelte";
 
+  let isHover: boolean = false;
+
+  function onHover() {
+    isHover = !isHover;
+  }
+
   function scrollTop() {
     if (browser) {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -12,11 +18,13 @@
 
 <button
   id="to-top"
+  on:mouseenter={onHover}
+  on:mouseleave={onHover}
+  on:click|preventDefault={scrollTop}
   in:fly={{ x: 0, y: 60, duration: 300, delay: 0 }}
   out:fly={{ x: 0, y: 60, duration: 300, delay: 0 }}
-  on:click|preventDefault={scrollTop}
 >
-  <Icon name="arrow-up" size={20} />
+  <Icon name="arrow-up" size={20} isThemed={isHover} />
 </button>
 
 <style>

@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-  <title>{$page.status} · RiccardoBuzzolo</title>
+  <title>{$page.status}</title>
 </svelte:head>
 
 <div id="container">

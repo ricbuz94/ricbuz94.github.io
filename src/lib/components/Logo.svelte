@@ -5,7 +5,7 @@
 
 	let isMobile: boolean = false;
 	const mq: Readable<boolean> = useMediaQuery(
-		"only screen and (max-width: 420px)"
+		"only screen and (max-width: 720px)"
 	);
 
 	mq.subscribe((value) => (isMobile = value));
@@ -13,7 +13,7 @@
 	$: size = isMobile ? 34 : 24;
 </script>
 
-<a href={"/"} title="Homepage">
+<a href="/" title="Homepage">
 	<Icon name="box" {size} isThemed />
 	<h3>{text}</h3>
 </a>
@@ -34,7 +34,7 @@
 		transition: color var(--transition);
 	}
 
-	@media only screen and (max-width: 420px) {
+	@media only screen and (max-width: 720px) {
 		h3 {
 			font-size: 24px;
 		}

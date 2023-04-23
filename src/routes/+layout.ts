@@ -9,8 +9,6 @@ export const prerender = true;
 
 export const load = (async () => {
 
-  console.log("\n👉🏼   https://github.com/ricbuz94\n\n");
-
   let currentTheme = "light";
   let language: string | null = "it-IT";
 

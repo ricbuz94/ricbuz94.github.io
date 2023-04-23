@@ -1,9 +1,9 @@
 <script context="module" lang="ts">
 	import { _, json, locale } from "svelte-i18n";
-	import Divider from "$lib/components/Divider.svelte";
-	import List from "$lib/components/Works/Section.svelte";
 	import type { PageData } from "./$types";
 	import type { Section } from "$lib/helpers/interfaces";
+	import Divider from "$lib/components/Divider.svelte";
+	import List from "$lib/components/Works/Section.svelte";
 </script>
 
 <script lang="ts">
@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-	<title>{$_("layout.nav.works")} · RiccardoBuzzolo</title>
+	<title>{$_("layout.nav.works")}</title>
 	<meta
 		name="description"
 		content="Works page of Riccardo Buzzolo. Browse my old and current projects and works."

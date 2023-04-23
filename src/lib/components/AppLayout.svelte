@@ -2,17 +2,17 @@
   import "../../app.css";
   import "$lib/i18n";
   import { _, isLoading } from "svelte-i18n";
-  import { page } from "$app/stores";
   import { browser } from "$app/environment";
   import { onMount } from "svelte";
+  import { page } from "$app/stores";
   import { fly } from "svelte/transition";
-  import { Theme } from "$lib/helpers/interfaces";
-  import Loader from "$lib/components/Loader.svelte";
-  import Footer from "$lib/components/Footer/Footer.svelte";
-  import Header from "$lib/components/Header/Header.svelte";
-  import type { LayoutData } from "../../routes/$types";
-  import { useMediaQuery } from "$lib/hooks/useMediaQuery";
   import type { Readable } from "svelte/store";
+  import type { LayoutData } from "../../routes/$types";
+  import { useMediaQuery } from "../hooks/useMediaQuery";
+  import { Theme } from "../helpers/interfaces";
+  import Loader from "./Loader.svelte";
+  import Footer from "./Footer/Footer.svelte";
+  import Header from "./Header/Header.svelte";
   import TopButton from "./TopButton.svelte";
 
   export let data: LayoutData;
@@ -28,7 +28,6 @@
     currentTheme === Theme.light ? "/favicon.ico" : "/favicon-dark.ico";
   $: addressBarColor = currentTheme === Theme.light ? "#f6f9fc" : "#202023";
 
-  const header = browser && document.getElementById("header");
   const mq: Readable<boolean> = useMediaQuery(
     "only screen and (max-width: 720px)"
   );
@@ -38,6 +37,7 @@
   mq.subscribe((value) => (isMobile = value));
 
   function onScrollHandler() {
+    const header = browser && document.getElementById("header");
     if (browser && window.scrollY > 15) {
       isTopButtonVisible = true;
       if (!!header && !isMobile) {
@@ -80,6 +80,7 @@
 
   onMount(async () => {
     applyTheme();
+    onScrollHandler();
     window
       .matchMedia(DARK_PREFERENCE)
       .addEventListener("change", () => applyTheme());
@@ -102,16 +103,13 @@
 
 <div id="theme" class="light">
   {#if $isLoading}
-    {#key (refresh = $page.url.pathname)}
-      <div class="loading" in:fly={{ y: -15, duration: 300 }}>
-        <Loader />
-        <div />
-      </div>
-    {/key}
+    <div class="loading">
+      <Loader />
+    </div>
   {:else}
     <Header language={data?.language} {currentTheme} {toggleTheme} />
     {#key (refresh = $page.url.pathname)}
-      <main in:fly={{ y: 30, duration: 600, delay: 150 }}>
+      <main in:fly={{ y: 30, duration: 600, delay: 100 }}>
         <slot />
       </main>
     {/key}
@@ -257,13 +255,13 @@
   }
 
   #theme {
+    margin: 0 auto;
     min-height: 100vh;
     color: var(--textColor);
-    margin: 0 auto;
-    font-family: "Nunito", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
     font-size: var(--fontSize);
     background-color: var(--backgroundColor);
     transition: color var(--transition), background-color var(--transition);
+    font-family: "Nunito", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   }
 
   :global(p) {
@@ -277,12 +275,11 @@
   }
 
   .loading {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    padding: 3px;
+    transform: translate(-50%, -60%);
   }
 
   main {

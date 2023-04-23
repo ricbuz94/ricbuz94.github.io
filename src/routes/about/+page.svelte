@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>{$_("layout.nav.about")} · RiccardoBuzzolo</title>
+	<title>{$_("layout.nav.about")}</title>
 	<meta
 		name="description"
 		content="About page for Riccardo Buzzolo. Know something about me."
