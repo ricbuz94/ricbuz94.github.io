@@ -85,8 +85,11 @@
   }
 
   p.sub-text {
-    color: var(--subTextColor);
     cursor: pointer;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--subTextColor);
   }
 
   /* schermo piccolo */

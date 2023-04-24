@@ -77,8 +77,8 @@ hr {
 	--accentColorHover: var(--purpleLight);
 	--textColor: var(--gray0);
 	--subTextColor: var(--gray2);
-	--webTag: #82b5ff;
-	--androidTag: #99d066;
+	--webTag: #3b82f6;
+	--androidTag: #a4c34a;
 	--borderColor: rgba(255, 255, 255, 0.1);
 	--navBackgroundColor: rgba(32, 32, 32, 0.6);
 	--navBorder: inset 1px rgba(255, 255, 255, 0.1);

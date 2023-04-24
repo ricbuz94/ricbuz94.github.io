@@ -92,17 +92,18 @@
 
 <style>
   #header {
-    z-index: 1;
+    z-index: 101;
     height: 80px;
     width: 100%;
     position: fixed;
     box-shadow: none;
     user-select: none;
+    backface-visibility: hidden;
     background-color: var(--navBackgroundColor);
-    -webkit-backdrop-filter: saturate(180%) blur(15px);
     backdrop-filter: saturate(180%) blur(15px);
-    transition: height var(--transition), background-color var(--transition),
-      box-shadow var(--transition), opacity 300ms ease;
+    -webkit-backdrop-filter: saturate(180%) blur(15px);
+    transition: height 200ms ease 0s, box-shadow 200ms ease 0s,
+      background-color var(--transition), opacity 300ms ease;
   }
 
   #nav {
