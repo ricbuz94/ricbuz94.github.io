@@ -1,8 +1,21 @@
 <script lang="ts">
+  import { browser } from "$app/environment";
   import ContactLink from "./ContactLink.svelte";
-  import makeItRain from "$lib/utils/confetti";
+  import JSConfetti from "js-confetti";
 
   const year: number = new Date().getFullYear();
+  const jsConfetti = browser && new JSConfetti();
+  const emojis = [ "🔥", "⚡️", "💥", "✨", "💫", "🌸", "💦", "🚀", "🍆", "🍑", "💪", "🍺", "🌮", "🐈", "🍄", "🎱", "💘", "🎉", "💎", "👌", "🤙", "👍", "🤘", "👅", "🎈", "💵", "💸" ];
+
+  function makeItRain() {
+    if (!!jsConfetti) {
+      const rand = (arr: Array<string>) =>
+        arr[Math.floor(Math.random() * arr.length)];
+      jsConfetti.addConfetti({
+        emojis: [rand(emojis), rand(emojis)],
+      });
+    }
+  }
 </script>
 
 <footer>
