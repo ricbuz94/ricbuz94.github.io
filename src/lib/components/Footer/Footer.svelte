@@ -3,9 +3,15 @@
   import ContactLink from "./ContactLink.svelte";
   import JSConfetti from "js-confetti";
 
+  let jsConfetti: JSConfetti | undefined;
   const year: number = new Date().getFullYear();
-  const jsConfetti = browser && new JSConfetti();
-  const emojis = [ "🔥", "⚡️", "💥", "✨", "💫", "🌸", "💦", "🚀", "🍆", "🍑", "💪", "🍺", "🌮", "🐈", "🍄", "🎱", "💘", "🎉", "💎", "👌", "🤙", "👍", "🤘", "👅", "🎈", "💵", "💸" ];
+  const emojis = [ "🔥", "⚡️", "💥", "✨", "💫", "🌸", "💦", "🚀", "🍆", "🍑", "💪", "🍺", "🌮", "🐈", "🍄", "🎱", "💘", "🎉", "💎", "👌", "🤙", "👍", "🤘", "👅", "🎈", "💵", "💸", ];
+
+  function setCanvas() {
+    if (!jsConfetti) {
+      jsConfetti = new JSConfetti();
+    }
+  }
 
   function makeItRain() {
     if (!!jsConfetti) {
@@ -57,7 +63,7 @@
       rel="noreferrer">GitHub Pages</a
     >
   </p>
-  <p class="sub-text bottom-text" on:mousedown={makeItRain}>
+  <p class="sub-text bottom-text" on:mouseenter={setCanvas} on:mousedown={makeItRain}>
     © {year} Riccardo Buzzolo. All Rights Reserved.
   </p>
 </footer>

@@ -15,6 +15,7 @@ enum Tag {
 }
 
 interface Post {
+	id: string,
 	url: string,
 	title: string,
 	tags: Array<Tag>,
@@ -23,6 +24,7 @@ interface Post {
 }
 
 interface Section {
+	id: string,
 	title: string,
 	posts: Array<Post>
 }

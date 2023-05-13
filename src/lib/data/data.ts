@@ -8,9 +8,11 @@ import howMuchCanIDrink from "$lib/assets/images/howmuchcanidrink.webp";
 
 const data: Array<Section> = [
 	{
+		id: "000000",
 		title: "Works",
 		posts: [
 			{
+				id: "000000",
 				url: `${import.meta.env.VITE_APP_BEACHAROUND_URL}` || "#",
 				image: beacharound,
 				title: "Beacharound",
@@ -18,6 +20,7 @@ const data: Array<Section> = [
 				description: "The portal for booking beaches throughout Italy.",
 			},
 			{
+				id: "000001",
 				url: `${import.meta.env.VITE_APP_BEACHAROUND_BUSINESS_URL}` || "#",
 				image: beacharoundBusiness,
 				title: "Beacharound Business",
@@ -25,6 +28,7 @@ const data: Array<Section> = [
 				description: "Management system for bathing establishments and online reservations.",
 			},
 			{
+				id: "000002",
 				url: `${import.meta.env.VITE_APP_MANGO_URL}` || "#",
 				image: picWix,
 				title: "PicWix for Mango Mobile",
@@ -34,9 +38,11 @@ const data: Array<Section> = [
 		],
 	},
 	{
+		id: "000001",
 		title: "Projects",
 		posts: [
 			{
+				id: "000003",
 				url: `${import.meta.env.VITE_APP_DRINKTOOL_URL}` || "#",
 				image: drinktool,
 				title: "Drink Tool app",
@@ -46,9 +52,11 @@ const data: Array<Section> = [
 		],
 	},
 	{
+		id: "000002",
 		title: "Old projects",
 		posts: [
 			{
+				id: "000004",
 				url: `${import.meta.env.VITE_APP_HMCID_URL}` || "#",
 				image: howMuchCanIDrink,
 				title: "Howmuchcanidrink",

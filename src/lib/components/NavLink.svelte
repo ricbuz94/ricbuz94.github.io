@@ -1,13 +1,22 @@
 <script context="module" lang="ts">
 	import { page } from "$app/stores";
+	import Icon from "./Icon.svelte";
+	import isMobile from "$lib/helpers/isMobile";
 </script>
 
 <script lang="ts">
 	export let href: string = "/";
+	export let mobileIcon: string = "circle";
+
 	$: isActive = $page.url.pathname === href;
 </script>
 
-<a {...$$props} class:active={isActive} {href}><slot /></a>
+<a {...$$props} class:active={isActive} {href}>
+	{#if isMobile()}
+		<Icon name={mobileIcon} />
+	{/if}
+	<slot />
+</a>
 
 <style>
 	a {
@@ -40,14 +49,20 @@
 	@media only screen and (max-width: 720px) {
 		a {
 			text-align: center;
-			padding: 0.75rem 0px;
+			padding: 0.75rem 1rem;
 			background: none;
 			font-size: 1rem;
 			border-radius: var(--borderRadius);
+			transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+			display: flex;
+			gap: 1rem;
+			align-items: center;
 		}
 
 		a:hover {
-			color: var(--accentColor);
+			transform: scale(0.9);
+			background-color: rgba(112, 117, 121, 0.08);
+			color: var(--textColor);
 		}
 	}
 </style>

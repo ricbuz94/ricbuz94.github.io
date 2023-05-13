@@ -13,17 +13,15 @@
 		header: string;
 		list: Array<{ title: string; description: string }>;
 	}>;
-	$: sections = (data?.sections as Array<Section>).map(
-		({ title, posts }, i) => ({
-			key: `${i}-${title}`,
-			title: jsonWorks[i].header,
-			posts: posts?.map((post, j) => ({
-				...post,
-				title: jsonWorks[i].list[j].title,
-				description: jsonWorks[i].list[j].description,
-			})),
-		})
-	);
+	$: sections = (data?.sections as Array<Section>).map(({ id, posts }, i) => ({
+		id,
+		title: jsonWorks[i].header,
+		posts: posts?.map((post, j) => ({
+			...post,
+			title: jsonWorks[i].list[j].title,
+			description: jsonWorks[i].list[j].description,
+		})),
+	}));
 </script>
 
 <svelte:head>
@@ -37,7 +35,7 @@
 <Divider />
 <ul id="sections">
 	{#key data?.language}
-		{#each sections as section, i (section?.key)}
+		{#each sections as section, i (section?.id)}
 			<List {section} />
 			{#if i !== sections?.length - 1}
 				<div id="marker">
@@ -65,6 +63,7 @@
 
 	#marker p {
 		font-size: 2rem;
+		user-select: none;
 	}
 
 	/* schermo piccolo */

@@ -1,12 +1,12 @@
 <script lang="ts">
   import { locale, _ } from "svelte-i18n";
   import { Locale, Theme } from "$lib/helpers/interfaces";
-  import { fly } from "svelte/transition";
   import { base } from "$app/paths";
   import Logo from "../Logo.svelte";
   import NavLink from "../NavLink.svelte";
   import MenuButton from "../MenuButton.svelte";
   import { beforeNavigate } from "$app/navigation";
+  import isMobile from "$lib/helpers/isMobile";
 
   export let currentTheme: string;
   export let toggleTheme: ((e: any) => void) | undefined;
@@ -61,10 +61,14 @@
     <Logo />
     <ul id="menu">
       <li>
-        <NavLink href="{base}/works">{$_("layout.nav.works")}</NavLink>
+        <NavLink href="{base}/works">
+          {$_("layout.nav.works")}
+        </NavLink>
       </li>
       <li>
-        <NavLink href="{base}/about">{$_("layout.nav.about")}</NavLink>
+        <NavLink href="{base}/about">
+          {$_("layout.nav.about")}
+        </NavLink>
       </li>
     </ul>
     <MenuButton icon={themeIcon} onclick={toggleTheme} label="Cambia tema" />
@@ -79,13 +83,20 @@
     </div>
   </nav>
 </header>
-{#if isOpen}
-  <ul id="menu-mobile" in:fly={{ x: 50, y: 0, duration: 180 }}>
+{#if isMobile()}
+  <ul id="menu-mobile" class={isOpen ? "active" : ""}>
     <li>
-      <NavLink href={`${base}/works`}>{$_("layout.nav.works")}</NavLink>
+      <NavLink href="/" mobileIcon="home">Home</NavLink>
     </li>
     <li>
-      <NavLink href={`${base}/about`}>{$_("layout.nav.about")}</NavLink>
+      <NavLink href={`${base}/works`} mobileIcon="layers">
+        {$_("layout.nav.works")}
+      </NavLink>
+    </li>
+    <li>
+      <NavLink href={`${base}/about`} mobileIcon="user">
+        {$_("layout.nav.about")}
+      </NavLink>
     </li>
   </ul>
 {/if}
@@ -128,11 +139,6 @@
     display: none;
   }
 
-  #menu-mobile {
-    position: absolute;
-    display: none;
-  }
-
   /* schermo piccolo */
   @media only screen and (max-width: 720px) {
     #header {
@@ -155,20 +161,37 @@
       display: initial;
     }
 
+    #menu-mobile.active {
+      opacity: 1;
+      visibility: visible;
+      transform: scale(1);
+    }
+
     #menu-mobile {
+      position: absolute;
       height: max-content;
-      width: 150px;
+      width: 180px;
       top: 60px;
-      right: 0px;
-      background-color: var(--cardBackgroundColor);
-      border-radius: var(--borderRadius) 0 0 var(--borderRadius);
+      right: 15px;
+      -webkit-touch-callout: none;
+      backdrop-filter: blur(50px);
+      background-color: var(--navBackgroundColor);
+      border-radius: var(--borderRadius);
       box-shadow: var(--cardShadow);
-      list-style: none;
+      border: var(--navBorder);
+      opacity: 0;
       margin: 0px;
-      padding: 0.75rem 0.25rem;
+      padding: 0.5rem 0rem;
+      list-style: none;
       display: flex;
       flex-direction: column;
-      transition: background-color var(--transition);
+      transform-origin: top right;
+      transform: scale(0.8);
+      transition: opacity 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 0.18s cubic-bezier(0.4, 0, 0.2, 1),
+        background-color var(--transition);
+      visibility: hidden;
       z-index: 1000;
     }
 

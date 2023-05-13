@@ -78,9 +78,8 @@
 
 	.row {
 		display: flex;
-		align-items: center;
-		justify-content: start;
-		gap: 0.25rem;
+		flex-wrap: wrap;
+		gap: 0.5rem;
 		padding-top: 1.5rem;
 	}
 

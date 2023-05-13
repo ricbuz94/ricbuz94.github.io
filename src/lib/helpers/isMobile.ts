@@ -1,6 +1,8 @@
+import { browser } from "$app/environment";
+
 const isMobile = {
 	getUserAgent: (): string => {
-		return navigator.userAgent;
+		return browser ? navigator?.userAgent : "";
 	},
 	Android: function (): boolean {
 		return /Android/i.test(isMobile.getUserAgent()) && !isMobile.Windows();
@@ -30,6 +32,9 @@ const isMobile = {
 		return /Kindle Fire|Silk|KFAPWA|KFSOWI|KFJWA|KFJWI|KFAPWI|KFAPWI|KFOT|KFTT|KFTHWI|KFTHWA|KFASWI|KFTBWI|KFMEWI|KFFOWI|KFSAWA|KFSAWI|KFARWI/i.test(isMobile.getUserAgent());
 	},
 	any: function (): boolean {
+		if (!isMobile.getUserAgent()) {
+			return false;
+		}
 		return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
 	}
 };
