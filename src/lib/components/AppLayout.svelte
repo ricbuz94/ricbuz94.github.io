@@ -26,7 +26,7 @@
 
   $: favicon =
     currentTheme === Theme.light ? "/favicon.ico" : "/favicon-dark.ico";
-  $: addressBarColor = currentTheme === Theme.light ? "#f6f9fc" : "#202023";
+  $: addressBarColor = currentTheme === Theme.light ? "#faf9fc" : "#0f0f0f";
 
   const mq: Readable<boolean> = useMediaQuery(
     "only screen and (max-width: 720px)"
@@ -245,6 +245,7 @@
     --gray4: #454e56;
     --gray5: #2a2e35;
     --gray6: #202023;
+    --gray7: #0f0f0f;
     --red: #ff414e;
     --redDark: #e13b47;
     --purple: #9166cc;

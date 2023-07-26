@@ -29,7 +29,7 @@
 
 <style>
   #to-top {
-    border: none;
+    border: var(--navBorder);
     width: 36px;
     height: 36px;
     border-radius: 50%;
