@@ -121,122 +121,6 @@
 </div>
 
 <style>
-  @font-face {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 200;
-    src: url("/fonts/Nunito/static/Nunito-ExtraLight.ttf") format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: italic;
-    font-weight: 200;
-    src: url("/fonts/Nunito/static/Nunito-ExtraLightItalic.ttf")
-      format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 300;
-    src: url("/fonts/Nunito/static/Nunito-Light.ttf") format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: italic;
-    font-weight: 300;
-    src: url("/fonts/Nunito/static/Nunito-LightItalic.ttf") format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 400;
-    src: url("/fonts/Nunito/static/Nunito-Regular.ttf") format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: italic;
-    font-weight: 400;
-    src: url("/fonts/Nunito/static/Nunito-Italic.ttf") format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 500;
-    src: url("/fonts/Nunito/static/Nunito-Medium.ttf") format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: italic;
-    font-weight: 500;
-    src: url("/fonts/Nunito/static/Nunito-MediumItalic.ttf") format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 600;
-    src: url("/fonts/Nunito/static/Nunito-SemiBold.ttf") format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: italic;
-    font-weight: 600;
-    src: url("/fonts/Nunito/static/Nunito-SemiBoldItalic.ttf")
-      format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 700;
-    src: url("/fonts/Nunito/static/Nunito-Bold.ttf") format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: italic;
-    font-weight: 700;
-    src: url("/fonts/Nunito/static/Nunito-BoldItalic.ttf") format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 800;
-    src: url("/fonts/Nunito/static/Nunito-ExtraBold.ttf") format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: italic;
-    font-weight: 800;
-    src: url("/fonts/Nunito/static/Nunito-ExtraBoldItalic.ttf")
-      format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 900;
-    src: url("/fonts/Nunito/static/Nunito-Black.ttf") format("truetype");
-    font-display: swap;
-  }
-  @font-face {
-    font-family: "Nunito";
-    font-style: italic;
-    font-weight: 900;
-    src: url("/fonts/Nunito/static/Nunito-BlackItalic.ttf") format("truetype");
-    font-display: swap;
-  }
-
   :root {
     --gray0: #f6f9fc;
     --gray1: #dbe1e8;
@@ -248,8 +132,10 @@
     --gray7: #0f0f0f;
     --red: #ff414e;
     --redDark: #e13b47;
-    --purple: #9166cc;
-    --purpleLight: #a372e7;
+    /* --purple: #9166cc; */
+    --purple: #ff7a00;
+    /* --purpleLight: #a372e7; */
+    --purpleLight: #e66e00;
     --borderRadius: 0.75rem;
     --transition: 120ms cubic-bezier(0.4, 0, 0.2, 1);
     --activeInputShadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
@@ -262,7 +148,7 @@
     font-size: var(--fontSize);
     background-color: var(--backgroundColor);
     transition: color var(--transition), background-color var(--transition);
-    font-family: "Nunito", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
   }
 
   :global(p) {

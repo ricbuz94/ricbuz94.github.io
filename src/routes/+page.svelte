@@ -130,9 +130,9 @@
 		width: 100%;
 		padding: 1rem 2rem;
 		text-align: center;
-		border-radius: 0.5rem;
+		border-radius: 35px;
 		font-weight: 500;
-		background-color: rgba(128, 128, 128, 0.1);
+		background-color: var(--borderColor);
 	}
 
 	.me {
@@ -191,13 +191,12 @@
 		.banner p {
 			padding: 1rem 0px;
 			text-align: center;
-			border-radius: 0.5rem;
 			font-weight: 600;
-			background-color: rgba(128, 128, 128, 0.1);
+			font-size: 90%;
 		}
 
 		article p {
-			font-weight: 600;
+			font-weight: 500;
 		}
 
 		.me {

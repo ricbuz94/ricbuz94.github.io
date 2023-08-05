@@ -43,7 +43,7 @@
   }
 
   #text {
-    font-family: "Nunito", monospace;
+    font-family: inherit;
     letter-spacing: 1px;
     font-weight: 700;
     font-size: 14px;

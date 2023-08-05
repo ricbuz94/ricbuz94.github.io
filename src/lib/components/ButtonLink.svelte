@@ -23,13 +23,14 @@
 		align-items: center;
 		user-select: none;
 		background-color: var(--accentColor);
-		border-radius: var(--borderRadius);
+		border-radius: 25px;
 		padding: 0.5rem 1rem;
-		transition: all var(--transition);
+		transition: all 0.2s ease-in-out;
 	}
 
 	a:hover {
 		background-color: var(--accentColorHover);
+		transform: translateY(-3px);
 	}
 
 	a:active {

@@ -34,6 +34,12 @@
 		transition: all var(--transition);
 	}
 
+	li:hover {
+		border-radius: calc(var(--borderRadius) - 8px);
+		outline: 3px solid var(--accentColor);
+		outline-offset: 8px;
+	}
+
 	li:hover div.image {
 		transform: scale(1.05);
 	}

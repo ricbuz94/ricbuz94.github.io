@@ -61,7 +61,7 @@ hr {
 	--subTextColor: var(--gray4);
 	--webTag: #005ac4;
 	--androidTag: #387002;
-	--borderColor: rgba(0, 0, 0, 0.1);
+	--borderColor: rgba(120, 120, 120, 0.1);
 	--navBackgroundColor: rgba(248, 248, 248, 0.6);
 	--navBorder: inset 1px rgba(0, 0, 0, 0.1);
 	--navBorderBottom: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
@@ -79,7 +79,7 @@ hr {
 	--subTextColor: var(--gray2);
 	--webTag: #3b82f6;
 	--androidTag: #a4c34a;
-	--borderColor: rgba(255, 255, 255, 0.1);
+	--borderColor: rgba(200, 200, 200, 0.1);
 	--navBackgroundColor: rgba(15, 15, 15, 0.6);
 	--navBorder: inset 1px rgba(255, 255, 255, 0.1);
 	--navBorderBottom: inset 0 -1px 0 0 rgba(255, 255, 255, 0.1);

@@ -105,7 +105,7 @@
 		}
 
 		article p {
-			font-weight: 600;
+			font-weight: 500;
 		}
 
 		.dense {
