@@ -132,10 +132,10 @@
     --gray7: #0f0f0f;
     --red: #ff414e;
     --redDark: #e13b47;
+    --orange: #ff7a00;
+    --orangeDark: #e66e00;
     /* --purple: #9166cc; */
-    --purple: #ff7a00;
     /* --purpleLight: #a372e7; */
-    --purpleLight: #e66e00;
     --borderRadius: 0.75rem;
     --transition: 120ms cubic-bezier(0.4, 0, 0.2, 1);
     --activeInputShadow: 0 0 0 3px rgba(66, 153, 225, 0.6);

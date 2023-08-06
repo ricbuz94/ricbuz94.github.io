@@ -103,7 +103,7 @@
 		letter-spacing: 1px;
 		font-size: 45%;
 		font-weight: 600;
-		font-family: Verdana, sans-serif;
+		/* font-family: Verdana, sans-serif; */
 		margin: 0;
 		padding: 6px 10px;
 		border-radius: 5px;

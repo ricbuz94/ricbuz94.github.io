@@ -7,16 +7,16 @@ import { getLocaleFromNavigator, locale, waitLocale } from 'svelte-i18n';
 
 export const prerender = true;
 
-export const load = (async () => {
+export const load: unknown = (async () => {
 
   let currentTheme = "light";
-  let language: string | null = "it-IT";
+  let language: string | null = getLocaleFromNavigator();
 
   if (browser) {
 
     // Locale
-    language = localStorage.getItem("language") || getLocaleFromNavigator();
-    locale.set(language);
+    language = localStorage.getItem("language");
+    await locale.set(language);
 
     // Theme
     const THEME_KEY = "theme";
@@ -27,11 +27,15 @@ export const load = (async () => {
     currentTheme = localStorage.getItem(THEME_KEY) || preferredTheme;
 
     if (currentTheme === Theme.dark) {
-      document.getElementById("theme")?.classList.remove(Theme.light);
-      document.getElementById("theme")?.classList.add(Theme.dark);
+      document.body?.classList.remove(Theme.light);
+      document.body?.classList.add(Theme.dark);
+      document.getElementById(THEME_KEY)?.classList.remove(Theme.light);
+      document.getElementById(THEME_KEY)?.classList.add(Theme.dark);
     } else {
-      document.getElementById("theme")?.classList.remove(Theme.dark);
-      document.getElementById("theme")?.classList.add(Theme.light);
+      document.body?.classList.remove(Theme.dark);
+      document.body?.classList.add(Theme.light);
+      document.getElementById(THEME_KEY)?.classList.remove(Theme.dark);
+      document.getElementById(THEME_KEY)?.classList.add(Theme.light);
     }
   }
 

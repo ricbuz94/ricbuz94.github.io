@@ -73,8 +73,8 @@ hr {
 .dark {
 	--backgroundColor: var(--gray7);
 	--cardBackgroundColor: var(--gray5);
-	--accentColor: var(--purple);
-	--accentColorHover: var(--purpleLight);
+	--accentColor: var(--orange);
+	--accentColorHover: var(--orangeDark);
 	--textColor: var(--gray0);
 	--subTextColor: var(--gray2);
 	--webTag: #3b82f6;

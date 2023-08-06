@@ -33,14 +33,14 @@
     main.style.opacity = "0";
     footer.style.opacity = "0";
 
-    setTimeout(() => {
+    setTimeout(async () => {
       if (language === Locale.it) {
+        await locale.set(Locale.en);
         language = Locale.en;
-        locale.set(Locale.en);
         localStorage.setItem("language", Locale.en);
       } else {
+        await locale.set(Locale.it);
         language = Locale.it;
-        locale.set(Locale.it);
         localStorage.setItem("language", Locale.it);
       }
 
