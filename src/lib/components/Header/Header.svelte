@@ -7,6 +7,7 @@
   import MenuButton from "../MenuButton.svelte";
   import { beforeNavigate } from "$app/navigation";
   import isMobile from "$lib/helpers/isMobile";
+  import MenuButtonMobile from "../MenuButtonMobile.svelte";
 
   export let currentTheme: string;
   export let toggleTheme: ((e: any) => void) | undefined;
@@ -15,7 +16,6 @@
 
   let isOpen: boolean = false;
   let isLoading: boolean = false;
-  $: icon = isOpen ? "x" : "menu";
   $: localeText = language === Locale.it ? "IT" : "EN";
   $: themeIcon = currentTheme !== Theme.dark ? "moon" : "sun";
 
@@ -79,7 +79,7 @@
       label="Cambia lingua"
     />
     <div id="mobile-menu-button">
-      <MenuButton {icon} onclick={toggleMenu} label="Menù" />
+      <MenuButtonMobile {isOpen} onclick={toggleMenu} label="Menù" />
     </div>
   </nav>
 </header>
