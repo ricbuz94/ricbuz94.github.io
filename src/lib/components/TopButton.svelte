@@ -20,7 +20,8 @@
   id="to-top"
   on:mouseenter={onHover}
   on:mouseleave={onHover}
-  on:click|preventDefault={scrollTop}
+  on:mousedown|preventDefault={scrollTop}
+  on:touchstart|preventDefault={scrollTop}
   in:fly={{ x: 0, y: 60, duration: 300, delay: 0 }}
   out:fly={{ x: 0, y: 60, duration: 300, delay: 0 }}
 >
