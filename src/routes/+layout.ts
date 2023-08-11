@@ -15,7 +15,7 @@ export const load: unknown = (async () => {
   if (browser) {
 
     // Locale
-    language = localStorage.getItem("language");
+    language = localStorage.getItem("language") ?? language;
     await locale.set(language);
 
     // Theme

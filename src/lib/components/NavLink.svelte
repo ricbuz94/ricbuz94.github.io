@@ -23,9 +23,10 @@
 		display: inline-block;
 		color: var(--textColor);
 		margin: 0px 0.5rem;
-		font-size: 0.9rem;
+		font-size: 12px;
 		letter-spacing: 1px;
-		font-weight: 700;
+		font-weight: 600;
+		text-transform: uppercase;
 		background-image: linear-gradient(currentColor 0 0);
 		background-position: 0 100%; /*OR bottom left*/
 		background-size: 0% 2px;
@@ -42,7 +43,7 @@
 
 	a.active {
 		background-position: 100% 100%; /*OR bottom right*/
-		background-size: 100% 2px;
+		background-size: 100% 1px;
 	}
 
 	/* schermo piccolo */
@@ -51,7 +52,7 @@
 			text-align: center;
 			padding: 0.75rem 1rem;
 			background: none;
-			font-size: 1rem;
+			font-size: 14px;
 			border-radius: var(--borderRadius);
 			transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
 			display: flex;

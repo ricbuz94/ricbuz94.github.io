@@ -34,11 +34,11 @@
 		transition: all var(--transition);
 	}
 
-	li:hover {
+	/* li:hover {
 		border-radius: calc(var(--borderRadius) - 8px);
 		outline: 3px solid var(--accentColor);
 		outline-offset: 8px;
-	}
+	} */
 
 	li:hover div.image {
 		transform: scale(1.05);
@@ -53,7 +53,8 @@
 		margin: 0px;
 		line-height: 1;
 		outline: none;
-		border-radius: var(--borderRadius);
+		/* border-radius: var(--borderRadius); */
+		border-radius: 0px;
 		-webkit-tap-highlight-color: transparent;
 		color: var(--textColor);
 	}
@@ -67,7 +68,8 @@
 		height: 200px;
 		max-height: 200px;
 		overflow: hidden;
-		border-radius: var(--borderRadius);
+		/* border-radius: var(--borderRadius); */
+		border-radius: 25px;
 	}
 
 	.image {
@@ -103,10 +105,9 @@
 		letter-spacing: 1px;
 		font-size: 45%;
 		font-weight: 600;
-		/* font-family: Verdana, sans-serif; */
 		margin: 0;
 		padding: 6px 10px;
-		border-radius: 5px;
+		border-radius: 25px;
 	}
 
 	.description {
@@ -141,10 +142,6 @@
 
 		.description {
 			font-size: 16px;
-		}
-
-		.tag {
-			border-radius: 25px;
 		}
 
 		li {
