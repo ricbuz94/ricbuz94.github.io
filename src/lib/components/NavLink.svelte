@@ -25,25 +25,41 @@
 		margin: 0px 0.5rem;
 		font-size: 12px;
 		letter-spacing: 1px;
+		position: relative;
 		font-weight: 600;
 		text-transform: uppercase;
-		background-image: linear-gradient(currentColor 0 0);
-		background-position: 0 100%; /*OR bottom left*/
-		background-size: 0% 2px;
-		background-repeat: no-repeat;
-		transition: color var(--transition), background-size 0.3s,
-			background-position 0s 0.3s;
+		line-height: 1.4;
 	}
 
-	a:hover {
-		color: var(--accentColor);
-		background-position: 100% 100%; /*OR bottom right*/
-		background-size: 100% 2px;
+	a::after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background-color: var(--accentColor);
+		-webkit-transform: scaleX(0);
+		transform: scaleX(0);
+		-webkit-transform-origin: right bottom;
+		transform-origin: right bottom;
+		-webkit-transition: -webkit-transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+		transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 	}
 
-	a.active {
-		background-position: 100% 100%; /*OR bottom right*/
-		background-size: 100% 1px;
+	a.active::after {
+		height: 1px;
+	}
+
+	a:hover::after,
+	a.active::after {
+		background-color: var(--accentColor);
+		-webkit-transition-duration: 0.4s;
+		transition-duration: 0.4s;
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
+		-webkit-transform-origin: left bottom;
+		transform-origin: left bottom;
 	}
 
 	/* schermo piccolo */
@@ -58,6 +74,10 @@
 			display: flex;
 			gap: 1rem;
 			align-items: center;
+		}
+
+		a::after {
+			display: none;
 		}
 
 		a:hover {
