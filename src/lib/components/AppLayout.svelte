@@ -109,7 +109,7 @@
   {:else}
     <Header language={data?.language} {currentTheme} {toggleTheme} />
     {#key (refresh = $page.url.pathname)}
-      <main in:fly={{ y: 30, duration: 600, delay: 100 }}>
+      <main in:fly={{ y: 30, duration: 200, delay: 100 }}>
         <slot />
       </main>
     {/key}
