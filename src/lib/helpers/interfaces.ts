@@ -1,4 +1,5 @@
 enum Locale {
+	_it = "it",
 	it = "it-IT",
 	en = "en-US"
 }

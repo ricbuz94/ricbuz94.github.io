@@ -5,5 +5,5 @@ register('en-US', () => import('./locales/en-US.json'));
 
 init({
   fallbackLocale: 'it-IT',
-  initialLocale: getLocaleFromNavigator()
+  initialLocale: ["it", "it-IT"].includes(getLocaleFromNavigator() ?? "") ? "it-IT" : "en-US"
 });
