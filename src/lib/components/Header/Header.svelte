@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { locale, _, getLocaleFromNavigator } from "svelte-i18n";
+  import { locale, _ } from "svelte-i18n";
   import { Locale, Theme } from "$lib/helpers/interfaces";
   import { base } from "$app/paths";
   import Logo from "../Logo.svelte";
