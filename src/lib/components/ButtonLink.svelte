@@ -24,7 +24,7 @@
 		user-select: none;
 		background-color: var(--accentColor);
 		border-radius: 25px;
-		padding: 0.5rem 1rem;
+		padding: 0.5rem 1.25rem;
 		transition: all 0.2s ease-in-out;
 	}
 
@@ -45,8 +45,9 @@
 		color: var(--gray0);
 		margin-right: 5px;
 		font-weight: 700;
-		font-size: 0.9rem;
+		font-size: 0.8rem;
 		letter-spacing: 1px;
+		text-transform: uppercase;
 	}
 
 	/* schermo piccolo */

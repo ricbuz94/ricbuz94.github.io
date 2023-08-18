@@ -3,26 +3,23 @@ import data from '$lib/data/data';
 import { browser } from '$app/environment';
 import { Theme } from '$lib/helpers/interfaces';
 
-import { getLocaleFromNavigator, locale, waitLocale } from 'svelte-i18n';
+import { locale, waitLocale } from 'svelte-i18n';
 
 export const prerender = true;
 
 export const load: unknown = (async () => {
 
   let currentTheme = "light";
-  let language: string | null = getLocaleFromNavigator();
 
   if (browser) {
 
     // Locale
-    language = localStorage.getItem("language") ?? language;
-    await locale.set(language);
+    const language = localStorage.getItem("language");
+    if (language) await locale.set(language);
 
     // Theme
     const THEME_KEY = "theme";
-    const DARK_PREFERENCE = "(prefers-color-scheme: dark)";
-    const isMediaThemeDark =
-      window.matchMedia(DARK_PREFERENCE).matches;
+    const isMediaThemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const preferredTheme = isMediaThemeDark ? Theme.dark : Theme.light;
     currentTheme = localStorage.getItem(THEME_KEY) || preferredTheme;
 
@@ -43,7 +40,6 @@ export const load: unknown = (async () => {
 
   return {
     currentTheme,
-    sections: data,
-    language
+    sections: data
   };
 }) satisfies LayoutData;

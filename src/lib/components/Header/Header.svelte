@@ -12,11 +12,9 @@
   export let currentTheme: string;
   export let toggleTheme: ((e: any) => void) | undefined;
 
-  export let language: string | null;
-
   let isOpen: boolean = false;
   let isLoading: boolean = false;
-  $: localeText = language === Locale.it ? "IT" : "EN";
+  $: localeText = $locale === Locale.it ? "IT" : "EN";
   $: themeIcon = currentTheme !== Theme.dark ? "moon" : "sun";
 
   function toggleMenu() {
@@ -34,13 +32,13 @@
     footer.style.opacity = "0";
 
     setTimeout(async () => {
-      if (language === Locale.it) {
+      if ($locale === Locale.it) {
         await locale.set(Locale.en);
-        language = Locale.en;
+        $locale = Locale.en;
         localStorage.setItem("language", Locale.en);
       } else {
         await locale.set(Locale.it);
-        language = Locale.it;
+        $locale = Locale.it;
         localStorage.setItem("language", Locale.it);
       }
 

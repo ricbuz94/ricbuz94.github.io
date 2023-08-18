@@ -107,7 +107,7 @@
       <Loader />
     </div>
   {:else}
-    <Header language={data?.language} {currentTheme} {toggleTheme} />
+    <Header {currentTheme} {toggleTheme} />
     {#key (refresh = $page.url.pathname)}
       <main in:fly={{ y: 30, duration: 200, delay: 100 }}>
         <slot />

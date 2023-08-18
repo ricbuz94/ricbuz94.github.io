@@ -5,6 +5,7 @@
 :root {
 	--fontSize: 16px;
 	--fontSizeLarge: 18px;
+	--fontSizeSmall: 14px;
 }
 
 html,

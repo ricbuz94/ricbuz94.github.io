@@ -34,7 +34,7 @@
 
 <Divider />
 <ul id="sections">
-	{#key data?.language}
+	{#key $locale}
 		{#each sections as section, i (section?.id)}
 			<List {section} />
 			{#if i !== sections?.length - 1}
