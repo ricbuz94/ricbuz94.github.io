@@ -173,6 +173,7 @@
       right: 15px;
       -webkit-touch-callout: none;
       backdrop-filter: blur(50px);
+      -webkit-backdrop-filter: blur(50px);
       background-color: var(--navBackgroundColor);
       border-radius: var(--borderRadius);
       box-shadow: var(--cardShadow);

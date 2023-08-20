@@ -2,7 +2,6 @@
 	import { _, json, locale } from "svelte-i18n";
 	import type { PageData } from "./$types";
 	import type { Section } from "$lib/helpers/interfaces";
-	import Divider from "$lib/components/Divider.svelte";
 	import List from "$lib/components/Works/Section.svelte";
 </script>
 
@@ -32,7 +31,6 @@
 	/>
 </svelte:head>
 
-<Divider />
 <ul id="sections">
 	{#key $locale}
 		{#each sections as section, i (section?.id)}
@@ -45,7 +43,6 @@
 		{/each}
 	{/key}
 </ul>
-<Divider />
 
 <style>
 	#sections {

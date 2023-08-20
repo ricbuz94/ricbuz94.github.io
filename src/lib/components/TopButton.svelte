@@ -39,6 +39,9 @@
     right: 2rem;
     z-index: 1000;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: var(--cardShadow);
     background-color: var(--navBackgroundColor);
     -webkit-backdrop-filter: saturate(180%) blur(15px);

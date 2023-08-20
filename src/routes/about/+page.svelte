@@ -15,57 +15,45 @@
 	/>
 </svelte:head>
 
-<article>
-	<Divider />
-	<div class="content">
-		<img src={me} alt="Riccardo Buzzolo" title="Riccardo Buzzolo" />
-		<div class="card-wide">
-			<Article title={$_("about.aboutMe")}>
-				<p style="text-align: justify;">
-					{$_("about.aboutMeContent1")}
-					<ArticleLink
-						title={$_("about.aboutMeLink1")}
-						href={`${import.meta.env.VITE_APP_ITG_URL}`}
-					/>{$_("about.aboutMeContent2")}
-					<ArticleLink
-						title={$_("about.aboutMeLink2")}
-						href={`${import.meta.env.VITE_APP_UNIBO_URL}`}
-					/>{$_("about.aboutMeContent3")}
-					<ArticleLink
-						title="Beacharound S.r.l."
-						href={`${import.meta.env.VITE_APP_BEACHAROUND_URL}`}
-					/>
-				</p>
-			</Article>
-		</div>
+<div class="content">
+	<img src={me} alt="Riccardo Buzzolo" title="Riccardo Buzzolo" />
+	<div class="card-wide">
+		<Article title={$_("about.aboutMe")}>
+			<p style="text-align: justify;">
+				{$_("about.aboutMeContent1")}
+				<ArticleLink
+					title={$_("about.aboutMeLink1")}
+					href={`${import.meta.env.VITE_APP_ITG_URL}`}
+				/>{$_("about.aboutMeContent2")}
+				<ArticleLink
+					title={$_("about.aboutMeLink2")}
+					href={`${import.meta.env.VITE_APP_UNIBO_URL}`}
+				/>{$_("about.aboutMeContent3")}
+				<ArticleLink
+					title="Beacharound S.r.l."
+					href={`${import.meta.env.VITE_APP_BEACHAROUND_URL}`}
+				/>
+			</p>
+		</Article>
 	</div>
-	<Divider height={4} />
-	<div class="content dense">
-		<div class="card-wide">
-			<Article title={$_("about.aboutMyWork")}>
-				<p style="text-align: justify;">
-					{$_("about.aboutMyWorkContent1")}
-					<ArticleLink
-						title="Beacharound S.r.l."
-						href={`${import.meta.env.VITE_APP_BEACHAROUND_BUSINESS_URL}`}
-					/>{$_("about.aboutMyWorkContent2")}
-				</p>
-			</Article>
-		</div>
-		<img src={beach} alt="Cattolica" title="Cattolica" />
+</div>
+<Divider height={4} />
+<div class="content dense">
+	<div class="card-wide">
+		<Article title={$_("about.aboutMyWork")}>
+			<p style="text-align: justify;">
+				{$_("about.aboutMyWorkContent1")}
+				<ArticleLink
+					title="Beacharound S.r.l."
+					href={`${import.meta.env.VITE_APP_BEACHAROUND_BUSINESS_URL}`}
+				/>{$_("about.aboutMyWorkContent2")}
+			</p>
+		</Article>
 	</div>
-	<Divider />
-</article>
+	<img src={beach} alt="Cattolica" title="Cattolica" />
+</div>
 
 <style>
-	article {
-		width: 100%;
-	}
-
-	article p {
-		font-weight: 500;
-	}
-
 	.card-wide {
 		font-size: 90%;
 		grid-column: span 2 / auto;
@@ -102,10 +90,6 @@
 			justify-items: center;
 			grid-template-columns: auto;
 			grid-template-rows: auto auto;
-		}
-
-		article p {
-			font-weight: 500;
 		}
 
 		.dense {

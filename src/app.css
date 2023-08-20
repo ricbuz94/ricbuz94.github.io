@@ -20,6 +20,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	background-color: var(--backgroundColor);
+	scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {

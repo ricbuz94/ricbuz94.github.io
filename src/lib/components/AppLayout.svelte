@@ -14,6 +14,7 @@
   import Footer from "./Footer/Footer.svelte";
   import Header from "./Header/Header.svelte";
   import TopButton from "./TopButton.svelte";
+  import Divider from "./Divider.svelte";
 
   export let data: LayoutData;
   export let refresh: string = "";
@@ -109,8 +110,10 @@
   {:else}
     <Header {currentTheme} {toggleTheme} />
     {#key (refresh = $page.url.pathname)}
-      <main in:fly={{ y: 30, duration: 200, delay: 100 }}>
+      <main in:fly={{ y: 30, duration: isMobile ? 400 : 200, delay: 100 }}>
+        <Divider />
         <slot />
+        <Divider />
       </main>
     {/key}
     <Footer />
