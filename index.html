@@ -10,30 +10,26 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-	<meta http-equiv="content-security-policy" content="">
-		<link href="./internal/immutable/assets/_layout-fd49489a.css" rel="stylesheet">
-		<link href="./internal/immutable/assets/Icon-21532967.css" rel="stylesheet">
-		<link href="./internal/immutable/assets/Divider-4fa86fb7.css" rel="stylesheet">
-		<link href="./internal/immutable/assets/_page-b9e873c6.css" rel="stylesheet">
-		<link href="./internal/immutable/assets/me-bb93b3b8.css" rel="stylesheet">
-		<link rel="modulepreload" href="./internal/immutable/start-ede300ac.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/index-79c9ccd9.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/singletons-8d1cf0fd.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/index-572c7b01.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/shared-23917130.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/preload-helper-41c905a7.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/control-e7f5239e.js">
-		<link rel="modulepreload" href="./internal/immutable/components/pages/_layout.svelte-c1a602cc.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/stores-795715a4.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/interfaces-2e5f63a7.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/runtime.esm-dbd217f2.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/Icon-bad83094.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/navigation-b01cd00c.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/Divider-7eeb3627.js">
-		<link rel="modulepreload" href="./internal/immutable/modules/pages/_layout.ts-d042d3f1.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/_layout-2c9e5273.js">
-		<link rel="modulepreload" href="./internal/immutable/components/pages/_page.svelte-8c003ae3.js">
-		<link rel="modulepreload" href="./internal/immutable/chunks/me-5fa41551.js"><!-- HEAD_svelte-gr3eh7_START --><link rel="icon" href="/favicon.ico"><meta name="theme-color" content="#faf9fc"><!-- HEAD_svelte-gr3eh7_END -->
+	
+		<link href="./internal/immutable/assets/0.18da0aa5.css" rel="stylesheet">
+		<link href="./internal/immutable/assets/Icon.21532967.css" rel="stylesheet">
+		<link href="./internal/immutable/assets/Divider.4fa86fb7.css" rel="stylesheet">
+		<link href="./internal/immutable/assets/3.f4d54d79.css" rel="stylesheet">
+		<link href="./internal/immutable/assets/me.2c895fb0.css" rel="stylesheet">
+		<link rel="modulepreload" href="./internal/immutable/entry/start.77efc2a7.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/index.33d0ab84.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/singletons.1d492108.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/index.c864c5e7.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/paths.2f9e7679.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/control.f5b05b5f.js">
+		<link rel="modulepreload" href="./internal/immutable/entry/app.f2ce52d6.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/preload-helper.a4192956.js">
+		<link rel="modulepreload" href="./internal/immutable/nodes/0.950ccb51.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/Icon.b832f581.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/navigation.bb167b2e.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/Divider.b4e018e8.js">
+		<link rel="modulepreload" href="./internal/immutable/nodes/3.6a4e4c4b.js">
+		<link rel="modulepreload" href="./internal/immutable/chunks/me.69e22a5b.js"><!-- HEAD_svelte-gr3eh7_START --><link rel="icon" href="/favicon.ico"><meta name="theme-color" content="#faf9fc"><!-- HEAD_svelte-gr3eh7_END -->
 	<script type="text/javascript" defer>
 		console.log("\n 👉🏼   https://github.com/ricbuz94 \n\n");
 	</script>
@@ -51,23 +47,32 @@
 </div>
 
 
-		<script type="module" data-sveltekit-hydrate="12bhdqh">
-			import { start } from "./internal/immutable/start-ede300ac.js";
+			
+			<script>
+				{
+					__sveltekit_s8gnox = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
 
-			start({
-				env: {},
-				paths: {"assets":"","base":""},
-				target: document.querySelector('[data-sveltekit-hydrate="12bhdqh"]').parentNode,
-				version: "1692528326694",
-				hydrate: {
-					node_ids: [0, 3],
-					data: [null,null],
-					form: null,
-					error: null
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./internal/immutable/entry/start.77efc2a7.js"),
+						import("./internal/immutable/entry/app.f2ce52d6.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 3],
+							data,
+							form: null,
+							error: null
+						});
+					});
 				}
-			});
-		</script>
-	
+			</script>
+		
 	</div>
 </body>
 
