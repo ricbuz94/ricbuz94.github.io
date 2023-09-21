@@ -24,7 +24,6 @@
   let currentTheme = data?.currentTheme;
   const THEME_KEY = "theme";
   const DARK_PREFERENCE = "(prefers-color-scheme: dark)";
-  const header = browser && document.getElementById("header");
 
   $: favicon =
     currentTheme === Theme.light ? "/favicon.ico" : "/favicon-dark.ico";
@@ -39,6 +38,7 @@
   mq.subscribe((value) => (isMobile = value));
 
   function onScrollHandler() {
+    const header = browser && document.getElementById("header");
     if (browser && window.scrollY > 15) {
       isTopButtonVisible = true;
       if (!!header && !isMobile) {
