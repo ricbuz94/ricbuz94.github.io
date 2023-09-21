@@ -6,7 +6,8 @@
 	"layout": {
 		"nav": {
 			"works": "Works",
-			"about": "About"
+			"about": "About",
+			"hmcid": "HowMuchCanIDrink"
 		}
 	},
 	"home": {

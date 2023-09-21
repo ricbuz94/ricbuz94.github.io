@@ -7,11 +7,6 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		appDir: 'internal',
-		prerender: {
-			entries: [
-				"*"
-			]
-		}
 	},
 };
 

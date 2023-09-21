@@ -1,10 +1,14 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
   import { base } from "$app/paths";
+  import { page } from "$app/stores";
   import { goto } from "$app/navigation";
   import Icon from "$lib/components/Icon.svelte";
-  import { _ } from "svelte-i18n";
 
   function goToHome() {
+    if ($page?.url?.pathname?.includes("/drinktool")) {
+      return goto(`${base}/drinktool`);
+    }
     goto(`${base}/`);
   }
 </script>
@@ -14,7 +18,7 @@
 </svelte:head>
 
 <div id="container">
-  <Icon name="file" size={80} width={1} />
+  <Icon name="file" size={80} width={1} isThemed />
   <h2 id="title">404 ~ {$_("generic.notFound")}</h2>
   <button id="back-button" on:click={goToHome}>
     <Icon name="arrow-left" size={14} />
@@ -35,6 +39,7 @@
     text-align: center;
     margin-top: 2rem;
     margin-bottom: 4rem;
+    color: var(--textColor);
   }
 
   #back-button {
@@ -45,7 +50,7 @@
     outline: none;
     cursor: pointer;
     text-decoration: none;
-    color: black;
+    color: var(--textColor);
     font-weight: 700;
     font-size: 0.75rem;
     padding: 0.5rem 0.8rem;
