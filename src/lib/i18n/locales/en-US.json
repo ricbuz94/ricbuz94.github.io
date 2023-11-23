@@ -1,7 +1,9 @@
 {
 	"generic": {
 		"back": "Back",
-		"notFound": "Page not found"
+		"notFound": "Page not found",
+		"changeTheme": "Change theme",
+		"changeLanguage": "Change laguage"
 	},
 	"layout": {
 		"nav": {

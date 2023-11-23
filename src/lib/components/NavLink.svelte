@@ -11,12 +11,16 @@
 	$: isActive = $page.url.pathname === href;
 </script>
 
-<a {...$$props} class:active={isActive} {href}>
-	{#if isMobile()}
+{#if isMobile()}
+	<a {...$$props} class="mobile" {href}>
 		<Icon name={mobileIcon} />
-	{/if}
-	<slot />
-</a>
+		<slot />
+	</a>
+{:else}
+	<a {...$$props} class:active={isActive} {href}>
+		<slot />
+	</a>
+{/if}
 
 <style>
 	a {
@@ -62,28 +66,29 @@
 		transform-origin: left bottom;
 	}
 
+	a.mobile {
+		text-align: center;
+		padding: 0.75rem 1rem;
+		background: none;
+		font-size: 14px;
+		border-radius: var(--borderRadius);
+		transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+	}
+
+	a.mobile::after {
+		display: none;
+	}
+
+	a.mobile:hover {
+		transform: scale(0.9);
+		background-color: rgba(112, 117, 121, 0.08);
+		color: var(--textColor);
+	}
+
 	/* schermo piccolo */
-	@media only screen and (max-width: 720px) {
-		a {
-			text-align: center;
-			padding: 0.75rem 1rem;
-			background: none;
-			font-size: 14px;
-			border-radius: var(--borderRadius);
-			transition: transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
-			display: flex;
-			gap: 1rem;
-			align-items: center;
-		}
-
-		a::after {
-			display: none;
-		}
-
-		a:hover {
-			transform: scale(0.9);
-			background-color: rgba(112, 117, 121, 0.08);
-			color: var(--textColor);
-		}
+	@media only screen and (max-width: 1200px) {
 	}
 </style>

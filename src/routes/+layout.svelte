@@ -6,7 +6,7 @@
 	export let data: LayoutData;
 </script>
 
-{#if $page?.url?.pathname?.includes("drinktool")}
+{#if $page?.url?.pathname?.includes("/drinktool") || $page?.url?.pathname?.includes("/test")}
 	<slot />
 {:else}
 	<AppLayout {data}>

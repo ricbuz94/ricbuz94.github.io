@@ -13,8 +13,8 @@
     viewBox="0 0 24 24"
     aria-hidden="true"
     focusable="false"
-    width="26px"
-    height="26px"
+    width="24px"
+    height="24px"
     class={className}
   >
     <line x1="2" y1="16" x2="22" y2="16" id="middle-down" />
@@ -33,11 +33,16 @@
     justify-content: center;
     -webkit-tap-highlight-color: transparent;
     background-color: var(--backgroundColor);
+    border: 1px solid var(--borderColor);
     border-radius: var(--borderRadius);
     margin: 0px;
     margin-left: 0.5rem;
     cursor: pointer;
     transition: all var(--transition);
+  }
+
+  #button:active {
+    box-shadow: var(--activeInputShadow) !important;
   }
 
   #icon {
@@ -48,6 +53,7 @@
     stroke-width: 2.5;
     transition: var(--transition);
     -webkit-transition: var(--transition);
+    transform: scale(0.8);
   }
 
   #middle-up,
@@ -66,6 +72,11 @@
   @media only screen and (max-width: 720px) {
     #button {
       border: none;
+      transform: scale(1.2);
+    }
+
+    #button:active {
+      box-shadow: none !important;
     }
   }
 </style>

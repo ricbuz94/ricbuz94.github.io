@@ -1,7 +1,9 @@
 {
 	"generic": {
 		"back": "Indietro",
-		"notFound": "Pagina non trovata"
+		"notFound": "Pagina non trovata",
+		"changeTheme": "Cambia tema",
+		"changeLanguage": "Cambia lingua"
 	},
 	"layout": {
 		"nav": {

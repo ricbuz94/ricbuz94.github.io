@@ -1,19 +1,37 @@
 <script lang="ts">
   import { locale, _ } from "svelte-i18n";
   import { Locale, Theme } from "$lib/helpers/interfaces";
-  import { base } from "$app/paths";
   import Logo from "../Logo.svelte";
-  import NavLink from "../NavLink.svelte";
   import MenuButton from "../MenuButton.svelte";
   import { beforeNavigate } from "$app/navigation";
   import isMobile from "$lib/helpers/isMobile";
   import MenuButtonMobile from "../MenuButtonMobile.svelte";
+  import NavMenu from "../NavMenu.svelte";
 
   export let currentTheme: string;
   export let toggleTheme: ((e: any) => void) | undefined;
 
+  let menuButton: unknown;
   let isOpen: boolean = false;
   let isLoading: boolean = false;
+  $: navList = [
+    {
+      title: "Home",
+      icon: "home",
+      href: "/",
+    },
+    {
+      title: $_("layout.nav.works"),
+      icon: "layers",
+      href: "/works",
+    },
+    {
+      title: $_("layout.nav.about"),
+      icon: "user",
+      href: "/about",
+    },
+  ];
+
   $: localeText = $locale === Locale.it ? "IT" : "EN";
   $: themeIcon = currentTheme !== Theme.dark ? "moon" : "sun";
 
@@ -57,47 +75,31 @@
 <header id="header">
   <nav id="nav">
     <Logo />
-    <ul id="menu">
-      <li>
-        <NavLink href="{base}/works">
-          {$_("layout.nav.works")}
-        </NavLink>
-      </li>
-      <li>
-        <NavLink href="{base}/about">
-          {$_("layout.nav.about")}
-        </NavLink>
-      </li>
-    </ul>
-    <MenuButton icon={themeIcon} onclick={toggleTheme} label="Cambia tema" />
+    {#if !isMobile()}
+      <NavMenu isOpen={true} {navList} />
+    {/if}
+    <MenuButton icon={themeIcon} onclick={toggleTheme} label={$_("generic.changeTheme")} />
     <MenuButton
       {isLoading}
       text={localeText}
       onclick={handleLocaleChange}
-      label="Cambia lingua"
+      label={$_("generic.changeLanguage")}
     />
-    <div id="mobile-menu-button">
-      <MenuButtonMobile {isOpen} onclick={toggleMenu} label="Menù" />
-    </div>
+    {#if isMobile()}
+      <div class="menu-area">
+        <MenuButtonMobile
+          bind:this={menuButton}
+          {isOpen}
+          onclick={toggleMenu}
+          label="Menù"
+        />
+        <div class="menu-container">
+          <NavMenu {isOpen} {navList} />
+        </div>
+      </div>
+    {/if}
   </nav>
 </header>
-{#if isMobile()}
-  <ul id="menu-mobile" class={isOpen ? "active" : ""}>
-    <li>
-      <NavLink href="/" mobileIcon="home">Home</NavLink>
-    </li>
-    <li>
-      <NavLink href={`${base}/works`} mobileIcon="layers">
-        {$_("layout.nav.works")}
-      </NavLink>
-    </li>
-    <li>
-      <NavLink href={`${base}/about`} mobileIcon="user">
-        {$_("layout.nav.about")}
-      </NavLink>
-    </li>
-  </ul>
-{/if}
 
 <style>
   #header {
@@ -125,16 +127,16 @@
     align-items: center;
   }
 
-  #menu {
-    display: initial;
-  }
+  .menu-area {
+    position: relative;
 
-  #menu li {
-    display: inline;
   }
+  .menu-container {
+    position: absolute;
+    top: 3rem;
+    right: -0.5rem;
 
-  #mobile-menu-button {
-    display: none;
+    /* border: 1px solid red; */
   }
 
   /* schermo piccolo */
@@ -149,53 +151,6 @@
       min-width: inherit;
       padding-left: 1.25rem;
       padding-right: 1rem;
-    }
-
-    #menu {
-      display: none;
-    }
-
-    #mobile-menu-button {
-      display: initial;
-    }
-
-    #menu-mobile.active {
-      opacity: 1;
-      visibility: visible;
-      transform: scale(1);
-    }
-
-    #menu-mobile {
-      position: absolute;
-      height: max-content;
-      width: 180px;
-      top: 60px;
-      right: 15px;
-      -webkit-touch-callout: none;
-      backdrop-filter: blur(50px);
-      -webkit-backdrop-filter: blur(50px);
-      background-color: var(--navBackgroundColor);
-      border-radius: var(--borderRadius);
-      box-shadow: var(--cardShadow);
-      border: var(--navBorder);
-      opacity: 0;
-      margin: 0px;
-      padding: 0.5rem 0rem;
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      transform-origin: top right;
-      transform: scale(0.8);
-      transition: opacity 0.18s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 0.18s cubic-bezier(0.4, 0, 0.2, 1),
-        visibility 0.18s cubic-bezier(0.4, 0, 0.2, 1),
-        background-color var(--transition);
-      visibility: hidden;
-      z-index: 1000;
-    }
-
-    #menu-mobile li {
-      display: contents;
     }
   }
 
