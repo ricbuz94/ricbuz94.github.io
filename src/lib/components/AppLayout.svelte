@@ -133,10 +133,6 @@
     --gray5: #2a2e35;
     --gray6: #202023;
     --gray7: #0f0f0f;
-    --red: #ff414e;
-    --redDark: #e13b47;
-    --orange: #ff7a00;
-    --orangeDark: #e66e00;
     /* --purple: #9166cc; */
     /* --purpleLight: #a372e7; */
     --borderRadius: 0.75rem;

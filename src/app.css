@@ -4,8 +4,8 @@
 
 :root {
 	--fontSize: 16px;
-	--fontSizeLarge: 18px;
 	--fontSizeSmall: 14px;
+	--fontSizeLarge: 18px;
 }
 
 html,
@@ -57,8 +57,8 @@ hr {
 .light {
 	--backgroundColor: var(--gray0);
 	--cardBackgroundColor: white;
-	--accentColor: var(--red);
-	--accentColorHover: var(--redDark);
+	--accentColor: #ff414e;
+	--accentColorHover: #e13b47;
 	--textColor: black;
 	--subTextColor: var(--gray4);
 	--webTag: #005ac4;
@@ -76,8 +76,8 @@ hr {
 .dark {
 	--backgroundColor: var(--gray7);
 	--cardBackgroundColor: var(--gray5);
-	--accentColor: var(--orange);
-	--accentColorHover: var(--orangeDark);
+	--accentColor: #ff7a00;
+	--accentColorHover: #e66e00;
 	--textColor: var(--gray0);
 	--subTextColor: var(--gray2);
 	--webTag: #3b82f6;

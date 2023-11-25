@@ -8,8 +8,7 @@
 	"layout": {
 		"nav": {
 			"works": "Works",
-			"about": "About",
-			"hmcid": "HowMuchCanIDrink"
+			"about": "About"
 		}
 	},
 	"home": {
