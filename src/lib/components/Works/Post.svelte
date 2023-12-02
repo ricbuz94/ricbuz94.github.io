@@ -4,7 +4,11 @@
 </script>
 
 <li>
-	<a rel="noreferrer" href={post.url} target="_blank">
+	<a
+		rel="noreferrer"
+		href={post.url}
+		target={post.noBlank ? "_self" : "_blank"}
+	>
 		<div class="image-container">
 			<div
 				class="image"

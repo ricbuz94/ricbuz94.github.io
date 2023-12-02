@@ -65,6 +65,10 @@
 				{
 					"title": "Drink Tool",
 					"description": "Real-time blood alcohol content calculator: BAC (Blood Alcohol Content)."
+				},
+				{
+					"title": "Simple QR Code",
+					"description": "A simple QR code generator that lets you download the image (.png) of the code with a title."
 				}
 			]
 		},

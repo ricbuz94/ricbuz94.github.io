@@ -7,6 +7,7 @@ import beacharound from "$lib/assets/images/beacharound.webp";
 import beacharoundBusiness from "$lib/assets/images/beacharound-business.webp";
 import picWix from "$lib/assets/images/pic-wix.webp";
 import drinktool from "$lib/assets/images/drinktool.webp";
+import simpleQrCode from "$lib/assets/images/simple_qr_code.webp";
 import howMuchCanIDrink from "$lib/assets/images/howmuchcanidrink.webp";
 
 import { locale, waitLocale } from 'svelte-i18n';
@@ -56,6 +57,15 @@ const sections: Array<Section> = [
         tags: [Tag.android],
         description: "Real-time BAC (Blood Alcohol Content) calculator.",
       },
+      {
+        id: "000004",
+        url: `${import.meta.env.VITE_APP_SIMPLE_QR_CODE_URL}` || "#",
+        noBlank: true,
+        image: simpleQrCode,
+        title: "Simple QR Code",
+        tags: [Tag.web],
+        description: "A simple QR code generator that lets you download the image (.png) of the code with a title.",
+      },
     ],
   },
   {
@@ -63,7 +73,7 @@ const sections: Array<Section> = [
     title: "Old projects",
     posts: [
       {
-        id: "000004",
+        id: "000005",
         url: `${import.meta.env.VITE_APP_HMCID_URL}` || "#",
         image: howMuchCanIDrink,
         title: "Howmuchcanidrink",

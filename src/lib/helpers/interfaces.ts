@@ -18,6 +18,7 @@ enum Tag {
 interface Post {
 	id: string,
 	url: string,
+	noBlank?: boolean,
 	title: string,
 	tags: Array<Tag>,
 	image: string,
