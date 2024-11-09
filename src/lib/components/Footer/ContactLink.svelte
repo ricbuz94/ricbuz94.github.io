@@ -72,7 +72,7 @@
   }
 
   /* schermo piccolo */
-  @media only screen and (max-width: 720px) {
+  /* @media only screen and (max-width: 720px) {
     #link {
       width: 100%;
       text-align: center;
@@ -93,10 +93,10 @@
       vertical-align: top;
       color: var(--textColor);
     }
-  }
+  } */
 
   /* schermo grande */
-  @media only screen and (min-width: 1400px) {
+  /* @media only screen and (min-width: 1400px) {
     #link {
       padding: 0px 0.5rem;
     }
@@ -109,5 +109,5 @@
       vertical-align: top;
       color: var(--textColor);
     }
-  }
+  } */
 </style>

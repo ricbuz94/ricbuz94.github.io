@@ -13,10 +13,10 @@
 	}
 
 	/* schermo piccolo */
-	@media only screen and (max-width: 720px) {
+	/* @media only screen and (max-width: 720px) {
 		hr {
 			margin-block-start: 1rem;
 			margin-block-end: 1rem;
 		}
-	}
+	} */
 </style>

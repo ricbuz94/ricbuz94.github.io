@@ -10,7 +10,7 @@
 
 <li>
 	<div>
-		<Icon name="corner-down-right" width={3} size={16} isThemed />
+		<Icon name="corner-down-right" className="icon sm themed" />
 		<h5>{section?.title}</h5>
 	</div>
 	<ul>
@@ -54,7 +54,7 @@
 	}
 
 	/* schermo piccolo */
-	@media only screen and (max-width: 720px) {
+	/* @media only screen and (max-width: 720px) {
 		h5 {
 			font-size: 100%;
 		}
@@ -63,12 +63,12 @@
 			gap: 0px;
 			grid-template-columns: auto;
 		}
-	}
+	} */
 
 	/* schermo grande */
-	@media only screen and (min-width: 1400px) {
+	/* @media only screen and (min-width: 1400px) {
 		ul {
 			grid-template-columns: repeat(auto-fill, minmax(375, 1fr));
 		}
-	}
+	} */
 </style>

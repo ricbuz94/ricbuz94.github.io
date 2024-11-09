@@ -184,7 +184,7 @@
 	}
 
 	/* schermo piccolo */
-	@media only screen and (max-width: 720px) {
+	/* @media only screen and (max-width: 720px) {
 		.banner {
 			display: block;
 		}
@@ -208,13 +208,13 @@
 			gap: 1.5rem;
 			grid-template-columns: auto;
 		}
-	}
+	} */
 
 	/* schermo grande */
-	@media only screen and (min-width: 1400px) {
+	/* @media only screen and (min-width: 1400px) {
 		img {
 			width: 140px;
 			height: 140px;
 		}
-	}
+	} */
 </style>

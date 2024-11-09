@@ -83,7 +83,7 @@
 	}
 
 	/* schermo piccolo */
-	@media only screen and (max-width: 800px) {
+	/* @media only screen and (max-width: 800px) {
 		.content {
 			display: grid;
 			gap: 2rem;
@@ -113,10 +113,10 @@
 		p {
 			text-align: justify;
 		}
-	}
+	} */
 
 	/* schermo grande */
-	@media only screen and (min-width: 1400px) {
+	/* @media only screen and (min-width: 1400px) {
 		.content {
 			gap: 4rem;
 			grid-template-columns: auto auto auto;
@@ -132,5 +132,5 @@
 			width: 200px;
 			height: 200px;
 		}
-	}
+	} */
 </style>

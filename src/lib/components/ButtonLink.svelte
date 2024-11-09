@@ -1,20 +1,18 @@
 <script>
 	import Icon from "./Icon.svelte";
 
-	export let to = "/",
-		text = "Testo",
-		shadow = false;
-
-	$: style = shadow ? "shadow" : "";
+	export let to = "/";
+	export let text = "Testo";
+	export let shadow = false;
 </script>
 
-<a href={to} class={style}>
+<a href={to} class="btn sale" class:shadow>
 	<p>{text}</p>
-	<Icon name="chevron-right" size={14} width={3} color="#f6f9fc" />
+	<Icon name="chevron-right" className="icon xs light" />
 </a>
 
 <style>
-	a {
+	/* a {
 		width: min-content;
 		display: flex;
 		justify-content: space-around;
@@ -26,32 +24,19 @@
 		border-radius: 25px;
 		padding: 0.5rem 1.25rem;
 		transition: all 0.2s ease-in-out;
-	}
+	} */
 
-	a:hover {
-		background-color: var(--accentColorHover);
-		transform: translateY(-3px);
-	}
-
-	a:active {
-		box-shadow: var(--activeInputShadow) !important;
-	}
-
-	a.shadow {
-		box-shadow: var(--cardShadow);
-	}
-
-	p {
+	/* p {
 		color: var(--gray0);
 		margin-right: 5px;
 		font-weight: 700;
 		font-size: 0.8rem;
 		letter-spacing: 1px;
 		text-transform: uppercase;
-	}
+	} */
 
 	/* schermo piccolo */
-  @media only screen and (max-width: 720px) {
+	/* @media only screen and (max-width: 720px) {
 		a {
 			border-radius: 25px;
 			padding: 0.75rem 1.25rem;
@@ -60,5 +45,5 @@
 		p {
 			font-size: 1rem;
 		}
-	}
+	} */
 </style>

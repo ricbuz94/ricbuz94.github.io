@@ -1,0 +1,15 @@
+.btn {
+  @apply bg-transparent text-black dark:text-gray0 font-poppins uppercase font-bold cursor-pointer shadow-none no-underline text-sm duration-150 my-0.5 flex justify-center items-center hover:bg-lightHoverlay dark:hover:bg-darkHoverlay transition-colors;
+
+  &.menu {
+    @apply w-9 min-w-9 h-9 min-h-9 rounded-full;
+  }
+
+  &.sale {
+    @apply gap-1 text-gray0 w-min px-5 py-2 rounded-full select-none bg-redLight dark:bg-orangeLight hover:bg-red dark:hover:bg-orange
+  }
+
+  &.top {
+    @apply fixed bottom-8 right-8 shadow-md bg-cardBackground dark:bg-gray5 z-50;
+  }
+}

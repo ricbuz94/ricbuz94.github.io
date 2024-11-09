@@ -5,7 +5,35 @@
 
   let jsConfetti: JSConfetti | undefined;
   const year: number = new Date().getFullYear();
-  const emojis = [ "🔥", "⚡️", "💥", "✨", "💫", "🌸", "💦", "🚀", "🍆", "🍑", "💪", "🍺", "🌮", "🐈", "🍄", "🎱", "💘", "🎉", "💎", "👌", "🤙", "👍", "🤘", "👅", "🎈", "💵", "💸", ];
+  const emojis = [
+    "🔥",
+    "⚡️",
+    "💥",
+    "✨",
+    "💫",
+    "🌸",
+    "💦",
+    "🚀",
+    "🍆",
+    "🍑",
+    "💪",
+    "🍺",
+    "🌮",
+    "🐈",
+    "🍄",
+    "🎱",
+    "💘",
+    "🎉",
+    "💎",
+    "👌",
+    "🤙",
+    "👍",
+    "🤘",
+    "👅",
+    "🎈",
+    "💵",
+    "💸",
+  ];
 
   function setCanvas() {
     if (!jsConfetti) {
@@ -63,7 +91,11 @@
       rel="noreferrer">GitHub Pages</a
     >
   </p>
-  <p class="sub-text bottom-text" on:mouseenter={setCanvas} on:mousedown={makeItRain}>
+  <p
+    class="sub-text bottom-text"
+    on:mouseenter={setCanvas}
+    on:mousedown={makeItRain}
+  >
     © {year} Riccardo Buzzolo. All Rights Reserved.
   </p>
 </footer>
@@ -112,7 +144,7 @@
   }
 
   /* schermo piccolo */
-  @media only screen and (max-width: 720px) {
+  /* @media only screen and (max-width: 720px) {
     footer {
       width: 100%;
       display: flex;
@@ -134,10 +166,10 @@
       flex-direction: column;
       align-items: flex-start;
     }
-  }
+  } */
 
   /* schermo grande */
-  @media only screen and (min-width: 1400px) {
+  /* @media only screen and (min-width: 1400px) {
     footer {
       width: 850px;
     }
@@ -154,5 +186,5 @@
     footer a:hover p {
       color: var(--accentColor);
     }
-  }
+  } */
 </style>

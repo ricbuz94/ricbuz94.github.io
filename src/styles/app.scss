@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './buttons.scss';
+@import './nav-link.scss';
+@import './icons.scss';
+@import './tags.scss';
+@import './logo.scss';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	display: block;
+	font-size: 16px;
+}
+
+html,
+body {
+	margin: 0px;
+	padding: 0px;
+	min-width: 320px;
+}
+
+body {
+	text-rendering: optimizeLegibility;
+
+	@apply antialiased text-black dark:text-gray0 bg-gray0 dark:bg-gray7 scroll-smooth transition-colors;
+}
+
+body::-webkit-scrollbar {
+	width: 0.375rem;
+	height: 0.375rem;
+}
+
+body::-webkit-scrollbar-track {
+	background-color: rgba(75, 75, 75, 0.5);
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply m-0 select-none transition-colors;
+}
+
+p {
+	@apply transition-colors;
+}
+
+hr {
+	@apply h-[1px] border-none bg-gray1;
+}
+
+// .light {
+// 	--backgroundColor: var(--gray0);
+// 	--cardBackgroundColor: white;
+// 	--accentColor: #ff414e;
+// 	--accentColorHover: #e13b47;
+// 	--textColor: black;
+// 	--subTextColor: var(--gray4);
+// 	--webTag: #005ac4;
+// 	--androidTag: #387002;
+// 	--borderColor: rgba(120, 120, 120, 0.1);
+// 	--navBackgroundColor: rgba(248, 248, 248, 0.6);
+// 	--menuBackgroundColor: rgba(248, 248, 248, 0.98);
+// 	--navBorder: inset 1px rgba(0, 0, 0, 0.1);
+// 	--navBorderBottom: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+// 	--cardShadow: 0 2px 4px rgba(0, 30, 84, 0.12);
+// 	--cardShadowHover: 0 6px 12px -2px rgba(50, 50, 93, 0.25);
+// 	--tocShadow: rgba(0, 0, 0, 0.2) 0px 8px 10px 0px
+// }
+
+// .dark {
+// 	--backgroundColor: var(--gray7);
+// 	--cardBackgroundColor: var(--gray5);
+// 	--accentColor: #ff7a00;
+// 	--accentColorHover: #e66e00;
+// 	--textColor: var(--gray0);
+// 	--subTextColor: var(--gray2);
+// 	--webTag: #3b82f6;
+// 	--androidTag: #a4c34a;
+// 	--borderColor: rgba(200, 200, 200, 0.1);
+// 	--navBackgroundColor: rgba(15, 15, 15, 0.6);
+// 	--menuBackgroundColor: rgba(15, 15, 15, 0.98);
+// 	--navBorder: inset 1px rgba(255, 255, 255, 0.1);
+// 	--navBorderBottom: inset 0 -1px 0 0 rgba(255, 255, 255, 0.1);
+// 	--cardShadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+// 	--cardShadowHover: 0 6px 12px -2px rgba(0, 0, 0, 0.6);
+// 	--tocShadow: rgba(0, 0, 0, 0.6) 0px 8px 10px 0px
+// }

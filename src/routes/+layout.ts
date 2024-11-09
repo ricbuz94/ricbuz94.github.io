@@ -86,37 +86,31 @@ const sections: Array<Section> = [
 
 export const load: LayoutLoad = (async () => {
 
-  let currentTheme = "light";
+  let isDark;
 
   if (browser) {
 
-    // Locale
+    // Language
     const language = localStorage.getItem("language");
     if (language) await locale.set(language);
 
     // Theme
     const THEME_KEY = "theme";
-    const isMediaThemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const preferredTheme = isMediaThemeDark ? Theme.dark : Theme.light;
-    currentTheme = localStorage.getItem(THEME_KEY) || preferredTheme;
+    const isMediaDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const storageTheme = localStorage.getItem(THEME_KEY);
+    isDark = storageTheme === Theme.dark || (!('theme' in localStorage) && isMediaDark);
 
-    if (currentTheme === Theme.dark) {
-      document.body?.classList.remove(Theme.light);
-      document.body?.classList.add(Theme.dark);
-      document.getElementById(THEME_KEY)?.classList.remove(Theme.light);
-      document.getElementById(THEME_KEY)?.classList.add(Theme.dark);
+    if (isDark) {
+      document.documentElement.classList.add(Theme.dark);
     } else {
-      document.body?.classList.remove(Theme.dark);
-      document.body?.classList.add(Theme.light);
-      document.getElementById(THEME_KEY)?.classList.remove(Theme.dark);
-      document.getElementById(THEME_KEY)?.classList.add(Theme.light);
+      document.documentElement.classList.remove(Theme.dark);
     }
   }
 
   await waitLocale();
 
   return {
-    currentTheme,
+    isDark,
     sections
   };
 }) satisfies LayoutData;

@@ -104,16 +104,6 @@
 		transition: color var(--transition);
 	}
 
-	.tag {
-		line-height: 1.2;
-		letter-spacing: 1px;
-		font-size: 45%;
-		font-weight: 600;
-		margin: 0;
-		padding: 6px 10px;
-		border-radius: 25px;
-	}
-
 	.description {
 		font-size: 14px;
 		font-weight: 500;
@@ -123,23 +113,8 @@
 		padding: 0px;
 	}
 
-	.WEB {
-		color: #fff;
-		background-color: var(--webTag);
-	}
-
-	.ANDROID {
-		color: #fff;
-		background-color: var(--androidTag);
-	}
-
-	.iOS {
-		background-color: var(--textColor);
-		color: var(--backgroundColor);
-	}
-
 	/* schermo piccolo */
-	@media only screen and (max-width: 720px) {
+	/* @media only screen and (max-width: 720px) {
 		h4 {
 			font-size: 140%;
 		}
@@ -168,13 +143,13 @@
 			height: 200px;
 			max-height: 200px;
 		}
-	}
+	} */
 
 	/* schermo grande */
-	@media only screen and (min-width: 1400px) {
+	/* @media only screen and (min-width: 1400px) {
 		.image-container {
 			height: 250px;
 			max-height: 250px;
 		}
-	}
+	} */
 </style>

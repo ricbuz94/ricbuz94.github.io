@@ -45,9 +45,9 @@
 	}
 
 	/* schermo piccolo */
-	@media only screen and (max-width: 720px) {
+	/* @media only screen and (max-width: 720px) {
 		article {
 			font-size: 120%;
 		}
-	}
+	} */
 </style>

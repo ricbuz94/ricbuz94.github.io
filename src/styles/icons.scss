@@ -1,0 +1,62 @@
+@layer utilities {
+  .stroke-3 {
+    stroke-width: 3;
+  }
+
+  .sk-linecap-round {
+    stroke-linecap: round;
+  }
+
+  .sk-linejoin-round {
+    stroke-linejoin: round;
+  }
+}
+
+.icon {
+  @apply w-6 h-6 min-w-6 min-h-6 fill-none stroke-2 sk-linecap-round sk-linejoin-round sk-linecap-round sk-linejoin-round stroke-black dark:stroke-gray0 transition-colors;
+
+  &.xs {
+    @apply w-3 h-3 min-w-3 min-h-3 stroke-3;
+  }
+
+  &.sm {
+    @apply w-5 h-5 min-w-5 min-h-5;
+  }
+
+  &.lg {
+    @apply w-7 h-7 min-w-7 min-h-7;
+  }
+
+  &.xl {
+    @apply w-8 h-8 min-w-8 min-h-8;
+  }
+
+  &.inverted {
+    @apply stroke-gray0 dark:stroke-black;
+  }
+
+  &.dark {
+    @apply stroke-black dark:stroke-black;
+  }
+
+  &.light {
+    @apply stroke-gray0 dark:stroke-gray0;
+  }
+
+  &.themed {
+    @apply stroke-redLight dark:stroke-orangeLight;
+  }
+
+  &.x {
+
+    &.active {
+      .middle-up {
+        @apply rotate-45 -translate-x-[2px];
+      }
+
+      .middle-down {
+        @apply -rotate-45 -translate-x-[2px];
+      }
+    }
+  }
+}

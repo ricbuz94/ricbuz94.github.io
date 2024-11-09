@@ -7,7 +7,11 @@ const config = {
 	kit: {
 		adapter: adapter(),
 		appDir: 'internal',
+
 	},
+	compilerOptions: {
+		customElement: false
+	}
 };
 
 export default config;

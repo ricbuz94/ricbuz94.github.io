@@ -1,0 +1,7 @@
+#logo {
+  @apply text-xl font-semibold flex gap-1 items-center justify-center;
+
+  &.push-right {
+    @apply mr-auto;
+  }
+}

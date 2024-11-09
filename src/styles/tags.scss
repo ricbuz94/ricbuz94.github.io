@@ -1,0 +1,18 @@
+@layer utilities {
+  .text-xxs {
+    font-size: 0.625rem;
+    line-height: 0.75rem;
+  }
+}
+
+.tag {
+  @apply inline-block text-xxs font-bold px-2 py-1 uppercase rounded-full border-none bg-black text-gray0 dark:bg-gray0 dark:text-black;
+
+  &.android {
+    @apply bg-green dark:bg-greenLight;
+  }
+
+  &.web {
+    @apply bg-blue dark:bg-blueLight;
+  }
+}

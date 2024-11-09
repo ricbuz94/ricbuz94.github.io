@@ -1,0 +1,28 @@
+.nav-link {
+  @apply inline-block mx-2 my-0 text-xs tracking-wider text-black dark:text-gray0 uppercase relative font-semibold cursor-pointer;
+
+  &::after {
+    @apply content-[""] absolute bottom-0 left-0 w-full h-[1px] bg-redLight dark:bg-orangeLight scale-0 origin-bottom-right transition-transform duration-300;
+  }
+
+  &.active::after {
+    @apply h-[2px];
+  }
+
+  &.active::after,
+  &:hover::after {
+    @apply bg-redLight dark:bg-orangeLight scale-100 origin-bottom-left;
+  }
+
+  &.mobile {
+    @apply text-center px-3 py-4 bg-none flex gap-4 items-center rounded-xl transition-transform;
+  }
+
+  &.mobile::after {
+    @apply hidden;
+  }
+
+  &.mobile:hover {
+    @apply scale-90 bg-darkHoverlay dark:bg-lightHoverlay;
+  }
+}

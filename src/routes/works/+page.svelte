@@ -64,7 +64,7 @@
 	}
 
 	/* schermo piccolo */
-	@media only screen and (max-width: 720px) {
+	/* @media only screen and (max-width: 720px) {
 		#sections {
 			padding: 0px;
 		}
@@ -73,5 +73,5 @@
 			padding-top: 2rem;
 			padding-bottom: 1rem;
 		}
-	}
+	} */
 </style>

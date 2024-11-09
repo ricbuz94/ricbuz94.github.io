@@ -10,9 +10,9 @@ enum Theme {
 }
 
 enum Tag {
-	web = "WEB",
-	ios = "iOS",
-	android = "ANDROID"
+	web = "web",
+	ios = "ios",
+	android = "android"
 }
 
 interface Post {

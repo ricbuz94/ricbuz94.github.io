@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "../../app.css";
+  import "../../styles/app.scss";
   import "$lib/i18n";
   import { _, isLoading } from "svelte-i18n";
   import { browser } from "$app/environment";
@@ -20,20 +20,17 @@
   export let refresh: string = "";
 
   let isMobile = false;
+  let isDark = data?.isDark;
   let isTopButtonVisible = false;
-  let currentTheme = data?.currentTheme;
   const THEME_KEY = "theme";
   const DARK_PREFERENCE = "(prefers-color-scheme: dark)";
 
-  $: favicon =
-    currentTheme === Theme.light ? "/favicon.ico" : "/favicon-dark.ico";
-  $: addressBarColor = currentTheme === Theme.light ? "#faf9fc" : "#0f0f0f";
+  $: favicon = isDark ? "/favicon-dark.ico" : "/favicon.ico";
+  $: addressBarColor = isDark ? "#0f0f0f" : "#faf9fc";
 
   const mq: Readable<boolean> = useMediaQuery(
-    "only screen and (max-width: 720px)"
+    "only screen and (max-width: 720px)",
   );
-  const isMediaThemeDark =
-    browser && window.matchMedia(DARK_PREFERENCE).matches;
 
   mq.subscribe((value) => (isMobile = value));
 
@@ -54,37 +51,24 @@
     }
   }
 
-  function applyTheme(theme?: string) {
+  function toggleTheme(save?: boolean) {
     if (browser) {
-      const preferredTheme: Theme = isMediaThemeDark ? Theme.dark : Theme.light;
-      const storedTheme = localStorage.getItem(THEME_KEY);
-      currentTheme = !!theme ? theme : storedTheme || preferredTheme;
-      localStorage.setItem(THEME_KEY, currentTheme);
-
-      if (currentTheme === Theme.dark) {
-        document.body?.classList.remove(Theme.light);
-        document.body?.classList.add(Theme.dark);
-        document.getElementById("theme")?.classList.remove(Theme.light);
-        document.getElementById("theme")?.classList.add(Theme.dark);
+      if (isDark) {
+        document.documentElement.classList.remove(Theme.dark);
+        save && localStorage.setItem(THEME_KEY, "light");
       } else {
-        document.body?.classList.remove(Theme.dark);
-        document.body?.classList.add(Theme.light);
-        document.getElementById("theme")?.classList.remove(Theme.dark);
-        document.getElementById("theme")?.classList.add(Theme.light);
+        document.documentElement.classList.add(Theme.dark);
+        save && localStorage.setItem(THEME_KEY, "dark");
       }
+      isDark = !isDark;
     }
   }
 
-  function toggleTheme() {
-    applyTheme(currentTheme === Theme.light ? Theme.dark : Theme.light);
-  }
-
   onMount(async () => {
-    applyTheme();
     onScrollHandler();
     window
       .matchMedia(DARK_PREFERENCE)
-      .addEventListener("change", () => applyTheme());
+      .addEventListener("change", () => toggleTheme());
 
     window.addEventListener("scroll", onScrollHandler, { passive: true });
 
@@ -92,7 +76,7 @@
       window.removeEventListener("scroll", onScrollHandler);
       window
         .matchMedia(DARK_PREFERENCE)
-        .removeEventListener("change", () => applyTheme());
+        .removeEventListener("change", () => toggleTheme());
     };
   });
 </script>
@@ -102,13 +86,13 @@
   <meta name="theme-color" content={addressBarColor} />
 </svelte:head>
 
-<div id="theme" class="light">
+<div id="theme">
   {#if $isLoading}
     <div class="loading">
       <Loader />
     </div>
   {:else}
-    <Header {currentTheme} {toggleTheme} />
+    <Header {isDark} {toggleTheme} />
     {#key (refresh = $page.url.pathname)}
       <main in:fly={{ y: 30, duration: isMobile ? 400 : 200, delay: 100 }}>
         <Divider />
@@ -136,6 +120,7 @@
     /* --purple: #9166cc; */
     /* --purpleLight: #a372e7; */
     --borderRadius: 0.75rem;
+    --borderRadiusFull: 50%;
     --transition: 120ms cubic-bezier(0.4, 0, 0.2, 1);
     --activeInputShadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
   }
@@ -146,8 +131,15 @@
     color: var(--textColor);
     font-size: var(--fontSize);
     background-color: var(--backgroundColor);
-    transition: color var(--transition), background-color var(--transition);
-    font-family: "Poppins", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    transition:
+      color var(--transition),
+      background-color var(--transition);
+    font-family:
+      "Poppins",
+      -apple-system,
+      BlinkMacSystemFont,
+      Arial,
+      sans-serif;
   }
 
   :global(p) {
@@ -184,7 +176,7 @@
   }
 
   /* schermo piccolo */
-  @media only screen and (max-width: 720px) {
+  /* @media only screen and (max-width: 720px) {
     :root {
       --transition: 300ms ease;
     }
@@ -196,10 +188,10 @@
       padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
-  }
+  } */
 
   /* schermo grande */
-  @media only screen and (min-width: 1400px) {
+  /* @media only screen and (min-width: 1400px) {
     #theme {
       font-size: var(--fontSizeLarge);
     }
@@ -207,5 +199,5 @@
     main {
       width: 850px;
     }
-  }
+  } */
 </style>

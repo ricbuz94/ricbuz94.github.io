@@ -1,17 +1,16 @@
 <script lang="ts">
   import { locale, _ } from "svelte-i18n";
-  import { Locale, Theme } from "$lib/helpers/interfaces";
+  import { Locale } from "$lib/helpers/interfaces";
   import Logo from "../Logo.svelte";
-  import MenuButton from "../MenuButton.svelte";
+  import MenuButton from "../Button.svelte";
   import { beforeNavigate } from "$app/navigation";
   import isMobile from "$lib/helpers/isMobile";
   import MenuButtonMobile from "../MenuButtonMobile.svelte";
-  import NavMenu from "../NavMenu.svelte";
+  import NavMenu from "./NavMenu.svelte";
 
-  export let currentTheme: string;
-  export let toggleTheme: ((e: any) => void) | undefined;
+  export let isDark: boolean;
+  export let toggleTheme: (save?: boolean) => void;
 
-  let menuButton: unknown;
   let isOpen: boolean = false;
   let isLoading: boolean = false;
   $: navList = [
@@ -33,7 +32,7 @@
   ];
 
   $: localeText = $locale === Locale.it ? "IT" : "EN";
-  $: themeIcon = currentTheme !== Theme.dark ? "moon" : "sun";
+  $: themeIcon = isDark ? "sun" : "moon";
 
   function toggleMenu() {
     isOpen = !isOpen;
@@ -72,13 +71,17 @@
   beforeNavigate(() => (isOpen = false));
 </script>
 
-<header id="header">
-  <nav id="nav">
-    <Logo />
+<header id="header" class:mobile={isMobile()}>
+  <nav id="nav" class:mobile={isMobile()}>
+    <Logo pushRight />
     {#if !isMobile()}
       <NavMenu isOpen={true} {navList} />
     {/if}
-    <MenuButton icon={themeIcon} onclick={toggleTheme} label={$_("generic.changeTheme")} />
+    <MenuButton
+      icon={themeIcon}
+      onclick={() => toggleTheme(true)}
+      label={$_("generic.changeTheme")}
+    />
     <MenuButton
       {isLoading}
       text={localeText}
@@ -86,78 +89,51 @@
       label={$_("generic.changeLanguage")}
     />
     {#if isMobile()}
-      <div class="menu-area">
-        <MenuButtonMobile
-          bind:this={menuButton}
-          {isOpen}
-          onclick={toggleMenu}
-          label="Menù"
-        />
-        <div class="menu-container">
-          <NavMenu {isOpen} {navList} />
-        </div>
+      <div class="relative">
+        <MenuButtonMobile {isOpen} onclick={toggleMenu} label="Menù" />
+        <NavMenu {isOpen} {navList} />
       </div>
     {/if}
   </nav>
 </header>
 
-<style>
+<style lang="scss">
   #header {
-    z-index: 101;
-    height: 80px;
-    width: 100%;
-    position: fixed;
-    box-shadow: none;
-    user-select: none;
-    backface-visibility: hidden;
-    background-color: var(--navBackgroundColor);
-    backdrop-filter: saturate(180%) blur(15px);
-    -webkit-backdrop-filter: saturate(180%) blur(15px);
-    transition: height 200ms ease 0s, box-shadow 200ms ease 0s,
-      background-color var(--transition), opacity 300ms ease;
+    @apply w-full h-20 z-40 fixed shadow-none select-none bg-navBackground dark:bg-navBackgroundDark backdrop-saturate-150 backdrop-blur-md transition-all;
+
+    &.mobile {
+      @apply h-14;
+      position: initial;
+    }
   }
 
   #nav {
-    max-width: 650px;
-    height: inherit;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: start;
-    align-items: center;
-  }
+    @apply max-w-[650px] h-full px-2 flex gap-1 mx-auto justify-start items-center border;
 
-  .menu-area {
-    position: relative;
-
-  }
-  .menu-container {
-    position: absolute;
-    top: 3rem;
-    right: -0.5rem;
-
-    /* border: 1px solid red; */
+    &.mobile {
+      @apply px-4;
+    }
   }
 
   /* schermo piccolo */
-  @media only screen and (max-width: 720px) {
-    #header {
-      height: 60px;
-      position: initial;
-    }
+  // @media only screen and (max-width: 720px) {
+  //   #header {
+  //     @apply block h-14;
+  //     position: initial;
+  //   }
 
-    #nav {
-      height: inherit;
-      min-width: inherit;
-      padding-left: 1.25rem;
-      padding-right: 1rem;
-    }
-  }
+  //   #nav {
+  //     height: inherit;
+  //     min-width: inherit;
+  //     padding-left: 1.25rem;
+  //     padding-right: 1rem;
+  //   }
+  // }
 
   /* schermo grande */
-  @media only screen and (min-width: 1400px) {
+  /* @media only screen and (min-width: 1400px) {
     #nav {
       max-width: 850px;
     }
-  }
+  } */
 </style>

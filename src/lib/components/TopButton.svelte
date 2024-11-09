@@ -3,12 +3,6 @@
   import { fly } from "svelte/transition";
   import Icon from "./Icon.svelte";
 
-  let isHover: boolean = false;
-
-  function onHover() {
-    isHover = !isHover;
-  }
-
   function scrollTop() {
     if (browser) {
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -17,20 +11,17 @@
 </script>
 
 <button
-  id="to-top"
-  on:mouseenter={onHover}
-  on:mouseleave={onHover}
-  on:mousedown|preventDefault={scrollTop}
-  on:touchstart|preventDefault={scrollTop}
+  class="btn menu top"
+  on:click={scrollTop}
   in:fly={{ x: 0, y: 60, duration: 300, delay: 0 }}
   out:fly={{ x: 0, y: 60, duration: 300, delay: 0 }}
 >
-  <Icon name="arrow-up" size={20} isThemed={isHover} />
+  <Icon name="arrow-up" className="icon sm" />
 </button>
 
 <style>
-  #to-top {
-    border: var(--navBorder);
+  /* #to-top {
+    border: none;
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -44,20 +35,16 @@
     justify-content: center;
     box-shadow: var(--cardShadow);
     background-color: var(--navBackgroundColor);
-    -webkit-backdrop-filter: saturate(180%) blur(15px);
     backdrop-filter: saturate(180%) blur(15px);
     -webkit-tap-highlight-color: transparent;
     transition: all var(--transition);
-  }
+  } */
 
-  #to-top:active {
-    box-shadow: var(--activeInputShadow) !important;
-  }
-
-  @media only screen and (max-width: 720px) {
+  /* @media only screen and (max-width: 720px) {
     #to-top {
+      border: var(--navBorder);
       bottom: 1.5rem;
       right: 1rem;
     }
-  }
+  } */
 </style>
