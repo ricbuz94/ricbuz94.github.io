@@ -1,0 +1,29 @@
+---
+const { isThemed, name, size, width = 2, color } = Astro.props;
+---
+
+<svg
+    class={isThemed ? "icon themed" : "icon"}
+    width={`${size}px`}
+    height={`${size}px`}
+    stroke-width={width}
+    style={[{ stroke: color }]}
+    aria-hidden="true"
+    focusable="false"
+>
+    <use href={`icons.svg#${name}`}></use>
+</svg>
+
+<style>
+    .icon {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: var(--textColor);
+        transition: stroke var(--transition) opacity var(--transition);
+    }
+
+    .icon.themed {
+        stroke: var(--accentColor);
+    }
+</style>

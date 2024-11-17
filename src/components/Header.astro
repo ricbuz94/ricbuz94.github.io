@@ -1,0 +1,140 @@
+---
+import { t } from "../utils/i18n";
+import { isMobile } from "../utils/store";
+
+import Logo from "./Logo.astro";
+import HeaderButton from "./HeaderButton.astro";
+import NavLinks from "./NavLinks.astro";
+
+let lang = "it";
+
+const isLoading = false;
+
+let navList = [
+    {
+        title: t[lang].layout.nav.home,
+        icon: "home",
+        path: "/",
+    },
+    {
+        title: t[lang].layout.nav.works,
+        icon: "layers",
+        path: "/works",
+    },
+    {
+        title: t[lang].layout.nav.about,
+        icon: "user",
+        path: "/about",
+    },
+];
+---
+
+<script is:inline define:vars={{ lang }}>
+    let isLoading = false;
+
+    async function handleLocaleChange() {
+        let header = document.getElementsByTagName("header")[0];
+        let main = document.getElementsByTagName("main")[0];
+        let footer = document.getElementsByTagName("footer")[0];
+
+        header.style.opacity = "0";
+        main.style.opacity = "0";
+        footer.style.opacity = "0";
+
+        setTimeout(async () => {
+            localStorage.setItem(
+                "language",
+                !lang || lang === "it" ? "en" : "it",
+            );
+
+            setTimeout(() => {
+                header.style.opacity = "1";
+                main.style.opacity = "1";
+                footer.style.opacity = "1";
+                isLoading = false;
+            }, 300);
+        }, 300);
+    }
+</script>
+
+<header id="header">
+    <nav id="nav">
+        <Logo />
+        {!isMobile.value && <NavLinks navList={navList} />}
+        <HeaderButton icon="sun" title={t[lang].generic.changeTheme} />
+        <HeaderButton text="IT" title={t[lang].generic.changeLanguage} />
+        {
+            !isMobile.value && (
+                <div class="menu-area">
+                    <HeaderButton icon="burger" />
+                    <div class="menu-container">
+                        <NavLinks {navList} mobile />
+                    </div>
+                </div>
+            )
+        }
+    </nav>
+</header>
+
+<style>
+    #header {
+        z-index: 101;
+        height: 80px;
+        width: 100%;
+        position: fixed;
+        box-shadow: none;
+        user-select: none;
+        backface-visibility: hidden;
+        background-color: var(--navBackgroundColor);
+        backdrop-filter: saturate(180%) blur(15px);
+        -webkit-backdrop-filter: saturate(180%) blur(15px);
+        transition:
+            height 200ms ease 0s,
+            box-shadow 200ms ease 0s,
+            background-color var(--transition),
+            opacity 300ms ease;
+    }
+
+    #nav {
+        max-width: 650px;
+        height: inherit;
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: start;
+        align-items: center;
+    }
+
+    .menu-area {
+        position: relative;
+    }
+    .menu-container {
+        position: absolute;
+        top: 3rem;
+        right: -0.5rem;
+
+        /* border: 1px solid red; */
+    }
+
+    /* schermo piccolo */
+    @media only screen and (max-width: 720px) {
+        #header {
+            height: 60px;
+            position: initial;
+        }
+
+        #nav {
+            height: inherit;
+            min-width: inherit;
+            padding-left: 1.25rem;
+            padding-right: 1rem;
+        }
+    }
+
+    /* schermo grande */
+    @media only screen and (min-width: 1400px) {
+        #nav {
+            max-width: 850px;
+        }
+    }
+</style>

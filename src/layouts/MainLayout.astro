@@ -1,0 +1,284 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import TopButton from "../components/TopButton.astro";
+
+const page = Astro.props.page;
+---
+
+<html lang="it">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="favicon.ico" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="description"
+            content="Portfolio website for Riccardo Buzzolo: full-stack, web and IT developer."
+        />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+            rel="stylesheet"
+        />
+        <meta name="theme-color" content="#f6f9fc" />
+        <title>{page.title}</title>
+    </head>
+    <body>
+        <Header />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+        <TopButton />
+    </body>
+</html>
+
+<script>
+    import { isMobile } from "../utils/store";
+
+    console.log("\n 👉🏼   https://github.com/ricbuz94 \n\n");
+
+    const topButton = document.getElementById("to-top");
+
+    const mobile = {
+        getUserAgent: () => {
+            return navigator?.userAgent || "";
+        },
+        Android: function () {
+            return /Android/i.test(mobile.getUserAgent()) && !mobile.Windows();
+        },
+        BlackBerry: function () {
+            return /BlackBerry|BB10|PlayBook/i.test(mobile.getUserAgent());
+        },
+        iPhone: function () {
+            return (
+                /iPhone/i.test(mobile.getUserAgent()) &&
+                !mobile.iPad() &&
+                !mobile.Windows()
+            );
+        },
+        iPod: function () {
+            return /iPod/i.test(mobile.getUserAgent());
+        },
+        iPad: function () {
+            return /iPad/i.test(mobile.getUserAgent());
+        },
+        iOS: function () {
+            return mobile.iPad() || mobile.iPod() || mobile.iPhone();
+        },
+        Opera: function () {
+            return /Opera Mini/i.test(mobile.getUserAgent());
+        },
+        Windows: function () {
+            return /Windows Phone|IEMobile|WPDesktop/i.test(
+                mobile.getUserAgent(),
+            );
+        },
+        KindleFire: function () {
+            return /Kindle Fire|Silk|KFAPWA|KFSOWI|KFJWA|KFJWI|KFAPWI|KFAPWI|KFOT|KFTT|KFTHWI|KFTHWA|KFASWI|KFTBWI|KFMEWI|KFFOWI|KFSAWA|KFSAWI|KFARWI/i.test(
+                mobile.getUserAgent(),
+            );
+        },
+        check: function () {
+            if (!mobile.getUserAgent()) {
+                return false;
+            }
+            return (
+                mobile.Android() ||
+                mobile.BlackBerry() ||
+                mobile.iOS() ||
+                mobile.Opera() ||
+                mobile.Windows()
+            );
+        },
+    };
+
+    function onScrollHandler() {
+        const header = document.getElementById("header");
+        if (window.scrollY > 15) {
+            topButton.classList.add("visible");
+            topButton.classList.remove("invisible");
+            if (!!header && !isMobile.value) {
+                header.style.height = "60px";
+                header.style.boxShadow = "var(--navBorderBottom)";
+            }
+        } else {
+            topButton.classList.add("invisible");
+            topButton.classList.remove("visible");
+            if (!!header && !isMobile.value) {
+                header.style.height = "80px";
+                header.style.boxShadow = "none";
+            }
+        }
+    }
+
+    function applyTheme() {
+        const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)")
+            .matches
+            ? "dark"
+            : "light";
+        const storedTheme = localStorage.getItem("theme");
+        const currentTheme = storedTheme || preferredTheme;
+
+        const links = document.getElementsByTagName("link");
+
+        if (currentTheme === "dark") {
+            document.documentElement.classList.add("dark");
+            document.documentElement.classList.remove("light");
+            document.head.children.namedItem("theme-color").content = "#0f0f0f";
+            for (const link of links) {
+                if (link?.rel === "icon") {
+                    link.href = "favicon-dark.ico";
+                }
+            }
+        } else {
+            document.documentElement.classList.add("light");
+            document.documentElement.classList.remove("dark");
+            document.head.children.namedItem("theme-color").content = "#f6f9fc";
+            for (const link of links) {
+                if (link?.rel === "icon") {
+                    link.href = "favicon.ico";
+                }
+            }
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        applyTheme();
+
+        isMobile.set(mobile.check());
+
+        const lang =
+            localStorage.getItem("lang") ||
+            (navigator?.language === "it-IT" ? "it" : "en") ||
+            "it";
+        document.documentElement.setAttribute("lang", lang);
+
+        window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .addEventListener("change", applyTheme);
+
+        window.addEventListener("scroll", onScrollHandler, { passive: true });
+
+        return () => {
+            window.removeEventListener("scroll", onScrollHandler);
+            window
+                .matchMedia("(prefers-color-scheme: dark)")
+                .removeEventListener("change", applyTheme);
+        };
+    });
+</script>
+
+<style>
+    body {
+        margin: 0 auto;
+        min-height: 100vh;
+        color: var(--textColor);
+        font-size: var(--fontSize);
+        background-color: var(--backgroundColor);
+        transition:
+            color var(--transition),
+            background-color var(--transition);
+        font-family:
+            "Poppins",
+            -apple-system,
+            Arial,
+            sans-serif;
+    }
+
+    a {
+        outline: none;
+        text-decoration: none;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .loading {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        padding: 3px;
+        transform: translate(-50%, -60%);
+    }
+
+    .light {
+        --backgroundColor: var(--gray0);
+        --cardBackgroundColor: white;
+        --accentColor: #ff414e;
+        --accentColorHover: #e13b47;
+        --textColor: black;
+        --subTextColor: var(--gray4);
+        --webTag: #005ac4;
+        --androidTag: #387002;
+        --borderColor: rgba(120, 120, 120, 0.1);
+        --navBackgroundColor: rgba(248, 248, 248, 0.6);
+        --menuBackgroundColor: rgba(248, 248, 248, 0.95);
+        --navBorder: inset 1px rgba(0, 0, 0, 0.1);
+        --navBorderBottom: inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+        --cardShadow: 0 2px 4px rgba(0, 30, 84, 0.12);
+        --cardShadowHover: 0 6px 12px -2px rgba(50, 50, 93, 0.25);
+        --tocShadow: rgba(0, 0, 0, 0.2) 0px 8px 10px 0px;
+    }
+
+    .dark {
+        --backgroundColor: var(--gray7);
+        --cardBackgroundColor: var(--gray5);
+        --accentColor: #ff7a00;
+        --accentColorHover: #e66e00;
+        --textColor: var(--gray0);
+        --subTextColor: var(--gray2);
+        --webTag: #3b82f6;
+        --androidTag: #a4c34a;
+        --borderColor: rgba(200, 200, 200, 0.1);
+        --navBackgroundColor: rgba(15, 15, 15, 0.6);
+        --menuBackgroundColor: rgba(15, 15, 15, 0.95);
+        --navBorder: inset 1px rgba(255, 255, 255, 0.1);
+        --navBorderBottom: inset 0 -1px 0 0 rgba(255, 255, 255, 0.1);
+        --cardShadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        --cardShadowHover: 0 6px 12px -2px rgba(0, 0, 0, 0.6);
+        --tocShadow: rgba(0, 0, 0, 0.6) 0px 8px 10px 0px;
+    }
+
+    main {
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 80px;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+        padding-bottom: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        transition: opacity 300ms ease;
+    }
+
+    /* schermo piccolo */
+    @media only screen and (max-width: 720px) {
+        :root {
+            --transition: 300ms ease;
+        }
+
+        main {
+            width: 100%;
+            display: block;
+            padding-top: 0px;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+    }
+
+    /* schermo grande */
+    @media only screen and (min-width: 1400px) {
+        #theme {
+            font-size: var(--fontSizeLarge);
+        }
+
+        main {
+            width: 850px;
+        }
+    }
+</style>

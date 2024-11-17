@@ -1,40 +1,27 @@
 {
-	"name": "ricbuz94.github.io",
-	"version": "3.0.0",
-	"private": true,
-	"description": "Portfolio website.",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/ricbuz94/ricbuz94.github.io"
-	},
-	"author": {
-		"name": "Riccardo Buzzolo",
-		"email": "riccardo.buzzolo@gmail.com"
-	},
-	"scripts": {
-		"dev": "vite dev --port 5000",
-		"preview": "vite preview --port 5001",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "eslint .",
-		"watch": "vite build --watch",
-		"build": "rm -rf build && vite build",
-		"deploy": "pnpm run build && touch build/.nojekyll && rm build/.DS_Store && pnpm dlx gh-pages -d build -t true"
-	},
-	"devDependencies": {
-		"@sveltejs/adapter-static": "^1.0.6",
-		"@sveltejs/kit": "^1.25.0",
-		"@typescript-eslint/eslint-plugin": "^5.62.0",
-		"@typescript-eslint/parser": "^5.62.0",
-		"eslint": "^8.49.0",
-		"eslint-plugin-svelte3": "^4.0.0",
-		"js-confetti": "^0.11.0",
-		"svelte": "^3.59.2",
-		"svelte-check": "^3.5.2",
-		"svelte-i18n": "^3.7.4",
-		"tslib": "^2.6.2",
-		"typescript": "^4.9.5",
-		"vite": "^4.4.9"
-	},
-	"type": "module"
+  "name": "ricbuz94.github.io",
+  "type": "module",
+  "version": "4.0.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ricbuz94/ricbuz94.github.io"
+  },
+  "author": {
+    "name": "Riccardo Buzzolo",
+    "email": "riccardo.buzzolo@gmail.com"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "pnpm run build && touch build/.nojekyll && rm build/.DS_Store && pnpm dlx gh-pages -d build -t true"
+  },
+  "dependencies": {
+    "astro": "^4.16.10",
+    "js-confetti": "^0.11.0",
+    "lucide": "^0.456.0",
+    "nanostores": "^0.11.3"
+  }
 }

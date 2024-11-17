@@ -1,0 +1,48 @@
+---
+import { isMobile } from "../utils/store";
+
+const logoContent = isMobile?.value ? "RB" : "RiccardoBuzzolo";
+const logoSize = isMobile?.value ? "34px" : "24px";
+---
+
+<a href="/" title="Homepage">
+    <svg class="logo-icon" aria-hidden="true" focusable="false">
+        <use href={`icons.svg#box`}></use>
+    </svg>
+    <h3>{logoContent}</h3>
+</a>
+
+<style define:vars={{ logoContent, logoSize }}>
+    a {
+        display: flex;
+        align-items: center;
+        margin-right: auto;
+        color: var(--textColor);
+        text-decoration: none;
+    }
+
+    h3 {
+        content: var(--logoContent);
+        padding-left: 3px;
+        font-size: 20px;
+        font-weight: 700;
+        user-select: none;
+        transition: color var(--transition);
+    }
+
+    .logo-icon {
+        fill: none;
+        width: var(--logoSize);
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: var(--accentColor);
+        transition: stroke var(--transition) opacity var(--transition);
+    }
+
+    @media only screen and (max-width: 720px) {
+        h3 {
+            font-size: 24px;
+        }
+    }
+</style>

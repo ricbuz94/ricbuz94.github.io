@@ -1,37 +1,36 @@
-import { browser } from "$app/environment";
-
 const isMobile = {
-	getUserAgent: (): string => {
-		return browser ? navigator?.userAgent : "";
+	getUserAgent: () => {
+		let navigator;
+		return navigator?.userAgent || "";
 	},
-	Android: function (): boolean {
+	Android: function () {
 		return /Android/i.test(isMobile.getUserAgent()) && !isMobile.Windows();
 	},
-	BlackBerry: function (): boolean {
+	BlackBerry: function () {
 		return /BlackBerry|BB10|PlayBook/i.test(isMobile.getUserAgent());
 	},
-	iPhone: function (): boolean {
+	iPhone: function () {
 		return /iPhone/i.test(isMobile.getUserAgent()) && !isMobile.iPad() && !isMobile.Windows();
 	},
-	iPod: function (): boolean {
+	iPod: function () {
 		return /iPod/i.test(isMobile.getUserAgent());
 	},
-	iPad: function (): boolean {
+	iPad: function () {
 		return /iPad/i.test(isMobile.getUserAgent());
 	},
-	iOS: function (): boolean {
+	iOS: function () {
 		return (isMobile.iPad() || isMobile.iPod() || isMobile.iPhone());
 	},
-	Opera: function (): boolean {
+	Opera: function () {
 		return /Opera Mini/i.test(isMobile.getUserAgent());
 	},
-	Windows: function (): boolean {
+	Windows: function () {
 		return /Windows Phone|IEMobile|WPDesktop/i.test(isMobile.getUserAgent());
 	},
-	KindleFire: function (): boolean {
+	KindleFire: function () {
 		return /Kindle Fire|Silk|KFAPWA|KFSOWI|KFJWA|KFJWI|KFAPWI|KFAPWI|KFOT|KFTT|KFTHWI|KFTHWA|KFASWI|KFTBWI|KFMEWI|KFFOWI|KFSAWA|KFSAWI|KFARWI/i.test(isMobile.getUserAgent());
 	},
-	any: function (): boolean {
+	check: function () {
 		if (!isMobile.getUserAgent()) {
 			return false;
 		}
