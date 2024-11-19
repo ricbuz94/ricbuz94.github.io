@@ -1,11 +1,39 @@
 <script lang="ts">
-  import { browser } from "$app/environment";
-  import ContactLink from "./ContactLink.svelte";
   import JSConfetti from "js-confetti";
+  import ContactLink from "./ContactLink.svelte";
 
-  let jsConfetti: JSConfetti | undefined;
-  const year: number = new Date().getFullYear();
-  const emojis = [ "🔥", "⚡️", "💥", "✨", "💫", "🌸", "💦", "🚀", "🍆", "🍑", "💪", "🍺", "🌮", "🐈", "🍄", "🎱", "💘", "🎉", "💎", "👌", "🤙", "👍", "🤘", "👅", "🎈", "💵", "💸", ];
+  let jsConfetti: JSConfetti | undefined = $state(undefined);
+  let year: number = $state(new Date().getFullYear());
+
+  const emojis = [
+    "🔥",
+    "⚡️",
+    "💥",
+    "✨",
+    "💫",
+    "🌸",
+    "💦",
+    "🚀",
+    "🍆",
+    "🍑",
+    "💪",
+    "🍺",
+    "🌮",
+    "🐈",
+    "🍄",
+    "🎱",
+    "💘",
+    "🎉",
+    "💎",
+    "👌",
+    "🤙",
+    "👍",
+    "🤘",
+    "👅",
+    "🎈",
+    "💵",
+    "💸",
+  ];
 
   function setCanvas() {
     if (!jsConfetti) {
@@ -29,21 +57,31 @@
     <ContactLink
       href={import.meta.env.VITE_APP_MAILTO}
       icon="mail"
+      title="Gmail"
       text="riccardo.buzzolo@gmail.com"
     />
     <ContactLink
       href={import.meta.env.VITE_APP_INSTAGRAM_PROFILE_URL}
       icon="instagram"
+      title="Instagram"
       text="@riccardo_buzzolo"
     />
     <ContactLink
-      href={import.meta.env.VITE_APP_TWITTER_PROFILE_URL}
+      href={import.meta.env.VITE_APP_LINKEDIN_PROFILE_URL}
+      icon="linkedin"
+      title="LinedIn"
+      text="@riccardo-buzzolo"
+    />
+    <ContactLink
+      href={import.meta.env.VITE_APP_X_PROFILE_URL}
       icon="twitter"
+      title="X"
       text="@riccardobuzzolo"
     />
     <ContactLink
       href={import.meta.env.VITE_APP_GITHUB_PROFILE_URL}
       icon="github"
+      title="GitHub"
       text="@ricbuz94"
     />
   </div>
@@ -63,7 +101,12 @@
       rel="noreferrer">GitHub Pages</a
     >
   </p>
-  <p class="sub-text bottom-text" on:mouseenter={setCanvas} on:mousedown={makeItRain}>
+  <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+  <p
+    class="sub-text bottom-text"
+    onmouseenter={setCanvas}
+    onmousedown={makeItRain}
+  >
     © {year} Riccardo Buzzolo. All Rights Reserved.
   </p>
 </footer>
@@ -82,9 +125,10 @@
   .contacts-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 5rem;
+    justify-content: center;
+    margin-bottom: 7rem;
   }
 
   .footer-link {
@@ -140,19 +184,6 @@
   @media only screen and (min-width: 1400px) {
     footer {
       width: 850px;
-    }
-
-    footer a p {
-      display: inline;
-      line-height: 2;
-      padding-left: 5px;
-      font-size: 1rem;
-      vertical-align: top;
-      color: var(--textColor);
-    }
-
-    footer a:hover p {
-      color: var(--accentColor);
     }
   }
 </style>

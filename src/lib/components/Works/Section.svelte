@@ -1,11 +1,11 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	import type { Section } from "$lib/helpers/interfaces";
 	import Icon from "../Icon.svelte";
 	import Post from "./Post.svelte";
 </script>
 
 <script lang="ts">
-	export let section: Section;
+	let { section }: { section: Section } = $props();
 </script>
 
 <li>

@@ -20,7 +20,7 @@
 <div id="container">
   <Icon name="file" size={80} width={1} isThemed />
   <h2 id="title">404 ~ {$_("generic.notFound")}</h2>
-  <button id="back-button" on:click={goToHome}>
+  <button id="back-button" onclick={goToHome}>
     <Icon name="arrow-left" size={14} />
     <p>{$_("generic.back")}</p>
   </button>

@@ -3,13 +3,13 @@
 	import type { LayoutData } from "./$types";
 	import AppLayout from "$lib/components/AppLayout.svelte";
 
-	export let data: LayoutData;
+	let { data, children }: { data: LayoutData; children: any } = $props();
 </script>
 
 {#if $page?.url?.pathname?.includes("/drinktool") || $page?.url?.pathname?.includes("/test")}
-	<slot />
+	{@render children()}
 {:else}
 	<AppLayout {data}>
-		<slot />
+		{@render children()}
 	</AppLayout>
 {/if}

@@ -1,19 +1,24 @@
 <script lang="ts">
   import feather from "$lib/assets/feather-sprite.svg";
 
-  export let href = "/",
-    text = "",
-    icon = "";
+  let { title = "", href = "/", text = "", icon = "" } = $props();
 
-  $: viewBox = icon === "twitter" ? "0 0 24 24" : undefined;
+  const viewBox = $derived(icon === "twitter" ? "0 0 24 24" : undefined);
 </script>
 
-<a id="link" {href} target="_blank" rel="noreferrer">
+<a
+  id="link"
+  title={title + " | " + text}
+  {href}
+  target="_blank"
+  rel="noreferrer"
+>
   <svg
     id="icon"
+    class:fill={icon === "twitter"}
     aria-hidden="true"
+    aria-label={text}
     {viewBox}
-    class={icon === "twitter" ? "fill" : ""}
   >
     {#if icon === "twitter"}
       <g>
@@ -25,7 +30,9 @@
       <use href="{feather}#{icon}" />
     {/if}
   </svg>
-  <p id="text">{text}</p>
+  {#if !!text}
+    <p id="text">{text}</p>
+  {/if}
 </a>
 
 <style>
@@ -82,7 +89,9 @@
     #icon {
       width: 26px;
       height: 26px;
-      margin: 0px 1.5rem;
+      margin: 0px;
+      margin-left: 1.5rem;
+      margin-right: 0.5rem;
     }
 
     #text {

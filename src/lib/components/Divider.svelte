@@ -1,8 +1,8 @@
 <script>
-	export let height = 0;
+	let { height = 0 } = $props();
 </script>
 
-<hr style="height: {height}rem" />
+<hr style:height="{height}rem" />
 
 <style>
 	hr {

@@ -23,7 +23,12 @@
 		<h1 class="title">Riccardo Buzzolo</h1>
 		<p class="subtitle">{$_("home.developer")} (Web / Mobile / IT)</p>
 	</div>
-	<img src={me} alt="Riccardo Buzzolo" title="Riccardo Buzzolo" />
+	<img
+		src={me}
+		alt="Riccardo Buzzolo"
+		title="Riccardo Buzzolo"
+		draggable="false"
+	/>
 </div>
 <Divider />
 <Article
@@ -166,6 +171,7 @@
 		background-color: var(--subTextColor);
 		transition: background-color var(--transition);
 		box-shadow: var(--tocShadow);
+		user-select: none;
 	}
 
 	img:hover {

@@ -1,12 +1,8 @@
 <script lang="ts">
-  export let label = "";
-  export let isOpen = false;
-  export let onclick = (e: any) => {};
-
-  $: className = isOpen ? "active" : "";
+  let { label = "Menu", isOpen = false, onclick } = $props();
 </script>
 
-<button id="button" title={label} on:click|preventDefault={onclick}>
+<button id="button" title={label} {onclick} aria-label={label}>
   <svg
     id="icon"
     xmlns="http://www.w3.org/2000/svg"
@@ -15,7 +11,7 @@
     focusable="false"
     width="24px"
     height="24px"
-    class={className}
+    class:active={isOpen}
   >
     <line x1="2" y1="16" x2="22" y2="16" id="middle-down" />
     <line x1="2" y1="8" x2="22" y2="8" id="middle-up" />

@@ -16,77 +16,81 @@
   import TopButton from "./TopButton.svelte";
   import Divider from "./Divider.svelte";
 
-  export let data: LayoutData;
-  export let refresh: string = "";
-
-  let isMobile = false;
-  let isTopButtonVisible = false;
-  let currentTheme = data?.currentTheme;
-  const THEME_KEY = "theme";
   const DARK_PREFERENCE = "(prefers-color-scheme: dark)";
 
-  $: favicon =
-    currentTheme === Theme.light ? "/favicon.ico" : "/favicon-dark.ico";
-  $: addressBarColor = currentTheme === Theme.light ? "#faf9fc" : "#0f0f0f";
+  let { data, children }: { data: LayoutData; children: any } = $props();
+
+  let theme = $state(data?.theme);
+  let isSmallScreen = $state(false);
+  let hideTopButton = $state(true);
 
   const mq: Readable<boolean> = useMediaQuery(
-    "only screen and (max-width: 720px)"
+    "only screen and (max-width: 720px)",
   );
-  const isMediaThemeDark =
-    browser && window.matchMedia(DARK_PREFERENCE).matches;
 
-  mq.subscribe((value) => (isMobile = value));
+  mq.subscribe((value) => (isSmallScreen = value));
 
   function onScrollHandler() {
-    const header = browser && document.getElementById("header");
-    if (browser && window.scrollY > 15) {
-      isTopButtonVisible = true;
-      if (!!header && !isMobile) {
-        header.style.height = "60px";
-        header.style.boxShadow = "var(--navBorderBottom)";
-      }
-    } else {
-      isTopButtonVisible = false;
-      if (!!header && !isMobile) {
-        header.style.height = "80px";
-        header.style.boxShadow = "none";
+    if (browser) {
+      const header = document.getElementById("header");
+      if (window.scrollY > 15) {
+        hideTopButton = false;
+        if (!!header && !isSmallScreen) {
+          header.style.height = "60px";
+          header.style.boxShadow = "var(--navBorderBottom)";
+        }
+      } else {
+        hideTopButton = true;
+        if (!!header && !isSmallScreen) {
+          header.style.height = "80px";
+          header.style.boxShadow = "none";
+        }
       }
     }
   }
 
-  function applyTheme(theme?: string) {
+  function applyTheme(t?: string) {
     if (browser) {
+      const THEME_KEY = "theme";
+      const isMediaThemeDark = window.matchMedia(DARK_PREFERENCE).matches;
       const preferredTheme: Theme = isMediaThemeDark ? Theme.dark : Theme.light;
       const storedTheme = localStorage.getItem(THEME_KEY);
-      currentTheme = !!theme ? theme : storedTheme || preferredTheme;
-      localStorage.setItem(THEME_KEY, currentTheme);
+      theme = !!t ? t : storedTheme || preferredTheme;
+      localStorage.setItem(THEME_KEY, theme);
 
-      if (currentTheme === Theme.dark) {
+      const favicon = document.getElementsByTagName("link")[0];
+      const metaThemeColor: any = document.getElementsByName("theme-color")[0];
+
+      if (theme === Theme.dark) {
         document.body?.classList.remove(Theme.light);
         document.body?.classList.add(Theme.dark);
         document.getElementById("theme")?.classList.remove(Theme.light);
         document.getElementById("theme")?.classList.add(Theme.dark);
+        favicon.href = "/favicon-dark.ico";
+        metaThemeColor.content = "#0f0f0f";
       } else {
         document.body?.classList.remove(Theme.dark);
         document.body?.classList.add(Theme.light);
         document.getElementById("theme")?.classList.remove(Theme.dark);
         document.getElementById("theme")?.classList.add(Theme.light);
+        favicon.href = "/favicon.ico";
+        metaThemeColor.content = "#faf9fc";
       }
     }
   }
 
   function toggleTheme() {
-    applyTheme(currentTheme === Theme.light ? Theme.dark : Theme.light);
+    applyTheme(theme === Theme.light ? Theme.dark : Theme.light);
   }
 
-  onMount(async () => {
+  onMount(() => {
     applyTheme();
     onScrollHandler();
+
+    window.addEventListener("scroll", onScrollHandler, { passive: true });
     window
       .matchMedia(DARK_PREFERENCE)
       .addEventListener("change", () => applyTheme());
-
-    window.addEventListener("scroll", onScrollHandler, { passive: true });
 
     return () => {
       window.removeEventListener("scroll", onScrollHandler);
@@ -98,66 +102,56 @@
 </script>
 
 <svelte:head>
-  <link rel="icon" href={favicon} />
-  <meta name="theme-color" content={addressBarColor} />
+  <!-- <link rel="icon" href={favicon} />
+  <meta name="theme-color" content={addressBarColor} /> -->
 </svelte:head>
 
-<div id="theme" class="light">
+<div id="theme">
   {#if $isLoading}
     <div class="loading">
       <Loader />
     </div>
   {:else}
-    <Header {currentTheme} {toggleTheme} />
-    {#key (refresh = $page.url.pathname)}
-      <main in:fly={{ y: 30, duration: isMobile ? 400 : 200, delay: 100 }}>
+    <Header themeIcon={theme !== Theme.dark ? "moon" : "sun"} {toggleTheme} />
+    {#key $page.url.pathname}
+      <main in:fly={{ y: 30, duration: isSmallScreen ? 400 : 200, delay: 100 }}>
         <Divider />
-        <slot />
+        {@render children()}
         <Divider />
       </main>
     {/key}
     <Footer />
-  {/if}
-  {#if isTopButtonVisible}
-    <TopButton />
+    {#if !hideTopButton}
+      <TopButton />
+    {/if}
   {/if}
 </div>
 
 <style>
-  :root {
-    --gray0: #f6f9fc;
-    --gray1: #dbe1e8;
-    --gray2: #b2becd;
-    --gray3: #6c7983;
-    --gray4: #454e56;
-    --gray5: #2a2e35;
-    --gray6: #202023;
-    --gray7: #0f0f0f;
-    /* --purple: #9166cc; */
-    /* --purpleLight: #a372e7; */
-    --borderRadius: 0.75rem;
-    --transition: 120ms cubic-bezier(0.4, 0, 0.2, 1);
-    --activeInputShadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
-  }
-
   #theme {
     margin: 0 auto;
     min-height: 100vh;
     color: var(--textColor);
     font-size: var(--fontSize);
     background-color: var(--backgroundColor);
-    transition: color var(--transition), background-color var(--transition);
-    font-family: "Poppins", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-  }
-
-  :global(p) {
-    margin: 0px;
+    transition:
+      color var(--transition),
+      background-color var(--transition);
+    font-family:
+      "Poppins",
+      -apple-system,
+      BlinkMacSystemFont,
+      Arial,
+      sans-serif;
   }
 
   :global(a) {
     outline: none;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
+  }
+  :global(p) {
+    margin: 0px;
   }
 
   .loading {

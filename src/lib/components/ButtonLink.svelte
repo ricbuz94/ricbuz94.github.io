@@ -1,14 +1,10 @@
 <script>
 	import Icon from "./Icon.svelte";
 
-	export let to = "/",
-		text = "Testo",
-		shadow = false;
-
-	$: style = shadow ? "shadow" : "";
+	let { to = "/", text = "Testo", shadow = false } = $props();
 </script>
 
-<a href={to} class={style}>
+<a href={to} class:shadow draggable="false">
 	<p>{text}</p>
 	<Icon name="chevron-right" size={14} width={3} color="#f6f9fc" />
 </a>
@@ -51,7 +47,7 @@
 	}
 
 	/* schermo piccolo */
-  @media only screen and (max-width: 720px) {
+	@media only screen and (max-width: 720px) {
 		a {
 			border-radius: 25px;
 			padding: 0.75rem 1.25rem;

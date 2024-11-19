@@ -1,18 +1,18 @@
 <script lang="ts">
   import feather from "$lib/assets/feather-sprite.svg";
 
-  export let name: string = "circle";
-  export let color: string = "";
-  export let size: number = 24;
-  export let width: number = 2;
-  export let isThemed: boolean = false;
-
-  $: themed = isThemed ? "themed" : "";
+  let {
+    name = "circle",
+    color = "",
+    size = 24,
+    width = 2,
+    isThemed = false,
+  } = $props();
 </script>
 
 <svg
   id="icon"
-  class={themed}
+  class:themed={isThemed}
   width="{size}px"
   height="{size}px"
   stroke-width={width}

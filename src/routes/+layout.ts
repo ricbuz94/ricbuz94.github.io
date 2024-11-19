@@ -1,8 +1,7 @@
 import type { LayoutData, LayoutLoad } from './$types';
-import type { Section } from "$lib/helpers/interfaces";
+import { Tag, Theme, type Section } from "$lib/helpers/interfaces";
 import { browser } from '$app/environment';
 
-import { Tag, Theme } from "$lib/helpers/interfaces";
 import beacharound from "$lib/assets/images/beacharound.webp";
 import beacharoundBusiness from "$lib/assets/images/beacharound-business.webp";
 import picWix from "$lib/assets/images/pic-wix.webp";
@@ -86,37 +85,45 @@ const sections: Array<Section> = [
 
 export const load: LayoutLoad = (async () => {
 
-  let currentTheme = "light";
+  let theme = "light";
 
   if (browser) {
-
     // Locale
     const language = localStorage.getItem("language");
-    if (language) await locale.set(language);
+    if (!!language) {
+      await locale.set(language);
+    }
 
     // Theme
     const THEME_KEY = "theme";
     const isMediaThemeDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const preferredTheme = isMediaThemeDark ? Theme.dark : Theme.light;
-    currentTheme = localStorage.getItem(THEME_KEY) || preferredTheme;
+    theme = localStorage.getItem(THEME_KEY) || preferredTheme;
 
-    if (currentTheme === Theme.dark) {
+    const favicon = document.getElementsByTagName("link")[0];
+    const metaThemeColor: any = document.getElementsByName("theme-color")[0];
+
+    if (theme === Theme.dark) {
       document.body?.classList.remove(Theme.light);
       document.body?.classList.add(Theme.dark);
       document.getElementById(THEME_KEY)?.classList.remove(Theme.light);
       document.getElementById(THEME_KEY)?.classList.add(Theme.dark);
+      favicon.href = "/favicon-dark.ico";
+      metaThemeColor.content = "#0f0f0f";
     } else {
       document.body?.classList.remove(Theme.dark);
       document.body?.classList.add(Theme.light);
       document.getElementById(THEME_KEY)?.classList.remove(Theme.dark);
       document.getElementById(THEME_KEY)?.classList.add(Theme.light);
+      favicon.href = "/favicon.ico";
+      metaThemeColor.content = "#faf9fc";
     }
   }
 
   await waitLocale();
 
   return {
-    currentTheme,
+    theme,
     sections
   };
 }) satisfies LayoutData;

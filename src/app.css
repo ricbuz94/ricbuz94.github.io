@@ -6,6 +6,18 @@
 	--fontSize: 16px;
 	--fontSizeSmall: 14px;
 	--fontSizeLarge: 18px;
+
+	--gray0: #f6f9fc;
+	--gray1: #dbe1e8;
+	--gray2: #b2becd;
+	--gray3: #6c7983;
+	--gray4: #454e56;
+	--gray5: #2a2e35;
+	--gray6: #202023;
+	--gray7: #0f0f0f;
+	--borderRadius: 0.75rem;
+	--transition: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+	--activeInputShadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
 }
 
 html,
@@ -75,7 +87,7 @@ hr {
 
 .dark {
 	--backgroundColor: var(--gray7);
-	--cardBackgroundColor: var(--gray5);
+	--cardBackgroundColor: var(--gray6);
 	--accentColor: #ff7a00;
 	--accentColorHover: #e66e00;
 	--textColor: var(--gray0);

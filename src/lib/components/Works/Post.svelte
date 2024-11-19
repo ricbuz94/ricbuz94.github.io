@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Post } from "../../helpers/interfaces";
-	export let post: Post;
+	let { post }: { post: Post } = $props();
 </script>
 
 <li>
@@ -12,8 +12,8 @@
 		<div class="image-container">
 			<div
 				class="image"
-				style="background-image: linear-gradient(rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.1)),url('{post.image}');"
-			/>
+				style="background-image: linear-gradient(rgba(0, 0, 0,0.05),rgba(0, 0, 0, 0.1)),url({post.image});"
+			></div>
 		</div>
 		<div class="container">
 			<h4>{post.title}</h4>
@@ -37,12 +37,6 @@
 		-webkit-tap-highlight-color: transparent;
 		transition: all var(--transition);
 	}
-
-	/* li:hover {
-		border-radius: calc(var(--borderRadius) - 8px);
-		outline: 3px solid var(--accentColor);
-		outline-offset: 8px;
-	} */
 
 	li:hover div.image {
 		transform: scale(1.05);

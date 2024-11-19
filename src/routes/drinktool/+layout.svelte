@@ -1,4 +1,9 @@
+<script>
+	let { children } = $props();
+</script>
+
 <svelte:head>
+	<link rel="icon" href="/drinktool.ico" />
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link
 		rel="preconnect"
@@ -11,4 +16,4 @@
 	/>
 </svelte:head>
 
-<slot />
+{@render children()}

@@ -1,4 +1,4 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	import { _, json, locale } from "svelte-i18n";
 	import type { PageData } from "./$types";
 	import type { Section } from "$lib/helpers/interfaces";
@@ -6,21 +6,25 @@
 </script>
 
 <script lang="ts">
-	export let data: PageData;
+	let { data }: { data: PageData } = $props();
 
-	$: jsonWorks = $json("works", $locale as string | undefined) as Array<{
-		header: string;
-		list: Array<{ title: string; description: string }>;
-	}>;
-	$: sections = (data?.sections as Array<Section>).map(({ id, posts }, i) => ({
-		id,
-		title: jsonWorks[i].header,
-		posts: posts?.map((post, j) => ({
-			...post,
-			title: jsonWorks[i].list[j].title,
-			description: jsonWorks[i].list[j].description,
+	const jsonWorks = $derived(
+		$json("works", $locale as string | undefined) as Array<{
+			header: string;
+			list: Array<{ title: string; description: string }>;
+		}>,
+	);
+	const sections = $derived(
+		(data?.sections as Array<Section>).map(({ id, posts }, i) => ({
+			id,
+			title: jsonWorks[i].header,
+			posts: posts?.map((post, j) => ({
+				...post,
+				title: jsonWorks[i].list[j].title,
+				description: jsonWorks[i].list[j].description,
+			})),
 		})),
-	}));
+	);
 </script>
 
 <svelte:head>

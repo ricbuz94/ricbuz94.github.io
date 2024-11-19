@@ -16,7 +16,12 @@
 </svelte:head>
 
 <div class="content">
-	<img src={me} alt="Riccardo Buzzolo" title="Riccardo Buzzolo" />
+	<img
+		src={me}
+		alt="Riccardo Buzzolo"
+		title="Riccardo Buzzolo"
+		draggable="false"
+	/>
 	<div class="card-wide">
 		<Article title={$_("about.aboutMe")}>
 			<p style="text-align: justify;">
@@ -50,7 +55,7 @@
 			</p>
 		</Article>
 	</div>
-	<img src={beach} alt="Cattolica" title="Cattolica" />
+	<img src={beach} alt="Cattolica" title="Cattolica" draggable="false" />
 </div>
 
 <style>
@@ -76,6 +81,7 @@
 		background-color: var(--subTextColor);
 		transition: all var(--transition);
 		box-shadow: var(--tocShadow);
+		user-select: none;
 	}
 
 	img:hover {

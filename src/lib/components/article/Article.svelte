@@ -1,21 +1,22 @@
-<script context="module" lang="ts">
+<script module lang="ts">
 	import { base } from "$app/paths";
 	import ButtonLink from "../ButtonLink.svelte";
 </script>
 
 <script lang="ts">
-	export let title: string;
-	export let text: string =
-		"Lorem ipsum dolor sit amet consectetur adipisicing elit.";
-	export let link: string = "";
-	export let linkText: string = "Testo";
+	let {
+		title = "Titolo",
+		link = undefined,
+		linkText = "",
+		children = undefined,
+	} = $props();
 </script>
 
 <article>
 	<h3>{title}</h3>
-	<slot>
-		<p>{text}</p>
-	</slot>
+	{#if children}
+		{@render children?.()}
+	{/if}
 	{#if !!link}
 		<hr />
 		<ButtonLink to={`${base}/${link}`} text={linkText} shadow />
@@ -33,10 +34,6 @@
 		text-underline-offset: 6px;
 		text-decoration-thickness: 3px;
 		text-decoration-color: var(--accentColor);
-	}
-
-	p {
-		text-align: justify;
 	}
 
 	hr {

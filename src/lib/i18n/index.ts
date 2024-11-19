@@ -1,20 +1,18 @@
-import { browser } from '$app/environment';
-import { Locale } from '$lib/helpers/interfaces';
-import { init, register } from 'svelte-i18n';
+import { init, register } from "svelte-i18n";
+import { browser } from "$app/environment";
 
-const fallbackLocale = "it-IT";
+import { Locale } from "$lib/helpers/interfaces";
 
-register('it-IT', () => import('./locales/it-IT.json'));
-register('en-US', () => import('./locales/en-US.json'));
+register("it", () => import("./locales/it-IT.json"));
+register("en", () => import("./locales/en-US.json"));
 
-let lang = browser && window.navigator.language;
-if (lang === "it") {
-  lang = Locale.it;
-} else if (lang === "en") {
-  lang = Locale.en;
+let initialLocale = "it";
+
+if (browser) {
+    initialLocale = navigator.language === "it-IT" ? Locale.it : Locale.en;
 }
 
 init({
-  fallbackLocale,
-  initialLocale: lang || fallbackLocale,
+    fallbackLocale: "it",
+    initialLocale,
 });

@@ -1,20 +1,20 @@
 <script lang="ts">
   import { locale, _ } from "svelte-i18n";
   import { Locale, Theme } from "$lib/helpers/interfaces";
-  import Logo from "../Logo.svelte";
-  import MenuButton from "../MenuButton.svelte";
+  import isMobile from "$lib/stores/isMobileStore";
   import { beforeNavigate } from "$app/navigation";
-  import isMobile from "$lib/helpers/isMobile";
+
   import MenuButtonMobile from "../MenuButtonMobile.svelte";
+  import MenuButton from "../MenuButton.svelte";
   import NavMenu from "../NavMenu.svelte";
+  import Logo from "../Logo.svelte";
 
-  export let currentTheme: string;
-  export let toggleTheme: ((e: any) => void) | undefined;
+  let { themeIcon, toggleTheme } = $props();
 
-  let menuButton: unknown;
-  let isOpen: boolean = false;
-  let isLoading: boolean = false;
-  $: navList = [
+  let isOpen: boolean = $state(false);
+  let isLoading: boolean = $state(false);
+
+  const navList = $derived([
     {
       title: "Home",
       icon: "home",
@@ -30,10 +30,9 @@
       icon: "user",
       href: "/about",
     },
-  ];
+  ]);
 
-  $: localeText = $locale === Locale.it ? "IT" : "EN";
-  $: themeIcon = currentTheme !== Theme.dark ? "moon" : "sun";
+  const localeText = $derived($locale === Locale.it ? "IT" : "EN");
 
   function toggleMenu() {
     isOpen = !isOpen;
@@ -75,24 +74,23 @@
 <header id="header">
   <nav id="nav">
     <Logo />
-    {#if !isMobile()}
-      <NavMenu isOpen={true} {navList} />
+    {#if !$isMobile}
+      <NavMenu isOpen {navList} />
     {/if}
-    <MenuButton icon={themeIcon} onclick={toggleTheme} label={$_("generic.changeTheme")} />
+    <MenuButton
+      icon={themeIcon}
+      onclick={toggleTheme}
+      label={$_("generic.changeTheme")}
+    />
     <MenuButton
       {isLoading}
       text={localeText}
       onclick={handleLocaleChange}
       label={$_("generic.changeLanguage")}
     />
-    {#if isMobile()}
+    {#if $isMobile}
       <div class="menu-area">
-        <MenuButtonMobile
-          bind:this={menuButton}
-          {isOpen}
-          onclick={toggleMenu}
-          label="Menù"
-        />
+        <MenuButtonMobile label="Menù" {isOpen} onclick={toggleMenu} />
         <div class="menu-container">
           <NavMenu {isOpen} {navList} />
         </div>
@@ -113,8 +111,11 @@
     background-color: var(--navBackgroundColor);
     backdrop-filter: saturate(180%) blur(15px);
     -webkit-backdrop-filter: saturate(180%) blur(15px);
-    transition: height 200ms ease 0s, box-shadow 200ms ease 0s,
-      background-color var(--transition), opacity 300ms ease;
+    transition:
+      height 200ms ease 0s,
+      box-shadow 200ms ease 0s,
+      background-color var(--transition),
+      opacity 300ms ease;
   }
 
   #nav {
@@ -129,7 +130,6 @@
 
   .menu-area {
     position: relative;
-
   }
   .menu-container {
     position: absolute;

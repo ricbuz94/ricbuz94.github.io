@@ -1,19 +1,20 @@
 <script lang="ts">
 	import type { Readable } from "svelte/store";
 	import { useMediaQuery } from "$lib/hooks/useMediaQuery";
+
 	import Icon from "./Icon.svelte";
 
-	let isMobile: boolean = false;
 	const mq: Readable<boolean> = useMediaQuery(
-		"only screen and (max-width: 720px)"
+		"only screen and (max-width: 720px)",
 	);
 
-	mq.subscribe((value) => (isMobile = value));
-	$: text = isMobile ? "RB" : "RiccardoBuzzolo";
-	$: size = isMobile ? 34 : 24;
+	let isShort: boolean = $state(false);
+	mq.subscribe((value) => (isShort = value));
+	const text = $derived(isShort ? "RB" : "RiccardoBuzzolo");
+	const size = $derived(isShort ? 34 : 24);
 </script>
 
-<a href="/" title="Homepage">
+<a href="/" title="Homepage" draggable="false">
 	<Icon name="box" {size} isThemed />
 	<h3>{text}</h3>
 </a>
@@ -24,6 +25,7 @@
 		align-items: center;
 		margin-right: auto;
 		color: var(--textColor);
+		user-select: none;
 	}
 
 	h3 {

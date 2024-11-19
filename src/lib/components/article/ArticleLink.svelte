@@ -1,10 +1,9 @@
 <script lang="ts">
-	export let title: string = "Home";
-	export let href: string = "/";
+	let { title = "Home", href = "/" } = $props();
 </script>
 
 <span>
-	<a {href} target="_blank" rel="noreferrer">{title}</a>
+	<a {href} target="_blank" rel="noreferrer" draggable="false">{title}</a>
 </span>
 
 <style>

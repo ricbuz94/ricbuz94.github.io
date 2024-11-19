@@ -2,14 +2,16 @@
   import Icon from "./Icon.svelte";
   import Loader from "./Loader.svelte";
 
-  export let label = "";
-  export let icon: string = "";
-  export let isLoading = false;
-  export let text: string = "TXT";
-  export let onclick = (e: any) => {};
+  let {
+    label = "",
+    icon = "",
+    isLoading = false,
+    text = "",
+    onclick,
+  } = $props();
 </script>
 
-<button id="button" title={label} on:click|preventDefault={onclick}>
+<button id="button" title={label} {onclick}>
   {#if isLoading}
     <Loader small />
   {:else if !!icon}
