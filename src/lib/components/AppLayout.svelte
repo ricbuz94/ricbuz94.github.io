@@ -3,11 +3,10 @@
   import "$lib/i18n";
   import { _, isLoading } from "svelte-i18n";
   import { browser } from "$app/environment";
-  import { onMount } from "svelte";
+  import { onMount, type Snippet } from "svelte";
   import { page } from "$app/stores";
   import { fly } from "svelte/transition";
   import type { Readable } from "svelte/store";
-  import type { LayoutData } from "../../routes/$types";
   import { useMediaQuery } from "../hooks/useMediaQuery";
   import { Theme } from "../helpers/interfaces";
   import Loader from "./Loader.svelte";
@@ -18,7 +17,7 @@
 
   const DARK_PREFERENCE = "(prefers-color-scheme: dark)";
 
-  let { data, children }: { data: LayoutData; children: any } = $props();
+  let { data, children }: { data: any; children: Snippet } = $props();
 
   let theme = $state(data?.theme);
   let isSmallScreen = $state(false);
@@ -100,11 +99,6 @@
     };
   });
 </script>
-
-<svelte:head>
-  <!-- <link rel="icon" href={favicon} />
-  <meta name="theme-color" content={addressBarColor} /> -->
-</svelte:head>
 
 <div id="theme">
   {#if $isLoading}
