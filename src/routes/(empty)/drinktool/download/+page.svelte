@@ -3,7 +3,6 @@
     import type { Readable } from "svelte/store";
     import { useMediaQuery } from "$lib/hooks/useMediaQuery";
     import Glide from "@glidejs/glide";
-
     import Icon from "$lib/components/Icon.svelte";
 </script>
 
@@ -34,20 +33,9 @@
         }
     }
 
-    function canShare(): boolean {
-        return (
-            browser &&
-            navigator?.canShare({
-                title: "DrinkTool",
-                text: "Hey, sto usando DrinkTool, il calcolatore in tempo reale del BAC (Blood Alcohol Content). Scaricalo anche tu!",
-                url: import.meta.env.VITE_APP_DRINKTOOL_URL || "#",
-            })
-        );
-    }
-
     async function shareApp() {
         try {
-            if (canShare()) {
+            if (browser && navigator?.share) {
                 await navigator.share({
                     title: "DrinkTool",
                     text: "Hey, sto usando DrinkTool, il calcolatore in tempo reale del BAC (Blood Alcohol Content). Scaricalo anche tu!",
@@ -56,27 +44,12 @@
                 console.log("DrinkTool shared successfully");
             } else {
                 alert(
-                    "Dispositivo non supportato. Condividere manualmente il link a questa pagina.",
+                    "Dispositivo non supportato o connessione non sicura. Condividere manualmente.",
                 );
             }
         } catch (error) {
             console.log(error);
         }
-    }
-
-    function onResizeHandler() {
-        clearTimeout(debounce);
-        debounce = setTimeout(function () {
-            glider?.destroy();
-            glider = new Glide(".glide", {
-                perView: isSmallScreen ? 1 : 3,
-                peek: { before: 0, after: 60 },
-                startAt: 0,
-                rewind: false,
-                animationDuration: 80,
-                bound: true,
-            }).mount();
-        }, 100);
     }
 
     onMount(async () => {
@@ -89,7 +62,20 @@
             bound: true,
         }).mount();
 
-        window.addEventListener("resize", onResizeHandler);
+        window.addEventListener("resize", function () {
+            clearTimeout(debounce);
+            debounce = setTimeout(function () {
+                glider?.destroy();
+                glider = new Glide(".glide", {
+                    perView: isSmallScreen ? 1 : 3,
+                    peek: { before: 0, after: 60 },
+                    startAt: 0,
+                    rewind: false,
+                    animationDuration: 80,
+                    bound: true,
+                }).mount();
+            }, 100);
+        });
 
         const file = await fetch("/drinktool.apk");
         const fileBlob = await file.blob();
@@ -156,16 +142,14 @@
                         color="currentColor"
                     />Download (.apk)</button
                 >
-                {#if browser && canShare()}
-                    <button class="download-button light" onclick={shareApp}
-                        ><Icon
-                            name="share-2"
-                            width={3}
-                            size={14}
-                            color="currentColor"
-                        />Condividi</button
-                    >
-                {/if}
+                <button class="download-button light" onclick={shareApp}
+                    ><Icon
+                        name="share-2"
+                        width={3}
+                        size={14}
+                        color="currentColor"
+                    />Condividi</button
+                >
             </ul>
         </div>
         <img src="/drinktool/logo.png" alt="DrinkTool" draggable="false" />
