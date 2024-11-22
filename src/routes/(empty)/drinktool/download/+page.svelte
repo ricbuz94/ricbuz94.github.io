@@ -103,6 +103,22 @@
         content="DrinkTool è il calcolatore in tempo reale di BAC (Blood Alcohol Conten) facile da usare!"
     />
 
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta
+        property="twitter:url"
+        content={import.meta.env.VITE_APP_DRINKTOOL_URL || "#"}
+    />
+    <meta property="twitter:title" content="DrinkTool" />
+    <meta
+        property="twitter:description"
+        content="DrinkTool è il calcolatore in tempo reale di BAC (Blood Alcohol Conten) facile da usare!"
+    />
+    <meta
+        property="twitter:image"
+        content="https://ricbuz94.github.io/drinktool/logo-small.png"
+    />
+
     <!-- Image to display -->
     <!-- Replace   «example.com/image01.jpg» with your own -->
     <meta
