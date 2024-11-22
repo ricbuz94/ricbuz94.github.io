@@ -91,8 +91,7 @@
     <!-- MS Tile - for Microsoft apps-->
     <meta
         name="msapplication-TileImage"
-        content={`${import.meta.env.VITE_APP_DRINKTOOL_URL || "#"}` +
-            "/logo-small.png"}
+        content="https://ricbuz94.github.io/drinktool/logo-small.png"
     />
 
     <!-- fb & Whatsapp -->
@@ -108,8 +107,7 @@
     <!-- Replace   «example.com/image01.jpg» with your own -->
     <meta
         property="og:image"
-        content={`${import.meta.env.VITE_APP_DRINKTOOL_URL || "#"}` +
-            "/logo-small.png"}
+        content="https://ricbuz94.github.io/drinktool/logo-small.png"
     />
 
     <!-- No need to change anything here -->
