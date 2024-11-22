@@ -1,14 +1,18 @@
 <script module lang="ts">
     import { onMount } from "svelte";
-    import Icon from "$lib/components/Icon.svelte";
-    import Glide from "@glidejs/glide";
-    import { useMediaQuery } from "$lib/hooks/useMediaQuery";
     import type { Readable } from "svelte/store";
+    import { useMediaQuery } from "$lib/hooks/useMediaQuery";
+    import Glide from "@glidejs/glide";
+
+    import Icon from "$lib/components/Icon.svelte";
 </script>
 
 <script>
+    import { browser } from "$app/environment";
+
     let debounce: number = $state(0);
     let isSmallScreen = $state(false);
+    let fileURL: string = $state("");
 
     const mq: Readable<boolean> = useMediaQuery(
         "only screen and (max-width: 720px)",
@@ -20,22 +24,30 @@
     const slides = Array.from({ length: 7 }, (_, i) => ({ src: `${i}.png` }));
 
     async function downloadApp() {
-        const file = await fetch("/drinktool.apk");
-        const fileBlob = await file.blob();
-        const fileURL = URL.createObjectURL(fileBlob);
+        if (!!fileURL?.length) {
+            let link = document.createElement("a");
+            link.setAttribute("href", fileURL);
+            link.setAttribute("download", "drinktool.apk");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
 
-        let link = document.createElement("a");
-        link.setAttribute("href", fileURL);
-        link.setAttribute("download", "drinktool.apk");
-        document.body.appendChild(link);
-        link.click();
-
-        document.body.removeChild(link);
+    function canShare(): boolean {
+        return (
+            browser &&
+            navigator?.canShare({
+                title: "DrinkTool",
+                text: "Hey, sto usando DrinkTool, il calcolatore in tempo reale del BAC (Blood Alcohol Content). Scaricalo anche tu!",
+                url: import.meta.env.VITE_APP_DRINKTOOL_URL || "#",
+            })
+        );
     }
 
     async function shareApp() {
         try {
-            if (navigator.share) {
+            if (canShare()) {
                 await navigator.share({
                     title: "DrinkTool",
                     text: "Hey, sto usando DrinkTool, il calcolatore in tempo reale del BAC (Blood Alcohol Content). Scaricalo anche tu!",
@@ -43,18 +55,31 @@
                 });
                 console.log("DrinkTool shared successfully");
             } else {
-                const shareDialog: HTMLDialogElement | null =
-                    document.getElementById(
-                        "share-dialog",
-                    ) as HTMLDialogElement;
-                shareDialog?.showModal();
+                alert(
+                    "Dispositivo non supportato. Condividere manualmente il link a questa pagina.",
+                );
             }
-        } catch (err) {
-            console.log(`Error: ${err}`);
+        } catch (error) {
+            console.log(error);
         }
     }
 
-    onMount(() => {
+    function onResizeHandler() {
+        clearTimeout(debounce);
+        debounce = setTimeout(function () {
+            glider?.destroy();
+            glider = new Glide(".glide", {
+                perView: isSmallScreen ? 1 : 3,
+                peek: { before: 0, after: 60 },
+                startAt: 0,
+                rewind: false,
+                animationDuration: 80,
+                bound: true,
+            }).mount();
+        }, 100);
+    }
+
+    onMount(async () => {
         glider = new Glide(".glide", {
             perView: isSmallScreen ? 1 : 3,
             peek: { before: 0, after: 60 },
@@ -64,41 +89,56 @@
             bound: true,
         }).mount();
 
-        window.addEventListener("resize", function () {
-            clearTimeout(debounce);
-            debounce = setTimeout(function () {
-                glider?.destroy();
-                glider = new Glide(".glide", {
-                    perView: isSmallScreen ? 1 : 3,
-                    peek: { before: 0, after: 60 },
-                    startAt: 0,
-                    rewind: false,
-                    animationDuration: 80,
-                    bound: true,
-                }).mount();
-            }, 100);
-        });
+        window.addEventListener("resize", onResizeHandler);
+
+        const file = await fetch("/drinktool.apk");
+        const fileBlob = await file.blob();
+        fileURL = URL.createObjectURL(fileBlob);
     });
 </script>
 
 <svelte:head>
     <link rel="stylesheet" href="/glide.core.min.css" />
     <title>DrinkTool | Download</title>
+
+    <!-- MS, fb & Whatsapp -->
+    <!-- MS Tile - for Microsoft apps-->
     <meta
-        name="description"
-        content="DrinkTool è il calcolatore in tempo reale di BAC (Blood Alcohol Conten) facile da usare!"
+        name="msapplication-TileImage"
+        content={`${import.meta.env.VITE_APP_DRINKTOOL_URL || "#"}` +
+            "/logo-small.png"}
     />
-    <meta property="og:title" content="DrinkTool" />
-    <meta
-        property="og:url"
-        content={import.meta.env.VITE_APP_DRINKTOOL_URL || "#"}
-    />
+
+    <!-- fb & Whatsapp -->
+    <!-- Site Name, Title, and Description to be displayed -->
+    <meta property="og:site_name" content="DrinkTool" />
+    <meta property="og:title" content="DrinkTool - BAC calculator" />
     <meta
         property="og:description"
         content="DrinkTool è il calcolatore in tempo reale di BAC (Blood Alcohol Conten) facile da usare!"
     />
-    <meta property="og:image" content="/drinktool/logo.png" />
+
+    <!-- Image to display -->
+    <!-- Replace   «example.com/image01.jpg» with your own -->
+    <meta
+        property="og:image"
+        content={`${import.meta.env.VITE_APP_DRINKTOOL_URL || "#"}` +
+            "/logo-small.png"}
+    />
+
+    <!-- No need to change anything here -->
     <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/png" />
+
+    <!-- Size of image. Any size up to 300. Anything above 300px will not work in WhatsApp -->
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+
+    <!-- Website to visit when clicked in fb or WhatsApp-->
+    <meta
+        property="og:url"
+        content={import.meta.env.VITE_APP_DRINKTOOL_URL || "#"}
+    />
     <meta property="og:locale" content="it_IT" />
 </svelte:head>
 
@@ -116,18 +156,21 @@
                         color="currentColor"
                     />Download (.apk)</button
                 >
-                <button class="download-button light" onclick={shareApp}
-                    ><Icon
-                        name="share-2"
-                        width={3}
-                        size={14}
-                        color="currentColor"
-                    />Condividi</button
-                >
+                {#if browser && canShare()}
+                    <button class="download-button light" onclick={shareApp}
+                        ><Icon
+                            name="share-2"
+                            width={3}
+                            size={14}
+                            color="currentColor"
+                        />Condividi</button
+                    >
+                {/if}
             </ul>
         </div>
         <img src="/drinktool/logo.png" alt="DrinkTool" draggable="false" />
     </div>
+
     <div id="download-body">
         <div class="glide">
             <div class="glide__track" data-glide-el="track">
@@ -162,6 +205,7 @@
             </div>
         </div>
     </div>
+
     <div id="download-description">
         <h3>Informazioni</h3>
         <p>
@@ -205,14 +249,13 @@
             <li>informazioni aggiornate</li>
         </ul>
     </div>
+
     <footer id="download-footer">
         <p>© 2024 DrinkTool. All Rights Reserved.</p>
         <p>Made by <a href="/" target="_blank">RiccardoBuzzolo</a></p>
         <a href="/drinktool/privacy-policy">Privacy Policy</a>
     </footer>
 </div>
-
-<dialog></dialog>
 
 <style>
     * {
