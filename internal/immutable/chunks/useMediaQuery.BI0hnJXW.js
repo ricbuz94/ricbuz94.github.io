@@ -1,1 +1,0 @@
-import{r as s}from"./index.BrsSL5iI.js";const o=n=>s(!1,t=>{{const e=window==null?void 0:window.matchMedia(n);t(e.matches);const a=r=>t(r.matches);return e.addEventListener("change",a),()=>{e.removeEventListener("change",a)}}});export{o as u};
