@@ -10,7 +10,7 @@
 <script>
     import { browser } from "$app/environment";
 
-    let debounce: number = $state(0);
+    let debounce: NodeJS.Timeout | undefined = $state(undefined);
     let isSmallScreen = $state(false);
     let fileURL: string = $state("");
 
@@ -28,7 +28,7 @@
 
     async function downloadApp() {
         try {
-            if (browser && location?.protocol === "https") {
+            if (browser && location?.protocol === "https:") {
                 if (!!fileURL?.length) {
                     let link = document.createElement("a");
                     link.setAttribute("href", fileURL);
@@ -185,8 +185,8 @@
             </ul>
             <span id="disclamer-text">
                 <Icon name="alert-triangle" size={14} color="#5f6368" />
-                Questa applicazione non viene installata tramite il Play Store di
-                Google
+                Questa applicazione
+                <ins>non</ins> viene installata tramite il Play Store di Google
             </span>
         </div>
         <img src="/drinktool/logo.png" alt="DrinkTool" draggable="false" />
@@ -392,6 +392,7 @@
         display: flex;
         gap: 0.5rem;
         align-items: center;
+        user-select: none;
     }
 
     #download-header > img {
