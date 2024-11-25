@@ -3,7 +3,7 @@
 
   let {
     name = "circle",
-    color = undefined,
+    color = "",
     size = 24,
     width = 2,
     isThemed = false,
@@ -30,6 +30,9 @@
     stroke-linejoin: round;
     stroke: var(--textColor, currentColor);
     transition: stroke var(--transition) opacity var(--transition);
+
+    min-width: 14px;
+    min-height: 14px;
   }
 
   #icon.themed {

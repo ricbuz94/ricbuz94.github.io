@@ -1,8 +1,9 @@
 <script module lang="ts">
     import { onMount } from "svelte";
     import type { Readable } from "svelte/store";
-    import { useMediaQuery } from "$lib/hooks/useMediaQuery";
     import Glide from "@glidejs/glide";
+    import isMobile from "$lib/stores/isMobileStore";
+    import { useMediaQuery } from "$lib/hooks/useMediaQuery";
     import Icon from "$lib/components/Icon.svelte";
 </script>
 
@@ -20,16 +21,27 @@
 
     let glider: Glide | undefined = $state();
 
-    const slides = Array.from({ length: 7 }, (_, i) => ({ src: `${i}.png` }));
+    const slides = Array.from({ length: 14 }, (_, i) => ({
+        src: `${i + 1}.jpg`,
+        title: "image-" + (i + 1),
+    }));
 
     async function downloadApp() {
-        if (!!fileURL?.length) {
-            let link = document.createElement("a");
-            link.setAttribute("href", fileURL);
-            link.setAttribute("download", "drinktool.apk");
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+        try {
+            if (browser && location?.protocol === "https") {
+                if (!!fileURL?.length) {
+                    let link = document.createElement("a");
+                    link.setAttribute("href", fileURL);
+                    link.setAttribute("download", "drinktool.apk");
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                }
+            } else {
+                alert("Attenzione: connessione non sicura.");
+            }
+        } catch (error) {
+            console.log(error);
         }
     }
 
@@ -58,24 +70,30 @@
             peek: { before: 0, after: 60 },
             startAt: 0,
             rewind: false,
-            animationDuration: 80,
+            touchRatio: 1,
+            touchAngle: 40,
+            animationDuration: 120,
             bound: true,
         }).mount();
 
-        window.addEventListener("resize", function () {
-            clearTimeout(debounce);
-            debounce = setTimeout(function () {
-                glider?.destroy();
-                glider = new Glide(".glide", {
-                    perView: isSmallScreen ? 1 : 3,
-                    peek: { before: 0, after: 60 },
-                    startAt: 0,
-                    rewind: false,
-                    animationDuration: 80,
-                    bound: true,
-                }).mount();
-            }, 100);
-        });
+        if (!$isMobile) {
+            window.addEventListener("resize", function () {
+                clearTimeout(debounce);
+                debounce = setTimeout(function () {
+                    glider?.destroy();
+                    glider = new Glide(".glide", {
+                        perView: isSmallScreen ? 1 : 3,
+                        peek: { before: 0, after: 60 },
+                        startAt: 0,
+                        rewind: false,
+                        touchRatio: 1,
+                        touchAngle: 40,
+                        animationDuration: 120,
+                        bound: true,
+                    }).mount();
+                }, 100);
+            });
+        }
 
         const file = await fetch("/drinktool.apk");
         const fileBlob = await file.blob();
@@ -165,6 +183,11 @@
                     />Condividi</button
                 >
             </ul>
+            <span id="disclamer-text">
+                <Icon name="alert-triangle" size={14} color="#5f6368" />
+                Questa applicazione non viene installata tramite il Play Store di
+                Google
+            </span>
         </div>
         <img src="/drinktool/logo.png" alt="DrinkTool" draggable="false" />
     </div>
@@ -174,7 +197,7 @@
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
                     {#each slides as slide, i (slide.src)}
-                        <img src={slide.src} alt="image-{i}" />
+                        <img src={slide.src} alt={slide.title} />
                     {/each}
                 </ul>
             </div>
@@ -363,6 +386,14 @@
         background-color: rgba(5, 100, 73, 0.1);
     }
 
+    #disclamer-text {
+        color: #5f6368;
+        font-size: 12px;
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
     #download-header > img {
         user-select: none;
         width: 160px;
@@ -422,6 +453,10 @@
             min-width: 80px;
             height: 80px;
             border-radius: 1rem;
+        }
+
+        #disclamer-text {
+            gap: 1rem;
         }
 
         .download-button.light:hover {

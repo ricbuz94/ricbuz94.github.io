@@ -1,6 +1,6 @@
 <script lang="ts">
   import { locale, _ } from "svelte-i18n";
-  import { Locale, Theme } from "$lib/helpers/interfaces";
+  import { Locale } from "$lib/helpers/interfaces";
   import isMobile from "$lib/stores/isMobileStore";
   import { beforeNavigate } from "$app/navigation";
 
