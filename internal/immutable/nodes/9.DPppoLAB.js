@@ -1,0 +1,1 @@
+import{R as t}from"../chunks/CYgJF_JY.js";import"../chunks/CWj6FrbW.js";import"../chunks/69_IOA4Y.js";function n(o,e){throw new t(o,e.toString())}new TextEncoder;const r=()=>{n(302,"/drinktool/download")},d=Object.freeze(Object.defineProperty({__proto__:null,load:r},Symbol.toStringTag,{value:"Module"}));function l(o){}export{l as component,d as universal};

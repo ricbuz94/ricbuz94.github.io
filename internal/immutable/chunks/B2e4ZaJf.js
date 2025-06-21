@@ -1,0 +1,1 @@
+import{j as i,k as c,l as _,b as h,h as r,m as d,o as k,d as l,i as u,U as y}from"./DJQ-mZvm.js";function v(f,n,o){r&&d();var e=f,s=y,a,t=i()?c:_;h(()=>{t(s,s=n())&&(a&&k(a),a=l(()=>o(e)))}),r&&(e=u)}export{v as k};
