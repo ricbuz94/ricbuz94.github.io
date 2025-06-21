@@ -7,16 +7,15 @@
     import Icon from "$lib/components/Icon.svelte";
 </script>
 
-<script>
+<script lang="ts">
     import { browser } from "$app/environment";
+    import { AlertTriangle, ArrowLeft, ArrowRight, Download, Share2 } from "lucide-svelte";
 
     let debounce: NodeJS.Timeout | undefined = $state(undefined);
     let isSmallScreen = $state(false);
     let fileURL: string = $state("");
 
-    const mq: Readable<boolean> = useMediaQuery(
-        "only screen and (max-width: 720px)",
-    );
+    const mq: Readable<boolean> = useMediaQuery("only screen and (max-width: 720px)");
     mq.subscribe((value) => (isSmallScreen = value));
 
     let glider: Glide | undefined = $state();
@@ -55,9 +54,7 @@
                 });
                 console.log("DrinkTool shared successfully");
             } else {
-                alert(
-                    "Dispositivo non supportato o connessione non sicura. Condividere manualmente.",
-                );
+                alert("Dispositivo non supportato o connessione non sicura. Condividere manualmente.");
             }
         } catch (error) {
             console.log(error);
@@ -107,10 +104,7 @@
 
     <!-- MS, fb & Whatsapp -->
     <!-- MS Tile - for Microsoft apps-->
-    <meta
-        name="msapplication-TileImage"
-        content="https://ricbuz94.github.io/drinktool/logo-small.png"
-    />
+    <meta name="msapplication-TileImage" content="https://ricbuz94.github.io/drinktool/logo-small.png" />
 
     <!-- fb & Whatsapp -->
     <!-- Site Name, Title, and Description to be displayed -->
@@ -123,26 +117,17 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary" />
-    <meta
-        property="twitter:url"
-        content={import.meta.env.VITE_APP_DRINKTOOL_URL || "#"}
-    />
+    <meta property="twitter:url" content={import.meta.env.VITE_APP_DRINKTOOL_URL || "#"} />
     <meta property="twitter:title" content="DrinkTool" />
     <meta
         property="twitter:description"
         content="DrinkTool è il calcolatore in tempo reale di BAC (Blood Alcohol Conten) facile da usare!"
     />
-    <meta
-        property="twitter:image"
-        content="https://ricbuz94.github.io/drinktool/logo-small.png"
-    />
+    <meta property="twitter:image" content="https://ricbuz94.github.io/drinktool/logo-small.png" />
 
     <!-- Image to display -->
     <!-- Replace   «example.com/image01.jpg» with your own -->
-    <meta
-        property="og:image"
-        content="https://ricbuz94.github.io/drinktool/logo-small.png"
-    />
+    <meta property="og:image" content="https://ricbuz94.github.io/drinktool/logo-small.png" />
 
     <!-- No need to change anything here -->
     <meta property="og:type" content="website" />
@@ -153,10 +138,7 @@
     <meta property="og:image:height" content="300" />
 
     <!-- Website to visit when clicked in fb or WhatsApp-->
-    <meta
-        property="og:url"
-        content={import.meta.env.VITE_APP_DRINKTOOL_URL || "#"}
-    />
+    <meta property="og:url" content={import.meta.env.VITE_APP_DRINKTOOL_URL || "#"} />
     <meta property="og:locale" content="it_IT" />
 </svelte:head>
 
@@ -166,27 +148,18 @@
             <h1>DrinkTool</h1>
             <p style="margin-top: 0px;">BAC calculator</p>
             <ul id="actions">
-                <button class="download-button" onclick={downloadApp}
-                    ><Icon
-                        name="download"
-                        width={3}
-                        size={14}
-                        color="currentColor"
-                    />Download (.apk)</button
-                >
-                <button class="download-button light" onclick={shareApp}
-                    ><Icon
-                        name="share-2"
-                        width={3}
-                        size={14}
-                        color="currentColor"
-                    />Condividi</button
-                >
+                <button class="download-button" onclick={downloadApp}>
+                    <Icon component={Download} strokeWidth={3} size={14} />
+                    Download (APK)
+                </button>
+                <button class="download-button light" onclick={shareApp}>
+                    <Icon component={Share2} strokeWidth={3} size={14} color="currentColor" />
+                    Condividi
+                </button>
             </ul>
             <span id="disclamer-text">
-                <Icon name="alert-triangle" size={14} color="#5f6368" />
-                Questa applicazione
-                <ins>non</ins> viene installata tramite il Play Store di Google
+                <Icon component={AlertTriangle} size={14} color="#5f6368" />
+                Questa applicazione <ins>non</ins> viene installata tramite il Play Store di Google
             </span>
         </div>
         <img src="/drinktool/logo.png" alt="DrinkTool" draggable="false" />
@@ -203,26 +176,12 @@
             </div>
 
             <div class="glide__arrows" data-glide-el="controls">
-                <button
-                    class="glide__arrow glide__arrow--left download-button light"
-                    data-glide-dir="<"
-                    ><Icon
-                        name="arrow-left"
-                        width={3}
-                        size={20}
-                        color="currentColor"
-                    /></button
-                >
-                <button
-                    class="glide__arrow glide__arrow--right download-button light"
-                    data-glide-dir=">"
-                    ><Icon
-                        name="arrow-right"
-                        width={3}
-                        size={20}
-                        color="currentColor"
-                    /></button
-                >
+                <button class="glide__arrow glide__arrow--left download-button light" data-glide-dir="<">
+                    <Icon component={ArrowLeft} strokeWidth={3} size={20} color="#01875f" />
+                </button>
+                <button class="glide__arrow glide__arrow--right download-button light" data-glide-dir=">">
+                    <Icon component={ArrowRight} strokeWidth={3} size={20} color="#01875f" />
+                </button>
             </div>
         </div>
     </div>
@@ -230,14 +189,12 @@
     <div id="download-description">
         <h3>Informazioni</h3>
         <p>
-            Drink Tool è destinato esclusivamente a scopi di intrattenimento e
-            non deve essere inteso come strumento scientifico per la
-            determinazione dell' effettivo contenuto di alcol nel sangue.
+            Drink Tool è destinato esclusivamente a scopi di intrattenimento e non deve essere inteso come strumento
+            scientifico per la determinazione dell' effettivo contenuto di alcol nel sangue.
             <br /><br />
-            Tutti i dati relativi all'utente rimangono nella memoria del telefono
-            e non vengono salvati altrove. I dati possono essere cancellati dall'utente
-            in qualsiasi momento disinstallando l'applicazione o mediante l'apposita
-            sezione nelle impostazioni del telefono.
+            Tutti i dati relativi all'utente rimangono nella memoria del telefono e non vengono salvati altrove. I dati possono
+            essere cancellati dall'utente in qualsiasi momento disinstallando l'applicazione o mediante l'apposita sezione
+            nelle impostazioni del telefono.
             <br /><br />
             <strong>Funzionalità:</strong>
             <br />
@@ -246,14 +203,9 @@
         <ul>
             <li>calcolo del tasso alcolemico stimato (EBAC)</li>
             <li>visualizzazione del tempo di smaltimento in tempo reale</li>
-            <li>
-                possibilità di aggiungere altre bevande durante lo smaltimento
-            </li>
+            <li>possibilità di aggiungere altre bevande durante lo smaltimento</li>
             <li>possibilita di creare ed aggiornare un profilo</li>
-            <li>
-                il risultato viene aggiornato alla modifica del profilo durante
-                lo smaltimento
-            </li>
+            <li>il risultato viene aggiornato alla modifica del profilo durante lo smaltimento</li>
             <li>scelta del tema tra "sistema", "chiaro" e "scuro"</li>
             <li>tre unità di misura per il volume</li>
         </ul>
@@ -309,6 +261,14 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
+    }
+
+    :global(.glide__arrow--disabled > svg) {
+        stroke: #454e56 !important;
+    }
+    :global(.glide__arrow--disabled:hover) {
+        cursor: not-allowed !important;
+        background-color: var(--borderColor) !important;
     }
 
     #container {
@@ -391,7 +351,9 @@
         font-size: 12px;
         display: flex;
         gap: 0.5rem;
+        row-gap: 0px;
         align-items: center;
+        flex-wrap: wrap;
         user-select: none;
     }
 
@@ -454,10 +416,6 @@
             min-width: 80px;
             height: 80px;
             border-radius: 1rem;
-        }
-
-        #disclamer-text {
-            gap: 1rem;
         }
 
         .download-button.light:hover {

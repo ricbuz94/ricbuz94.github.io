@@ -1,8 +1,10 @@
 <script lang="ts">
     import { fly } from "svelte/transition";
     import { browser } from "$app/environment";
+    import { _ } from "svelte-i18n";
 
     import Icon from "./Icon.svelte";
+    import { ArrowUp } from "lucide-svelte";
 
     let { isHover = false } = $props();
 
@@ -10,9 +12,8 @@
         isHover = !isHover;
     }
 
-    function scrollTop(e: any) {
+    function scrollTop() {
         if (browser) {
-            e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
         }
     }
@@ -20,6 +21,7 @@
 
 <button
     id="to-top"
+    title={$_("generic.goUp")}
     onmouseenter={onHover}
     onmouseleave={onHover}
     onmousedown={scrollTop}
@@ -27,7 +29,7 @@
     in:fly={{ x: 0, y: 60, duration: 300, delay: 0 }}
     out:fly={{ x: 0, y: 60, duration: 300, delay: 0 }}
 >
-    <Icon name="arrow-up" size={20} isThemed={isHover} />
+    <Icon component={ArrowUp} />
 </button>
 
 <style>
@@ -54,6 +56,11 @@
 
     #to-top:active {
         box-shadow: var(--activeInputShadow) !important;
+    }
+
+    :global(#to-top:hover > .lucide) {
+        stroke: var(--accentColor);
+        fill: none;
     }
 
     @media only screen and (max-width: 720px) {

@@ -1,96 +1,104 @@
 {
-	"generic": {
-		"back": "Back",
-		"notFound": "Page not found",
-		"changeTheme": "Change theme",
-		"changeLanguage": "Change laguage"
-	},
-	"layout": {
-		"nav": {
-			"works": "Works",
-			"about": "About"
-		}
-	},
-	"home": {
-		"greatings": "Greetings, i'm an italian developer.",
-		"developer": "Developer",
-		"works": {
-			"title": "Works and projects",
-			"content": {
-				"1": "I work for ",
-				"2": ", an innovative startup, based in San Giovanni in Marignano (RN, Italy), that ships a management system with online booking features for bathing establishments. In the past i've worked for ",
-				"3": " as a mobile developer, using a framework to develop «cross-platform» mobile applications - for both platforms (Android and iOS) - wich it lets maintain a single codebase while releasing the application for both operating systems. I have also created, in a similar approach but with another framework, ",
-				"4": " an application for calculating the blood alcohol level in real time."
-			},
-			"callToAction": "More"
-		},
-		"bio": {
-			"title": "Bio",
-			"content": {
-				"1": "Born in Cattolica (RN), Italy.",
-				"2": "Based in San Giovanni in Marignano (RN), Italy.",
-				"3": "Graduated at ",
-				"4": "Studied comuper sience at ",
-				"5": "Worked at ",
-				"6": " traveling around the country.",
-				"7": "Worked at ",
-				"8": " as a mobile developer, building a crossplatform application using React Native.",
-				"9": "Working at ",
-				"10": ", handling part of development, testing and technical customer care to bathing establishments managers."
-			},
-			"callToAction": "More"
-		}
-	},
-	"works": [
-		{
-			"header": "Works",
-			"list": [
-				{
-					"title": "Beacharound",
-					"description": "Search portal and online booking of bathing establishments throughout Italy."
-				},
-				{
-					"title": "Beacharound Business",
-					"description": "Cloud management system and online reservations features for bathing establishments."
-				},
-				{
-					"title": "PicWix for Mango Mobile",
-					"description": "A «cross-platform» application in React Native that allows you to manage contests (photos and videos) with prizes."
-				}
-			]
-		},
-		{
-			"header": "Projects",
-			"list": [
-				{
-					"title": "Drink Tool",
-					"description": "Real-time blood alcohol content calculator: BAC (Blood Alcohol Content)."
-				},
-				{
-					"title": "Simple QR Code",
-					"description": "A simple QR code generator that lets you download the image (.png) of the code with a title."
-				}
-			]
-		},
-		{
-			"header": "Older projects",
-			"list": [
-				{
-					"title": "Howmuchcanidrink",
-					"description": "Simple calculations on the effects of the quantities of alcohol ingested, knowing your biometric data."
-				}
-			]
-		}
-	],
-	"about": {
-		"aboutMe": "About me",
-		"aboutMeContent1": "My name is Riccardo Buzzolo, I was born in Cattolica (RN) on 13 December 1994. I graduated from the Technical Institute for Surveyors O. Belluzzi in Rimini (today ",
-		"aboutMeLink1": "State Technical Technological Institute",
-		"aboutMeContent2": "). Later I studied at the Alma Mater Studiorum University of Cesena, course of study of ",
-		"aboutMeLink2": "Engineering and Computer Science",
-		"aboutMeContent3": ". I worked for a while as a mobile programmer for Mango Mobile, in Cesena, and as an evaluator for the Teddy group, in Rimini. I currently work as a «full-stack» web developer for an innovative startup, in San Giovanni in Marignano, which ships management systems and online bookings features for bathing establishments throughout the country: ",
-		"aboutMyWork": "About my work",
-		"aboutMyWorkContent1": "As mentioned before, i work for a startup in San Giovanni in Marignano that ships management systems and online bookings features for bathing establishments throughout all Italy: ",
-		"aboutMyWorkContent2": " My work changes, in some aspects, between the summer and winter seasons. During the winter season the work is focused on the development of the management system, and therefore, on the tests to be done on the new features or changes made to the management system. Basically, these are end-to-end tests, to verify the functioning of the various flows of operations, and API tests (as part of «integration testing»), to verify the correct data flow. During the summer season, my work is focused, partially, on providing technical assistance to managers who are experiencing problems, collecting and analyzing data to improve the product."
-	}
+    "generic": {
+        "back": "Back",
+        "notFound": "Page not found",
+        "changeTheme": "Change theme",
+        "changeLanguage": "Change laguage",
+        "goUp": "Go up"
+    },
+    "layout": {
+        "nav": {
+            "works": "Works",
+            "about": "About"
+        }
+    },
+    "home": {
+        "greatings": "Greetings, i'm an italian developer.",
+        "developer": "Developer",
+        "works": {
+            "title": "Works and projects",
+            "content": {
+                "1": "I work for ",
+                "2": ", a company specialized in programming php Wordpress and Symfony websites. In the past I worked for ",
+                "3": " an innovative startup that dealt with management and online reservations for beach resorts throughout Italy. ",
+                "4": " as a mobile developer, using a framework for the development of “cross-platform” mobile applications that maintains a single code base allowing applications to be published on Android and iOS. I developed in a similar way, but using another framework,",
+                "5": " an application for calculating blood alcohol levels in real time."
+            },
+            "callToAction": "More"
+        },
+        "bio": {
+            "title": "Bio",
+            "content": {
+                "1": "Born in Cattolica (RN), Italy.",
+                "2": "Based in San Giovanni in Marignano (RN), Italy.",
+                "3": "Graduated at ",
+                "4": "Studied comuper sience at ",
+                "5": "Worked at ",
+                "6": " traveling around the country.",
+                "7": "Worked at ",
+                "8": " as a mobile developer, building a crossplatform application using React Native.",
+                "9": "Worked at ",
+                "10": ", handling part of development, testing and technical customer care to bathing establishments managers.",
+                "11": "I work at ",
+                "12": " as a web php (Wordpress, Symfony) and mobile (Flutter) programmer."
+            },
+            "callToAction": "More"
+        }
+    },
+    "works": [
+        {
+            "header": "Works",
+            "list": [
+                {
+                    "title": "Simbiosi Group | Quadra S.r.l",
+                    "description": "The complete solution for your overall communication."
+                },
+                {
+                    "title": "Beacharound",
+                    "description": "Search portal and online booking of bathing establishments throughout Italy."
+                },
+                {
+                    "title": "Beacharound Business",
+                    "description": "Cloud management system and online reservations features for bathing establishments."
+                },
+                {
+                    "title": "PicWix for Mango Mobile",
+                    "description": "A «cross-platform» application in React Native that allows you to manage contests (photos and videos) with prizes."
+                }
+            ]
+        },
+        {
+            "header": "Projects",
+            "list": [
+                {
+                    "title": "Drink Tool",
+                    "description": "Real-time blood alcohol content calculator: BAC (Blood Alcohol Content)."
+                },
+                {
+                    "title": "Simple QR Code",
+                    "description": "A simple QR code generator that lets you download the image (.png) of the code with a title."
+                }
+            ]
+        },
+        {
+            "header": "Older projects",
+            "list": [
+                {
+                    "title": "Howmuchcanidrink",
+                    "description": "Simple calculations on the effects of the quantities of alcohol ingested, knowing your biometric data."
+                }
+            ]
+        }
+    ],
+    "about": {
+        "aboutMe": "About me",
+        "aboutMeContent1": "My name is Riccardo Buzzolo, I was born in Cattolica (RN) on December 13, 1994. I graduated from the Technical Institute for Surveyors O. Belluzzi in Rimini (now ",
+        "aboutMeLink1": "State Technical Technological Institute",
+        "aboutMeContent2": "). I then studied at the Alma Mater Studiorum University in Cesena, studying ",
+        "aboutMeLink2": "Engineering and Computer Science",
+        "aboutMeContent3": ". I worked as a mobile programmer for Mango Mobile, in Cesena, and as an evaluator for the Teddy group, in Rimini. Later I worked as “full-stack” web programmer for an innovative startup that deals with management and online bookings for beach resorts throughout the country: ",
+        "aboutMyWork": "About my work",
+        "aboutMyWorkContent1": "I am a web programmer, I deal with creating computer applications, both web and mobile, to solve problems or create solutions for customers. I work for ",
+        "aboutMyWorkContent2": ", a company specialized in programming Wordpress and Symfony (php) sites. My work consists of programming websites in Wordpress or Symfony (php) and mobile applications in Flutter."
+    }
 }

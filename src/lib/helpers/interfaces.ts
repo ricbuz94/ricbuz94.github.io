@@ -13,10 +13,13 @@ enum Tag {
     web = "WEB",
     ios = "iOS",
     android = "ANDROID",
+    reactNative = "REACT_NATIVE",
+    php = "PHP",
+    flutter = "FLUTTER",
 }
 
 // Types
-interface Post {
+interface T_Post {
     id: string;
     url: string;
     noBlank?: boolean;
@@ -26,11 +29,11 @@ interface Post {
     description: string;
 }
 
-interface Section {
+interface T_Section {
     id: string;
     title: string;
-    posts: Array<Post>;
+    posts: Array<T_Post>;
 }
 
 export { Locale, Theme, Tag };
-export type { Post, Section };
+export type { T_Post, T_Section };

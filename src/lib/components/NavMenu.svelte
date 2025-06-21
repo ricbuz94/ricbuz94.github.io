@@ -11,7 +11,7 @@
         isOpen: boolean;
         navList: Array<{
             title: string;
-            icon: string;
+            icon: any;
             href: string;
         }>;
     } = $props();
@@ -29,7 +29,7 @@
                 href={navItem.href}
             >
                 {#if $isMobile}
-                    <Icon name={navItem.icon} size={22} />
+                    <Icon component={navItem.icon} size={20} />
                 {/if}
                 {navItem.title}
             </a>
@@ -107,8 +107,7 @@
         transform: scaleX(0);
         -webkit-transform-origin: right bottom;
         transform-origin: right bottom;
-        -webkit-transition: -webkit-transform 0.6s
-            cubic-bezier(0.19, 1, 0.22, 1);
+        -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
         transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
     }
 

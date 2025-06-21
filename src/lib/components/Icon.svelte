@@ -1,41 +1,30 @@
 <script lang="ts">
-  import feather from "$lib/assets/feather-sprite.svg";
+    import { Circle } from "lucide-svelte";
 
-  let {
-    name = "circle",
-    color = "",
-    size = 24,
-    width = 2,
-    isThemed = false,
-  } = $props();
+    let {
+        component: IconComponent = Circle,
+        color = "var(--textColor, currentColor)",
+        size = 20,
+        strokeWidth = 2,
+    } = $props();
 </script>
 
-<svg
-  id="icon"
-  class:themed={isThemed}
-  width="{size}px"
-  height="{size}px"
-  stroke-width={width}
-  style:stroke={color}
-  aria-hidden="true"
-  focusable="false"
->
-  <use href="{feather}#{name}" />
-</svg>
-
-<style>
-  #icon {
-    fill: none;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke: var(--textColor, currentColor);
-    transition: stroke var(--transition) opacity var(--transition);
-
-    min-width: 14px;
-    min-height: 14px;
-  }
-
-  #icon.themed {
-    stroke: var(--accentColor, currentColor);
-  }
-</style>
+{#if typeof IconComponent === "string" && IconComponent === "Twitter"}
+    <svg
+        class="lucide lucide-twitter"
+        width={size}
+        height={size}
+        stroke-width={strokeWidth}
+        fill={color}
+        aria-hidden="true"
+        viewBox="0 0 24 24"
+    >
+        <g>
+            <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+            />
+        </g>
+    </svg>
+{:else}
+    <IconComponent {color} {size} {strokeWidth} />
+{/if}
