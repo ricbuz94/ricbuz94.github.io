@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
     import isMobile from "$lib/stores/isMobileStore";
 
     import Icon from "./Icon.svelte";
@@ -25,7 +25,7 @@
             <a
                 draggable="false"
                 class:mobile={$isMobile}
-                class:active={!$isMobile && $page.url.pathname === navItem.href}
+                class:active={!$isMobile && page.url.pathname === navItem.href}
                 href={navItem.href}
             >
                 {#if $isMobile}
@@ -76,7 +76,7 @@
             visibility 0.18s cubic-bezier(0.4, 0, 0.2, 1),
             background-color var(--transition);
         visibility: hidden;
-        z-index: 1000;
+        z-index: 10;
     }
 
     .menu-mobile li {

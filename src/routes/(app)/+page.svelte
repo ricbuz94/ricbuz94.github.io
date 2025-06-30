@@ -119,6 +119,7 @@
         grid-template-columns: auto auto;
         align-items: center;
         justify-items: center;
+        user-select: none;
         z-index: 1;
     }
 

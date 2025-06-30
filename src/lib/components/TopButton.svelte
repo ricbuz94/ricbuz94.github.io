@@ -41,7 +41,7 @@
         position: fixed;
         bottom: 2rem;
         right: 2rem;
-        z-index: 1000;
+        z-index: 10;
         cursor: pointer;
         display: flex;
         align-items: center;

@@ -1,16 +1,29 @@
-import { sveltekit } from '@sveltejs/kit/vite';
-import type { UserConfig } from 'vite';
+import { sveltekit } from "@sveltejs/kit/vite";
+import type { PluginOption, ServerOptions, UserConfig } from "vite";
 
 import fs from "fs";
 
+let server: ServerOptions | undefined = {};
+
+if (process.env.HTTPS) {
+    server.https = {
+        key: fs.readFileSync("localhost-key.pem"),
+        cert: fs.readFileSync("localhost.pem"),
+    };
+}
+
+let plugins: PluginOption[] | undefined = [sveltekit()];
+
 const config: UserConfig = {
-	server: {
-		https: process.env.HTTPS ? {
-			key: fs.readFileSync('localhost-key.pem'),
-			cert: fs.readFileSync('localhost.pem'),
-		} : undefined
-	},
-	plugins: [sveltekit()]
+    server,
+    css: {
+        preprocessorOptions: {
+            scss: {
+                api: "modern-compiler",
+            },
+        },
+    },
+    plugins,
 };
 
 export default config;

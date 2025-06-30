@@ -11,7 +11,6 @@
     import { Theme, type T_Section } from "$lib/helpers/interfaces";
     import { Moon, Sun } from "lucide-svelte";
 
-    import isMobile from "$lib/stores/isMobileStore";
     import Loader from "$lib/components/Loader.svelte";
     import Header from "$lib/components/Header.svelte";
     import Footer from "$lib/components/Footer/Footer.svelte";
@@ -21,8 +20,7 @@
 
     const DARK_PREFERENCE = "(prefers-color-scheme: dark)";
 
-    let { data, children }: { data: { theme: string | undefined; sections: T_Section[] }; children: Snippet } =
-        $props();
+    let { children }: { data: { theme: string | undefined; sections: T_Section[] }; children: Snippet } = $props();
 
     let theme = $state();
     let isSmallScreen = $state(false);
@@ -104,9 +102,7 @@
     });
 </script>
 
-{#if !$isMobile}
-    <Waves />
-{/if}
+<Waves />
 <div id="theme">
     {#if $isLoading}
         <div class="loading">
@@ -185,12 +181,12 @@
         }
 
         #theme {
+            display: grid;
             font-size: var(--fontSizeSmall);
         }
 
         main {
             width: 100%;
-            display: block;
             padding-top: 0px;
             padding-left: 1.5rem;
             padding-right: 1.5rem;

@@ -4,7 +4,8 @@
         "notFound": "Page not found",
         "changeTheme": "Change theme",
         "changeLanguage": "Change laguage",
-        "goUp": "Go up"
+        "goUp": "Go up",
+        "search": "Search"
     },
     "layout": {
         "nav": {

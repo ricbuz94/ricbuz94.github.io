@@ -52,7 +52,6 @@
                     text: "Hey, sto usando DrinkTool, il calcolatore in tempo reale del BAC (Blood Alcohol Content). Scaricalo anche tu!",
                     url: import.meta.env.VITE_APP_DRINKTOOL_URL || "#",
                 });
-                console.log("DrinkTool shared successfully");
             } else {
                 alert("Dispositivo non supportato o connessione non sicura. Condividere manualmente.");
             }
@@ -169,7 +168,7 @@
         <div class="glide">
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
-                    {#each slides as slide, i (slide.src)}
+                    {#each slides as slide (slide.src)}
                         <img src={slide.src} alt={slide.title} />
                     {/each}
                 </ul>
@@ -268,7 +267,7 @@
     }
     :global(.glide__arrow--disabled:hover) {
         cursor: not-allowed !important;
-        background-color: var(--borderColor) !important;
+        background-color: transparent !important;
     }
 
     #container {

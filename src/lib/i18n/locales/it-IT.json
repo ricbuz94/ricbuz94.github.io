@@ -4,7 +4,8 @@
         "notFound": "Pagina non trovata",
         "changeTheme": "Cambia tema",
         "changeLanguage": "Cambia lingua",
-        "goUp": "Torna su"
+        "goUp": "Torna su",
+        "search": "Cerca"
     },
     "layout": {
         "nav": {

@@ -4,7 +4,6 @@
     import { Locale } from "$lib/helpers/interfaces";
     import isMobile from "$lib/stores/isMobileStore";
     import { beforeNavigate } from "$app/navigation";
-    import { page } from "$app/state";
 
     import MenuButtonMobile from "./MenuButtonMobile.svelte";
     import MenuButton from "./MenuButton.svelte";
@@ -70,10 +69,7 @@
         }, 300);
     }
 
-    beforeNavigate(() => {
-        console.log(page.url.pathname);
-        return (isOpen = false);
-    });
+    beforeNavigate(() => (isOpen = false));
 </script>
 
 <header id="header">
@@ -103,7 +99,7 @@
 
 <style>
     #header {
-        z-index: 101;
+        z-index: 10;
         height: 80px;
         width: 100%;
         position: fixed;
@@ -129,6 +125,7 @@
         margin-right: auto;
         justify-content: start;
         align-items: center;
+        z-index: inherit;
     }
 
     .menu-area {
@@ -138,6 +135,7 @@
         position: absolute;
         top: 3rem;
         right: -0.5rem;
+        z-index: 10;
     }
 
     /* schermo piccolo */
