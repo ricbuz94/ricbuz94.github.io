@@ -19,7 +19,13 @@
         <h1 class="title">Riccardo Buzzolo</h1>
         <p class="subtitle">{$_("home.developer")} (Web / Mobile / IT)</p>
     </div>
-    <img src={me} alt="Riccardo Buzzolo" title="Riccardo Buzzolo" draggable="false" />
+    <img
+        src={me}
+        alt="Riccardo Buzzolo"
+        title="Riccardo Buzzolo"
+        draggable="false"
+        oncontextmenu={(e) => e.preventDefault()}
+    />
 </div>
 <Divider />
 <Article title={$_("home.works.title")} link="works" linkText={$_("home.works.callToAction")}>

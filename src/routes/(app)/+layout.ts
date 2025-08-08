@@ -32,7 +32,7 @@ const sections: Array<T_Section> = [
                 url: `${import.meta.env.VITE_APP_BEACHAROUND_URL}` || "#",
                 image: beacharound,
                 title: "Beacharound",
-                tags: [Tag.web],
+                tags: [Tag.web, Tag.react],
                 description: "The portal for booking beaches throughout Italy.",
             },
             {
@@ -40,7 +40,7 @@ const sections: Array<T_Section> = [
                 url: `${import.meta.env.VITE_APP_BEACHAROUND_BUSINESS_URL}` || "#",
                 image: beacharoundBusiness,
                 title: "Beacharound Business",
-                tags: [Tag.web],
+                tags: [Tag.web, Tag.react],
                 description: "Management system for bathing establishments and online reservations.",
             },
             {
@@ -72,7 +72,7 @@ const sections: Array<T_Section> = [
                 noBlank: true,
                 image: simpleQrCode,
                 title: "Simple QR Code",
-                tags: [Tag.web],
+                tags: [Tag.web, Tag.jquery],
                 description:
                     "A simple QR code generator that lets you download the image (.png) of the code with a title.",
             },

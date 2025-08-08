@@ -13,6 +13,8 @@ enum Tag {
     web = "WEB",
     ios = "iOS",
     android = "ANDROID",
+    jquery = "JQUERY",
+    react = "REACT",
     reactNative = "REACT_NATIVE",
     php = "PHP",
     flutter = "FLUTTER",

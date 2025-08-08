@@ -89,6 +89,8 @@ hr {
     --webTag: #005ac4;
     --androidTag: #387002;
     --phpTag: #4f5b93;
+    --jqueryTag: #005ac4;
+    --reactTag: #005ac4;
     --reactNativeTag: #005ac4;
     --flutterTag: #005ac4;
     --borderColor: rgba(120, 120, 120, 0.1);
@@ -113,6 +115,8 @@ hr {
     --phpTag: #7a86b8;
     --androidTag: #a4c34a;
     --flutterTag: #3b82f6;
+    --jqueryTag: #3b82f6;
+    --reactTag: #3b82f6;
     --reactNativeTag: #3b82f6;
     --flutterTag: #3b82f6;
     --borderColor: rgba(200, 200, 200, 0.1);

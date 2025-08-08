@@ -132,6 +132,16 @@
         color: #fff;
     }
 
+    .JQUERY {
+        color: #fff;
+        background-color: var(--flutterTag);
+    }
+
+    .REACT {
+        color: #fff;
+        background-color: var(--flutterTag);
+    }
+
     .REACT_NATIVE {
         color: #fff;
         background-color: var(--flutterTag);

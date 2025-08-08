@@ -13,7 +13,13 @@
 </svelte:head>
 
 <div class="content">
-    <img src={me} alt="Riccardo Buzzolo" title="Riccardo Buzzolo" draggable="false" />
+    <img
+        src={me}
+        alt="Riccardo Buzzolo"
+        title="Riccardo Buzzolo"
+        draggable="false"
+        oncontextmenu={(e) => e.preventDefault()}
+    />
     <div class="card-wide">
         <Article title={$_("about.aboutMe")}>
             <p style="text-align: justify;">
@@ -41,7 +47,7 @@
             </p>
         </Article>
     </div>
-    <img src={code} alt="Lavoro" title="Lavoro" draggable="false" />
+    <img src={code} alt="Lavoro" title="Lavoro" draggable="false" oncontextmenu={(e) => e.preventDefault()} />
 </div>
 
 <style>
