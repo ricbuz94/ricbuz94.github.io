@@ -32,6 +32,7 @@
     mq.subscribe((value) => (isSmallScreen = value));
 
     function onScrollHandler() {
+            console.log("onScrollHandler");
         if (browser) {
             const header = document.getElementById("header");
             if (window.scrollY > 15) {
@@ -89,6 +90,7 @@
     }
 
     onMount(() => {
+        console.log("onMount");
         applyTheme();
         onScrollHandler();
 

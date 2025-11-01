@@ -23,22 +23,22 @@
         "deploy": "pnpm run build && pnpm dlx gh-pages -d build"
     },
     "devDependencies": {
-        "@sveltejs/adapter-static": "^3.0.8",
-        "@sveltejs/kit": "^2.21.5",
+        "@sveltejs/adapter-static": "^3.0.10",
+        "@sveltejs/kit": "^2.48.4",
         "@sveltejs/vite-plugin-svelte": "^4.0.4",
         "@types/glidejs__glide": "^3.6.6",
-        "@types/node": "^22.15.31",
-        "@typescript-eslint/eslint-plugin": "^8.34.0",
-        "@typescript-eslint/parser": "^8.34.0",
-        "eslint": "^9.29.0",
+        "@types/node": "^22.18.13",
+        "@typescript-eslint/eslint-plugin": "^8.46.2",
+        "@typescript-eslint/parser": "^8.46.2",
+        "eslint": "^9.39.0",
         "eslint-plugin-svelte": "^2.46.1",
         "js-confetti": "^0.12.0",
-        "svelte": "^5.34.3",
-        "svelte-check": "^4.2.1",
+        "svelte": "^5.43.2",
+        "svelte-check": "^4.3.3",
         "svelte-i18n": "^4.0.1",
         "tslib": "^2.8.1",
-        "typescript": "^5.8.3",
-        "vite": "^5.4.19"
+        "typescript": "^5.9.3",
+        "vite": "7.1.11"
     },
     "type": "module",
     "dependencies": {

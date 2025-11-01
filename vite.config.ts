@@ -16,13 +16,6 @@ let plugins: PluginOption[] | undefined = [sveltekit()];
 
 const config: UserConfig = {
     server,
-    css: {
-        preprocessorOptions: {
-            scss: {
-                api: "modern-compiler",
-            },
-        },
-    },
     plugins,
 };
 

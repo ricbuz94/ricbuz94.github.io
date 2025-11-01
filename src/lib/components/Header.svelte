@@ -103,7 +103,7 @@
         height: 80px;
         width: 100%;
         position: fixed;
-        top: 0px;
+        top: 0;
         box-shadow: none;
         user-select: none;
         backface-visibility: hidden;
