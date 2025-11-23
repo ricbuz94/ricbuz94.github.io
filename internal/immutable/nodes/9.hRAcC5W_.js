@@ -1,0 +1,1 @@
+import{R as e}from"../chunks/BUApaBEI.js";import"../chunks/DsnmJJEf.js";import"../chunks/69_IOA4Y.js";function r(o,t){throw new e(o,t.toString())}const n=(()=>{r(302,"/drinktool/download")}),l=Object.freeze(Object.defineProperty({__proto__:null,load:n},Symbol.toStringTag,{value:"Module"}));function p(o){}export{p as component,l as universal};
