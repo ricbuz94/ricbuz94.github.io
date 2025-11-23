@@ -1,12 +1,12 @@
 // CALCOLO 1
 function primoCalcolo() {
-  var sesso = document.getElementById("sesso").value;
-  var anni = document.getElementById("anni").value;
-  var h = document.getElementById("h").value;
-  var peso = document.getElementById("peso").value;
-  var grado = document.getElementById("grado").value;
+    const sesso = document.getElementById("sesso")?.value ?? 0;
+    const anni = document.getElementById("anni")?.value ?? 20;
+    const h = document.getElementById("h").value;
+    const peso = document.getElementById("peso").value;
+    const grado = document.getElementById("grado").value;
 
-  if (!sesso || !anni || !h || !peso || !grado) {
+    if (!sesso || !anni || !h || !peso || !grado) {
     return alert({
       message: "Completare tutti i campi obbligatori.",
       closeButton: false,

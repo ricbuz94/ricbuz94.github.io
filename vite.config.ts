@@ -1,5 +1,6 @@
-import { sveltekit } from "@sveltejs/kit/vite";
-import type { PluginOption, ServerOptions, UserConfig } from "vite";
+import {sveltekit} from "@sveltejs/kit/vite";
+import {enhancedImages} from '@sveltejs/enhanced-img';
+import type {PluginOption, ServerOptions, UserConfig} from "vite";
 
 import fs from "fs";
 
@@ -12,7 +13,7 @@ if (process.env.HTTPS) {
     };
 }
 
-let plugins: PluginOption[] | undefined = [sveltekit()];
+let plugins: PluginOption[] | undefined = [enhancedImages(), sveltekit()];
 
 const config: UserConfig = {
     server,

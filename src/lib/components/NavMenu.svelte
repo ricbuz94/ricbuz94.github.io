@@ -39,7 +39,7 @@
 
 <style>
     ul {
-        padding: 0px;
+        padding: 0;
     }
 
     .menu li {
@@ -63,8 +63,8 @@
         box-shadow: var(--cardShadow);
         border: var(--navBorder);
         opacity: 0;
-        margin: 0px;
-        padding: 0.5rem 0rem;
+        margin: 0;
+        padding: 0.5rem 0;
         list-style: none;
         display: flex;
         flex-direction: column;
@@ -86,7 +86,7 @@
     a {
         display: inline-block;
         color: var(--textColor);
-        margin: 0px 0.5rem;
+        margin: 0 0.5rem;
         font-size: 12px;
         letter-spacing: 1px;
         position: relative;
@@ -103,7 +103,6 @@
         width: 100%;
         height: 2px;
         background-color: var(--accentColor);
-        -webkit-transform: scaleX(0);
         transform: scaleX(0);
         -webkit-transform-origin: right bottom;
         transform-origin: right bottom;
@@ -120,7 +119,6 @@
         background-color: var(--accentColor);
         -webkit-transition-duration: 0.4s;
         transition-duration: 0.4s;
-        -webkit-transform: scaleX(1);
         transform: scaleX(1);
         -webkit-transform-origin: left bottom;
         transform-origin: left bottom;

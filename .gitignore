@@ -3,10 +3,13 @@ node_modules
 /build
 /stuff
 /.svelte-kit
+/.idea
 /package
+.npmrc
 .env
 .env.*
 !.env.example
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 *.pem
+pnpm*

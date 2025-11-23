@@ -1,15 +1,15 @@
 <script lang="ts">
     import "../../app.css";
     import "$lib/i18n";
-    import { _, isLoading } from "svelte-i18n";
-    import { browser } from "$app/environment";
-    import { onMount, type Snippet } from "svelte";
-    import { page } from "$app/state";
-    import { fly } from "svelte/transition";
-    import { type Readable } from "svelte/store";
-    import { useMediaQuery } from "$lib/hooks/useMediaQuery";
-    import { Theme, type T_Section } from "$lib/helpers/interfaces";
-    import { Moon, Sun } from "lucide-svelte";
+    import {isLoading} from "svelte-i18n";
+    import {browser} from "$app/environment";
+    import {onMount, type Snippet} from "svelte";
+    import {page} from "$app/state";
+    import {fly} from "svelte/transition";
+    import {type Readable} from "svelte/store";
+    import {useMediaQuery} from "$lib/hooks/useMediaQuery";
+    import {Theme, type T_Section} from "$lib/helpers/interfaces";
+    import {Moon, Sun} from "lucide-svelte";
 
     import Loader from "$lib/components/Loader.svelte";
     import Header from "$lib/components/Header.svelte";
@@ -20,19 +20,17 @@
 
     const DARK_PREFERENCE = "(prefers-color-scheme: dark)";
 
-    let { children }: { data: { theme: string | undefined; sections: T_Section[] }; children: Snippet } = $props();
+    let {children}: { data: { theme: string | undefined; sections: T_Section[] }; children: Snippet } = $props();
 
     let theme = $state();
     let isSmallScreen = $state(false);
     let hideTopButton = $state(true);
-
-    let themeIcon = $derived(theme !== Theme.dark ? Moon : Sun);
+    let themeIcon = $derived(theme === Theme.light ? Moon : Sun);
 
     const mq: Readable<boolean> = useMediaQuery("only screen and (max-width: 720px)");
     mq.subscribe((value) => (isSmallScreen = value));
 
     function onScrollHandler() {
-            console.log("onScrollHandler");
         if (browser) {
             const header = document.getElementById("header");
             if (window.scrollY > 15) {
@@ -55,13 +53,13 @@
         }
     }
 
-    function applyTheme(t?: string) {
+    function applyTheme(newTheme?: string) {
         if (browser) {
             const THEME_KEY = "theme";
             const isMediaThemeDark = window.matchMedia(DARK_PREFERENCE).matches;
             const preferredTheme: Theme = isMediaThemeDark ? Theme.dark : Theme.light;
             const storedTheme = localStorage.getItem(THEME_KEY);
-            theme = !!t ? t : storedTheme || preferredTheme;
+            theme = newTheme || storedTheme || preferredTheme;
             localStorage.setItem(THEME_KEY, theme as string);
 
             const favicon = document.getElementsByTagName("link")[0];
@@ -90,11 +88,10 @@
     }
 
     onMount(() => {
-        console.log("onMount");
         applyTheme();
         onScrollHandler();
 
-        window.addEventListener("scroll", onScrollHandler, { passive: true });
+        window.addEventListener("scroll", onScrollHandler, {passive: true});
         window.matchMedia(DARK_PREFERENCE).addEventListener("change", () => applyTheme());
 
         return () => {
@@ -104,24 +101,24 @@
     });
 </script>
 
-<Waves />
+<Waves/>
 <div id="theme">
     {#if $isLoading}
         <div class="loading">
-            <Loader />
+            <Loader/>
         </div>
     {:else}
-        <Header {themeIcon} {toggleTheme} />
+        <Header {themeIcon} {toggleTheme}/>
         {#key page.url.pathname}
             <main in:fly={{ y: 30, duration: isSmallScreen ? 400 : 200, delay: 100 }}>
-                <Divider />
+                <Divider/>
                 {@render children()}
-                <Divider />
+                <Divider/>
             </main>
         {/key}
-        <Footer />
+        <Footer/>
         {#if !hideTopButton}
-            <TopButton />
+            <TopButton/>
         {/if}
     {/if}
 </div>
@@ -133,15 +130,13 @@
         color: var(--textColor);
         font-size: var(--fontSize);
         background-color: var(--backgroundColor);
-        transition:
-            color var(--transition),
-            background-color var(--transition);
-        font-family:
-            "Poppins",
-            -apple-system,
-            BlinkMacSystemFont,
-            Arial,
-            sans-serif;
+        transition: color var(--transition),
+        background-color var(--transition);
+        font-family: "Poppins",
+        -apple-system,
+        BlinkMacSystemFont,
+        Arial,
+        sans-serif;
     }
 
     :global(a) {
@@ -149,8 +144,9 @@
         text-decoration: none;
         -webkit-tap-highlight-color: transparent;
     }
+
     :global(p) {
-        margin: 0px;
+        margin: 0;
     }
 
     .loading {
@@ -165,10 +161,7 @@
         width: 650px;
         margin-left: auto;
         margin-right: auto;
-        padding-top: 80px;
-        padding-left: 0.25rem;
-        padding-right: 0.25rem;
-        padding-bottom: 1rem;
+        padding: 80px 0.25rem 1rem;
         display: flex;
         flex-direction: column;
         justify-content: start;

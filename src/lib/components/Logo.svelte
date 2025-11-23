@@ -1,9 +1,9 @@
 <script lang="ts">
-    import type { Readable } from "svelte/store";
-    import { useMediaQuery } from "$lib/hooks/useMediaQuery";
+    import type {Readable} from "svelte/store";
+    import {useMediaQuery} from "$lib/hooks/useMediaQuery";
 
     import Icon from "./Icon.svelte";
-    import { Box } from "lucide-svelte";
+    import {Atom as Logo} from "lucide-svelte";
 
     const mq: Readable<boolean> = useMediaQuery("only screen and (max-width: 720px)");
 
@@ -13,8 +13,8 @@
     const size = $derived(isShort ? 34 : 24);
 </script>
 
-<a href="/" title="Homepage" draggable="false">
-    <Icon component={Box} {size} color="var(--accentColor)" />
+<a class="logo" href="/" title="Homepage" draggable="false">
+    <Icon component={Logo} {size} color="var(--accentColor)"/>
     <h3>{text}</h3>
 </a>
 
@@ -25,6 +25,14 @@
         margin-right: auto;
         color: var(--textColor);
         user-select: none;
+    }
+
+    :global(a.logo svg) {
+        transition: transform 1s ease-in-out, stroke 1s ease-in-out !important;
+    }
+
+    :global(a.logo:hover svg) {
+        animation: coolRotation 1s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
     }
 
     h3 {
@@ -38,6 +46,20 @@
     @media only screen and (max-width: 720px) {
         h3 {
             font-size: 24px;
+        }
+    }
+
+    @keyframes coolRotation {
+        0% {
+            stroke: var(--accentColor);
+            transform: rotate(0deg) scale(1);
+        }
+        50% {
+            stroke: var(--textColor);
+        }
+        100% {
+            stroke: var(--accentColor);
+            transform: rotate(360deg) scale(1.6);
         }
     }
 </style>

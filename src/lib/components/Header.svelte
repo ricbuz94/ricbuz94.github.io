@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { Home, Layers, User } from "lucide-svelte";
+    import { House, Layers, User } from "lucide-svelte";
     import { locale, _ } from "svelte-i18n";
     import { Locale } from "$lib/helpers/interfaces";
     import isMobile from "$lib/stores/isMobileStore";
@@ -18,7 +18,7 @@
     const navList = $derived([
         {
             title: "Home",
-            icon: Home,
+            icon: House,
             href: "/",
         },
         {
@@ -81,7 +81,6 @@
         <MenuButton icon={themeIcon} onclick={toggleTheme} label={$_("generic.changeTheme")} />
         <MenuButton
             {isLoading}
-            hideIcon
             text={localeText}
             onclick={handleLocaleChange}
             label={$_("generic.changeLanguage")}
@@ -107,9 +106,7 @@
         box-shadow: none;
         user-select: none;
         backface-visibility: hidden;
-        /* background-color: var(--navBackgroundColor); */
         background-color: transparent;
-        /* backdrop-filter: saturate(180%) blur(15px); */
         transition:
             height 200ms ease 0s,
             box-shadow 200ms ease 0s,

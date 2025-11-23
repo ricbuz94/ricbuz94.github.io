@@ -22,8 +22,8 @@
 
 html,
 body {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     min-width: 320px;
 }
 
@@ -69,7 +69,7 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0px;
+    margin: 0;
 }
 
 hr {
@@ -83,7 +83,7 @@ hr {
     --cardBackgroundColor: white;
     --accentColor: #ff414e;
     --accentColorHover: #e13b47;
-    --accentColorTransparent: rgba(255, 65, 78, 0.1);
+    --accentColorTransparent: rgba(255, 65, 78, 0.2);
     --textColor: black;
     --subTextColor: var(--gray4);
     --webTag: #005ac4;
@@ -108,7 +108,7 @@ hr {
     --cardBackgroundColor: var(--gray6);
     --accentColor: #ff7a00;
     --accentColorHover: #e66e00;
-    --accentColorTransparent: rgba(255, 122, 0, 0.1);
+    --accentColorTransparent: rgba(255, 122, 0, 0.2);
     --textColor: var(--gray0);
     --subTextColor: var(--gray2);
     --webTag: #3b82f6;
@@ -118,7 +118,6 @@ hr {
     --jqueryTag: #3b82f6;
     --reactTag: #3b82f6;
     --reactNativeTag: #3b82f6;
-    --flutterTag: #3b82f6;
     --borderColor: rgba(200, 200, 200, 0.1);
     --navBackgroundColor: rgba(15, 15, 15, 0.6);
     --menuBackgroundColor: rgba(15, 15, 15, 0.95);
@@ -132,9 +131,8 @@ hr {
 .lucide,
 .lucide > g,
 .lucide > path {
-    transition:
-        stroke,
-        fill var(--transition);
+    transition: stroke,
+    fill var(--transition);
 }
 
 @media only screen and (max-width: 720px) {

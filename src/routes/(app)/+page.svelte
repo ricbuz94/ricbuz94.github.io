@@ -19,12 +19,13 @@
         <h1 class="title">Riccardo Buzzolo</h1>
         <p class="subtitle">{$_("home.developer")} (Web / Mobile / IT)</p>
     </div>
-    <img
+    <enhanced:img
         src={me}
         alt="Riccardo Buzzolo"
         title="Riccardo Buzzolo"
-        draggable="false"
+        draggable={false}
         oncontextmenu={(e) => e.preventDefault()}
+        role="figure"
     />
 </div>
 <Divider />

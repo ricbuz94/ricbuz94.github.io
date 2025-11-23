@@ -1,15 +1,16 @@
 <script module lang="ts">
-    import { onMount } from "svelte";
-    import type { Readable } from "svelte/store";
+    import {onMount} from "svelte";
+    import type {Readable} from "svelte/store";
     import Glide from "@glidejs/glide";
     import isMobile from "$lib/stores/isMobileStore";
-    import { useMediaQuery } from "$lib/hooks/useMediaQuery";
+    import {useMediaQuery} from "$lib/hooks/useMediaQuery";
     import Icon from "$lib/components/Icon.svelte";
 </script>
 
 <script lang="ts">
-    import { browser } from "$app/environment";
-    import { AlertTriangle, ArrowLeft, ArrowRight, Download, Share2 } from "lucide-svelte";
+    import {browser} from "$app/environment";
+    import logo from "$lib/assets/images/drinktool/logo.png";
+    import {TriangleAlert, ArrowLeft, ArrowRight, Download, Share2} from "lucide-svelte";
 
     let debounce: NodeJS.Timeout | undefined = $state(undefined);
     let isSmallScreen = $state(false);
@@ -20,7 +21,7 @@
 
     let glider: Glide | undefined = $state();
 
-    const slides = Array.from({ length: 14 }, (_, i) => ({
+    const slides = Array.from({length: 14}, (_, i) => ({
         src: `${i + 1}.jpg`,
         title: "image-" + (i + 1),
     }));
@@ -63,7 +64,7 @@
     onMount(async () => {
         glider = new Glide(".glide", {
             perView: isSmallScreen ? 1 : 3,
-            peek: { before: 0, after: 60 },
+            peek: {before: 0, after: 60},
             startAt: 0,
             rewind: false,
             touchRatio: 1,
@@ -79,7 +80,7 @@
                     glider?.destroy();
                     glider = new Glide(".glide", {
                         perView: isSmallScreen ? 1 : 3,
-                        peek: { before: 0, after: 60 },
+                        peek: {before: 0, after: 60},
                         startAt: 0,
                         rewind: false,
                         touchRatio: 1,
@@ -98,47 +99,47 @@
 </script>
 
 <svelte:head>
-    <link rel="stylesheet" href="/glide.core.min.css" />
+    <link rel="stylesheet" href="/glide.core.min.css"/>
     <title>DrinkTool | Download</title>
 
     <!-- MS, fb & Whatsapp -->
     <!-- MS Tile - for Microsoft apps-->
-    <meta name="msapplication-TileImage" content="https://ricbuz94.github.io/drinktool/logo-small.png" />
+    <meta name="msapplication-TileImage" content="https://ricbuz94.github.io/drinktool/logo-small.png"/>
 
     <!-- fb & Whatsapp -->
     <!-- Site Name, Title, and Description to be displayed -->
-    <meta property="og:site_name" content="DrinkTool" />
-    <meta property="og:title" content="DrinkTool - BAC calculator" />
+    <meta property="og:site_name" content="DrinkTool"/>
+    <meta property="og:title" content="DrinkTool - BAC calculator"/>
     <meta
-        property="og:description"
-        content="DrinkTool è il calcolatore in tempo reale di BAC (Blood Alcohol Conten) facile da usare!"
+            property="og:description"
+            content="DrinkTool è il calcolatore in tempo reale di BAC (Blood Alcohol Conten) facile da usare!"
     />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary" />
-    <meta property="twitter:url" content={import.meta.env.VITE_APP_DRINKTOOL_URL || "#"} />
-    <meta property="twitter:title" content="DrinkTool" />
+    <meta property="twitter:card" content="summary"/>
+    <meta property="twitter:url" content={import.meta.env.VITE_APP_DRINKTOOL_URL || "#"}/>
+    <meta property="twitter:title" content="DrinkTool"/>
     <meta
-        property="twitter:description"
-        content="DrinkTool è il calcolatore in tempo reale di BAC (Blood Alcohol Conten) facile da usare!"
+            property="twitter:description"
+            content="DrinkTool è il calcolatore in tempo reale di BAC (Blood Alcohol Conten) facile da usare!"
     />
-    <meta property="twitter:image" content="https://ricbuz94.github.io/drinktool/logo-small.png" />
+    <meta property="twitter:image" content="https://ricbuz94.github.io/drinktool/logo-small.png"/>
 
     <!-- Image to display -->
     <!-- Replace   «example.com/image01.jpg» with your own -->
-    <meta property="og:image" content="https://ricbuz94.github.io/drinktool/logo-small.png" />
+    <meta property="og:image" content="https://ricbuz94.github.io/drinktool/logo-small.png"/>
 
     <!-- No need to change anything here -->
-    <meta property="og:type" content="website" />
-    <meta property="og:image:type" content="image/png" />
+    <meta property="og:type" content="website"/>
+    <meta property="og:image:type" content="image/png"/>
 
     <!-- Size of image. Any size up to 300. Anything above 300px will not work in WhatsApp -->
-    <meta property="og:image:width" content="300" />
-    <meta property="og:image:height" content="300" />
+    <meta property="og:image:width" content="300"/>
+    <meta property="og:image:height" content="300"/>
 
     <!-- Website to visit when clicked in fb or WhatsApp-->
-    <meta property="og:url" content={import.meta.env.VITE_APP_DRINKTOOL_URL || "#"} />
-    <meta property="og:locale" content="it_IT" />
+    <meta property="og:url" content={import.meta.env.VITE_APP_DRINKTOOL_URL || "#"}/>
+    <meta property="og:locale" content="it_IT"/>
 </svelte:head>
 
 <div id="container">
@@ -147,21 +148,25 @@
             <h1>DrinkTool</h1>
             <p style="margin-top: 0px;">BAC calculator</p>
             <ul id="actions">
-                <button class="download-button" onclick={downloadApp}>
-                    <Icon component={Download} strokeWidth={3} size={14} />
-                    Download (APK)
-                </button>
-                <button class="download-button light" onclick={shareApp}>
-                    <Icon component={Share2} strokeWidth={3} size={14} color="currentColor" />
-                    Condividi
-                </button>
+                <li>
+                    <button class="download-button" onclick={downloadApp}>
+                        <Icon component={Download} strokeWidth={3} size={14}/>
+                        Download (APK)
+                    </button>
+                </li>
+                <li>
+                    <button class="download-button light" onclick={shareApp}>
+                        <Icon component={Share2} strokeWidth={3} size={14} color="currentColor"/>
+                        Condividi
+                    </button>
+                </li>
             </ul>
             <span id="disclamer-text">
-                <Icon component={AlertTriangle} size={14} color="#5f6368" />
+                <Icon component={TriangleAlert} size={14} color="#5f6368"/>
                 Questa applicazione <ins>non</ins> viene installata tramite il Play Store di Google
             </span>
         </div>
-        <img src="/drinktool/logo.png" alt="DrinkTool" draggable="false" />
+        <enhanced:img src={logo} alt="DrinkTool" draggable={false}/>
     </div>
 
     <div id="download-body">
@@ -169,17 +174,17 @@
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
                     {#each slides as slide (slide.src)}
-                        <img src={slide.src} alt={slide.title} />
+                        <enhanced:img src={slide.src} draggable={false} alt={slide.title}/>
                     {/each}
                 </ul>
             </div>
 
             <div class="glide__arrows" data-glide-el="controls">
                 <button class="glide__arrow glide__arrow--left download-button light" data-glide-dir="<">
-                    <Icon component={ArrowLeft} strokeWidth={3} size={20} color="#01875f" />
+                    <Icon component={ArrowLeft} strokeWidth={3} size={20} color="#01875f"/>
                 </button>
                 <button class="glide__arrow glide__arrow--right download-button light" data-glide-dir=">">
-                    <Icon component={ArrowRight} strokeWidth={3} size={20} color="#01875f" />
+                    <Icon component={ArrowRight} strokeWidth={3} size={20} color="#01875f"/>
                 </button>
             </div>
         </div>
@@ -190,13 +195,15 @@
         <p>
             Drink Tool è destinato esclusivamente a scopi di intrattenimento e non deve essere inteso come strumento
             scientifico per la determinazione dell' effettivo contenuto di alcol nel sangue.
-            <br /><br />
-            Tutti i dati relativi all'utente rimangono nella memoria del telefono e non vengono salvati altrove. I dati possono
-            essere cancellati dall'utente in qualsiasi momento disinstallando l'applicazione o mediante l'apposita sezione
+            <br/><br/>
+            Tutti i dati relativi all'utente rimangono nella memoria del telefono e non vengono salvati altrove. I dati
+            possono
+            essere cancellati dall'utente in qualsiasi momento disinstallando l'applicazione o mediante l'apposita
+            sezione
             nelle impostazioni del telefono.
-            <br /><br />
+            <br/><br/>
             <strong>Funzionalità:</strong>
-            <br />
+            <br/>
         </p>
 
         <ul>
@@ -210,9 +217,9 @@
         </ul>
 
         <p>
-            <br />
+            <br/>
             <strong>Novità:</strong>
-            <br />
+            <br/>
         </p>
 
         <ul>
@@ -239,13 +246,15 @@
         background-color: rgba(2, 173, 122, 0.4);
     }
 
-    img {
+    enhanced\:img {
         user-select: none;
     }
+
     a {
         color: #01875f;
         text-decoration: none;
     }
+
     a::selection {
         color: -webkit-link !important;
     }
@@ -263,8 +272,10 @@
     }
 
     :global(.glide__arrow--disabled > svg) {
+        cursor: not-allowed !important;
         stroke: #454e56 !important;
     }
+
     :global(.glide__arrow--disabled:hover) {
         cursor: not-allowed !important;
         background-color: transparent !important;
@@ -275,7 +286,7 @@
         font-family: "Roboto Mono", monospace;
         font-size: var(--fontSize, 16px);
         color: black;
-        word-spacing: 0px;
+        word-spacing: 0;
         padding: 2rem 15%;
     }
 
@@ -299,7 +310,7 @@
 
     #actions {
         list-style: none;
-        padding: 0px;
+        padding: 0;
         display: flex;
         gap: 0.5rem;
     }
@@ -315,9 +326,11 @@
         padding-top: 3rem;
         padding-bottom: 3rem;
     }
+
     #download-footer > p {
-        margin: 0.25rem 0px;
+        margin: 0.25rem 0;
     }
+
     .download-button {
         color: white;
         background-color: #01875f;
@@ -331,6 +344,7 @@
         align-items: center;
         user-select: none;
     }
+
     .download-button:hover {
         background-color: #056449;
     }
@@ -340,6 +354,7 @@
         color: #01875f;
         background-color: transparent;
     }
+
     .download-button.light:hover {
         color: #056449;
         background-color: rgba(5, 100, 73, 0.1);
@@ -350,13 +365,13 @@
         font-size: 12px;
         display: flex;
         gap: 0.5rem;
-        row-gap: 0px;
+        row-gap: 0;
         align-items: center;
         flex-wrap: wrap;
         user-select: none;
     }
 
-    #download-header > img {
+    #download-header > enhanced\:img {
         user-select: none;
         width: 160px;
         min-width: 160px;
@@ -379,8 +394,7 @@
         }
 
         #container {
-            padding: 0px;
-            padding-top: 1rem;
+            padding: 1rem 0 0;
         }
 
         #header-text > h1 {
@@ -408,7 +422,7 @@
             align-items: flex-start;
         }
 
-        #download-header > img {
+        #download-header > enhanced\:img {
             top: 1rem;
             right: 1rem;
             width: 80px;

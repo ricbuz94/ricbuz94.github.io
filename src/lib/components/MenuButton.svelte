@@ -1,15 +1,15 @@
 <script lang="ts">
-    import { Circle } from "lucide-svelte";
     import Icon from "./Icon.svelte";
     import Loader from "./Loader.svelte";
+    import {Circle} from "lucide-svelte";
 
-    let { label = "", icon = Circle, hideIcon = false, isLoading = false, text = "", onclick } = $props();
+    let { label = "", icon = null, isLoading = false, text = "", onclick } = $props();
 </script>
 
 <button id="button" title={label} {onclick}>
     {#if isLoading}
         <Loader small />
-    {:else if !!icon && !hideIcon}
+    {:else if !!icon}
         <Icon component={icon} size={18} />
     {:else}
         <p id="text">{text}</p>
@@ -26,11 +26,9 @@
         align-items: center;
         justify-content: center;
         -webkit-tap-highlight-color: transparent;
-        background-color: var(--backgroundColor);
         border: 1px solid var(--borderColor);
         border-radius: var(--borderRadius);
-        margin: 0px;
-        margin-left: 0.5rem;
+        margin: 0 0 0 0.5rem;
         cursor: pointer;
         transition: all var(--transition);
     }
