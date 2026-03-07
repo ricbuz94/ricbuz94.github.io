@@ -1,54 +1,4 @@
-<!doctype html>
-<html lang="it">
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <link rel="icon" href="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Portfolio website for Riccardo Buzzolo: full-stack, web and IT developer." />
-        <meta name="theme-color" content="#faf9fc" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-        <title>Riccardo Buzzolo</title>
-        <link href="../internal/immutable/entry/start.CeS9lksT.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/DTNFiaNv.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/BwAhLuHJ.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/C7tdss9s.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/DIeogL5L.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/CR44JTOa.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/BS9bzeBp.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/CYgJF_JY.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/CfFybFir.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/COCyBdNW.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/8UtF8RsF.js" rel="modulepreload">
-		<link href="../internal/immutable/entry/app.CW98Dwm3.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/PPVm8Dsz.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/DsnmJJEf.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/DVxgkpoN.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/Cv7YWb1E.js" rel="modulepreload">
-		<link href="../internal/immutable/nodes/0.m7Zg8A4e.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/DHfcD43N.js" rel="modulepreload">
-		<link href="../internal/immutable/nodes/3.Df4egcMt.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/DF8AkM3s.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/BMt-DQGF.js" rel="modulepreload">
-		<link href="../internal/immutable/nodes/4.BdkMRTSa.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/DnXAFcT-.js" rel="modulepreload">
-		<link href="../internal/immutable/nodes/12.BeUcadKO.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/69_IOA4Y.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/DYLxVEPz.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/CEwL_prD.js" rel="modulepreload">
-		<!--1k96yox--><link rel="icon" href="/drinktool/drinktool.ico"/> <link rel="preconnect" href="https://fonts.googleapis.com"/> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/> <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&amp;display=swap" rel="stylesheet"/><!----><!--o14o5q--><!----><title>DrinkTool ~ Privacy-Policy</title>
-		<link href="../internal/immutable/assets/index.DcSVAONn.css" rel="stylesheet">
-		<link href="../internal/immutable/assets/12.Dhenl-W7.css" rel="stylesheet">
-        <script type="text/javascript" async>
-            console.log("\n 👉🏼   https://github.com/ricbuz94 \n\n");
-        </script>
-    </head>
-
-    <body data-sveltekit-preload-data="hover">
-        <div style="display: contents"><!--[--><!--[0--><!--[--><!--[0--><!--[--><!--[0--><!--[--><!--[--><div id="container" class="svelte-o14o5q"><header class="svelte-o14o5q"><p class="top svelte-o14o5q">Last update: 21/11/2024</p> <h3 class="svelte-o14o5q">DrinkTool - Privacy-Policy</h3> <p class="svelte-o14o5q">Riccardo Buzzolo built the DrinkTool app as an Ad Supported app.
+import"../chunks/DsnmJJEf.js";import"../chunks/69_IOA4Y.js";import{p as _,t as D,a as z,b as T,T as U,e,d as I,$ as x,s,r as o,n as a}from"../chunks/C7tdss9s.js";import{h as B}from"../chunks/DnXAFcT-.js";import{a as c}from"../chunks/DYLxVEPz.js";import{i as C}from"../chunks/CEwL_prD.js";var S=I(`<div id="container" class="svelte-o14o5q"><header class="svelte-o14o5q"><p class="top svelte-o14o5q">Last update: 21/11/2024</p> <h3 class="svelte-o14o5q">DrinkTool - Privacy-Policy</h3> <p class="svelte-o14o5q">Riccardo Buzzolo built the DrinkTool app as an Ad Supported app.
             This application is provided by Riccardo Buzzolo at no cost and is
             intended for use as is.</p> <p class="svelte-o14o5q">This page is used to inform visitors regarding my policies with the
             collection, use, and disclosure of Personal Information if anyone
@@ -95,7 +45,7 @@
             psychological and social impacts of alcohol can be detrimental to a
             person's well-being.</p> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Information Collection and Use</strong></p> <p class="svelte-o14o5q">The app does use third party services that may collect information
             used to identify you.</p> <p class="svelte-o14o5q">Link to privacy policy of third party service providers used by the
-            app:</p> <ul class="svelte-o14o5q"><li class="svelte-o14o5q"><a rel="noreferrer" href="https://policies.google.com/privacy" target="_blank" class="svelte-o14o5q">Google Play Services and AdMob</a></li></ul> <p class="svelte-o14o5q">AdMob is an advertising service provided by Google LLC or by Google
+            app:</p> <ul class="svelte-o14o5q"><li class="svelte-o14o5q"><a rel="noreferrer" target="_blank" class="svelte-o14o5q">Google Play Services and AdMob</a></li></ul> <p class="svelte-o14o5q">AdMob is an advertising service provided by Google LLC or by Google
             Ireland Limited, depending on the location this Application is
             accessed from. In order to understand Google's use of Data, consult
             Google's partner policy.</p> <p class="svelte-o14o5q">Personal Data processed: Cookies; unique device identifiers for
@@ -112,34 +62,9 @@
             proper functioning of this Application.</p> <p class="svelte-o14o5q">If User grants any of the permissions listed below, the respective
             Personal Data may be processed (i.e accessed to, modified or
             removed) by this Application.</p> <ul class="svelte-o14o5q"><li class="svelte-o14o5q"><p id="underline" class="svelte-o14o5q">App specific files: Internal storage</p> <p class="svelte-o14o5q">Used for saving persistent data of the user's profile. See
-                    more <span class="svelte-o14o5q"><a rel="noreferrer" href="https://developer.android.com/training/data-storage/app-specific" target="_blank" class="svelte-o14o5q">here</a>.</span></p></li> <li class="svelte-o14o5q"><p id="underline" class="svelte-o14o5q">Internet</p> <p class="svelte-o14o5q">Used to show advertisements (AdMob). See more  <a rel="noreferrer" href="https://developer.android.com/training/basics/network-ops/connecting" target="_blank" class="svelte-o14o5q">here</a>.</p></li></ul> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Cookies</strong></p> <p class="svelte-o14o5q">Cookies are files with a small amount of data that are commonly used
+                    more <span class="svelte-o14o5q"><a rel="noreferrer" target="_blank" class="svelte-o14o5q">here</a>.</span></p></li> <li class="svelte-o14o5q"><p id="underline" class="svelte-o14o5q">Internet</p> <p class="svelte-o14o5q"> <a rel="noreferrer" target="_blank" class="svelte-o14o5q">here</a>.</p></li></ul> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Cookies</strong></p> <p class="svelte-o14o5q">Cookies are files with a small amount of data that are commonly used
             as anonymous unique identifiers. These are sent to your browser from
             the websites that you visit and are stored on your device's internal
-            memory.</p> <p class="svelte-o14o5q">This application does not use cookies.</p> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Security</strong></p> <p class="svelte-o14o5q">Be sure to install the application from  <a rel="noreferrer" href="/drinktool/download" class="svelte-o14o5q"><strong class="svelte-o14o5q">here</strong></a>, i am not responsible for damage to your device resulting from
+            memory.</p> <p class="svelte-o14o5q">This application does not use cookies.</p> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Security</strong></p> <p class="svelte-o14o5q"> <a rel="noreferrer" href="/drinktool/download" class="svelte-o14o5q"><strong class="svelte-o14o5q">here</strong></a>, i am not responsible for damage to your device resulting from
             cracked and pirated versions of the app.</p> <p class="svelte-o14o5q">Furthermore, the application could not work properly if not
-            installed from the correct page.</p> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Contact Me</strong></p> <p class="bottom svelte-o14o5q">If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at  <a href="mailto:riccardo.buzzolo@gmail.com" class="svelte-o14o5q">riccardo.buzzolo@gmail.com</a>.</p></main></div><!--]--><!----><!--]--><!--]--><!----><!--]--><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
-			
-			<script>
-				{
-					__sveltekit_1m7z2b6 = {
-						base: new URL("..", location).pathname.slice(0, -1)
-					};
-
-					const element = document.currentScript.parentElement;
-
-					Promise.all([
-						import("../internal/immutable/entry/start.CeS9lksT.js"),
-						import("../internal/immutable/entry/app.CW98Dwm3.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 3, 4, 12],
-							data: [null,null,null,null],
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
-		</div>
-    </body>
-</html>
+            installed from the correct page.</p> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Contact Me</strong></p> <p class="bottom svelte-o14o5q"> <a href="mailto:riccardo.buzzolo@gmail.com" class="svelte-o14o5q">riccardo.buzzolo@gmail.com</a>.</p></main></div>`);function F(g,b){_(b,!1),C();var t=S();B("o14o5q",$=>{U(()=>{x.title="DrinkTool ~ Privacy-Policy"})});var p=s(e(t),4),i=s(e(p),22),d=e(i),q=e(d);o(d),o(i);var r=s(i,20),n=e(r),v=s(e(n),2),h=s(e(v)),w=e(h);a(),o(h),o(v),o(n);var m=s(n,2),u=s(e(m),2),f=e(u);f.nodeValue="Used to show advertisements (AdMob). See more  ";var k=s(f);a(),o(u),o(m),o(r);var l=s(r,14),P=e(l);P.nodeValue="Be sure to install the application from  ",a(2),o(l);var y=s(l,8),A=e(y);A.nodeValue="If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at  ",a(2),o(y),o(p),o(t),D(()=>{c(q,"href","https://policies.google.com/privacy"),c(w,"href","https://developer.android.com/training/data-storage/app-specific"),c(k,"href","https://developer.android.com/training/basics/network-ops/connecting")}),z(g,t),T()}export{F as component};
