@@ -78,13 +78,8 @@
         {#if !$isMobile}
             <NavMenu {isOpen} {navList} />
         {/if}
+        <MenuButton {isLoading} text={localeText} onclick={handleLocaleChange} label={$_("generic.changeLanguage")} />
         <MenuButton icon={themeIcon} onclick={toggleTheme} label={$_("generic.changeTheme")} />
-        <MenuButton
-            {isLoading}
-            text={localeText}
-            onclick={handleLocaleChange}
-            label={$_("generic.changeLanguage")}
-        />
         {#if $isMobile}
             <div class="menu-area">
                 <MenuButtonMobile label="Menù" {isOpen} onclick={toggleMenu} />

@@ -1,19 +1,18 @@
-import {sveltekit} from "@sveltejs/kit/vite";
-import {enhancedImages} from '@sveltejs/enhanced-img';
-import type {PluginOption, ServerOptions, UserConfig} from "vite";
+import { sveltekit } from "@sveltejs/kit/vite";
+import type { PluginOption, ServerOptions, UserConfig } from "vite";
 
 import fs from "fs";
 
 let server: ServerOptions | undefined = {};
 
-if (process.env.HTTPS) {
+if (!!process.env.HTTPS && process.env.HTTPS === "true") {
     server.https = {
         key: fs.readFileSync("localhost-key.pem"),
         cert: fs.readFileSync("localhost.pem"),
     };
 }
 
-let plugins: PluginOption[] | undefined = [enhancedImages(), sveltekit()];
+let plugins: PluginOption[] | undefined = [sveltekit()];
 
 const config: UserConfig = {
     server,

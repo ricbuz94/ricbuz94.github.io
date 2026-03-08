@@ -28,7 +28,7 @@
 </script>
 
 <svelte:head>
-    <title>{$_("layout.nav.works")}</title>
+    <title>RB ~ {$_("layout.nav.works")}</title>
     <meta name="description" content="Works page of Riccardo Buzzolo. Browse my old and current projects and works." />
 </svelte:head>
 

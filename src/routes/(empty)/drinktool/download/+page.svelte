@@ -100,7 +100,7 @@
 
 <svelte:head>
     <link rel="stylesheet" href="/glide.core.min.css"/>
-    <title>DrinkTool | Download</title>
+    <title>DrinkTool ~ Download</title>
 
     <!-- MS, fb & Whatsapp -->
     <!-- MS Tile - for Microsoft apps-->
@@ -166,7 +166,7 @@
                 Questa applicazione <ins>non</ins> viene installata tramite il Play Store di Google
             </span>
         </div>
-        <enhanced:img src={logo} alt="DrinkTool" draggable={false}/>
+        <img src={logo} alt="DrinkTool" draggable={false}/>
     </div>
 
     <div id="download-body">
@@ -174,7 +174,7 @@
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
                     {#each slides as slide (slide.src)}
-                        <enhanced:img src={slide.src} draggable={false} alt={slide.title}/>
+                        <img src={slide.src} draggable={false} alt={slide.title}/>
                     {/each}
                 </ul>
             </div>
@@ -246,7 +246,7 @@
         background-color: rgba(2, 173, 122, 0.4);
     }
 
-    enhanced\:img {
+    img {
         user-select: none;
     }
 
@@ -371,7 +371,7 @@
         user-select: none;
     }
 
-    #download-header > enhanced\:img {
+    #download-header > img {
         user-select: none;
         width: 160px;
         min-width: 160px;
@@ -422,7 +422,7 @@
             align-items: flex-start;
         }
 
-        #download-header > enhanced\:img {
+        #download-header > img {
             top: 1rem;
             right: 1rem;
             width: 80px;

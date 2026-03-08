@@ -6,12 +6,13 @@
         color = "var(--textColor, currentColor)",
         size = 20,
         strokeWidth = 2,
+        classes = ''
     } = $props();
 </script>
 
 {#if typeof IconComponent === "string" && IconComponent === "Twitter"}
     <svg
-            class="lucide lucide-twitter"
+            class={['lucide', 'lucide-twitter'].concat(classes.split(' '))}
             width={size}
             height={size}
             stroke-width={strokeWidth}

@@ -1,105 +1,112 @@
 {
-    "generic": {
-        "back": "Back",
-        "notFound": "Page not found",
-        "changeTheme": "Change theme",
-        "changeLanguage": "Change laguage",
-        "goUp": "Go up",
-        "search": "Search"
-    },
-    "layout": {
-        "nav": {
-            "works": "Works",
-            "about": "About"
-        }
-    },
-    "home": {
-        "greatings": "Greetings, i'm an italian developer.",
-        "developer": "Developer",
-        "works": {
-            "title": "Works and projects",
-            "content": {
-                "1": "I work for ",
-                "2": ", a company specialized in programming php Wordpress and Symfony websites. In the past I worked for ",
-                "3": " an innovative startup that dealt with management and online reservations for beach resorts throughout Italy. ",
-                "4": " as a mobile developer, using a framework for the development of “cross-platform” mobile applications that maintains a single code base allowing applications to be published on Android and iOS. I developed in a similar way, but using another framework,",
-                "5": " an application for calculating blood alcohol levels in real time."
-            },
-            "callToAction": "More"
-        },
-        "bio": {
-            "title": "Bio",
-            "content": {
-                "1": "Born in Cattolica (RN), Italy.",
-                "2": "Based in San Giovanni in Marignano (RN), Italy.",
-                "3": "Graduated at ",
-                "4": "Studied comuper sience at ",
-                "5": "Worked at ",
-                "6": " traveling around the country.",
-                "7": "Worked at ",
-                "8": " as a mobile developer, building a crossplatform application using React Native.",
-                "9": "Worked at ",
-                "10": ", handling part of development, testing and technical customer care to bathing establishments managers.",
-                "11": "I work at ",
-                "12": " as a web php (Wordpress, Symfony) and mobile (Flutter) programmer."
-            },
-            "callToAction": "More"
-        }
-    },
-    "works": [
-        {
-            "header": "Works",
-            "list": [
-                {
-                    "title": "Simbiosi Group | Quadra S.r.l",
-                    "description": "The complete solution for your overall communication."
-                },
-                {
-                    "title": "Beacharound",
-                    "description": "Search portal and online booking of bathing establishments throughout Italy."
-                },
-                {
-                    "title": "Beacharound Business",
-                    "description": "Cloud management system and online reservations features for bathing establishments."
-                },
-                {
-                    "title": "PicWix for Mango Mobile",
-                    "description": "A «cross-platform» application in React Native that allows you to manage contests (photos and videos) with prizes."
-                }
-            ]
-        },
-        {
-            "header": "Projects",
-            "list": [
-                {
-                    "title": "Drink Tool",
-                    "description": "Real-time blood alcohol content calculator: BAC (Blood Alcohol Content)."
-                },
-                {
-                    "title": "Simple QR Code",
-                    "description": "A simple QR code generator that lets you download the image (.png) of the code with a title."
-                }
-            ]
-        },
-        {
-            "header": "Older projects",
-            "list": [
-                {
-                    "title": "Howmuchcanidrink",
-                    "description": "Simple calculations on the effects of the quantities of alcohol ingested, knowing your biometric data."
-                }
-            ]
-        }
-    ],
-    "about": {
-        "aboutMe": "About me",
-        "aboutMeContent1": "My name is Riccardo Buzzolo, I was born in Cattolica (RN) on December 13, 1994. I graduated from the Technical Institute for Surveyors O. Belluzzi in Rimini (now ",
-        "aboutMeLink1": "State Technical Technological Institute",
-        "aboutMeContent2": "). I then studied at the Alma Mater Studiorum University in Cesena, studying ",
-        "aboutMeLink2": "Engineering and Computer Science",
-        "aboutMeContent3": ". I worked as a mobile programmer for Mango Mobile, in Cesena, and as an evaluator for the Teddy group, in Rimini. Later I worked as “full-stack” web programmer for an innovative startup that deals with management and online bookings for beach resorts throughout the country: ",
-        "aboutMyWork": "About my work",
-        "aboutMyWorkContent1": "I am a web programmer, I deal with creating computer applications, both web and mobile, to solve problems or create solutions for customers. I work for ",
-        "aboutMyWorkContent2": ", a company specialized in programming Wordpress and Symfony (php) sites. My work consists of programming websites in Wordpress or Symfony (php) and mobile applications in Flutter."
+  "generic": {
+    "back": "Back",
+    "notFound": "Page not found",
+    "changeTheme": "Change theme",
+    "changeLanguage": "Change laguage",
+    "goUp": "Go up",
+    "search": "Search"
+  },
+  "layout": {
+    "nav": {
+      "works": "Works",
+      "about": "About"
     }
+  },
+  "home": {
+    "greatings": "Greetings, i'm an italian developer.",
+    "developer": "Developer",
+    "works": {
+      "title": "Works and projects",
+      "content": {
+        "1": "I work for ",
+        "2": ", a company specialized in programming php Wordpress and Symfony websites. In the past I worked for ",
+        "3": " an innovative startup that dealt with management and online reservations for beach resorts throughout Italy. ",
+        "4": " as a mobile developer, using a framework for the development of “cross-platform” mobile applications that maintains a single code base allowing applications to be published on Android and iOS. I developed in a similar way, but using another framework,",
+        "5": " an application for calculating blood alcohol levels in real time."
+      },
+      "callToAction": "More"
+    },
+    "bio": {
+      "title": "Bio",
+      "content": {
+        "1": "Born in Cattolica (RN), Italy.",
+        "2": "Based in San Giovanni in Marignano (RN), Italy.",
+        "3": "Graduated at ",
+        "4": "Studied comuper sience at ",
+        "5": "Worked at ",
+        "6": " traveling around the country.",
+        "7": "Worked at ",
+        "8": " as a mobile developer, building a crossplatform application using React Native.",
+        "9": "Worked at ",
+        "10": ", handling part of development, testing and technical customer care to bathing establishments managers.",
+        "11": "I work at ",
+        "12": " as a web php (Wordpress, Symfony) and mobile (Flutter) programmer."
+      },
+      "callToAction": "More"
+    }
+  },
+  "works": [
+    {
+      "header": "Works",
+      "list": [
+        {
+          "title": "Simbiosi Group | Quadra S.r.l",
+          "description": "The complete solution for your overall communication."
+        },
+        {
+          "title": "Beacharound",
+          "description": "Search portal and online booking of bathing establishments throughout Italy."
+        },
+        {
+          "title": "Beacharound Business",
+          "description": "Cloud management system and online reservations features for bathing establishments."
+        },
+        {
+          "title": "PicWix for Mango Mobile",
+          "description": "A «cross-platform» application in React Native that allows you to manage contests (photos and videos) with prizes."
+        }
+      ]
+    },
+    {
+      "header": "Projects",
+      "list": [
+        {
+          "title": "Drink Tool",
+          "description": "Real-time blood alcohol content calculator: BAC (Blood Alcohol Content)."
+        },
+        {
+          "title": "Simple QR Code",
+          "description": "A simple QR code generator that lets you download the image (.png) of the code with a title."
+        }
+      ]
+    },
+    {
+      "header": "Older projects",
+      "list": [
+        {
+          "title": "Howmuchcanidrink",
+          "description": "Simple calculations on the effects of the quantities of alcohol ingested, knowing your biometric data."
+        }
+      ]
+    }
+  ],
+  "about": {
+    "aboutMe": "About me",
+    "aboutMeContent1": "My name is Riccardo Buzzolo, I was born in Cattolica (RN) on December 13, 1994. I have a solid technical background, starting from the ",
+    "aboutMeLink1": "Belluzzi Technical Technological Institute",
+    "aboutMeContent2": " and continuing with ",
+    "aboutMeLink2": "Computer Science and Engineering",
+    "aboutMeContent3": " studies at the University of Bologna (Cesena campus). My professional experience began with mobile development at Mango Mobile and operational analysis at Teddy Group. I then moved into a full-stack role at ",
+    "aboutMeContent4": ", where I worked on the development of management software and online booking platforms for the tourism sector nationwide. I am currently a developer at Quadra S.r.l., focusing on backend development with Symfony (PHP), custom WordPress solutions, and cross-platform mobile apps using Flutter. My goal is to keep expanding my technical toolkit to handle all phases of a project—from database architecture to the final UI—ensuring reliable and functional software for the end user.",
+    "aboutMyWork": "About my work",
+    "aboutMyWorkContent1": "As a Developer at ",
+    "aboutMyWorkContent2": ", I specialize in transforming business requirements into tangible digital solutions, managing the entire software lifecycle from initial architecture to final deployment. My approach goes beyond mere coding; it is rooted in software engineering aimed at solving complex problems through elegant, scalable technology. My workflow is built upon three fundamental pillars, each selected to ensure maximum performance and maintainability:",
+    "aboutMyWorkContent3": "<strong>Enterprise Web Development with ",
+    "aboutMyWorkContent4": " (PHP):</strong><br>I leverage the Symfony Framework to build robust web applications and API-first architectures. By utilizing Symfony’s modular components, I handle complex business logic while adhering to SOLID principles and ensuring seamless data persistence via Doctrine ORM. This enables the creation of bespoke platforms tailored for high-demand enterprise environments.",
+    "aboutMyWorkContent5": "<strong>Advanced Content Management with ",
+    "aboutMyWorkContent6": ":</strong><br>For projects requiring dynamic content control, I implement high-end WordPress solutions. Rather than relying on off-the-shelf templates, I focus on custom theme development and bespoke plugin engineering. This ensures the CMS is perfectly aligned with the client’s operational workflow while maintaining peak performance, rigorous security standards, and SEO optimization.",
+    "aboutMyWorkContent7": "<strong>Cross-Platform Mobile Development with ",
+    "aboutMyWorkContent8": ":</strong><br>On the mobile front, I utilize Flutter, Google’s UI toolkit, to build high-performance native applications for both iOS and Android from a single Dart codebase. Thanks to its declarative UI approach and widget-based architecture, I deliver fluid user experiences (60fps) and accelerated time-to-market, integrating complex hardware features and real-time data synchronization."
+  }
 }

@@ -122,11 +122,16 @@
         {/if}
     {/if}
 </div>
+<Waves class="rotate"/>
 
 <style>
+    :global(body) {
+        position: relative;
+    }
+
     #theme {
         margin: 0 auto;
-        min-height: 100vh;
+        /*min-height: 100vh;*/
         color: var(--textColor);
         font-size: var(--fontSize);
         background-color: var(--backgroundColor);
@@ -161,7 +166,7 @@
         width: 650px;
         margin-left: auto;
         margin-right: auto;
-        padding: 80px 0.25rem 1rem;
+        padding: 80px 0.25rem 160px;
         display: flex;
         flex-direction: column;
         justify-content: start;
@@ -182,9 +187,10 @@
 
         main {
             width: 100%;
-            padding-top: 0px;
+            padding-top: 0;
             padding-left: 1.5rem;
             padding-right: 1.5rem;
+            /*padding-bottom: 2.5rem;*/
         }
     }
 

@@ -1,6 +1,6 @@
-import {Tag, Theme, type T_Section} from "$lib/helpers/interfaces";
-import type {LayoutData} from "./$types";
-import {browser} from "$app/environment";
+import { Tag, Theme, type T_Section } from "$lib/helpers/interfaces";
+import type { LayoutData } from "./$types";
+import { browser } from "$app/environment";
 
 import quadraweb from "$lib/assets/images/quadraweb.webp";
 import beacharound from "$lib/assets/images/beacharound.webp";
@@ -10,7 +10,7 @@ import drinktool from "$lib/assets/images/drinktool.webp";
 import simpleQrCode from "$lib/assets/images/simple_qr_code.webp";
 import howMuchCanIDrink from "$lib/assets/images/howmuchcanidrink.webp";
 
-import {locale, waitLocale} from "svelte-i18n";
+import { locale, waitLocale } from "svelte-i18n";
 
 export const prerender = true;
 
@@ -128,5 +128,5 @@ export const load: () => Promise<{ theme: string; sections: T_Section[] }> = (as
     }
 
     await waitLocale();
-    return {theme, sections};
+    return { theme, sections };
 }) satisfies LayoutData;

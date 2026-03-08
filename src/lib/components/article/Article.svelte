@@ -1,10 +1,9 @@
 <script module lang="ts">
-    import { base } from "$app/paths";
     import ButtonLink from "../ButtonLink.svelte";
 </script>
 
 <script lang="ts">
-    let { title = "Titolo", link = undefined, linkText = "", children = undefined } = $props();
+    let {title = "Titolo", link = undefined, linkText = "", children = undefined} = $props();
 </script>
 
 <article>
@@ -13,14 +12,14 @@
         {@render children?.()}
     {/if}
     {#if !!link}
-        <hr />
-        <ButtonLink to={`${base}/${link}`} text={linkText} shadow />
+        <hr/>
+        <ButtonLink to={link} text={linkText} shadow/>
     {/if}
 </article>
 
 <style>
     article {
-        padding: 2rem 0px;
+        padding: 2rem 0;
         position: relative;
         z-index: 1;
     }

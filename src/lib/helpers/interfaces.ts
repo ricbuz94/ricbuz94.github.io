@@ -37,5 +37,27 @@ interface T_Section {
     posts: Array<T_Post>;
 }
 
-export { Locale, Theme, Tag };
-export type { T_Post, T_Section };
+interface T_Drink {
+    volume: number;
+    grade: number;
+}
+
+interface PersonData {
+    sex: number;
+    age: number;
+    height: number;
+    weight: number;
+}
+
+interface FirstCountData extends PersonData {
+    alcoholIndex: number;
+}
+
+interface SecondCountData extends PersonData {
+    licence: number;
+    stomach: number;
+    drinks: Array<T_Drink>
+}
+
+export {Locale, Theme, Tag};
+export type {T_Post, T_Section, T_Drink, PersonData, FirstCountData, SecondCountData};

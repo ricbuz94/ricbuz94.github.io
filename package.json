@@ -24,7 +24,6 @@
     },
     "devDependencies": {
         "@sveltejs/adapter-static": "^3.0.10",
-        "@sveltejs/enhanced-img": "^0.9.0",
         "@sveltejs/kit": "^2.49.0",
         "@sveltejs/vite-plugin-svelte": "^6.2.1",
         "@types/glidejs__glide": "^3.6.6",
@@ -34,6 +33,7 @@
         "eslint": "^9.39.1",
         "eslint-plugin-svelte": "^3.13.0",
         "js-confetti": "^0.13.1",
+        "sass-embedded": "^1.97.3",
         "svelte": "^5.43.14",
         "svelte-check": "^4.3.4",
         "svelte-i18n": "^4.0.1",

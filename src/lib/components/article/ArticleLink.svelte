@@ -15,6 +15,7 @@
 	}
 
 	a:hover {
+        color: var(--accentColorHover);
 		text-decoration: underline;
 	}
 </style>

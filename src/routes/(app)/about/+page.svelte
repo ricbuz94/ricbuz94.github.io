@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { _ } from "svelte-i18n";
+    import {_} from "svelte-i18n";
     import Article from "$lib/components/article/Article.svelte";
     import ArticleLink from "$lib/components/article/ArticleLink.svelte";
     import Divider from "$lib/components/Divider.svelte";
@@ -8,46 +8,60 @@
 </script>
 
 <svelte:head>
-    <title>{$_("layout.nav.about")}</title>
-    <meta name="description" content="About page for Riccardo Buzzolo. Know something about me." />
+    <title>RB ~ {$_("layout.nav.about")}</title>
+    <meta name="description" content="About page for Riccardo Buzzolo. Know something about me."/>
 </svelte:head>
 
 <div class="content">
-    <enhanced:img
-        src={me}
-        alt="Riccardo Buzzolo"
-        title="Riccardo Buzzolo"
-        draggable={false}
-        oncontextmenu={(e) => e.preventDefault()}
+    <img
+            src={me}
+            alt="Riccardo Buzzolo"
+            title="Riccardo Buzzolo"
+            draggable={false}
+            oncontextmenu={(e) => e.preventDefault()}
     />
     <div class="card-wide">
         <Article title={$_("about.aboutMe")}>
             <p style="text-align: justify;">
                 {$_("about.aboutMeContent1")}
-                <ArticleLink title={$_("about.aboutMeLink1")} href={`${import.meta.env.VITE_APP_ITG_URL}`} />{$_(
-                    "about.aboutMeContent2",
-                )}
-                <ArticleLink title={$_("about.aboutMeLink2")} href={`${import.meta.env.VITE_APP_UNIBO_URL}`} />{$_(
-                    "about.aboutMeContent3",
-                )}
-                <ArticleLink title="Beacharound S.r.l." href={`${import.meta.env.VITE_APP_BEACHAROUND_URL}`} />
+                <ArticleLink title={$_("about.aboutMeLink1")} href={`${import.meta.env.VITE_APP_ITG_URL}`}/>{$_(
+                "about.aboutMeContent2",
+            )}
+                <ArticleLink title={$_("about.aboutMeLink2")} href={`${import.meta.env.VITE_APP_UNIBO_URL}`}/>{$_(
+                "about.aboutMeContent3",
+            )}
+                <ArticleLink title="Beacharound S.r.l." href={`${import.meta.env.VITE_APP_BEACHAROUND_URL}`}/>{$_(
+                "about.aboutMeContent4",
+            )}
             </p>
         </Article>
     </div>
 </div>
-<Divider height={4} />
+<Divider height={4}/>
 <div class="content dense">
     <div class="card-wide">
         <Article title={$_("about.aboutMyWork")}>
             <p style="text-align: justify;">
                 {$_("about.aboutMyWorkContent1")}
-                <ArticleLink title="Quadra S.r.l." href={`${import.meta.env.VITE_APP_QUADRA_URL}`} />{$_(
-                    "about.aboutMyWorkContent2",
-                )}
+                <ArticleLink title="Quadra S.r.l." href={`${import.meta.env.VITE_APP_QUADRA_URL}`}/>{$_(
+                "about.aboutMyWorkContent2",
+            )}
+                <br><br>
+                {@html $_("about.aboutMyWorkContent3")}
+                <ArticleLink title="Symfony" href={`${import.meta.env.VITE_APP_SYMFONY_URL}`}/>
+                {@html $_("about.aboutMyWorkContent4")}
+                <br><br>
+                {@html $_("about.aboutMyWorkContent5")}
+                <ArticleLink title="Wordpress"
+                             href={`${import.meta.env.VITE_APP_WORDPRESS_URL}`}/>{@html $_("about.aboutMyWorkContent6")}
+                <br><br>
+                {@html $_("about.aboutMyWorkContent7")}
+                <ArticleLink title="Flutter"
+                             href={`${import.meta.env.VITE_APP_FLUTTER_URL}`}/>{@html $_("about.aboutMyWorkContent8")}
             </p>
         </Article>
     </div>
-    <enhanced:img src={code} alt="Lavoro" title="Lavoro" draggable={false} oncontextmenu={(e) => e.preventDefault()} />
+    <img src={code} alt="Lavoro" title="Lavoro" draggable={false} oncontextmenu={(e) => e.preventDefault()}/>
 </div>
 
 <style>
@@ -61,12 +75,13 @@
         gap: 3rem;
         grid-template-columns: auto auto auto;
         grid-template-rows: auto;
-        align-items: center;
+        align-items: flex-start;
         justify-content: space-between;
         z-index: 1;
     }
 
     img {
+        margin-top: 3rem;
         width: 180px;
         height: 180px;
         padding: 3px;
