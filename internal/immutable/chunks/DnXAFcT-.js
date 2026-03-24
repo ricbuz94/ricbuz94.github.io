@@ -1,1 +1,0 @@
-import{o as y,g as o,J as u,K as _,h as t,L as g,M as i,N as l,O as d,v as p,P as v}from"./C7tdss9s.js";function C(n,r){let s=null,E=t;var a;if(t){s=p;for(var e=v(document.head);e!==null&&(e.nodeType!==g||e.data!==n);)e=i(e);if(e===null)l(!1);else{var f=i(e);e.remove(),d(f)}}t||(a=document.head.appendChild(y()));try{o(()=>r(a),u|_)}finally{E&&(l(!0),d(s))}}export{C as h};

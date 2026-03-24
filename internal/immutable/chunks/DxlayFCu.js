@@ -1,1 +1,0 @@
-import"./DsnmJJEf.js";import{t as a,a as m,d as p}from"./C7tdss9s.js";import{s as i}from"./DYLxVEPz.js";import{p as h}from"./DVxgkpoN.js";var f=p('<hr class="svelte-1fp7xm9"/>');function g(r,s){let o=h(s,"height",3,0);var t=f();let e;a(()=>e=i(t,"",e,{height:`${o()??""}rem`})),m(r,t)}export{g as D};
