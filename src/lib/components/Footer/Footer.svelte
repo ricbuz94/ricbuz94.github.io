@@ -72,7 +72,6 @@
                 title="LinedIn"
                 text="@riccardo-buzzolo"
         />
-        <ContactLink href={import.meta.env.VITE_APP_X_PROFILE_URL} icon="Twitter" title="X" text="@riccardobuzzolo"/>
         <ContactLink href={import.meta.env.VITE_APP_GITHUB_PROFILE_URL} icon={Github} title="GitHub" text="@ricbuz94"/>
     </div>
     <p class="bottom-text">

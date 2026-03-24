@@ -20,6 +20,12 @@
     --activeInputShadow: 0 0 0 3px rgba(66, 153, 225, 0.6);
 }
 
+html {
+    scroll-padding-top: 80px;
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+}
+
 html,
 body {
     margin: 0;
@@ -33,7 +39,6 @@ body {
     text-rendering: optimizeLegibility;
     background-color: var(--backgroundColor);
     overscroll-behavior: none;
-    scroll-behavior: smooth;
 }
 
 body::-webkit-scrollbar {
