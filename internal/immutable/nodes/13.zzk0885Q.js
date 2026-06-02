@@ -1,42 +1,4 @@
-<!doctype html>
-<html lang="it">
-<head>
-    <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <link rel="icon" href=""/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Portfolio website for Riccardo Buzzolo: full-stack, web and IT developer."/>
-    <meta name="theme-color" content="#faf9fc"/>
-    <link rel="manifest" href="/manifest.json"/>
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <title>Riccardo Buzzolo</title>
-    <link href="../internal/immutable/entry/start.C2F3ODcr.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/XDPP6r0-.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/Dle5WQBg.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/BuFlayix.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/DDDXLt4I.js" rel="modulepreload">
-		<link href="../internal/immutable/entry/app.bcQTMvZd.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/kNaey6uv.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/xihTtKlq.js" rel="modulepreload">
-		<link href="../internal/immutable/nodes/0.CaASGDXd.js" rel="modulepreload">
-		<link href="../internal/immutable/nodes/3.BY0sLIrb.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/Q7MK9ETB.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/BzcgxIGH.js" rel="modulepreload">
-		<link href="../internal/immutable/nodes/4.SnXU8sbG.js" rel="modulepreload">
-		<link href="../internal/immutable/nodes/13.zzk0885Q.js" rel="modulepreload">
-		<link href="../internal/immutable/chunks/D78ET4Xl.js" rel="modulepreload">
-		<!--1k96yox--><link rel="icon" href="/drinktool/drinktool.ico"/> <link rel="preconnect" href="https://fonts.googleapis.com"/> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/> <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&amp;display=swap" rel="stylesheet"/><!----><!--o14o5q--><!----><title>DrinkTool ~ Privacy-Policy</title>
-		<link href="../internal/immutable/assets/i18n.iM4PyJmK.css" rel="stylesheet">
-		<link href="../internal/immutable/assets/13.BUESFPcF.css" rel="stylesheet">
-    <script type="text/javascript" async>
-        console.log("\n 👉🏼   https://github.com/ricbuz94 \n\n");
-    </script>
-</head>
-
-<body data-sveltekit-preload-data="hover">
-<div style="display: contents"><!--[--><!--[0--><!--[--><!--[0--><!--[--><!--[0--><!--[--><!--[--><div id="container" class="svelte-o14o5q"><header class="svelte-o14o5q"><p class="top svelte-o14o5q">Last update: 21/11/2024</p> <h3 class="svelte-o14o5q">DrinkTool - Privacy-Policy</h3> <p class="svelte-o14o5q">Riccardo Buzzolo built the DrinkTool app as an Ad Supported app.
+import{D as e,G as t,H as n,R as r,T as i,U as a,at as o,ct as s,it as c,lt as l,m as u,s as d,u as f,z as p}from"../chunks/Dle5WQBg.js";import"../chunks/xihTtKlq.js";import"../chunks/D78ET4Xl.js";var m=e(`<div id="container" class="svelte-o14o5q"><header class="svelte-o14o5q"><p class="top svelte-o14o5q">Last update: 21/11/2024</p> <h3 class="svelte-o14o5q">DrinkTool - Privacy-Policy</h3> <p class="svelte-o14o5q">Riccardo Buzzolo built the DrinkTool app as an Ad Supported app.
             This application is provided by Riccardo Buzzolo at no cost and is
             intended for use as is.</p> <p class="svelte-o14o5q">This page is used to inform visitors regarding my policies with the
             collection, use, and disclosure of Personal Information if anyone
@@ -83,7 +45,7 @@
             psychological and social impacts of alcohol can be detrimental to a
             person's well-being.</p> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Information Collection and Use</strong></p> <p class="svelte-o14o5q">The app does use third party services that may collect information
             used to identify you.</p> <p class="svelte-o14o5q">Link to privacy policy of third party service providers used by the
-            app:</p> <ul class="svelte-o14o5q"><li class="svelte-o14o5q"><a rel="noreferrer" href="https://policies.google.com/privacy" target="_blank" class="svelte-o14o5q">Google Play Services and AdMob</a></li></ul> <p class="svelte-o14o5q">AdMob is an advertising service provided by Google LLC or by Google
+            app:</p> <ul class="svelte-o14o5q"><li class="svelte-o14o5q"><a rel="noreferrer" target="_blank" class="svelte-o14o5q">Google Play Services and AdMob</a></li></ul> <p class="svelte-o14o5q">AdMob is an advertising service provided by Google LLC or by Google
             Ireland Limited, depending on the location this Application is
             accessed from. In order to understand Google's use of Data, consult
             Google's partner policy.</p> <p class="svelte-o14o5q">Personal Data processed: Cookies; unique device identifiers for
@@ -100,34 +62,9 @@
             proper functioning of this Application.</p> <p class="svelte-o14o5q">If User grants any of the permissions listed below, the respective
             Personal Data may be processed (i.e accessed to, modified or
             removed) by this Application.</p> <ul class="svelte-o14o5q"><li class="svelte-o14o5q"><p id="underline" class="svelte-o14o5q">App specific files: Internal storage</p> <p class="svelte-o14o5q">Used for saving persistent data of the user's profile. See
-                    more <span class="svelte-o14o5q"><a rel="noreferrer" href="https://developer.android.com/training/data-storage/app-specific" target="_blank" class="svelte-o14o5q">here</a>.</span></p></li> <li class="svelte-o14o5q"><p id="underline" class="svelte-o14o5q">Internet</p> <p class="svelte-o14o5q">Used to show advertisements (AdMob). See more  <a rel="noreferrer" href="https://developer.android.com/training/basics/network-ops/connecting" target="_blank" class="svelte-o14o5q">here</a>.</p></li></ul> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Cookies</strong></p> <p class="svelte-o14o5q">Cookies are files with a small amount of data that are commonly used
+                    more <span class="svelte-o14o5q"><a rel="noreferrer" target="_blank" class="svelte-o14o5q">here</a>.</span></p></li> <li class="svelte-o14o5q"><p id="underline" class="svelte-o14o5q">Internet</p> <p class="svelte-o14o5q"> <a rel="noreferrer" target="_blank" class="svelte-o14o5q">here</a>.</p></li></ul> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Cookies</strong></p> <p class="svelte-o14o5q">Cookies are files with a small amount of data that are commonly used
             as anonymous unique identifiers. These are sent to your browser from
             the websites that you visit and are stored on your device's internal
-            memory.</p> <p class="svelte-o14o5q">This application does not use cookies.</p> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Security</strong></p> <p class="svelte-o14o5q">Be sure to install the application from  <a rel="noreferrer" href="/drinktool/download" class="svelte-o14o5q"><strong class="svelte-o14o5q">here</strong></a>, i am not responsible for damage to your device resulting from
+            memory.</p> <p class="svelte-o14o5q">This application does not use cookies.</p> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Security</strong></p> <p class="svelte-o14o5q"> <a rel="noreferrer" href="/drinktool/download" class="svelte-o14o5q"><strong class="svelte-o14o5q">here</strong></a>, i am not responsible for damage to your device resulting from
             cracked and pirated versions of the app.</p> <p class="svelte-o14o5q">Furthermore, the application could not work properly if not
-            installed from the correct page.</p> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Contact Me</strong></p> <p class="bottom svelte-o14o5q">If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at  <a href="mailto:riccardo.buzzolo@gmail.com" class="svelte-o14o5q">riccardo.buzzolo@gmail.com</a>.</p></main></div><!--]--><!----><!--]--><!--]--><!----><!--]--><!--]--><!----><!--]--><!--]--> <!--[-1--><!--]--><!--]-->
-			
-			<script>
-				{
-					__sveltekit_kmvxg5 = {
-						base: new URL("..", location).pathname.slice(0, -1)
-					};
-
-					const element = document.currentScript.parentElement;
-
-					Promise.all([
-						import("../internal/immutable/entry/start.C2F3ODcr.js"),
-						import("../internal/immutable/entry/app.bcQTMvZd.js")
-					]).then(([kit, app]) => {
-						kit.start(app, element, {
-							node_ids: [0, 3, 4, 13],
-							data: [null,null,null,null],
-							form: null,
-							error: null
-						});
-					});
-				}
-			</script>
-		</div>
-</body>
-</html>
+            installed from the correct page.</p> <br class="svelte-o14o5q"/> <p class="svelte-o14o5q"><strong class="svelte-o14o5q">Contact Me</strong></p> <p class="bottom svelte-o14o5q"> <a href="mailto:riccardo.buzzolo@gmail.com" class="svelte-o14o5q">riccardo.buzzolo@gmail.com</a>.</p></main></div>`);function h(e,h){o(h,!1),d();var g=m();u(`o14o5q`,e=>{r(()=>{n.title=`DrinkTool ~ Privacy-Policy`})});var _=t(a(g),4),v=t(a(_),22),y=a(v),b=a(y);l(y),l(v);var x=t(v,20),S=a(x),C=t(a(S),2),w=t(a(C)),T=a(w);s(),l(w),l(C),l(S);var E=t(S,2),D=t(a(E),2),O=a(D);O.nodeValue=`Used to show advertisements (AdMob). See more  `;var k=t(O);s(),l(D),l(E),l(x);var A=t(x,14),j=a(A);j.nodeValue=`Be sure to install the application from  `,s(2),l(A);var M=t(A,8),N=a(M);N.nodeValue=`If you have any questions or suggestions about my Privacy Policy, do not hesitate to contact me at  `,s(2),l(M),l(_),l(g),p(()=>{f(b,`href`,`https://policies.google.com/privacy`),f(T,`href`,`https://developer.android.com/training/data-storage/app-specific`),f(k,`href`,`https://developer.android.com/training/basics/network-ops/connecting`)}),i(e,g),c()}export{h as component};

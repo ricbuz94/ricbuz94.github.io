@@ -1,0 +1,1 @@
+import{pt as e}from"../chunks/Dle5WQBg.js";import{r as t}from"../chunks/BuFlayix.js";import"../chunks/xihTtKlq.js";import"../chunks/D78ET4Xl.js";function n(e,n){throw new t(e,n.toString())}var r=e({load:()=>i}),i=(()=>{n(302,`/drinktool/download`)});function a(e){}export{a as component,r as universal};
