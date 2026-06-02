@@ -9,8 +9,11 @@
 
 <script lang="ts">
     import {browser} from "$app/environment";
-    import logo from "$lib/assets/images/drinktool/logo.png";
-    import {TriangleAlert, ArrowLeft, ArrowRight, Download, Share2} from "lucide-svelte";
+    import TriangleAlert from "@lucide/svelte/icons/triangle-alert";
+    import ArrowLeft from "@lucide/svelte/icons/arrow-left";
+    import ArrowRight from "@lucide/svelte/icons/arrow-right";
+    import Download from "@lucide/svelte/icons/download";
+    import Share2 from "@lucide/svelte/icons/share-2";
 
     let debounce: NodeJS.Timeout | undefined = $state(undefined);
     let isSmallScreen = $state(false);
@@ -166,7 +169,7 @@
                 Questa applicazione <ins>non</ins> viene installata tramite il Play Store di Google
             </span>
         </div>
-        <img src={logo} alt="DrinkTool" draggable={false}/>
+        <img src="/drinktool/logo.png" alt="DrinkTool" draggable={false}/>
     </div>
 
     <div id="download-body">
@@ -224,7 +227,7 @@
 
         <ul>
             <li>grafica rinnovata</li>
-            <li>aggiunta di un nuovo launchscreen</li>
+            <li>aggiunta di un nuovo launch-screen</li>
             <li>informazioni aggiornate</li>
         </ul>
     </div>

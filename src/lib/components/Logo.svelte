@@ -3,28 +3,28 @@
     import {useMediaQuery} from "$lib/hooks/useMediaQuery";
 
     import Icon from "./Icon.svelte";
-    import {Atom as Logo} from "lucide-svelte";
+    import Atom from "@lucide/svelte/icons/atom";
 
     const mq: Readable<boolean> = useMediaQuery("only screen and (max-width: 720px)");
 
     let isShort: boolean = $state(false);
     mq.subscribe((value) => (isShort = value));
-    const text = $derived(isShort ? "RB" : "RiccardoBuzzolo");
     const size = $derived(isShort ? 34 : 24);
 </script>
 
-<a class="logo" href="/" title="Homepage" draggable="false">
-    <Icon component={Logo} {size} color="var(--accentColor)"/>
-    <h3>{text}</h3>
+<a class="logo nav-link" href="/" title="Homepage" draggable="false">
+    <Icon component={Atom} {size} color="var(--accentColor)"/>
+    <h3 class="logo-text">RB</h3>
 </a>
 
 <style>
-    a {
-        display: flex;
+    .logo {
+        display: inline-flex;
         align-items: center;
         margin-right: auto;
-        color: var(--textColor);
         user-select: none;
+        color: var(--textColor);
+        transition: background-color var(--transition), opacity var(--transition);
     }
 
     :global(a.logo svg) {
@@ -35,17 +35,23 @@
         animation: coolRotation 1s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
     }
 
-    h3 {
-        padding-left: 3px;
+    .logo-text {
         font-size: 20px;
         font-weight: 700;
         user-select: none;
-        transition: color var(--transition);
+        max-width: 160px;
+        transition: background-color var(--transition), opacity var(--transition), max-width var(--transition);
     }
 
+    /* schermo piccolo */
     @media only screen and (max-width: 720px) {
-        h3 {
-            font-size: 24px;
+        :global(a.logo:hover svg) {
+            animation: none;
+        }
+
+        :global(a.logo:hover svg) {
+            animation: coolRotation 1s cubic-bezier(0.4, 0, 0.2, 1) alternate;
+            animation-iteration-count: 2;
         }
     }
 

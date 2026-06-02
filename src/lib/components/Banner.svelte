@@ -1,5 +1,5 @@
 <script>
-    let { text = "Simple banner", isAnimated = false } = $props();
+    let {text = "Simple banner", isAnimated = false} = $props();
 </script>
 
 <div class="banner" class:animated={isAnimated}>
@@ -65,8 +65,7 @@
     .banner.animated > p {
         border-right: 0.15em solid var(--accentColor);
         white-space: nowrap;
-        animation:
-            typing 14s steps(40, end) infinite,
-            blink-caret 1s step-end infinite;
+        animation: typing 14s steps(40, end) infinite,
+        blink-caret 1s step-end infinite;
     }
 </style>

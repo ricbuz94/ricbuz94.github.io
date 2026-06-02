@@ -4,7 +4,7 @@
     import { _ } from "svelte-i18n";
 
     import Icon from "./Icon.svelte";
-    import { ArrowUp } from "lucide-svelte";
+    import ArrowUp from "@lucide/svelte/icons/arrow-up";
 
     let { isHover = false } = $props();
 

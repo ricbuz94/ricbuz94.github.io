@@ -1,7 +1,7 @@
 <script lang="ts">
     import JSConfetti from "js-confetti";
     import ContactLink from "./ContactLink.svelte";
-    import {Github, Instagram, Linkedin, Mail} from "lucide-svelte";
+    import Mail from "@lucide/svelte/icons/mail";
 
     let jsConfetti: JSConfetti | undefined = $state(undefined);
     let year: number = $state(new Date().getFullYear());
@@ -62,17 +62,17 @@
         />
         <ContactLink
                 href={import.meta.env.VITE_APP_INSTAGRAM_PROFILE_URL}
-                icon={Instagram}
+                icon="instagram"
                 title="Instagram"
                 text="@riccardo_buzzolo"
         />
         <ContactLink
                 href={import.meta.env.VITE_APP_LINKEDIN_PROFILE_URL}
-                icon={Linkedin}
+                icon="linkedin"
                 title="LinedIn"
                 text="@riccardo-buzzolo"
         />
-        <ContactLink href={import.meta.env.VITE_APP_GITHUB_PROFILE_URL} icon={Github} title="GitHub" text="@ricbuz94"/>
+        <ContactLink href={import.meta.env.VITE_APP_GITHUB_PROFILE_URL} icon="github" title="GitHub" text="@ricbuz94"/>
     </div>
     <p class="bottom-text">
         Powered by

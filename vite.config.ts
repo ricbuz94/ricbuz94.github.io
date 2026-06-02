@@ -1,5 +1,5 @@
-import { sveltekit } from "@sveltejs/kit/vite";
-import type { PluginOption, ServerOptions, UserConfig } from "vite";
+import type {PluginOption, ServerOptions, UserConfig} from "vite";
+import {sveltekit} from "@sveltejs/kit/vite";
 
 import fs from "fs";
 

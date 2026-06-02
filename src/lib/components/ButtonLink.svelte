@@ -1,5 +1,5 @@
 <script>
-    import { ChevronRight } from "lucide-svelte";
+    import ChevronRight from "@lucide/svelte/icons/chevron-right";
     import Icon from "./Icon.svelte";
 
     let { to = "/", text = "Testo", shadow = false } = $props();

@@ -4,7 +4,6 @@
     import ArticleLink from "$lib/components/article/ArticleLink.svelte";
     import Banner from "$lib/components/Banner.svelte";
     import Divider from "$lib/components/Divider.svelte";
-    import me from "$lib/assets/images/me.webp";
     import {resolve} from "$app/paths";
 </script>
 
@@ -13,22 +12,26 @@
     <meta name="description" content="Homepage of Riccardo Buzzolo. See my works and bio."/>
 </svelte:head>
 
-<Banner text={$_("home.greatings")}/>
+<Banner text="👨🏻‍💻 {$_('home.greetings')}"/>
+
 <Divider/>
+
 <div class="me">
     <div class="title-container">
         <h1 class="title">Riccardo Buzzolo</h1>
         <p class="subtitle">{$_("home.developer")} (Web / Mobile / IT)</p>
     </div>
     <img
-            src={me}
+            src="/images/me.webp"
             alt="Riccardo Buzzolo"
             title="Riccardo Buzzolo"
             draggable={false}
             oncontextmenu={(e) => e.preventDefault()}
     />
 </div>
+
 <Divider/>
+
 <Article title={$_("home.works.title")} link={resolve('/(app)/works')} linkText={$_("home.works.callToAction")}>
     <p style="text-align: justify;">
         {$_("home.works.content.1")}
@@ -44,7 +47,32 @@
         <ArticleLink title="Drink Tool" href="/drinktool/download"/>{$_("home.works.content.5")}
     </p>
 </Article>
+
 <Divider/>
+
+<Article title={$_("home.skills.title")} link={resolve('/(app)/skills')} linkText={$_("home.skills.callToAction")}>
+    <p style="text-align: justify;">
+        {$_("home.skills.content.1")}
+        <ArticleLink title="React" href={`${import.meta.env.VITE_APP_REACT_URL}`}/>,
+        <ArticleLink title="NextJS" href={`${import.meta.env.VITE_APP_NEXTJS_URL}`}/>
+        {$_("home.skills.content.2")}
+        <ArticleLink title="Svelte" href={`${import.meta.env.VITE_APP_SVELTE_URL}`}/>
+        {$_("home.skills.content.3")}
+        <ArticleLink title="Flutter" href={`${import.meta.env.VITE_APP_FLUTTER_URL}`}/>
+        {$_("home.skills.content.4")}
+        <ArticleLink title="Tailwind" href={`${import.meta.env.VITE_APP_TAILWIND_URL}`}/>
+        {$_("home.skills.content.5")}
+        <ArticleLink title="Sass" href={`${import.meta.env.VITE_APP_SASS_URL}`}/>
+        {$_("home.skills.content.6")}<ArticleLink title="Symfony" href={`${import.meta.env.VITE_APP_SYMFONY_URL}`}/>{$_("home.skills.content.7")}
+        <ArticleLink title="Go" href={`${import.meta.env.VITE_APP_GO_URL}`}/>{$_("home.skills.content.8")}<ArticleLink title="PostgreSQL" href={`${import.meta.env.VITE_APP_POSTGRESQL_URL}`}/>,
+        <ArticleLink title="MySQL" href={`${import.meta.env.VITE_APP_MYSQL_URL}`}/>,
+        <ArticleLink title="SQLite" href={`${import.meta.env.VITE_APP_SQLITE_URL}`}/>{$_("home.skills.content.9")}<ArticleLink title="MySQL" href={`${import.meta.env.VITE_APP_MYSQL_URL}`}/>{$_("home.skills.content.10")}
+        <ArticleLink title="" href={`${import.meta.env.VITE_APP_}`}/>
+    </p>
+</Article>
+
+<Divider/>
+
 <Article title={$_("home.bio.title")} link={resolve('/(app)/about')} linkText={$_("home.bio.callToAction")}>
     <div class="timeline-container">
         <div class="row">

@@ -10,11 +10,12 @@
   "layout": {
     "nav": {
       "works": "Lavori",
+      "skills": "Tecnologie",
       "about": "Chi sono"
     }
   },
   "home": {
-    "greatings": "Salve, sono un programmatore italiano.",
+    "greetings": "Salve, sono un programmatore italiano.",
     "developer": "Programmatore",
     "works": {
       "title": "Lavori e progetti",
@@ -24,6 +25,22 @@
         "3": ", una startup innovativa che si occupava di gestionale e prenotazioni online per gli stabilimenti balneari in tutta Italia. ",
         "4": " come sviluppatore mobile, utilizzando un framework per lo sviluppo di applicazioni mobile «cross-platform» che mantiene una singola base di codice permettendo di pubblicare le applicazioni su Android e iOS. Ho sviluppato in modo analogo, ma utilizzando un altro framework, ",
         "5": ": un'applicazione per il calcolo del tasso alcolemico in tempo reale."
+      },
+      "callToAction": "Altro"
+    },
+    "skills": {
+      "title": "Ingegneria Web, Mobile, Cloud",
+      "content": {
+        "1": "Il mio profilo tecnico si traduce in un controllo completo del ciclo di vita del software, combinando lo sviluppo di interfacce frontend moderne con la progettazione di solide architetture backend. Lato client, unisco la flessibilità di ",
+        "2": " e ",
+        "3": " alla reattività cross-platform di ",
+        "4": " per il mobile, supportati da ",
+        "5": " e ",
+        "6": " per un design efficiente. Nel backend, sviluppo logiche robuste in PHP (",
+        "7": ") e soluzioni ad alte prestazioni in ",
+        "8": ", gestendo con precisione database sia relazionali (",
+        "9": ") che NoSQL (",
+        "10": "). Completa il mio profilo una solida competenza in ambienti Linux, automazione Bash e gestione infrastrutturale, caratteristiche che mi permettono di garantire codice pulito, scalabilità dei sistemi e pieno allineamento agli standard ingegneristici aziendali."
       },
       "callToAction": "Altro"
     },
@@ -91,6 +108,122 @@
       ]
     }
   ],
+  "skills": {
+    "title": "Stack Tecnologico",
+    "description": "Una panoramica dei linguaggi, framework e strumenti che utilizzo per dare vita ai progetti.",
+    "sections": [
+      {
+        "title": "Linguaggi di Programmazione",
+        "description": "Le fondamenta solide su cui costruisco logica ed ecosistemi digitali.",
+        "items": [
+          {
+            "title": "go",
+            "description": "Linguaggio di programmazione open-source sviluppato da Google, celebre per la sua efficienza, gestione della concorrenza e velocità di esecuzione."
+          },
+          {
+            "title": "html",
+            "description": "Linguaggio di markup fondamentale per strutturare e formattare i contenuti delle pagine web."
+          },
+          {
+            "title": "javascript",
+            "description": "Linguaggio di scripting lato client e server indispensabile per rendere i siti web interattivi e dinamici."
+          },
+          {
+            "title": "php",
+            "description": "Linguaggio di programmazione lato server ampiamente utilizzato per lo sviluppo di siti web dinamici e applicazioni web."
+          },
+          {
+            "title": "css",
+            "description": "Linguaggio utilizzato per definire la formattazione, il design e il layout visivo dei documenti HTML."
+          },
+          {
+            "title": "sass",
+            "description": "Estensione e preprocessore CSS che aggiunge funzionalità avanzate come variabili, cicli e nidificazione alla scrittura degli stili."
+          }
+        ]
+      },
+      {
+        "title": "Framework",
+        "description": "Strumenti avanzati per lo sviluppo di interfacce veloci e reattive.",
+        "items": [
+          {
+            "title": "bootstrap",
+            "description": "Framework CSS e JavaScript tra i più famosi al mondo per la creazione di interfacce web responsive e mobile-first."
+          },
+          {
+            "title": "flutter",
+            "description": "Framework di Google per lo sviluppo di applicazioni compilate nativamente per mobile, web e desktop da un unico codice sorgente."
+          },
+          {
+            "title": "nextjs",
+            "description": "Framework React avanzato che permette il rendering lato server (SSR) e la generazione di siti statici ottimizzati."
+          },
+          {
+            "title": "react",
+            "description": "Libreria JavaScript per la creazione di interfacce utente reattive e basate su componenti riutilizzabili."
+          },
+          {
+            "title": "svelte",
+            "description": "Framework JavaScript innovativo che sposta il lavoro di compilazione al build-time, producendo codice nativo ultraleggero."
+          },
+          {
+            "title": "symfony",
+            "description": "Framework PHP robusto e strutturato ad alte prestazioni, ideale per lo sviluppo di applicazioni aziendali complesse."
+          },
+          {
+            "title": "tailwind",
+            "description": "Framework CSS basato su classi di utilità che permette di progettare interfacce grafiche personalizzate direttamente nel codice HTML."
+          }
+        ]
+      },
+      {
+        "title": "Backend & Database",
+        "description": "Gestione dei dati, API sicure e architetture server performanti.",
+        "items": [
+          {
+            "title": "gnu-bash",
+            "description": "Interprete di comandi e linguaggio di scripting standard per sistemi operativi Unix e Linux."
+          },
+          {
+            "title": "jetbrains",
+            "description": "Ambiente di sviluppo software e suite di IDE professionali per programmatori."
+          },
+          {
+            "title": "linux",
+            "description": "Sistema operativo open-source che costituisce l'infrastruttura fondamentale per server e ambienti di sviluppo."
+          },
+          {
+            "title": "mongodb",
+            "description": "Database NoSQL orientato ai documenti che memorizza i dati in formato flessibile simile a JSON."
+          },
+          {
+            "title": "mysql",
+            "description": "Uno dei sistemi di gestione di database relazionali (RDBMS) open-source più diffusi al mondo."
+          },
+          {
+            "title": "phpmyadmin",
+            "description": "Strumento di amministrazione web grafico per la gestione semplificata di database MySQL e MariaDB."
+          },
+          {
+            "title": "plesk",
+            "description": "Piattaforma di Web Hosting e pannello di controllo per la gestione semplificata di server e siti web."
+          },
+          {
+            "title": "postgresql",
+            "description": "Potente sistema di database relazionale open-source ad oggetti, noto per l'affidabilità e l'estendibilità."
+          },
+          {
+            "title": "sql-lite",
+            "description": "Libreria software che fornisce un sistema di gestione di database relazionali leggero, autonomo e senza server."
+          },
+          {
+            "title": "wordpress",
+            "description": "Il sistema di gestione dei contenuti (CMS) più popolare al mondo per la creazione e gestione di siti web e blog."
+          }
+        ]
+      }
+    ]
+  },
   "about": {
     "aboutMe": "Chi sono",
     "aboutMeContent1": "Mi chiamo Riccardo Buzzolo, sono nato a Cattolica(RN) il 13 Dicembre del 1994. Ho una formazione tecnica iniziata all'Istituto Odone Belluzzi di Rimini (ora ",
@@ -107,6 +240,6 @@
     "aboutMyWorkContent5": "<strong>Content Management Avanzato con ",
     "aboutMyWorkContent6": ":</strong><br>Per i progetti che richiedono una gestione dinamica dei contenuti, implemento soluzioni basate su WordPress. Non mi limito all'uso di template predefiniti; il mio focus è lo sviluppo di temi custom e plugin ad hoc, ottimizzando le performance e garantendo che il CMS sia perfettamente cucito sulle esigenze operative del cliente, mantenendo alti standard di sicurezza e SEO-friendliness.",
     "aboutMyWorkContent7": "<strong>Sviluppo Mobile Cross-Platform con ",
-    "aboutMyWorkContent8": ":</strong><br>Sul fronte mobile, adotto Flutter, il framework di Google, per creare applicazioni native performanti sia per iOS che per Android partendo da un unico codebase in Dart. Grazie alla gestione dichiarativa della UI e all'architettura a widget, riesco a garantire interfacce utente fluide (60fps) e un time-to-market ridotto, integrando funzionalità hardware specifiche e sincronizzazione dati in tempo reale."
+    "aboutMyWorkContent8": ":</strong><br>Sul fronte mobile, adotto Flutter, il framework di Google, per creare applicazioni native performanti sia per iOS che per Android partendo da un unico codebase in Dart. Grazie alla gestione dichiarativa della UI e all'architettura a widget, riesco a garantire interfacce utente fluide e un time-to-market ridotto, integrando funzionalità hardware specifiche e sincronizzazione dati in tempo reale."
   }
 }

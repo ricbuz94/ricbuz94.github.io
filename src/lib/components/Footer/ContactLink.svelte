@@ -1,16 +1,19 @@
 <script lang="ts">
     import Icon from "../Icon.svelte";
+    import type {LucideIcon} from "@lucide/svelte";
 
-    let { title = "Icon", href = "/", text = "Contact link", icon } = $props();
+
+    let {title = "Icon", href = "/", icon = null, text}: {
+        title: string,
+        href: string,
+        icon?: null | LucideIcon | 'github' | 'linkedin' | 'instagram'
+        text?: string,
+    } = $props();
 </script>
 
 <a class="contact-link" title={title + " | " + text} {href} target="_blank" rel="noreferrer">
-    {#if !!icon}
-        <Icon component={icon} />
-    {/if}
-    {#if !!text}
-        <p class="contact-link-text">{text}</p>
-    {/if}
+    <Icon component={icon}/>
+    <p class="contact-link-text">{text}</p>
 </a>
 
 <style>
@@ -25,7 +28,7 @@
         stroke: var(--accentColor);
     }
 
-    :global(.contact-link:hover .lucide-twitter) {
+    :global(.contact-link:hover .lucide-fill) {
         stroke: none;
         fill: var(--accentColor);
     }

@@ -9,7 +9,8 @@
     import {type Readable} from "svelte/store";
     import {useMediaQuery} from "$lib/hooks/useMediaQuery";
     import {Theme, type T_Section} from "$lib/helpers/interfaces";
-    import {Moon, Sun} from "lucide-svelte";
+    import Moon from "@lucide/svelte/icons/moon";
+    import Sun from "@lucide/svelte/icons/sun";
 
     import Loader from "$lib/components/Loader.svelte";
     import Header from "$lib/components/Header.svelte";
@@ -20,36 +21,52 @@
 
     const DARK_PREFERENCE = "(prefers-color-scheme: dark)";
 
-    let {children}: { data: { theme: string | undefined; sections: T_Section[] }; children: Snippet } = $props();
+    let {children}: {
+        data: { theme: string | undefined; sections: T_Section[]; skillsSections: Array<any> };
+        children: Snippet
+    } = $props();
 
     let theme = $state();
     let isSmallScreen = $state(false);
     let hideTopButton = $state(true);
+    let isMenuOpen = $state(false);
     let themeIcon = $derived(theme === Theme.light ? Moon : Sun);
 
     const mq: Readable<boolean> = useMediaQuery("only screen and (max-width: 720px)");
     mq.subscribe((value) => (isSmallScreen = value));
 
+    let lastScrollTop = $state(0);
+    let ticking = $state(false);
+
     function onScrollHandler() {
-        if (browser) {
-            const header = document.getElementById("header");
-            if (window.scrollY > 15) {
-                hideTopButton = false;
-                if (!!header && !isSmallScreen) {
-                    header.style.height = "60px";
-                    header.style.boxShadow = "var(--navBorderBottom)";
-                    header.style.backgroundColor = "var(--navBackgroundColor)";
-                    header.style.backdropFilter = "saturate(180%) blur(15px)";
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const threshold = 10;
+                const currentScroll = window.scrollY || document.documentElement.scrollTop;
+                const scrollDistance = lastScrollTop - currentScroll;
+                const header = document.getElementById("header");
+
+                if (!!header && header instanceof HTMLElement) {
+                    if (currentScroll > threshold) {
+                        header.classList.add("scrolled");
+                        hideTopButton = false;
+
+                        if (currentScroll > lastScrollTop) {
+                            header.classList.add("scrolled-down");
+                            isMenuOpen = false;
+                        } else if (currentScroll < lastScrollTop && scrollDistance > threshold) {
+                            header.classList.remove("scrolled-down");
+                        }
+                    } else {
+                        header.classList.remove("scrolled", "scrolled-down");
+                        hideTopButton = true;
+                    }
                 }
-            } else {
-                hideTopButton = true;
-                if (!!header && !isSmallScreen) {
-                    header.style.height = "80px";
-                    header.style.boxShadow = "none";
-                    header.style.backgroundColor = "transparent";
-                    header.style.backdropFilter = "none";
-                }
-            }
+
+                lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+                ticking = false;
+            });
+            ticking = true;
         }
     }
 
@@ -108,7 +125,7 @@
             <Loader/>
         </div>
     {:else}
-        <Header {themeIcon} {toggleTheme}/>
+        <Header {themeIcon} {toggleTheme} bind:isMenuOpen={isMenuOpen}/>
         {#key page.url.pathname}
             <main in:fly={{ y: 30, duration: isSmallScreen ? 400 : 200, delay: 100 }}>
                 <Divider/>
@@ -131,13 +148,12 @@
 
     #theme {
         margin: 0 auto;
-        /*min-height: 100vh;*/
         color: var(--textColor);
         font-size: var(--fontSize);
         background-color: var(--backgroundColor);
         transition: color var(--transition),
         background-color var(--transition);
-        font-family: "Poppins",
+        font-family: "Inter",
         -apple-system,
         BlinkMacSystemFont,
         Arial,
@@ -147,7 +163,6 @@
     :global(a) {
         outline: none;
         text-decoration: none;
-        -webkit-tap-highlight-color: transparent;
     }
 
     :global(p) {
@@ -187,10 +202,9 @@
 
         main {
             width: 100%;
-            padding-top: 0;
+            padding-top: 3rem;
             padding-left: 1.5rem;
             padding-right: 1.5rem;
-            /*padding-bottom: 2.5rem;*/
         }
     }
 

@@ -1,6 +1,6 @@
 <script module lang="ts">
     import type { T_Section } from "$lib/helpers/interfaces";
-    import { CornerDownRight } from "lucide-svelte";
+    import CornerDownRight from "@lucide/svelte/icons/corner-down-right";
     import Icon from "../Icon.svelte";
     import Post from "./Post.svelte";
 </script>

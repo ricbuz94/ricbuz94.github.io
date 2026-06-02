@@ -1,6 +1,6 @@
 <script lang="ts">
     import {firstCount, secondCount} from "$lib/helpers/counts";
-    import {Info, SquareArrowOutUpRight} from "lucide-svelte";
+    import Info from "@lucide/svelte/icons/info";
     import Icon from "$lib/components/Icon.svelte";
     import type {FirstCountData, SecondCountData, T_Drink} from "$lib/helpers/interfaces";
 

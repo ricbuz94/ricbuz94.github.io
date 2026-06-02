@@ -27,7 +27,7 @@
 	.loader {
 		width: 4rem;
 		height: 4rem;
-		margin: 0px;
+		margin: 0;
 		border-radius: 50%;
 		border: 0.25rem solid var(--borderColor);
 		border-top: 0.25rem solid var(--accentColor);

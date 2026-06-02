@@ -3,8 +3,7 @@
     import Article from "$lib/components/article/Article.svelte";
     import ArticleLink from "$lib/components/article/ArticleLink.svelte";
     import Divider from "$lib/components/Divider.svelte";
-    import me from "$lib/assets/images/me.webp";
-    import code from "$lib/assets/images/code.webp";
+    import {browser} from "$app/environment";
 </script>
 
 <svelte:head>
@@ -12,57 +11,55 @@
     <meta name="description" content="About page for Riccardo Buzzolo. Know something about me."/>
 </svelte:head>
 
-<div class="content">
-    <img
-            src={me}
-            alt="Riccardo Buzzolo"
-            title="Riccardo Buzzolo"
-            draggable={false}
-            oncontextmenu={(e) => e.preventDefault()}
-    />
-    <div class="card-wide">
-        <Article title={$_("about.aboutMe")}>
-            <p style="text-align: justify;">
-                {$_("about.aboutMeContent1")}
-                <ArticleLink title={$_("about.aboutMeLink1")} href={`${import.meta.env.VITE_APP_ITG_URL}`}/>{$_(
-                "about.aboutMeContent2",
-            )}
-                <ArticleLink title={$_("about.aboutMeLink2")} href={`${import.meta.env.VITE_APP_UNIBO_URL}`}/>{$_(
-                "about.aboutMeContent3",
-            )}
-                <ArticleLink title="Beacharound S.r.l." href={`${import.meta.env.VITE_APP_BEACHAROUND_URL}`}/>{$_(
-                "about.aboutMeContent4",
-            )}
-            </p>
-        </Article>
+{#if !!browser}
+    <div class="content">
+        <img
+                src="/images/me.webp"
+                alt="Riccardo Buzzolo"
+                title="Riccardo Buzzolo"
+                draggable={false}
+                oncontextmenu={(e) => e.preventDefault()}
+        />
+        <div class="card-wide">
+            <Article title={$_("about.aboutMe")}>
+                <p style="text-align: justify;">
+                    {$_("about.aboutMeContent1")}
+                    <ArticleLink title={$_("about.aboutMeLink1")}
+                                 href={`${import.meta.env.VITE_APP_ITG_URL}`}/>{$_("about.aboutMeContent2")}
+                    <ArticleLink title={$_("about.aboutMeLink2")}
+                                 href={`${import.meta.env.VITE_APP_UNIBO_URL}`}/>{$_("about.aboutMeContent3")}
+                    <ArticleLink title="Beacharound S.r.l."
+                                 href={`${import.meta.env.VITE_APP_BEACHAROUND_URL}`}/>{$_("about.aboutMeContent4")}
+                </p>
+            </Article>
+        </div>
     </div>
-</div>
-<Divider height={4}/>
-<div class="content dense">
-    <div class="card-wide">
-        <Article title={$_("about.aboutMyWork")}>
-            <p style="text-align: justify;">
-                {$_("about.aboutMyWorkContent1")}
-                <ArticleLink title="Quadra S.r.l." href={`${import.meta.env.VITE_APP_QUADRA_URL}`}/>{$_(
-                "about.aboutMyWorkContent2",
-            )}
-                <br><br>
-                {@html $_("about.aboutMyWorkContent3")}
-                <ArticleLink title="Symfony" href={`${import.meta.env.VITE_APP_SYMFONY_URL}`}/>
-                {@html $_("about.aboutMyWorkContent4")}
-                <br><br>
-                {@html $_("about.aboutMyWorkContent5")}
-                <ArticleLink title="Wordpress"
-                             href={`${import.meta.env.VITE_APP_WORDPRESS_URL}`}/>{@html $_("about.aboutMyWorkContent6")}
-                <br><br>
-                {@html $_("about.aboutMyWorkContent7")}
-                <ArticleLink title="Flutter"
-                             href={`${import.meta.env.VITE_APP_FLUTTER_URL}`}/>{@html $_("about.aboutMyWorkContent8")}
-            </p>
-        </Article>
+    <Divider height={4}/>
+    <div class="content dense">
+        <div class="card-wide">
+            <Article title={$_("about.aboutMyWork")}>
+                <p style="text-align: justify;">
+                    {$_("about.aboutMyWorkContent1")}
+                    <ArticleLink title="Quadra S.r.l."
+                                 href={`${import.meta.env.VITE_APP_QUADRA_URL}`}/>{$_("about.aboutMyWorkContent2")}
+                    <br><br>
+                    {@html $_("about.aboutMyWorkContent3")}
+                    <ArticleLink title="Symfony" href={`${import.meta.env.VITE_APP_SYMFONY_URL}`}/>
+                    {@html $_("about.aboutMyWorkContent4")}
+                    <br><br>
+                    {@html $_("about.aboutMyWorkContent5")}
+                    <ArticleLink title="Wordpress"
+                                 href={`${import.meta.env.VITE_APP_WORDPRESS_URL}`}/>{@html $_("about.aboutMyWorkContent6")}
+                    <br><br>
+                    {@html $_("about.aboutMyWorkContent7")}
+                    <ArticleLink title="Flutter"
+                                 href={`${import.meta.env.VITE_APP_FLUTTER_URL}`}/>{@html $_("about.aboutMyWorkContent8")}
+                </p>
+            </Article>
+        </div>
+        <img src="/images/code.webp" alt="Lavoro" title="Lavoro" draggable={false} oncontextmenu={(e) => e.preventDefault()}/>
     </div>
-    <img src={code} alt="Lavoro" title="Lavoro" draggable={false} oncontextmenu={(e) => e.preventDefault()}/>
-</div>
+{/if}
 
 <style>
     .card-wide {

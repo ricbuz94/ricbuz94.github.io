@@ -1,23 +1,38 @@
 <script lang="ts">
     import Icon from "./Icon.svelte";
     import Loader from "./Loader.svelte";
-    import {Circle} from "lucide-svelte";
+    import isMobile from "$lib/stores/isMobileStore";
 
-    let { label = "", icon = null, isLoading = false, text = "", onclick } = $props();
+    let {label = "", icon = null, isLoading = false, text = "", onclick} = $props();
 </script>
 
-<button id="button" title={label} {onclick}>
+<button class={[!$isMobile ? "nav-link" : "menu-button"]} title={label} {onclick}>
     {#if isLoading}
-        <Loader small />
+        <Loader small/>
     {:else if !!icon}
-        <Icon component={icon} size={18} />
+        <Icon component={icon} size={18}/>
     {:else}
-        <p id="text">{text}</p>
+        <p>{text}</p>
     {/if}
 </button>
 
 <style>
-    #button {
+    button {
+        font-size: var(--fontSizeSmall);
+        font-weight: 600;
+    }
+
+    button:not(.menu-button) {
+        cursor: pointer;
+        border: none;
+        background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.4;
+    }
+
+    .menu-button {
         background-color: transparent !important;
         width: 40px;
         height: 40px;
@@ -33,24 +48,13 @@
         transition: all var(--transition);
     }
 
-    #button:active {
+    .menu-button:active {
         box-shadow: var(--activeInputShadow) !important;
-    }
-
-    #text {
-        font-family: inherit;
-        letter-spacing: 1px;
-        font-weight: 700;
-        font-size: 14px;
-        user-select: none;
-        padding-top: 1px;
-        color: var(--textColor);
-        transition: color var(--transition);
     }
 
     /* schermo piccolo */
     @media only screen and (max-width: 720px) {
-        #button:active {
+        .menu-button:active {
             box-shadow: none !important;
         }
     }
