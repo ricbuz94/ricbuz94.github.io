@@ -1,0 +1,1 @@
+import{D as e,E as t,T as n,W as r,m as i,v as a}from"../chunks/Dle5WQBg.js";import"../chunks/xihTtKlq.js";var o=e(`<link rel="icon" href="/shrinkpic/favicon/favicon.ico"/>`);function s(e,s){var c=t();i(`18thh1y`,e=>{n(e,o())}),a(r(c),()=>s.children),n(e,c)}export{s as component};
