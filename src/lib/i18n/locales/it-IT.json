@@ -89,6 +89,10 @@
       "header": "Progetti",
       "list": [
         {
+          "title": "shrinkpic",
+          "description": "Strumento multi-thread che riduce le immagini JPEG/PNG a ≤ 1 MB, preservando la migliore qualità possibile."
+        },
+        {
           "title": "Drink Tool",
           "description": "Calcolatore in tempo reale del tasso alcolemico: BAC (Blood Alcohol Content)."
         },

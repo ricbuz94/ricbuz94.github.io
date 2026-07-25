@@ -1,4 +1,4 @@
-import {Tag, Theme, type T_Section} from "$lib/helpers/interfaces";
+import {type T_Section, Tag, Theme} from "$lib/helpers/interfaces";
 import type {LayoutData} from "./$types";
 import {browser} from "$app/environment";
 
@@ -51,7 +51,15 @@ const sections: Array<T_Section> = [
         title: "Projects",
         posts: [
             {
-                id: "000003",
+                id: "000001",
+                url: "/shrinkpic",
+                image: "/images/shrinkpic.webp",
+                title: "shrinkpic",
+                tags: [Tag.zig, Tag.bash],
+                description: "Multi-threaded tool that shrinks JPEG/PNG images to ≤ 1 MB while preserving the best possible quality.",
+            },
+            {
+                id: "000002",
                 url: "/drinktool/download",
                 image: "/images/drinktool.webp",
                 title: "Drink Tool app",
@@ -59,7 +67,7 @@ const sections: Array<T_Section> = [
                 description: "Real-time BAC (Blood Alcohol Content) calculator.",
             },
             {
-                id: "000004",
+                id: "000003",
                 url: `${import.meta.env.VITE_APP_SIMPLE_QR_CODE_URL}` || "#",
                 noBlank: true,
                 image: "/images/simple_qr_code.webp",
@@ -75,7 +83,7 @@ const sections: Array<T_Section> = [
         title: "Old projects",
         posts: [
             {
-                id: "000005",
+                id: "000001",
                 url: "/hmcid",
                 image: "/images/howmuchcanidrink.webp",
                 title: "Howmuchcanidrink",

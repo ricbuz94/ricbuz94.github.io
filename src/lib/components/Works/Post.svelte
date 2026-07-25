@@ -152,6 +152,16 @@
         background-color: var(--flutterTag);
     }
 
+    .ZIG {
+        color: #000;
+        background-color: var(--zigTag);
+    }
+
+    .BASH {
+        color: #fff;
+        background-color: var(--bashTag);
+    }
+
     /* schermo piccolo */
     @media only screen and (max-width: 720px) {
         h4 {

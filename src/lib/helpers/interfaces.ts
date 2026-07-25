@@ -18,6 +18,8 @@ enum Tag {
     reactNative = "REACT_NATIVE",
     php = "PHP",
     flutter = "FLUTTER",
+    zig = "ZIG",
+    bash = "BASH",
 }
 
 // Types

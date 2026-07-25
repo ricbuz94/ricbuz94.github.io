@@ -89,6 +89,10 @@
       "header": "Projects",
       "list": [
         {
+          "title": "shrinkpic",
+          "description": "Multi-threaded tool that shrinks JPEG/PNG images to ≤ 1 MB while preserving the best possible quality."
+        },
+        {
           "title": "Drink Tool",
           "description": "Real-time blood alcohol content calculator: BAC (Blood Alcohol Content)."
         },

@@ -104,6 +104,8 @@ a, button {
     --reactTag: #005ac4;
     --reactNativeTag: #005ac4;
     --flutterTag: #005ac4;
+    --zigTag: #f7a41d;
+    --bashTag: #4DA925;
     --borderColor: rgba(120, 120, 120, 0.1);
     --navBackgroundColor: rgba(248, 248, 248, 0.6);
     --menuBackgroundColor: rgba(248, 248, 248, 0.95);
@@ -125,10 +127,12 @@ a, button {
     --webTag: #3b82f6;
     --phpTag: #7a86b8;
     --androidTag: #a4c34a;
-    --flutterTag: #3b82f6;
     --jqueryTag: #3b82f6;
     --reactTag: #3b82f6;
     --reactNativeTag: #3b82f6;
+    --flutterTag: #005ac4;
+    --zigTag: #f7af3a;
+    --bashTag: #5fa93f;
     --borderColor: rgba(200, 200, 200, 0.1);
     --navBackgroundColor: rgba(15, 15, 15, 0.6);
     --menuBackgroundColor: rgba(15, 15, 15, 0.95);

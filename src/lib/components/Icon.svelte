@@ -9,7 +9,7 @@
         size = 20,
         strokeWidth = 2,
     }: {
-        component: null | LucideIcon | 'github' | 'linkedin' | 'instagram';
+        component: null | LucideIcon | 'github' | 'linkedin' | 'instagram' | 'shrinkpic';
         color?: string;
         size?: number;
         strokeWidth?: number;
@@ -43,6 +43,10 @@
             <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
             <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+        {:else if IconComponent === 'shrinkpic'}
+            <title>shrinkpic</title>
+            <path d="M21.6 10.2L19.8 10.2L19.8 5.4L4.2 5.4L4.2 18.6L10.2 18.6L10.2 20.4L2.4 20.4L2.4 3.6L21.6 3.6L21.6 10.2zM21.6 20.4L12 20.4L12 12L21.6 12L21.6 20.4zM13.8 18.6L19.8 18.6L19.8 13.8L13.8 13.8L13.8 18.6z"></path>
+
         {/if}
     </svg>
 {:else}
