@@ -8,11 +8,15 @@
         color = "var(--textColor, currentColor)",
         size = 20,
         strokeWidth = 2,
+        strokeLinecap = "round",
+        strokeLinejoin = "round",
     }: {
         component: null | LucideIcon | 'github' | 'linkedin' | 'instagram' | 'shrinkpic';
         color?: string;
         size?: number;
         strokeWidth?: number;
+        strokeLinecap?: 'butt' | 'square' | 'round' | 'inherit';
+        strokeLinejoin?: 'miter' | 'round' | 'bevel' | 'inherit',
     } & SVGAttributes<SVGSVGElement> = $props();
 </script>
 
@@ -26,8 +30,8 @@
             fill="none"
             stroke={color}
             stroke-width={strokeWidth}
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            stroke-linecap={strokeLinecap}
+            stroke-linejoin={strokeLinejoin}
     >
         {#if IconComponent === 'github'}
             <title>GitHub</title>

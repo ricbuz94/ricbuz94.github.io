@@ -90,7 +90,7 @@
       "list": [
         {
           "title": "shrinkpic",
-          "description": "Strumento multi-thread che riduce le immagini JPEG/PNG a ≤ 1 MB, preservando la migliore qualità possibile."
+          "description": "Strumento multi-threaded che ridimensiona e comprime le immagini fino a una dimensione file target, preservando la migliore qualità fotografica possibile."
         },
         {
           "title": "Drink Tool",

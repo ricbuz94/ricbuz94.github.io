@@ -90,7 +90,7 @@
       "list": [
         {
           "title": "shrinkpic",
-          "description": "Multi-threaded tool that shrinks JPEG/PNG images to ≤ 1 MB while preserving the best possible quality."
+          "description": "Multi-threaded tool that downscales and compresses images to a target file size while preserving the best possible photographic quality."
         },
         {
           "title": "Drink Tool",

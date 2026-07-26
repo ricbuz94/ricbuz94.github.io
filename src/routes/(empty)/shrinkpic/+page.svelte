@@ -3,13 +3,13 @@ import Icon from "$lib/components/Icon.svelte";
 </script>
 
 <svelte:head>
-    <title>shrinkpic — Shrink images to 1 MB</title>
+    <title>shrinkpic — Shrink images for the web</title>
 </svelte:head>
 
 <div class="container">
     <header>
-        <h1><Icon component="shrinkpic" size={28} /> shrinkpic</h1>
-        <p class="tagline">Multi-threaded tool that shrinks JPEG/PNG images to ≤ 1 MB while preserving the best possible quality.</p>
+        <h1><Icon component="shrinkpic" size={28} strokeLinecap="butt" strokeLinejoin="miter" /> shrinkpic</h1>
+        <p class="tagline">Multi-threaded tool written in Zig 0.16 that downscales and compresses images to a target file size (default: 200 KB) while preserving the best possible photographic quality.</p>
         <a class="cta" href={import.meta.env.VITE_APP_SHRINKPIC_REPO_URL} target="_blank" rel="noopener">
             <Icon component="github" />
             View on GitHub
@@ -17,36 +17,56 @@ import Icon from "$lib/components/Icon.svelte";
     </header>
 
     <section>
+        <h2>Features</h2>
+        <ul>
+            <li><strong>Universal Input</strong>: Accepts PNG, JPEG, BMP, TGA, GIF, etc. (via <code>stb_image</code>)</li>
+            <li><strong>Photo-Grade Downscaling</strong>: High-quality linear resizing using <code>stb_image_resize2</code></li>
+            <li><strong>Optimized Output</strong>: Generates modern <strong>WebP</strong> files (default) or progressive <strong>JPEG</strong></li>
+            <li><strong>Metadata Purge</strong>: Automatically strips heavy EXIF, GPS, and IPTC data</li>
+            <li><strong>Dynamic Thread Pool</strong>: Smart concurrency with hardware safety bounds</li>
+        </ul>
+    </section>
+
+    <section>
         <h2>Requirements</h2>
         <ul>
             <li>Zig 0.16</li>
-            <li>libpng</li>
-            <li>libjpeg-turbo</li>
+            <li>libwebp</li>
+            <li>jpeg-turbo (libjpeg-turbo)</li>
         </ul>
         <h3>macOS</h3>
-        <pre><code>brew install zig libpng jpeg-turbo</code></pre>
+        <pre><code>brew install zig webp jpeg-turbo</code></pre>
         <h3>Ubuntu / Debian</h3>
-        <pre><code>sudo apt install zig libpng-dev libturbojpeg0-dev</code></pre>
+        <pre><code>sudo apt install zig libwebp-dev libturbojpeg0-dev</code></pre>
     </section>
 
     <section>
         <h2>Build</h2>
-        <pre><code>git clone {import.meta.env.VITE_APP_SHRINKPIC_REPO_URL}
-cd shrinkpic
-zig build -Doptimize=ReleaseFast</code></pre>
-        <p>Binary: <code>zig-out/bin/shrinkpic</code></p>
+        <pre><code>git clone {import.meta.env.VITE_APP_SHRINKPIC_REPO_URL}<br>cd shrinkpic<br>zig build -Doptimize=ReleaseFast</code></pre>
+        <p>Binary destination: <code>zig-out/bin/shrinkpic</code></p>
     </section>
 
     <section>
         <h2>Usage</h2>
-        <pre><code>./zig-out/bin/shrinkpic &lt;input_dir&gt; [output_dir]</code></pre>
+        <pre><code>./zig-out/bin/shrinkpic &lt;input_dir&gt; [output_dir] [options]</code></pre>
         <ul>
-            <li>Processes all <code>.jpg</code> / <code>.jpeg</code> / <code>.png</code> in <code>input_dir</code></li>
-            <li>Writes <code>*.shrunk.jpg</code> into <code>output_dir</code> (created if missing)</li>
-            <li>If <code>output_dir</code> is omitted, files are written next to the originals</li>
+            <li>Processes files concurrently, automatically skipping system hidden files like <code>.DS_Store</code></li>
+            <li>Creates the output directory if missing. If omitted, files are written next to the originals</li>
         </ul>
-        <h3>Example</h3>
-        <pre><code>./zig-out/bin/shrinkpic ./photos ./photos_small</code></pre>
+
+        <h3>CLI Options</h3>
+        <ul>
+            <li><code>--size=&lt;target_size&gt;</code>: Maximum file weight (e.g., <code>150KB</code> or <code>1MB</code>). *Default: 200kb*</li>
+            <li><code>--jpeg</code>: Forces output conversion to Progressive JPEG instead of the native WebP format</li>
+            <li><code>--workers=&lt;1-8&gt;</code>: Sets the number of concurrent parallel worker threads. *Default: 8*</li>
+        </ul>
+
+        <h3>Examples</h3>
+        <p>Standard WebP optimization (Max 150 KB, using 8 threads):</p>
+        <pre><code>./zig-out/bin/shrinkpic ./photos ./web_ready --size=150KB --workers=8</code></pre>
+
+        <p>Force JPEG conversion for WordPress uploads (Max 200 KB):</p>
+        <pre><code>./zig-out/bin/shrinkpic ./raw_images ./wp_upload --size=200kb --jpeg</code></pre>
     </section>
 
     <footer>
