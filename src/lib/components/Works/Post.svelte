@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { T_Post } from "../../helpers/interfaces";
+    import type { T_Post } from "$lib/helpers/interfaces";
     let { post }: { post: T_Post } = $props();
 </script>
 
@@ -44,11 +44,11 @@
 
     a {
         display: block;
-        margin: 0px;
+        margin: 0;
         line-height: 1;
         outline: none;
         /* border-radius: var(--borderRadius); */
-        border-radius: 0px;
+        border-radius: 0;
         -webkit-tap-highlight-color: transparent;
         color: var(--textColor);
     }
@@ -107,9 +107,8 @@
         font-size: 14px;
         font-weight: 500;
         color: var(--subTextColor);
-        margin: 0px;
-        margin-top: 10px;
-        padding: 0px;
+        margin: 10px 0 0;
+        padding: 0;
     }
 
     .WEB {

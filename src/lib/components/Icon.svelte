@@ -10,6 +10,7 @@
         strokeWidth = 2,
         strokeLinecap = "round",
         strokeLinejoin = "round",
+        fill = "none",
     }: {
         component: null | LucideIcon | 'github' | 'linkedin' | 'instagram' | 'shrinkpic';
         color?: string;
@@ -17,6 +18,7 @@
         strokeWidth?: number;
         strokeLinecap?: 'butt' | 'square' | 'round' | 'inherit';
         strokeLinejoin?: 'miter' | 'round' | 'bevel' | 'inherit',
+        fill?: string;
     } & SVGAttributes<SVGSVGElement> = $props();
 </script>
 
@@ -27,7 +29,7 @@
             width={size}
             height={size}
             viewBox="0 0 24 24"
-            fill="none"
+            fill={fill}
             stroke={color}
             stroke-width={strokeWidth}
             stroke-linecap={strokeLinecap}
