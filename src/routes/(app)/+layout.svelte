@@ -88,14 +88,14 @@
                 document.getElementById("theme")?.classList.remove(Theme.light);
                 document.getElementById("theme")?.classList.add(Theme.dark);
                 favicon.href = "/favicon-dark.ico";
-                metaThemeColor.content = "#0f0f0f";
+                metaThemeColor.content = "#3C2616";
             } else {
                 document.body?.classList.remove(Theme.dark);
                 document.body?.classList.add(Theme.light);
                 document.getElementById("theme")?.classList.remove(Theme.dark);
                 document.getElementById("theme")?.classList.add(Theme.light);
                 favicon.href = "/favicon.ico";
-                metaThemeColor.content = "#faf9fc";
+                metaThemeColor.content = "#F5D8DB";
             }
         }
     }

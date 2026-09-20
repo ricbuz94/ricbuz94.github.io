@@ -1,16 +1,9 @@
 <script lang="ts">
     import Icon from "$lib/components/Icon.svelte";
-</script>
+    import {onMount} from "svelte";
 
-<svelte:head>
-    <title>shrinkpic — Shrink images for the web</title>
-    <meta name="description"
-          content="Multi-threaded Zig 0.16 tool that downscales and compresses images to a target size without sacrificing photographic quality."/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"/>
-</svelte:head>
+    onMount(() => document.querySelector('meta[name="theme-color"]')?.setAttribute('content', '#0b0d10'));
+</script>
 
 <header>
     <div class="container">
@@ -20,6 +13,7 @@
         </button>
         <nav>
             <a href="#features">Features</a>
+            <a href="#perf">Performances</a>
             <a href="#install">Install</a>
             <a href="#usage">Usage</a>
         </nav>
@@ -76,7 +70,51 @@
                 <h3>Precise target size</h3>
                 <p>Adaptive quality until under the limit. If still over, writes anyway with a warning.</p>
             </div>
+            <div class="card">
+                <div class="icon">🖥️</div>
+                <h3>Cross-platform</h3>
+                <p>Single binary for macOS, Linux and Windows. No runtime deps.</p>
+            </div>
+            <div class="card">
+                <div class="icon">🚀</div>
+                <h3>Blazing fast</h3>
+                <p>Zig + ReleaseFast. Folders of 4K photos in a few seconds.</p>
+            </div>
+            <div class="card">
+                <div class="icon">📦</div>
+                <h3>Zero bloat</h3>
+                <p>Static binary. Drop it anywhere and run.</p>
+            </div>
         </div>
+    </div>
+</section>
+
+<section class="perf" id="perf">
+    <div class="container">
+        <h2>Real numbers</h2>
+        <p class="section-sub">18 large photos · from disk to web-ready in one command.</p>
+        <div class="stats">
+            <div class="stat">
+                <span class="num">995 MB</span>
+                <span class="label">input</span>
+            </div>
+            <div class="arrow">→</div>
+            <div class="stat">
+                <span class="num">6.2 MB</span>
+                <span class="label">output</span>
+            </div>
+            <div class="arrow">·</div>
+            <div class="stat">
+                <span class="num">5 s</span>
+                <span class="label">total time</span>
+            </div>
+            <div class="arrow">·</div>
+            <div class="stat">
+                <span class="num">160×</span>
+                <span class="label">smaller</span>
+            </div>
+        </div>
+        <p class="note">4K &amp; 3K sources · downscaled to 1920 px · WebP · target 200 KB · 8 workers</p>
     </div>
 </section>
 
@@ -357,7 +395,7 @@ zig-out/bin/shrinkpic (Windows: `zig-out\bin\shrinkpic.exe`)</code></pre>
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.25rem;
     }
   }
@@ -386,6 +424,57 @@ zig-out/bin/shrinkpic (Windows: `zig-out\bin\shrinkpic.exe`)</code></pre>
 
     p {
       font-size: 0.9rem;
+      color: var(--muted);
+    }
+  }
+
+  // ——— Performances ———
+  .perf {
+    padding: 3rem 0 4rem;
+    text-align: center;
+
+    h2 { margin-bottom: 0.5rem; }
+    .section-sub { color: var(--muted); margin-bottom: 2rem; }
+
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.4rem;
+      min-width: 110px;
+
+      .num {
+        display: block;
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--accent);
+        letter-spacing: -0.02em;
+      }
+      .label {
+        font-size: 0.8rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+    }
+
+    .arrow {
+      color: var(--muted);
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .note {
+      font-size: 0.85rem;
       color: var(--muted);
     }
   }
@@ -488,13 +577,38 @@ zig-out/bin/shrinkpic (Windows: `zig-out\bin\shrinkpic.exe`)</code></pre>
   }
 
   @media (max-width: 640px) {
-    header nav {
-      display: none;
-    }
+    header nav { display: none; }
 
     .hero {
-      padding-top: 3rem;
+      padding: 3rem 0 2.5rem;
+      h1 { font-size: 2rem; }
+      .subtitle { font-size: 1rem; }
     }
+
+    .features .grid,
+    .usage .opts {
+      grid-template-columns: 1fr;
+    }
+
+    .perf .stats {
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .perf .arrow { display: none; }
+    .perf .stat { width: 100%; max-width: 220px; }
+
+    .install pre {
+      font-size: 0.75rem;
+      padding: 1rem;
+    }
+
+    .usage .cmd {
+      font-size: 0.8rem;
+      padding: 1rem;
+      word-break: break-all;
+    }
+
+    .final-cta h2 { font-size: 1.4rem; }
   }
 
   @media (max-width: 768px) {
